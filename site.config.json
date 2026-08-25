@@ -1,0 +1,14 @@
+{
+  "collectionName": "Saat Koleksiyonum",
+  "ownerName": "",
+  "tagline": "Envanter, teknik özellikler ve rotasyon günlüğü",
+  "defaultCurrency": "USD",
+  "locale": "tr-TR",
+  "neglectedAfterDays": 60,
+  "privateFields": [
+    "acquisition.price",
+    "acquisition.seller",
+    "acquisition.serial",
+    "valuation"
+  ]
+}

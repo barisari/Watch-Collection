@@ -1,0 +1,289 @@
+[
+  {
+    "id": "omega-speedmaster-3861",
+    "brand": "Omega",
+    "model": "Speedmaster Professional Moonwatch",
+    "nickname": "Moonwatch",
+    "shortCode": "Moon",
+    "reference": "310.30.42.50.01.001",
+    "year": 2022,
+    "category": "kronograf",
+    "status": "owned",
+    "specs": {
+      "movement": {
+        "caliber": "Omega 3861",
+        "type": "manual",
+        "powerReserve": 50,
+        "frequency": 21600,
+        "jewels": 26,
+        "certification": "METAS Master Chronometer"
+      },
+      "case": {
+        "material": "Paslanmaz çelik",
+        "diameter": 42,
+        "thickness": 13.2,
+        "lugToLug": 47.5,
+        "lugWidth": 20,
+        "crystal": "Hesalite",
+        "waterResistance": 50,
+        "bezel": "Takimetre, siyah alüminyum"
+      },
+      "dial": {
+        "color": "Siyah",
+        "indices": "Aplike",
+        "lume": "Super-LumiNova",
+        "complications": [
+          "kronograf",
+          "küçük saniye"
+        ]
+      },
+      "strap": {
+        "type": "Bilezik",
+        "material": "Paslanmaz çelik",
+        "clasp": "Katlanır klips"
+      }
+    },
+    "acquisition": {
+      "date": "2022-04-12",
+      "price": {
+        "amount": 6200,
+        "currency": "USD"
+      },
+      "seller": "Yetkili bayi",
+      "condition": "new",
+      "boxPapers": true,
+      "serial": "ÖRNEK-0001"
+    },
+    "valuation": {
+      "amount": 7400,
+      "currency": "USD",
+      "asOf": "2026-01-01"
+    },
+    "service": {
+      "lastServiceDate": "2022-04-12",
+      "intervalYears": 8
+    },
+    "photos": [],
+    "tags": [
+      "ikonik",
+      "manuel kurmalı",
+      "günlük"
+    ],
+    "notes": "Örnek kayıt. Ay'a giden saat; hesalit camlı referans."
+  },
+  {
+    "id": "tudor-black-bay-58",
+    "brand": "Tudor",
+    "model": "Black Bay Fifty-Eight",
+    "nickname": "BB58",
+    "shortCode": "BB58",
+    "reference": "79030N",
+    "year": 2023,
+    "category": "dalgıç",
+    "status": "owned",
+    "specs": {
+      "movement": {
+        "caliber": "Tudor MT5402",
+        "type": "automatic",
+        "powerReserve": 70,
+        "frequency": 28800,
+        "jewels": 27,
+        "certification": "COSC"
+      },
+      "case": {
+        "material": "Paslanmaz çelik",
+        "diameter": 39,
+        "thickness": 11.9,
+        "lugToLug": 47.8,
+        "lugWidth": 20,
+        "crystal": "Safir",
+        "waterResistance": 200,
+        "bezel": "Tek yönlü dönen, siyah alüminyum"
+      },
+      "dial": {
+        "color": "Siyah",
+        "indices": "Aplike",
+        "lume": "Super-LumiNova",
+        "complications": []
+      },
+      "strap": {
+        "type": "Bilezik",
+        "material": "Paslanmaz çelik",
+        "clasp": "Katlanır klips"
+      }
+    },
+    "acquisition": {
+      "date": "2023-09-02",
+      "price": {
+        "amount": 3800,
+        "currency": "USD"
+      },
+      "seller": "Yetkili bayi",
+      "condition": "new",
+      "boxPapers": true,
+      "serial": "ÖRNEK-0002"
+    },
+    "valuation": {
+      "amount": 4100,
+      "currency": "USD",
+      "asOf": "2026-01-01"
+    },
+    "service": {
+      "lastServiceDate": "2023-09-02",
+      "intervalYears": 10
+    },
+    "photos": [],
+    "tags": [
+      "dalgıç",
+      "39mm",
+      "günlük"
+    ],
+    "notes": "Örnek kayıt. Küçük kasasıyla her bileğe oturan modern klasik."
+  },
+  {
+    "id": "seiko-skx007",
+    "brand": "Seiko",
+    "model": "SKX007",
+    "nickname": "SKX",
+    "shortCode": "SKX",
+    "reference": "SKX007K2",
+    "year": 2016,
+    "category": "dalgıç",
+    "status": "owned",
+    "specs": {
+      "movement": {
+        "caliber": "Seiko 7S26",
+        "type": "automatic",
+        "powerReserve": 41,
+        "frequency": 21600,
+        "jewels": 21,
+        "certification": null
+      },
+      "case": {
+        "material": "Paslanmaz çelik",
+        "diameter": 42.5,
+        "thickness": 13.25,
+        "lugToLug": 46,
+        "lugWidth": 22,
+        "crystal": "Hardlex",
+        "waterResistance": 200,
+        "bezel": "Tek yönlü dönen, siyah"
+      },
+      "dial": {
+        "color": "Siyah",
+        "indices": "Aplike",
+        "lume": "LumiBrite",
+        "complications": [
+          "gün",
+          "tarih"
+        ]
+      },
+      "strap": {
+        "type": "Bilezik",
+        "material": "Paslanmaz çelik (jubilee)",
+        "clasp": "Katlanır klips"
+      }
+    },
+    "acquisition": {
+      "date": "2016-06-20",
+      "price": {
+        "amount": 210,
+        "currency": "USD"
+      },
+      "seller": "İnternet üzerinden",
+      "condition": "new",
+      "boxPapers": true,
+      "serial": "ÖRNEK-0003"
+    },
+    "valuation": {
+      "amount": 450,
+      "currency": "USD",
+      "asOf": "2026-01-01"
+    },
+    "service": {
+      "lastServiceDate": null,
+      "intervalYears": 10
+    },
+    "photos": [],
+    "tags": [
+      "dalgıç",
+      "uygun fiyat",
+      "beater"
+    ],
+    "notes": "Örnek kayıt. Üretimi 2019'da sonlanan kült model."
+  },
+  {
+    "id": "casio-dw5600e",
+    "brand": "Casio",
+    "model": "G-Shock DW-5600E",
+    "nickname": "Square",
+    "shortCode": "Square",
+    "reference": "DW-5600E-1V",
+    "year": 2019,
+    "category": "dijital",
+    "status": "owned",
+    "specs": {
+      "movement": {
+        "caliber": "Casio modül 3229",
+        "type": "quartz",
+        "powerReserve": null,
+        "frequency": null,
+        "jewels": null,
+        "certification": null
+      },
+      "case": {
+        "material": "Reçine",
+        "diameter": 42.8,
+        "thickness": 13.4,
+        "lugToLug": 48.9,
+        "lugWidth": null,
+        "crystal": "Mineral",
+        "waterResistance": 200,
+        "bezel": "Sabit, reçine"
+      },
+      "dial": {
+        "color": "Negatif LCD",
+        "indices": "Dijital",
+        "lume": "EL arka aydınlatma",
+        "complications": [
+          "kronometre",
+          "geri sayım",
+          "alarm",
+          "takvim"
+        ]
+      },
+      "strap": {
+        "type": "Kayış",
+        "material": "Reçine",
+        "clasp": "Pimli toka"
+      }
+    },
+    "acquisition": {
+      "date": "2019-11-30",
+      "price": {
+        "amount": 60,
+        "currency": "USD"
+      },
+      "seller": "İnternet üzerinden",
+      "condition": "new",
+      "boxPapers": false,
+      "serial": "ÖRNEK-0004"
+    },
+    "valuation": {
+      "amount": 70,
+      "currency": "USD",
+      "asOf": "2026-01-01"
+    },
+    "service": {
+      "lastServiceDate": null,
+      "intervalYears": null
+    },
+    "photos": [],
+    "tags": [
+      "dijital",
+      "beater",
+      "seyahat"
+    ],
+    "notes": "Örnek kayıt. Her koşulda takılabilen dayanıklı seçenek."
+  }
+]
