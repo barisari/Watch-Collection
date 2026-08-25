@@ -6,7 +6,9 @@ name: Siteyi yayınla
 
 on:
   push:
-    branches: [main, master]
+    # Deponun varsayılan dalı şu an claude/watch-collection-manager-gl4ziq.
+    # İleride main'e taşırsan burada bir şey değiştirmene gerek yok.
+    branches: [main, master, claude/watch-collection-manager-gl4ziq]
   workflow_dispatch:
 
 permissions:
