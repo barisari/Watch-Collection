@@ -126,7 +126,11 @@ function watchCard(row, navigate) {
         color && el('span.swatch', { style: { background: color, display: 'inline-block', marginRight: '6px' }, 'aria-hidden': 'true' }),
         w.brand),
       el('div.watch-model', w.model),
-      el('div.watch-ref', [w.reference, w.nickname && `“${w.nickname}”`].filter(Boolean).join(' · ')),
+      // Referans model adıyla aynıysa tekrar yazma (Casio'da kod ikisini de karşılar).
+      el('div.watch-ref', [
+        w.reference !== w.model ? w.reference : null,
+        w.nickname && `“${w.nickname}”`,
+      ].filter(Boolean).join(' · ')),
       el('div.watch-meta',
         el('span', row.days ? `${row.days} gün takıldı` : 'Henüz takılmadı'),
         el('span', { style: { color: 'var(--text-muted)' } },

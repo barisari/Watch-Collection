@@ -39,8 +39,11 @@ export function renderDetail(root, id, navigate) {
           watch.brand),
         el('h1', watch.model),
         el('p.muted',
-          [watch.reference, watch.year, watch.nickname && `“${watch.nickname}”`]
-            .filter(Boolean).join(' · '))),
+          [
+            watch.reference !== watch.model ? watch.reference : null,
+            watch.year,
+            watch.nickname && `“${watch.nickname}”`,
+          ].filter(Boolean).join(' · '))),
       el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } },
         el('button.btn.btn-primary', {
           type: 'button',

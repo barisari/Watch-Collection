@@ -9,41 +9,53 @@ Ayrıntılı belgeler: [`README.md`](README.md) (kullanım, yayınlama) ve
 
 ---
 
-## KALDIĞIMIZ YER (25 Ağustos 2026)
+## KALDIĞIMIZ YER (28 Ağustos 2026)
 
-Site kuruldu, test edildi, yayında. Sırada **envanterin oluşturulması** var.
+Site kurulu ve yayında. Örnek veri silindi; **24 Casio envantere girdi**.
 
-### Bekleyen adım
+### Veri kaynağı
 
-Kullanıcı saatlerinin listesini verecek. Liste geldiğinde:
+Kullanıcının Google Drive'ındaki **"Casio Collection"** tablosu — elle
+hazırlanmış, tek doğru kaynak.
+`1GtGBfgE5gbGefurEjL7G20kTH1m84PLyKZ07XazFgCA`
 
+CSV olarak indirip:
 ```bash
-# listeyi bir metin dosyasına yaz, her satır:
-# Marka | Model | referans | satın alma tarihi | takma ad   (ilk ikisi zorunlu)
-node scripts/add-watches.mjs liste.txt --reset   # örnek veriyi siler, sıfırdan kurar
+node scripts/import-casio-sheet.mjs casio.csv    # --reset ile sıfırdan
 node scripts/validate-data.mjs
 ```
 
-`--reset` hem envanteri hem rotasyon günlüğünü boşaltır (ikisi birlikte
-sıfırlanmalı; günlük kayıtları saat kimliklerine bağlı).
+Tablodan **yalnızca model numarası + satın alma tarihi** alınır. Casio'da model
+numarası rengi ve varyantı da belirlediği için saatin kimliğini tek başına
+taşır. Tablodaki Solar / Bluetooth / modül no sütunlarına **güvenilmiyor** —
+kullanıcının talimatı: bunlar üreticinin verisinden ayrıca doğrulanacak.
 
-Liste parça parça gelebilir — betik aynı marka+model'i iki kez eklemez, yani
-tekrar çalıştırmak güvenli. Sonraki partiler için `--reset` **kullanma**.
+Drive'daki **"Saat Envanter Tablosu"** (Şubat 2026) bir yapay zekâ tarafından
+hazırlanmış ve hatalı — **tamamen yok sayılacak**, model kodları yanlış.
+
+### Bekleyen adımlar
+
+1. **Teknik özellikler** — 24 saatin kalibre/modül, kasa ölçüleri, su
+   geçirmezlik, kadran, kordon bilgileri boş. Üreticinin verisinden doldurulup
+   kullanıcıya doğrulatılacak.
+2. **`Casio MRS-301-2EVDF`** — tabloda fiyatı ve tarihi yok, bu yüzden içe
+   aktarılmadı. Kullanıcıyla konuşulacak.
+3. **Casio dışı saatler** — Seiko'lar ve diğerleri henüz girilmedi.
+4. **Fotoğraflar** — hepsi boş. Tabloda resmi Casio görsel URL'leri var ama
+   hotlink kırılgan; kullanıcının kendi fotoğrafları tercih edilir.
 
 ### Verilmemiş kararlar
 
-1. **Depo public mi kalacak?** Şu an public (Pages'i açmak için gerekti).
-   Bunun sonucu: `data/watches.json` dosyasını herkes okuyabilir. Yayınlanan
-   *site* hassas alanları göstermiyor (`scripts/build.mjs` onları `dist/`
-   kopyasından siliyor, canlı sitede doğrulandı) ama **depodaki kaynak dosya
-   açık**. İçerideki veri şu an sadece örnek olduğu için sorun değil.
-2. **Fiyat / satıcı / seri numarası girilecek mi?** (1) ile bağlantılı.
-   Seçenekler: hiç girmemek · depoyu private yapmak · envanteri private,
-   sergiyi public olmak üzere ikiye ayırmak. **Gerçek veri girilmeden önce
-   karara bağlanmalı.** Seri numarasını public repoda tutmamak önerildi.
+1. **Fiyatlar.** Kullanıcının kararı: *"Fiyatları biz bilelim ama sistem public
+   ken yazmayalım siteye."* Fiyatlar Drive tablosunda duruyor, depoya
+   **girilmedi**. Site bitince fiyatlarla bir hesap yapılacak — o zaman ya depo
+   private olacak ya da ayrı bir çözüm bulunacak.
+2. **Depo public mi kalacak?** Şu an public (Pages ücretsiz hesapta bunu
+   gerektiriyor). Yayınlanan site hassas alanları göstermiyor ama **depodaki
+   kaynak dosyayı herkes okuyabilir** — fiyat/seri no bu yüzden girilmiyor.
 3. **Telefondan hızlı kayıt** — şu an JSON indirip commit gerekiyor.
 
-Bu kararlar netleşmeden gerçek fiyat/seri no verisi girme.
+**Depo public olduğu sürece fiyat ve seri numarası girme.**
 
 ---
 
@@ -80,5 +92,6 @@ Bu kararlar netleşmeden gerçek fiyat/seri no verisi girme.
 | `node scripts/serve.mjs` | Yerel sunucu (`http://localhost:8080`) |
 | `node scripts/validate-data.mjs` | Veriyi doğrular, hatada 1 ile çıkar |
 | `node scripts/add-watches.mjs <liste> [--reset]` | Listeden toplu saat ekler |
+| `node scripts/import-casio-sheet.mjs <csv> [--reset]` | Casio Collection tablosundan içe aktarır |
 | `node scripts/log-wear.mjs "<saat>" [tarih] ["not"]` | Rotasyon kaydı ekler |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
