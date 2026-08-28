@@ -27,6 +27,13 @@ const WEARS = 'data/wears.json';
 /** MODEL hücresindeki seri adları — uzundan kısaya denenir. */
 const BRANDS = ['Pro Trek', 'G-Shock', 'Oceanus', 'Edifice', 'Casio'];
 
+/** Serinin resmi sayfasının hangi yerelde durduğu. Oceanus yalnızca Japonya'da. */
+const LOCALE = { Oceanus: 'jp' };
+const URL_PATH = {
+  'Casio': 'casio', 'G-Shock': 'gshock', 'Edifice': 'edifice',
+  'Pro Trek': 'protrek', 'Oceanus': 'oceanus',
+};
+
 function parseCSV(text) {
   const rows = [];
   let row = [], cur = '', quoted = false;
@@ -56,6 +63,53 @@ function splitModel(cell) {
   return { brand: 'Casio', code: text };
 }
 
+/**
+ * Casio model kodu üç katmanlıdır:  A1100D  -1  DF
+ *                                   model   renk  pazar
+ * Casio kendi ürün sayfalarında pazar sonekini atar (A1100D-1). Bu yüzden
+ * "model + renk" saatin ürün kimliği, tam kod ise senin aldığın haliyle
+ * referansı olur — ve model alanı doğrudan resmi sayfanın adresini verir.
+ *
+ * Renk kodu: rakam + isteğe bağlı harf + isteğe bağlı rakam (1, 1A, 1A1, 2A2).
+ * Kalan harfler pazar sonekidir (DF, DR, ER, JF, JR, VDF, UDF, AVDF, Z…).
+ *
+ * Sınır her zaman kesin değil: "5AVDF" → 5A+VDF mi, 5AV+DF mi? Bu yüzden
+ * ikinci bir aday da üretiliyor; hangisinin gerçek olduğu resmi sayfa
+ * çekilirken (200 mü 404 mü) belirlenir.
+ */
+/* Pazar sonekleri. A ile BAŞLAYAN biçimler (AUDF, AVDF…) bilinçli olarak yok:
+ * oradaki A her zaman renk kodunun parçasıdır (…-3A + UDF), sonekin değil.
+ * Bunu EFS-S570D-3AUDF'de doğruladım — resmi sayfa EFS-S570D-3A. */
+const MARKET_SUFFIXES = [
+  'VUDF', 'VUDR', 'VDF', 'VDR', 'UDF', 'UDR',
+  'DF', 'DR', 'ER', 'EF', 'JF', 'JR', 'Z',
+];
+
+/** Renk kodu bir rakamla başlar, en fazla bir harf ve bir rakam daha alır. */
+const looksLikeColour = (model) => /-\d[A-Z]?\d?$/.test(model);
+
+/**
+ * Olası "model + renk" adaylarını en olasıdan en az olasıya döndürür.
+ * Hangisinin gerçek olduğu resmi sayfa çekilirken belli olur (200 mü 404 mü).
+ */
+export function splitModelRef(fullCode) {
+  const candidates = MARKET_SUFFIXES
+    .filter((s) => fullCode.endsWith(s))
+    .map((s) => fullCode.slice(0, -s.length))
+    .filter(looksLikeColour)
+    .sort((a, b) => a.length - b.length);   // kısa = uzun sonek = daha olası
+
+  const unique = [...new Set(candidates)];
+  return {
+    model: unique[0] ?? fullCode,
+    candidates: unique.length ? unique : [fullCode],
+  };
+}
+
+/** Resmi ürün sayfasının adresi. */
+export const productUrl = (brand, model) =>
+  `https://www.casio.com/${LOCALE[brand] ?? 'intl'}/watches/${URL_PATH[brand]}/product.${model}/`;
+
 /** "21.12.2013" → "2013-12-21" */
 function parseDate(cell) {
   const m = String(cell).trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
@@ -69,23 +123,57 @@ const shortCodeFor = (code) =>
 const slug = (s) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
+/* Teknik değerler üreticinin yazdığı haliyle (İngilizce) saklanır; ekranda
+ * terim sözlüğüyle çevrilir. Böylece yeni bir dil eklemek sözlüğe sütun
+ * eklemek olur, 24 kaydı yeniden doldurmak değil. Serbest metinler (hikâye,
+ * slogan) gerçekten iki ayrı metin olduğu için dile göre anahtarlanır. */
 function skeleton(id, brand, code, date) {
+  const { model } = splitModelRef(code);
   return {
     id,
     brand,
-    model: code,
+    model,                       // ürün kimliği — casio.com'daki hali
+    reference: code,             // satın alındığı haliyle tam kod (pazar soneki dahil)
     nickname: null,
-    shortCode: shortCodeFor(code),
-    reference: code,
+    shortCode: shortCodeFor(model),
     year: null,
     category: null,
     status: 'owned',
     specs: {
-      movement: { caliber: null, type: null, powerReserve: null, frequency: null, jewels: null, certification: null },
-      case: { material: null, diameter: null, thickness: null, lugToLug: null, lugWidth: null, crystal: null, waterResistance: null, bezel: null },
-      dial: { color: null, indices: null, lume: null, complications: [] },
-      strap: { type: null, material: null, clasp: null },
+      movement: {
+        caliber: null,           // Casio modül numarası
+        type: null,              // quartz | solar | automatic | manual
+        battery: null,           // CR1616
+        batteryLife: null,       // "Approx. 3 years"
+        accuracy: null,          // "±30 seconds per month"
+        radioControlled: null,   // "Multi-Band 6"
+        bluetooth: null,
+        powerReserve: null, frequency: null, jewels: null, certification: null,
+      },
+      case: {
+        material: null, bezelMaterial: null,
+        diameter: null, thickness: null, lugToLug: null, lugWidth: null,
+        weight: null,            // gram
+        crystal: null,           // Mineral | Sapphire
+        crystalCoating: null,    // "Anti-reflective"
+        crystalShape: null,      // Flat | Curved
+        waterResistance: null,   // metre
+        bezel: null,
+        backlight: null,         // "LED (yellow)"
+      },
+      dial: {
+        color: null,
+        display: null,           // digital | analog | ana-digi
+        indices: null, lume: null, complications: [],
+      },
+      strap: {
+        type: null, material: null, color: null, clasp: null,
+        sizeRange: null,         // "150–205 mm"
+      },
     },
+    tagline: { en: null, tr: null },
+    story: { en: null, tr: null },
+    source: { productUrl: null, fetchedAt: null },
     acquisition: { date, condition: null, boxPapers: null },
     service: { lastServiceDate: null, intervalYears: null },
     photos: [],
@@ -168,4 +256,8 @@ async function main() {
   console.log(`  Toplam: ${existing.length} saat → ${WATCHES}\n`);
 }
 
-main().catch((err) => { console.error(err.message); process.exit(1); });
+// Yalnızca doğrudan çalıştırıldığında içe aktar; başka betikler
+// splitModelRef / productUrl için bu dosyayı modül olarak kullanabilsin.
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((err) => { console.error(err.message); process.exit(1); });
+}

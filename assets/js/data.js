@@ -96,10 +96,10 @@ export async function loadAll() {
   state.fileWatches = Array.isArray(watches) ? watches : [];
   state.fileWears = Array.isArray(wears) ? wears : [];
 
-  // Yayın derlemesinde gizli alanlar zaten silinmiştir; bunu tespit et ki
-  // "koleksiyoner modu" boş alan göstermek yerine durumu açıklasın.
-  state.strippedBuild = state.fileWatches.length > 0 &&
-    state.fileWatches.every((w) => w.acquisition && !('price' in w.acquisition));
+  // Yayın derlemesinde gizli alanlar silinmiş olabilir. Bunu verinin
+  // yokluğundan TAHMİN ETMİYORUZ — "silindi" ile "hiç girilmedi" aynı görünür.
+  // scripts/build.mjs temizlediği derlemeye bu bayrağı açıkça yazar.
+  state.strippedBuild = state.config.strippedBuild === true;
 
   state.drafts = readStore(DRAFT_KEY, emptyDrafts());
   state.prefs = readStore(PREFS_KEY, { collectorMode: false, theme: null });

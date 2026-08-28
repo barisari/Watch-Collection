@@ -2,10 +2,10 @@
   {
     "id": "casio-a1000dn-7er",
     "brand": "Casio",
-    "model": "A1000DN-7ER",
+    "model": "A1000DN-7",
+    "reference": "A1000DN-7ER",
     "nickname": null,
     "shortCode": "A1000D",
-    "reference": "A1000DN-7ER",
     "year": null,
     "category": null,
     "status": "owned",
@@ -13,6 +13,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -20,16 +25,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -37,8 +48,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-01-11",
@@ -56,10 +81,10 @@
   {
     "id": "casio-a1100b-1df",
     "brand": "Casio",
-    "model": "A1100B-1DF",
+    "model": "A1100B-1",
+    "reference": "A1100B-1DF",
     "nickname": null,
     "shortCode": "A1100B",
-    "reference": "A1100B-1DF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -67,6 +92,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -74,16 +104,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -91,8 +127,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-01-19",
@@ -110,43 +160,73 @@
   {
     "id": "casio-a1100d-1df",
     "brand": "Casio",
-    "model": "A1100D-1DF",
+    "model": "A1100D-1",
+    "reference": "A1100D-1DF",
     "nickname": null,
     "shortCode": "A1100D",
-    "reference": "A1100D-1DF",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
+        "caliber": "Casio modül 3503",
+        "type": "quartz",
+        "battery": "CR1616",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±30 saniye/ay",
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "material": "Stainless steel",
+        "bezelMaterial": null,
+        "diameter": 35,
+        "thickness": 9.1,
+        "lugToLug": 40,
         "lugWidth": null,
-        "crystal": null,
-        "waterResistance": null,
-        "bezel": null
+        "weight": 90,
+        "crystal": "Mineral Glass",
+        "crystalCoating": null,
+        "crystalShape": null,
+        "waterResistance": "Water Resistant",
+        "bezel": null,
+        "backlight": "LED (sarı)"
       },
       "dial": {
         "color": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Chronograph",
+          "Daily alarm",
+          "Hourly time signal",
+          "Full auto-calendar"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
-        "clasp": null
+        "type": "Bracelet",
+        "material": "Stainless steel",
+        "color": null,
+        "clasp": "Three-fold clasp",
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": "Experience the timeless charm of a 52QS-14B revival that brings the 1970s to today.",
+      "tr": "1970'leri bugüne taşıyan 52QS-14B canlandırmasının zamansız çekiciliği."
+    },
+    "story": {
+      "en": "The revived design boasts a full-metal case expertly polished to a high-quality finish. The iconic front buttons of the original model are replicated in metal for an added touch of style. Subtly engraved mode indicators and premium shine exude a sense of luxury to an impressive retro look that stands the test of time.",
+      "tr": "Yeniden yorumlanan tasarım, yüksek kaliteli bir finisaja kadar özenle parlatılmış tam metal kasaya sahip. Orijinal modelin ikonik ön düğmeleri, tarza ayrı bir dokunuş katmak için metal olarak yeniden üretildi. İnce işlenmiş mod göstergeleri ve üst düzey parlaklık, zamana meydan okuyan etkileyici retro görünüme bir lüks duygusu katıyor."
+    },
+    "source": {
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.A1100D-1/",
+      "fetchedAt": "2026-08-28"
     },
     "acquisition": {
       "date": "2025-10-28",
@@ -164,10 +244,10 @@
   {
     "id": "casio-a158wa-1df",
     "brand": "Casio",
-    "model": "A158WA-1DF",
+    "model": "A158WA-1",
+    "reference": "A158WA-1DF",
     "nickname": null,
     "shortCode": "A158WA",
-    "reference": "A158WA-1DF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -175,6 +255,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -182,16 +267,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -199,8 +290,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2013-12-21",
@@ -218,10 +323,10 @@
   {
     "id": "casio-ae-1200whl-5avdf",
     "brand": "Casio",
-    "model": "AE-1200WHL-5AVDF",
+    "model": "AE-1200WHL-5A",
+    "reference": "AE-1200WHL-5AVDF",
     "nickname": null,
     "shortCode": "AE1200",
-    "reference": "AE-1200WHL-5AVDF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -229,6 +334,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -236,16 +346,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -253,8 +369,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2025-12-06",
@@ -272,10 +402,10 @@
   {
     "id": "casio-ca-53w-1z",
     "brand": "Casio",
-    "model": "CA-53W-1Z",
+    "model": "CA-53W-1",
+    "reference": "CA-53W-1Z",
     "nickname": null,
     "shortCode": "CA53W1",
-    "reference": "CA-53W-1Z",
     "year": null,
     "category": null,
     "status": "owned",
@@ -283,6 +413,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -290,16 +425,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -307,8 +448,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-01-19",
@@ -326,10 +481,10 @@
   {
     "id": "casio-dbc-611-1df",
     "brand": "Casio",
-    "model": "DBC-611-1DF",
+    "model": "DBC-611-1",
+    "reference": "DBC-611-1DF",
     "nickname": null,
     "shortCode": "DBC611",
-    "reference": "DBC-611-1DF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -337,6 +492,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -344,16 +504,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -361,8 +527,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2025-12-13",
@@ -380,10 +560,10 @@
   {
     "id": "casio-f-91wpc-1adr",
     "brand": "Casio",
-    "model": "F-91WPC-1ADR",
+    "model": "F-91WPC-1A",
+    "reference": "F-91WPC-1ADR",
     "nickname": null,
     "shortCode": "F91WPC",
-    "reference": "F-91WPC-1ADR",
     "year": null,
     "category": null,
     "status": "owned",
@@ -391,6 +571,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -398,16 +583,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -415,8 +606,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-01-05",
@@ -434,10 +639,10 @@
   {
     "id": "casio-mdv-106-1avdf",
     "brand": "Casio",
-    "model": "MDV-106-1AVDF",
+    "model": "MDV-106-1A",
+    "reference": "MDV-106-1AVDF",
     "nickname": null,
     "shortCode": "MDV106",
-    "reference": "MDV-106-1AVDF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -445,6 +650,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -452,16 +662,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -469,8 +685,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-02-04",
@@ -488,10 +718,10 @@
   {
     "id": "casio-mtp-b185d-2a2vdf",
     "brand": "Casio",
-    "model": "MTP-B185D-2A2VDF",
+    "model": "MTP-B185D-2A2",
+    "reference": "MTP-B185D-2A2VDF",
     "nickname": null,
     "shortCode": "MTPB18",
-    "reference": "MTP-B185D-2A2VDF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -499,6 +729,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -506,16 +741,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -523,8 +764,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-04-02",
@@ -542,10 +797,10 @@
   {
     "id": "casio-mtp-b195l-1avdf",
     "brand": "Casio",
-    "model": "MTP-B195L-1AVDF",
+    "model": "MTP-B195L-1A",
+    "reference": "MTP-B195L-1AVDF",
     "nickname": null,
     "shortCode": "MTPB19",
-    "reference": "MTP-B195L-1AVDF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -553,6 +808,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -560,16 +820,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -577,8 +843,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-04-08",
@@ -596,10 +876,10 @@
   {
     "id": "edifice-efb-730d-7avudf",
     "brand": "Edifice",
-    "model": "EFB-730D-7AVUDF",
+    "model": "EFB-730D-7A",
+    "reference": "EFB-730D-7AVUDF",
     "nickname": null,
     "shortCode": "EFB730",
-    "reference": "EFB-730D-7AVUDF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -607,6 +887,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -614,16 +899,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -631,8 +922,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-03-09",
@@ -651,9 +956,9 @@
     "id": "edifice-efk-110d-1a",
     "brand": "Edifice",
     "model": "EFK-110D-1A",
+    "reference": "EFK-110D-1A",
     "nickname": null,
     "shortCode": "EFK110",
-    "reference": "EFK-110D-1A",
     "year": null,
     "category": null,
     "status": "owned",
@@ -661,6 +966,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -668,16 +978,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -685,8 +1001,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-08-27",
@@ -704,43 +1034,73 @@
   {
     "id": "edifice-efs-s570d-3audf",
     "brand": "Edifice",
-    "model": "EFS-S570D-3AUDF",
+    "model": "EFS-S570D-3A",
+    "reference": "EFS-S570D-3AUDF",
     "nickname": null,
     "shortCode": "EFSS57",
-    "reference": "EFS-S570D-3AUDF",
     "year": null,
-    "category": null,
+    "category": "analog",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
+        "caliber": "Casio modül 5634",
+        "type": "solar",
+        "battery": null,
+        "batteryLife": "Tam şarjda yaklaşık 6 ay",
+        "accuracy": "±20 saniye/ay",
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "material": "Stainless steel",
+        "bezelMaterial": null,
+        "diameter": 44,
+        "thickness": 9.7,
+        "lugToLug": 49,
         "lugWidth": null,
-        "crystal": null,
-        "waterResistance": null,
-        "bezel": null
+        "weight": 133,
+        "crystal": "Sapphire",
+        "crystalCoating": "Anti-reflective",
+        "crystalShape": null,
+        "waterResistance": 100,
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Stopwatch",
+          "Date display",
+          "Battery level indicator",
+          "Power saving"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
-        "clasp": null
+        "type": "Bracelet",
+        "material": "Stainless steel",
+        "color": null,
+        "clasp": "One-touch three-fold clasp",
+        "sizeRange": "150–205 mm"
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": "https://www.casio.com/intl/watches/edifice/product.EFS-S570D-3A/",
+      "fetchedAt": "2026-08-28"
     },
     "acquisition": {
       "date": "2026-01-11",
@@ -758,10 +1118,10 @@
   {
     "id": "g-shock-dw-6900rgm-5dr",
     "brand": "G-Shock",
-    "model": "DW-6900RGM-5DR",
+    "model": "DW-6900RGM-5",
+    "reference": "DW-6900RGM-5DR",
     "nickname": null,
     "shortCode": "DW6900",
-    "reference": "DW-6900RGM-5DR",
     "year": null,
     "category": null,
     "status": "owned",
@@ -769,6 +1129,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -776,16 +1141,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -793,8 +1164,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-01-28",
@@ -812,43 +1197,77 @@
   {
     "id": "g-shock-ga-2100-1a1dr",
     "brand": "G-Shock",
-    "model": "GA-2100-1A1DR",
+    "model": "GA-2100-1A1",
+    "reference": "GA-2100-1A1DR",
     "nickname": null,
     "shortCode": "GA2100",
-    "reference": "GA-2100-1A1DR",
     "year": null,
-    "category": null,
+    "category": "ana-dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
+        "caliber": "Casio modül 5611",
+        "type": "quartz",
+        "battery": "SR726W × 2",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±15 saniye/ay",
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "material": "Carbon / Resin",
+        "bezelMaterial": null,
+        "diameter": 45.4,
+        "thickness": 11.8,
+        "lugToLug": 48.5,
         "lugWidth": null,
-        "crystal": null,
-        "waterResistance": null,
-        "bezel": null
+        "weight": 51,
+        "crystal": "Mineral Glass",
+        "crystalCoating": null,
+        "crystalShape": null,
+        "waterResistance": 200,
+        "bezel": null,
+        "backlight": "Double LED light (Super Illuminator), beyaz"
       },
       "dial": {
         "color": null,
+        "display": "ana-digi",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Full auto-calendar",
+          "Mute function",
+          "Shock resistant",
+          "Hand shift feature"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
-        "clasp": null
+        "type": "Band",
+        "material": "Resin",
+        "color": null,
+        "clasp": null,
+        "sizeRange": "145–215 mm"
       }
+    },
+    "tagline": {
+      "en": "A digital-analog combination model that inherits the concept of the first-generation DW-5000C, while being even thinner.",
+      "tr": "İlk nesil DW-5000C'nin konseptini devralan, ondan da ince bir ana-dijital kombinasyon modeli."
+    },
+    "story": {
+      "en": "Inherits the octagonal shape that was also used in the first-generation DW-5000C model. A combination model developed with a simple design that eliminates waste while maintaining a tough structure. Also achieves a thickness of 11.8 mm thanks to a highly rigid fine resin containing carbon fiber for the case material. Uses a characteristic G-SHOCK blackout color.",
+      "tr": "İlk nesil DW-5000C'de de kullanılan sekizgen formu devralıyor. Sağlam yapısını korurken gereksiz her şeyi eleyen sade bir tasarımla geliştirilmiş bir kombinasyon modeli. Kasa malzemesinde karbon fiber içeren yüksek sertlikte ince reçine sayesinde 11,8 mm kalınlığa iniyor. G-SHOCK'a özgü tamamen siyah (blackout) renk kullanılıyor."
+    },
+    "source": {
+      "productUrl": "https://www.casio.com/intl/watches/gshock/product.GA-2100-1A1/",
+      "fetchedAt": "2026-08-28"
     },
     "acquisition": {
       "date": "2025-12-07",
@@ -866,10 +1285,10 @@
   {
     "id": "g-shock-gbd-200-1dr",
     "brand": "G-Shock",
-    "model": "GBD-200-1DR",
+    "model": "GBD-200-1",
+    "reference": "GBD-200-1DR",
     "nickname": null,
     "shortCode": "GBD200",
-    "reference": "GBD-200-1DR",
     "year": null,
     "category": null,
     "status": "owned",
@@ -877,6 +1296,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -884,16 +1308,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -901,8 +1331,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2025-12-19",
@@ -920,10 +1364,10 @@
   {
     "id": "g-shock-gbx-100-8dr",
     "brand": "G-Shock",
-    "model": "GBX-100-8DR",
+    "model": "GBX-100-8",
+    "reference": "GBX-100-8DR",
     "nickname": null,
     "shortCode": "GBX100",
-    "reference": "GBX-100-8DR",
     "year": null,
     "category": null,
     "status": "owned",
@@ -931,6 +1375,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -938,16 +1387,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -955,8 +1410,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-03-10",
@@ -974,10 +1443,10 @@
   {
     "id": "g-shock-gm-b2100d-1adr",
     "brand": "G-Shock",
-    "model": "GM-B2100D-1ADR",
+    "model": "GM-B2100D-1A",
+    "reference": "GM-B2100D-1ADR",
     "nickname": null,
     "shortCode": "GMB210",
-    "reference": "GM-B2100D-1ADR",
     "year": null,
     "category": null,
     "status": "owned",
@@ -985,6 +1454,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -992,16 +1466,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -1009,8 +1489,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2025-12-19",
@@ -1028,10 +1522,10 @@
   {
     "id": "g-shock-gst-b1000d-2adr",
     "brand": "G-Shock",
-    "model": "GST-B1000D-2ADR",
+    "model": "GST-B1000D-2A",
+    "reference": "GST-B1000D-2ADR",
     "nickname": null,
     "shortCode": "GSTB10",
-    "reference": "GST-B1000D-2ADR",
     "year": null,
     "category": null,
     "status": "owned",
@@ -1039,6 +1533,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -1046,16 +1545,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -1063,8 +1568,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-01-22",
@@ -1082,10 +1601,10 @@
   {
     "id": "g-shock-gw-bx5600-1a1dr",
     "brand": "G-Shock",
-    "model": "GW-BX5600-1A1DR",
+    "model": "GW-BX5600-1A1",
+    "reference": "GW-BX5600-1A1DR",
     "nickname": null,
     "shortCode": "GWBX56",
-    "reference": "GW-BX5600-1A1DR",
     "year": null,
     "category": null,
     "status": "owned",
@@ -1093,6 +1612,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -1100,16 +1624,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -1117,8 +1647,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2025-12-24",
@@ -1136,10 +1680,10 @@
   {
     "id": "oceanus-ocw-s400rl-8ajr",
     "brand": "Oceanus",
-    "model": "OCW-S400RL-8AJR",
+    "model": "OCW-S400RL-8A",
+    "reference": "OCW-S400RL-8AJR",
     "nickname": null,
     "shortCode": "OCWS40",
-    "reference": "OCW-S400RL-8AJR",
     "year": null,
     "category": null,
     "status": "owned",
@@ -1147,6 +1691,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -1154,16 +1703,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -1171,8 +1726,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-08-18",
@@ -1190,10 +1759,10 @@
   {
     "id": "oceanus-ocw-t200s-1ajf",
     "brand": "Oceanus",
-    "model": "OCW-T200S-1AJF",
+    "model": "OCW-T200S-1A",
+    "reference": "OCW-T200S-1AJF",
     "nickname": null,
     "shortCode": "OCWT20",
-    "reference": "OCW-T200S-1AJF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -1201,6 +1770,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -1208,16 +1782,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -1225,8 +1805,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-04-08",
@@ -1244,10 +1838,10 @@
   {
     "id": "pro-trek-prw-35ld-5jf",
     "brand": "Pro Trek",
-    "model": "PRW-35LD-5JF",
+    "model": "PRW-35LD-5",
+    "reference": "PRW-35LD-5JF",
     "nickname": null,
     "shortCode": "PRW35L",
-    "reference": "PRW-35LD-5JF",
     "year": null,
     "category": null,
     "status": "owned",
@@ -1255,6 +1849,11 @@
       "movement": {
         "caliber": null,
         "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
@@ -1262,16 +1861,22 @@
       },
       "case": {
         "material": null,
+        "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
         "lugWidth": null,
+        "weight": null,
         "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
         "waterResistance": null,
-        "bezel": null
+        "bezel": null,
+        "backlight": null
       },
       "dial": {
         "color": null,
+        "display": null,
         "indices": null,
         "lume": null,
         "complications": []
@@ -1279,8 +1884,22 @@
       "strap": {
         "type": null,
         "material": null,
-        "clasp": null
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
       }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null
     },
     "acquisition": {
       "date": "2026-04-08",

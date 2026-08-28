@@ -33,16 +33,52 @@ kullanıcının talimatı: bunlar üreticinin verisinden ayrıca doğrulanacak.
 Drive'daki **"Saat Envanter Tablosu"** (Şubat 2026) bir yapay zekâ tarafından
 hazırlanmış ve hatalı — **tamamen yok sayılacak**, model kodları yanlış.
 
+### Model numarası nasıl okunur
+
+Casio kodu üç katmanlıdır: `A1100D` + `-1` + `DF` = model, renk, pazar soneki.
+Casio kendi sayfalarında **pazar sonekini atar**. Bu yüzden:
+
+- `model` = `A1100D-1` — ürün kimliği, **resmi sayfanın adresini bu verir**
+- `reference` = `A1100D-1DF` — kullanıcının satın aldığı haliyle tam kod
+
+Ayrıştırma `scripts/import-casio-sheet.mjs > splitModelRef()` içinde; bilinen
+pazar sonekleri listesiyle yapılır. **A ile başlayan sonek yoktur** (AUDF gibi):
+oradaki A her zaman renk kodunun parçasıdır. 6 sayfa çekilerek doğrulandı.
+
+### Teknik özellik kaynakları (denenerek tespit edildi)
+
+| Kaynak | Adres | Verdiği |
+|---|---|---|
+| Ürün sayfası | `casio.com/intl/watches/<seri>/product.<MODEL>/` | Kasa ölçüleri, ağırlık, malzeme, cam, su geçirmezlik, pil/solar, hassasiyet, fonksiyonlar, **tanıtım metni** |
+| Destek sayfası | `casio.com/<ülke>/watches/<seri>/support.<MODEL>/` | **Modül numarası** (kılavuz PDF adından: `qw3503`) |
+| casiofanmag.com | — | Üretim yılı, renk varyantları (resmi değil) |
+
+Seri → URL yolu: `casio`, `gshock`, `edifice`, `protrek`, `oceanus`.
+**Oceanus yalnızca `jp` yerelinde**, diğerleri `intl`. TR sayfalarında ne
+teknik tablo ne tanıtım metni var — kullanma.
+
+`MRS-301` için hiçbir resmi sayfa yok (404).
+
+### İki dillilik
+
+Teknik değerler **İngilizce** (üreticinin yazdığı gibi) saklanır, ekranda
+`assets/js/terms.js` sözlüğüyle çevrilir. Yeni dil = sözlüğe sütun. Serbest
+metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
+(Türkçe); İngilizce düğmesi istendiğinde eklenecek.
+
 ### Bekleyen adımlar
 
-1. **Teknik özellikler** — 24 saatin kalibre/modül, kasa ölçüleri, su
-   geçirmezlik, kadran, kordon bilgileri boş. Üreticinin verisinden doldurulup
-   kullanıcıya doğrulatılacak.
-2. **`Casio MRS-301-2EVDF`** — tabloda fiyatı ve tarihi yok, bu yüzden içe
-   aktarılmadı. Kullanıcıyla konuşulacak.
-3. **Casio dışı saatler** — Seiko'lar ve diğerleri henüz girilmedi.
-4. **Fotoğraflar** — hepsi boş. Tabloda resmi Casio görsel URL'leri var ama
-   hotlink kırılgan; kullanıcının kendi fotoğrafları tercih edilir.
+1. **Teknik özellikler** — 24 saatten **3'ü dolduruldu** (A1100D-1, GA-2100-1A1,
+   EFS-S570D-3A). Kalan 21 seri seri çekilecek: Casio 10 → G-Shock 6 →
+   Edifice 2 → Pro Trek 1 → Oceanus 2. Her partiden sonra kullanıcıya doğrulat.
+2. **Kaynağın vermediği alanlar** — kadran rengi, kayış rengi, cam formu ve
+   üretim yılı Casio'nun teknik tablosunda **yok**. Model kodundan/görselden
+   çıkarım gerekir → mutlaka kullanıcıya sorulacak, tahmin yazılmayacak.
+3. **EFS-S570D-3A tanıtım metni** çekilmedi (yalnızca teknik veri alındı).
+4. **`Casio MRS-301-2EVDF`** — tabloda tarihi yok, içe aktarılmadı; resmi
+   sayfası da yok. Kullanıcıyla konuşulacak.
+5. **Casio dışı saatler** — Seiko'lar ve diğerleri henüz girilmedi.
+6. **Fotoğraflar** — hepsi boş.
 
 ### Verilmemiş kararlar
 

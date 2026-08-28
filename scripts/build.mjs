@@ -53,6 +53,13 @@ async function main() {
     const target = join(OUT, 'data/watches.json');
     await mkdir(dirname(target), { recursive: true });
     await writeFile(target, JSON.stringify(watches, null, 2) + '\n');
+
+    // Siteye açıkça söyle: bu derlemede alanlar silindi. Böylece arayüz
+    // "silinmiş" ile "hiç girilmemiş" arasındaki farkı tahmin etmek zorunda
+    // kalmaz — ikisi veride birebir aynı görünür.
+    await writeFile(join(OUT, 'site.config.json'),
+      JSON.stringify({ ...config, strippedBuild: true }, null, 2) + '\n');
+
     console.log(`  Gizlenen alanlar dist/ kopyasından silindi: ${privateFields.join(', ')}`);
   } else if (isPrivateBuild) {
     console.log('  --private: hassas alanlar dahil edildi. Bu derlemeyi herkese AÇIK yayınlama.');

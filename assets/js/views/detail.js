@@ -5,11 +5,8 @@ import { perWatchStats, todayISO } from '../stats.js';
 import {
   el, fmtDate, fmtMoney, fmtNum, relDays, watchLabel, colorForWatch, emptyState, toast,
 } from '../ui.js';
+import { term, termList, waterResistance } from '../terms.js';
 
-const MOVEMENT_TR = {
-  automatic: 'Otomatik', manual: 'Manuel kurmalı', quartz: 'Kuvars',
-  'spring-drive': 'Spring Drive', solar: 'Solar', 'kinetic': 'Kinetic',
-};
 const CONDITION_TR = {
   new: 'Sıfır', 'like-new': 'Sıfır ayarında', excellent: 'Çok iyi',
   good: 'İyi', fair: 'Orta', vintage: 'Vintage',
@@ -62,38 +59,79 @@ export function renderDetail(root, id, navigate) {
         rotationPanel(row, watch),
       ),
       el('div.stack',
+        storyCard(watch),
         specCard('Mekanizma', [
-          ['Kalibre', s.movement?.caliber],
-          ['Tip', MOVEMENT_TR[s.movement?.type] || s.movement?.type],
+          ['Kalibre / modül', s.movement?.caliber],
+          ['Tip', term(s.movement?.type)],
+          ['Pil', s.movement?.battery],
+          ['Pil ömrü', s.movement?.batteryLife],
+          ['Hassasiyet', s.movement?.accuracy],
+          ['Radyo senkronu', s.movement?.radioControlled],
+          ['Bluetooth', s.movement?.bluetooth == null ? null : (s.movement.bluetooth ? 'Var' : 'Yok')],
           ['Güç rezervi', s.movement?.powerReserve && `${s.movement.powerReserve} saat`],
           ['Frekans', s.movement?.frequency && `${fmtNum(s.movement.frequency)} A/s`],
           ['Taş sayısı', s.movement?.jewels],
           ['Sertifika', s.movement?.certification],
         ]),
         specCard('Kasa', [
-          ['Malzeme', s.case?.material],
-          ['Çap', s.case?.diameter && `${s.case.diameter} mm`],
+          ['Malzeme', term(s.case?.material)],
+          ['Bezel malzemesi', term(s.case?.bezelMaterial)],
+          ['Genişlik', s.case?.diameter && `${s.case.diameter} mm`],
           ['Kalınlık', s.case?.thickness && `${s.case.thickness} mm`],
           ['Kulaktan kulağa', s.case?.lugToLug && `${s.case.lugToLug} mm`],
-          ['Kayış genişliği', s.case?.lugWidth && `${s.case.lugWidth} mm`],
-          ['Cam', s.case?.crystal],
-          ['Su geçirmezlik', s.case?.waterResistance && `${s.case.waterResistance} m`],
+          ['Ağırlık', s.case?.weight && `${s.case.weight} g`],
+          ['Cam', term(s.case?.crystal)],
+          ['Cam kaplaması', term(s.case?.crystalCoating)],
+          ['Cam formu', term(s.case?.crystalShape)],
+          ['Su geçirmezlik', waterResistance(s.case?.waterResistance)],
+          ['Aydınlatma', s.case?.backlight],
           ['Bezel', s.case?.bezel],
         ]),
-        specCard('Kadran & kayış', [
-          ['Kadran rengi', s.dial?.color],
-          ['İndeksler', s.dial?.indices],
+        specCard('Kadran', [
+          ['Renk', term(s.dial?.color)],
+          ['Gösterim', term(s.dial?.display)],
+          ['İndeksler', term(s.dial?.indices)],
           ['Işıma', s.dial?.lume],
-          ['Komplikasyonlar', s.dial?.complications?.length ? s.dial.complications.join(', ') : null],
-          ['Kayış tipi', s.strap?.type],
-          ['Kayış malzemesi', s.strap?.material],
-          ['Toka', s.strap?.clasp],
+          ['Fonksiyonlar', s.dial?.complications?.length ? termList(s.dial.complications) : null],
+        ]),
+        specCard('Kayış', [
+          ['Tip', term(s.strap?.type)],
+          ['Malzeme', term(s.strap?.material)],
+          ['Renk', term(s.strap?.color)],
+          ['Toka', term(s.strap?.clasp)],
+          ['Genişlik', s.case?.lugWidth && `${s.case.lugWidth} mm`],
+          ['Uyduğu bilek', s.strap?.sizeRange],
         ]),
         acquisitionCard(watch),
         watch.notes && el('div.card', el('h3', 'Notlar'), el('p', { style: { margin: 0 } }, watch.notes)),
+        sourceNote(watch),
       ),
     ),
   );
+}
+
+/** Üreticinin tanıtım metni. Türkçesi varsa o, yoksa İngilizce aslı gösterilir. */
+function storyCard(watch) {
+  const tagline = watch.tagline?.tr || watch.tagline?.en;
+  const story = watch.story?.tr || watch.story?.en;
+  if (!tagline && !story) return null;
+
+  const onlyEnglish = !watch.story?.tr && !watch.tagline?.tr;
+  return el('div.card',
+    tagline && el('p', { style: { fontSize: '15.5px', fontWeight: '520', margin: story ? '0 0 12px' : '0' } }, tagline),
+    story && el('p', { style: { margin: 0, color: 'var(--text-secondary)' } }, story),
+    onlyEnglish && el('p.muted', { style: { marginTop: '10px', marginBottom: 0 } },
+      'Bu metin Casio\'nun İngilizce tanıtımından; Türkçesi henüz eklenmedi.'));
+}
+
+/** Teknik bilgilerin nereden geldiği — denetlenebilir olsun diye. */
+function sourceNote(watch) {
+  const url = watch.source?.productUrl;
+  if (!url) return null;
+  return el('p.muted', { style: { margin: 0 } },
+    'Teknik bilgiler üreticinin ürün sayfasından alındı: ',
+    el('a', { href: url, target: '_blank', rel: 'noopener' }, 'casio.com'),
+    watch.source.fetchedAt ? ` · ${fmtDate(watch.source.fetchedAt)}` : '');
 }
 
 function photoPanel(watch) {
@@ -152,10 +190,14 @@ function acquisitionCard(watch) {
   return specCard('Satın alma & sahiplik', rows);
 }
 
-/** Gizli alanlar: mod kapalıysa kilit metni, yayın derlemesinde açıklama döner. */
+/**
+ * Gizli alanlar. "gizli" yazısı YALNIZCA veri gerçekten varken çıkar —
+ * hiç girilmemiş bir alan için kilit göstermek, elimizde bir şey varmış
+ * izlenimi verirdi.
+ */
 function privateCell(watch, path, rendered) {
   if (!isPrivateField(path)) return rendered;
-  if (!canShow(path)) return el('span.locked', 'gizli');
+  if (!canShow(path)) return rendered ? el('span.locked', 'gizli') : null;
   if (rendered) return rendered;
   return state.strippedBuild
     ? el('span.locked', 'bu yayında yer almıyor')
