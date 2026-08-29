@@ -726,15 +726,15 @@
     "nickname": null,
     "shortCode": "MDV106",
     "year": null,
-    "category": null,
+    "category": "dalgıç",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 2784",
+        "type": "quartz",
+        "battery": "SR626SW",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±20 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -743,7 +743,7 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
@@ -760,14 +760,14 @@
       },
       "dial": {
         "color": "Black",
-        "display": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
         "complications": []
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Resin",
         "color": "Black",
         "clasp": null,
         "sizeRange": null
@@ -785,7 +785,8 @@
       "productUrl": null,
       "fetchedAt": null,
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "movementFrom": "Casio modül listesi (servis dokümanı), QW-2784 — Şubat 2003"
     },
     "acquisition": {
       "date": "2026-02-04",
@@ -800,7 +801,7 @@
       "photos/casio/casio_mdv-106-1avdf.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "Casio bu modeli intl sitesinde yayımlamıyor (Amerika pazarı — \"Duro\"). Kasa ölçüleri, cam ve su geçirmezlik değeri henüz doldurulmadı; mekanizma bilgisi Casio’nun modül servis listesinden alındı."
   },
   {
     "id": "casio-mtp-b185d-2a2vdf",
