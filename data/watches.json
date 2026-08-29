@@ -7,15 +7,15 @@
     "nickname": null,
     "shortCode": "A1000D",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 3479",
+        "type": "quartz",
+        "battery": "CR1616",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±30 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -24,47 +24,52 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 38,
+        "thickness": 7.3,
+        "lugToLug": 39.6,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 93,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": "Water Resistant",
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (Super Illuminator), beyaz",
         "color": "Silver"
       },
       "dial": {
         "color": "Grey LCD",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Stopwatch",
+          "Daily alarm",
+          "Hourly time signal",
+          "Auto calendar"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
-        "sizeRange": null
+        "clasp": "One-touch three-fold clasp",
+        "sizeRange": "150–205 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "A full-metal case with interchangeable metal and cloth bands, in a monochromatic silver scheme.",
+      "tr": "Değiştirilebilir metal ve kumaş kayışlarıyla, tek renk gümüş bir tam metal kasa."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "This two-band set pairs a full-metal watch case with interchangeable metal and cloth bands, all in a minimalist, monochromatic silver colour scheme — mix and match with the grey cloth band for different looks to suit different occasions.",
+      "tr": "Bu iki kayışlı set, tam metal kasayı değiştirilebilir metal ve kumaş kayışlarla bir araya getiriyor; hepsi sade, tek renk gümüş bir düzende. Gri kumaş kayışla değiştirerek farklı ortamlara farklı görünümler kurabilirsin."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/europe/watches/casio/vintage/product.A1000DN-7/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -81,7 +86,7 @@
       "photos/casio/casio_a1000dn-7er.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "Sette ayrıca gri kumaş kayış geliyor."
   },
   {
     "id": "casio-a1100b-1df",
@@ -91,15 +96,15 @@
     "nickname": null,
     "shortCode": "A1100B",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 3503",
+        "type": "quartz",
+        "battery": "CR1616",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±30 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -108,47 +113,52 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel with black ion plating",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 35,
+        "thickness": 9.1,
+        "lugToLug": 40,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 90,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": "Water Resistant",
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (kehribar)",
         "color": "Black"
       },
       "dial": {
         "color": "Green LCD",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Stopwatch",
+          "Daily alarm",
+          "Hourly time signal",
+          "Auto calendar"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Black",
-        "clasp": null,
-        "sizeRange": null
+        "clasp": "One-touch three-fold clasp",
+        "sizeRange": "150–205 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Experience the timeless charm of a 52QS-14B revival that brings the 1970s to today.",
+      "tr": "1970'leri bugüne taşıyan 52QS-14B canlandırmasının zamansız çekiciliği."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "The revived design boasts a full-metal case expertly polished to a high-quality finish. The iconic front buttons of the original model are replicated in metal, with subtly engraved mode indicators delivering a sense of luxury and enduring retro appeal.",
+      "tr": "Yeniden yorumlanan tasarım, yüksek kaliteli bir finisaja kadar özenle parlatılmış tam metal kasaya sahip. Orijinal modelin ikonik ön düğmeleri metal olarak yeniden üretildi; ince işlenmiş mod göstergeleri kalıcı retro çekiciliğe bir lüks duygusu katıyor."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.A1100B-1/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -264,15 +274,15 @@
     "nickname": null,
     "shortCode": "A158WA",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 593",
+        "type": "quartz",
+        "battery": "CR2016",
+        "batteryLife": "Yaklaşık 7 yıl",
+        "accuracy": "±30 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -281,33 +291,38 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin / Chrome plated",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 33.2,
+        "thickness": 8.2,
+        "lugToLug": 36.8,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 46,
+        "crystal": "Resin Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": "Water Resistant",
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (yeşil)",
         "color": "Silver"
       },
       "dial": {
         "color": "Grey LCD",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Stopwatch",
+          "Daily alarm",
+          "Hourly time signal",
+          "Auto calendar"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
+        "clasp": "Adjustable clasp",
         "sizeRange": null
       }
     },
@@ -320,8 +335,8 @@
       "tr": null
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.A158WA-1/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -343,20 +358,20 @@
   {
     "id": "casio-ae-1200whl-5avdf",
     "brand": "Casio",
-    "model": "AE-1200WHL-5A",
+    "model": "AE-1200WHL-5AV",
     "reference": "AE-1200WHL-5AVDF",
     "nickname": null,
     "shortCode": "AE1200",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 3299",
+        "type": "quartz",
+        "battery": "CR2025",
+        "batteryLife": "Yaklaşık 10 yıl",
+        "accuracy": "±30 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -365,47 +380,54 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 42.1,
+        "thickness": 12.5,
+        "lugToLug": 45,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 39,
+        "crystal": "Resin Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 100,
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (kehribar)",
         "color": "Bronze"
       },
       "dial": {
         "color": "Grey LCD",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Hourly time signal",
+          "Full auto-calendar"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Leather",
         "color": "Burgundy",
         "clasp": null,
         "sizeRange": null
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Bold style, practical functionality.",
+      "tr": "Cesur bir tarz, kullanışlı işlevsellik."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "This digital timepiece displays dual time zones simultaneously — one in a dedicated upper-left dial and another on the main LCD — complemented by a world map synchronised to the current time for travel tracking.",
+      "tr": "Bu dijital saat iki zaman dilimini aynı anda gösteriyor: biri sol üstteki ayrı göstergede, diğeri ana LCD’de. Güncel saatle eşleşen dünya haritası da seyahatte yön bulmayı kolaylaştırıyor."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.AE-1200WHL-5AV/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -422,7 +444,7 @@
       "photos/casio/casio_ae-1200whl-5avdf.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "31 zaman dilimi / 48 şehir dünya saati, 4 şehir aynı anda izlenebiliyor."
   },
   {
     "id": "casio-ca-53w-1z",
@@ -432,15 +454,15 @@
     "nickname": null,
     "shortCode": "CA53W1",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 3208",
+        "type": "quartz",
+        "battery": "CR2016",
+        "batteryLife": "Yaklaşık 5 yıl",
+        "accuracy": "±15 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -449,34 +471,42 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 34.4,
+        "thickness": 8.2,
+        "lugToLug": 43.2,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 25,
+        "crystal": "Resin Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": "Water Resistant",
         "bezel": null,
         "backlight": null,
         "color": "Black"
       },
       "dial": {
         "color": "Grey LCD",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Daily alarm",
+          "Hourly time signal",
+          "Full auto-calendar",
+          "Calculator",
+          "Mute function"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Resin",
         "color": "Black",
         "clasp": null,
-        "sizeRange": null
+        "sizeRange": "125–180 mm"
       }
     },
     "tagline": {
@@ -488,8 +518,8 @@
       "tr": null
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.CA-53W-1/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -506,7 +536,7 @@
       "photos/casio/casio_ca-53w-1z.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "8 haneli hesap makinesi. Arka aydınlatması yok."
   },
   {
     "id": "casio-dbc-611-1df",
@@ -516,15 +546,15 @@
     "nickname": null,
     "shortCode": "DBC611",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 3228",
+        "type": "quartz",
+        "battery": "CR1616",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±30 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -533,33 +563,40 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 33.1,
+        "thickness": 8.7,
+        "lugToLug": 46.5,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 48,
+        "crystal": "Resin Glass",
         "crystalCoating": null,
         "crystalShape": null,
         "waterResistance": null,
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (kehribar), otomatik ışık",
         "color": "Silver"
       },
       "dial": {
         "color": "Grey LCD",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Daily alarm",
+          "Full auto-calendar",
+          "Calculator",
+          "Data Bank"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
+        "clasp": "Adjustable clasp",
         "sizeRange": null
       }
     },
@@ -572,8 +609,8 @@
       "tr": null
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.DBC-611-1/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -590,7 +627,7 @@
       "photos/casio/casio_dbc-611-1df.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "8 haneli hesap makinesi · 25 kayıtlık veri bankası (8 karakter ad, 15 hane telefon) · 13 dil desteği · 5 alarm (biri ertelemeli). Casio bu model için su geçirmezlik değeri vermiyor."
   },
   {
     "id": "casio-f-91wpc-1adr",
@@ -600,15 +637,15 @@
     "nickname": null,
     "shortCode": "F91WPC",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 593",
+        "type": "quartz",
+        "battery": "CR2016",
+        "batteryLife": "Yaklaşık 7 yıl",
+        "accuracy": "±30 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -617,47 +654,52 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 35.2,
+        "thickness": 8.5,
+        "lugToLug": 38.2,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 21,
+        "crystal": "Resin Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": "Water Resistant",
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (yeşil)",
         "color": "Black"
       },
       "dial": {
         "color": "Black (Pac-Man graphic)",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Stopwatch",
+          "Daily alarm",
+          "Hourly time signal",
+          "Auto calendar"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Bio-based resin",
         "color": "Black",
         "clasp": null,
-        "sizeRange": null
+        "sizeRange": "145–200 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "PAC-MAN and the four GHOSTS in vivid neon colours.",
+      "tr": "Canlı neon renklerle PAC-MAN ve dört hayalet."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "A bold face layout featuring PAC-MAN and the four GHOSTS (Blinky, Pinky, Inky, and Clyde) and a palette of vivid neon colors give the design a pop feel. \"WAKA WAKA\" — the sound of PAC-MAN eating cookies — is spelled out on the band loop for an extra playful touch. The band is made with bio-based resin, a material expected to help reduce environmental impact.",
+      "tr": "PAC-MAN ve dört hayaleti (Blinky, Pinky, Inky ve Clyde) öne çıkaran cesur kadran düzeni ve canlı neon renk paleti tasarıma pop bir hava katıyor. PAC-MAN’in yem yerken çıkardığı \"WAKA WAKA\" sesi, kayış halkasına işlenmiş. Kayış, çevresel etkiyi azaltması beklenen biyo-bazlı reçineden üretildi."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.F-91WPC-1A/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -763,20 +805,20 @@
   {
     "id": "casio-mtp-b185d-2a2vdf",
     "brand": "Casio",
-    "model": "MTP-B185D-2A2",
+    "model": "MTP-B185D-2A2V",
     "reference": "MTP-B185D-2A2VDF",
     "nickname": null,
     "shortCode": "MTPB18",
     "year": null,
-    "category": null,
+    "category": "analog",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 5436",
+        "type": "quartz",
+        "battery": "SR920SW",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±20 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -785,47 +827,49 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 32.5,
+        "thickness": 7.3,
+        "lugToLug": 40,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 80,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 50,
         "bezel": null,
         "backlight": null,
         "color": "Silver"
       },
       "dial": {
         "color": "Ice blue",
-        "display": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Date display"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
-        "sizeRange": null
+        "clasp": "Adjustable clasp",
+        "sizeRange": "150–205 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Classic design with 5 bar water resistance.",
+      "tr": "Klasik tasarım, 5 bar su geçirmezlik."
     },
     "story": {
       "en": null,
       "tr": null
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.MTP-B185D-2A2V/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -847,20 +891,20 @@
   {
     "id": "casio-mtp-b195l-1avdf",
     "brand": "Casio",
-    "model": "MTP-B195L-1A",
+    "model": "MTP-B195L-1AV",
     "reference": "MTP-B195L-1AVDF",
     "nickname": null,
     "shortCode": "MTPB19",
     "year": null,
-    "category": null,
+    "category": "analog",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 5664",
+        "type": "quartz",
+        "battery": "SR920SW",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±20 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -869,47 +913,49 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 38,
+        "thickness": 8.3,
+        "lugToLug": 46.5,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 56,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 50,
         "bezel": null,
         "backlight": null,
         "color": "Silver"
       },
       "dial": {
         "color": "Black",
-        "display": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Date display"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Leather",
         "color": "Black",
         "clasp": null,
-        "sizeRange": null
+        "sizeRange": "175–215 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Detailed metal texture and sleek, angular lines.",
+      "tr": "İşlenmiş metal dokusu ve keskin, köşeli hatlar."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "A sharp, polished stainless-steel case with detailed metal texture and sleek, angular lines — at home in professional and casual settings alike.",
+      "tr": "İnce işlenmiş metal dokusu ve keskin köşeli hatlarıyla parlatılmış paslanmaz çelik kasa; hem resmi hem gündelik ortamlara uyuyor."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.MTP-B195L-1AV/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -931,20 +977,20 @@
   {
     "id": "edifice-efb-730d-7avudf",
     "brand": "Edifice",
-    "model": "EFB-730D-7A",
+    "model": "EFB-730D-7AV",
     "reference": "EFB-730D-7AVUDF",
     "nickname": null,
     "shortCode": "EFB730",
     "year": null,
-    "category": null,
+    "category": "analog",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 5742",
+        "type": "quartz",
+        "battery": "SR920SW",
+        "batteryLife": "Yaklaşık 3 yıl",
+        "accuracy": "±20 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -953,47 +999,50 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 40,
+        "thickness": 11,
+        "lugToLug": 47,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 136,
+        "crystal": "Sapphire",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
-        "bezel": null,
+        "waterResistance": 100,
+        "bezel": "Vidalı arka kapak",
         "backlight": null,
         "color": "Silver"
       },
       "dial": {
         "color": "Silver",
-        "display": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Stopwatch",
+          "Date display"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
-        "sizeRange": null
+        "clasp": "One-touch three-fold clasp",
+        "sizeRange": "150–205 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "The elegant look of sheer speed.",
+      "tr": "Saf hızın zarif görünümü."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "Inspired by classic sportscars: striking index bars and the characteristic 3-6-9 inset dial layout, in a compact case that carries from casual settings to business meetings.",
+      "tr": "Klasik spor otomobillerden ilham alıyor: belirgin çubuk indeksler ve karakteristik 3-6-9 gömme kadran düzeni. Kompakt kasasıyla gündelik ortamdan iş toplantısına kadar taşınabiliyor."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/edifice/product.EFB-730D-7AV/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1020,64 +1069,67 @@
     "nickname": null,
     "shortCode": "EFK110",
     "year": null,
-    "category": null,
+    "category": "analog",
     "status": "owned",
     "specs": {
       "movement": {
         "caliber": null,
-        "type": null,
+        "type": "automatic",
         "battery": null,
         "batteryLife": null,
-        "accuracy": null,
+        "accuracy": "Günlük −20 / +40 saniye",
         "radioControlled": null,
         "bluetooth": null,
-        "powerReserve": null,
-        "frequency": null,
-        "jewels": null,
+        "powerReserve": 42,
+        "frequency": 21600,
+        "jewels": 21,
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 38,
+        "thickness": 11.8,
+        "lugToLug": 43,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 143,
+        "crystal": "Sapphire",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
-        "bezel": null,
+        "waterResistance": 100,
+        "bezel": "Şeffaf, vidalı arka kapak",
         "backlight": null,
         "color": "Silver"
       },
       "dial": {
         "color": "Black",
-        "display": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Date display",
+          "Hacking function (seconds hand)"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
-        "sizeRange": null
+        "clasp": "One-touch three-fold clasp",
+        "sizeRange": "150–205 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Powered by an automatic movement, inspired by the motion of an internal combustion engine.",
+      "tr": "İçten yanmalı motorun hareketinden ilham alan otomatik bir mekanizma."
     },
     "story": {
       "en": null,
       "tr": null
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/edifice/product.EFK-110D-1A/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1094,7 +1146,7 @@
       "photos/casio/edifice_efk-110d-1a.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "Koleksiyondaki tek mekanik saat — otomatik, elle de kurulabiliyor. Şeffaf arka kapaktan mekanizma görülüyor."
   },
   {
     "id": "edifice-efs-s570d-3audf",
@@ -1193,15 +1245,15 @@
     "nickname": null,
     "shortCode": "DW6900",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 3529",
+        "type": "quartz",
+        "battery": "CR2016",
+        "batteryLife": "Yaklaşık 5 yıl",
+        "accuracy": "±15 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -1210,47 +1262,54 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin / Bio-based resin",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 50,
+        "thickness": 18.7,
+        "lugToLug": 53.2,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 67,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 200,
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (Super Illuminator), beyaz",
         "color": "Off-white"
       },
       "dial": {
         "color": "Off-white",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Hourly time signal",
+          "Full auto-calendar",
+          "Shock resistant"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Bio-based resin",
         "color": "Off-white",
         "clasp": null,
         "sizeRange": null
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "A G-SHOCK folded from the tradition of origami.",
+      "tr": "Origami geleneğinden katlanmış bir G-SHOCK."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "This model celebrates traditional Japanese arts and crafts through origami. Dotted line patterns indicate valley folds and mountain folds, with washi-inspired texture on the bezel and band. The LED display and case back show a crane — the world-renowned symbol of paper folding. Made in Japan, in special packaging infused with the origami tradition.",
+      "tr": "Bu model geleneksel Japon el sanatlarını origami üzerinden kutluyor. Noktalı çizgiler vadi ve dağ katlarını gösteriyor; bezel ve kayışta washi kâğıdından esinlenen bir doku var. LED ekranda ve arka kapakta, origaminin dünyaca bilinen simgesi turna kuşu işleniyor. Japonya üretimi ve origami geleneğini yansıtan özel kutusuyla geliyor."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/gshock/product.DW-6900RGM-5/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1267,7 +1326,7 @@
       "photos/casio/g-shock_dw-6900rgm-5dr.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "Origami koleksiyonu · Japonya üretimi · özel kutu."
   },
   {
     "id": "g-shock-ga-2100-1a1dr",
@@ -1370,64 +1429,74 @@
     "nickname": null,
     "shortCode": "GBD200",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 3506",
+        "type": "quartz",
+        "battery": "CR2032",
+        "batteryLife": "Yaklaşık 2 yıl",
+        "accuracy": "±15 saniye/ay (telefon bağlantısı olmadan)",
         "radioControlled": null,
-        "bluetooth": null,
+        "bluetooth": true,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 45.9,
+        "thickness": 15,
+        "lugToLug": 48.4,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 58,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 200,
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (Super Illuminator), beyaz — otomatik",
         "color": "Black"
       },
       "dial": {
         "color": "Black",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Full auto-calendar",
+          "Shock resistant",
+          "Step Tracker",
+          "Bluetooth smartphone link",
+          "Vibration"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Urethane",
         "color": "Black",
         "clasp": null,
-        "sizeRange": null
+        "sizeRange": "145–215 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "A slim G-SQUAD with a character line visible through side slits.",
+      "tr": "Yan yarıklardan görünen karakter çizgisiyle ince bir G-SQUAD."
     },
     "story": {
       "en": null,
       "tr": null
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/gshock/product.GBD-200-1/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1444,7 +1513,7 @@
       "photos/casio/g-shock_gbd-200-1dr.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "38 zaman dilimi · 100 koşuya kadar antrenman kaydı, koşu başına 140 tur · adım sayar, mesafe ve kalori · 4 alarm (ertelemeli) · uçuş modu."
   },
   {
     "id": "g-shock-gbx-100-8dr",
@@ -1454,64 +1523,75 @@
     "nickname": null,
     "shortCode": "GBX100",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 3482",
+        "type": "quartz",
+        "battery": "CR2032",
+        "batteryLife": "Yaklaşık 2 yıl",
+        "accuracy": "±15 saniye/ay (telefon bağlantısı olmadan)",
         "radioControlled": null,
-        "bluetooth": null,
+        "bluetooth": true,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin / Stainless steel / Bio-based resin",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 46,
+        "thickness": 14.7,
+        "lugToLug": 50.9,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 66,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 200,
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (Super Illuminator), beyaz — otomatik",
         "color": "Beige"
       },
       "dial": {
         "color": "Black",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Full auto-calendar",
+          "Shock resistant",
+          "Tide Graph",
+          "Sunrise Sunset",
+          "Step Tracker",
+          "Bluetooth smartphone link"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Bio-based resin",
         "color": "Beige",
         "clasp": null,
-        "sizeRange": null
+        "sizeRange": "145–215 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Tide and moon data for over 3,300 surf spots worldwide.",
+      "tr": "Dünya genelinde 3.300'den fazla sörf noktası için gelgit ve ay verisi."
     },
     "story": {
       "en": null,
       "tr": null
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/gshock/product.GBX-100-8/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1528,7 +1608,7 @@
       "photos/casio/g-shock_gbx-100-8dr.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "MIP ekran · 38 zaman dilimi · 100 koşuya kadar antrenman kaydı."
   },
   {
     "id": "g-shock-gm-b2100d-1adr",
@@ -1538,64 +1618,76 @@
     "nickname": null,
     "shortCode": "GMB210",
     "year": null,
-    "category": null,
+    "category": "ana-dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
+        "caliber": "Casio modül 5691",
+        "type": "solar",
         "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "batteryLife": "Normal kullanımda ~7 ay, güç tasarrufuyla karanlıkta 18 ay",
+        "accuracy": "±15 saniye/ay (telefon bağlantısı olmadan)",
         "radioControlled": null,
-        "bluetooth": null,
+        "bluetooth": true,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 44.4,
+        "thickness": 12.8,
+        "lugToLug": 49.8,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 165,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
-        "bezel": null,
-        "backlight": null,
+        "waterResistance": 200,
+        "bezel": "Sekizgen çelik, vidalı arka kapak",
+        "backlight": "Double LED (Super Illuminator), beyaz",
         "color": "Silver"
       },
       "dial": {
         "color": "Black",
-        "display": null,
+        "display": "ana-digi",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Hourly time signal",
+          "Full auto-calendar",
+          "Shock resistant",
+          "Hand shift feature",
+          "Bluetooth smartphone link",
+          "Battery level indicator",
+          "Power saving"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
-        "sizeRange": null
+        "clasp": "One-touch three-fold clasp",
+        "sizeRange": "150–205 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "The first full-metal addition to the continually evolving 2100 line.",
+      "tr": "Sürekli gelişen 2100 serisinin ilk tam metal üyesi."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "Full stainless-steel construction — screw-back case, bezel and band — honouring the original 1983 DW-5000C aesthetic through its octagonal form and dimpled band design.",
+      "tr": "Vidalı arka kapağı, bezeli ve bileziğiyle tamamen paslanmaz çelik yapı; sekizgen formu ve kabartmalı bilezik tasarımıyla 1983 tarihli DW-5000C’nin estetiğini selamlıyor."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/gshock/product.GM-B2100D-1A/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1622,64 +1714,74 @@
     "nickname": null,
     "shortCode": "GSTB10",
     "year": null,
-    "category": null,
+    "category": "analog",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 5748",
+        "type": "solar",
+        "battery": "CTL920 (şarj edilebilir)",
+        "batteryLife": "Normal kullanımda ~5 ay, güç tasarrufuyla karanlıkta 18 ay",
+        "accuracy": "±15 saniye/ay (telefon bağlantısı olmadan)",
         "radioControlled": null,
-        "bluetooth": null,
+        "bluetooth": true,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Bio-based Carbon / Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 44.2,
+        "thickness": 11.6,
+        "lugToLug": 46.9,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 118,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 200,
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (Super Illuminator)",
         "color": "Silver"
       },
       "dial": {
         "color": "Navy blue",
-        "display": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Full auto-calendar",
+          "Shock resistant",
+          "Date display",
+          "Day display",
+          "Bluetooth smartphone link",
+          "Power saving"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
-        "sizeRange": null
+        "clasp": "One-touch three-fold clasp",
+        "sizeRange": "150–205 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Tough, innovative, functional beauty — reimagined in sharp, minimalist style.",
+      "tr": "Sağlam, yenilikçi, işlevsel bir güzellik — keskin ve sade bir yorumla."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "A metal bezel guards against impact, finished in three separate textures — vertical hairline, circular hairline, and mirror polishing — for sophisticated tactile appeal.",
+      "tr": "Metal bezel darbelere karşı koruyor ve üç ayrı finisajla işleniyor: dikey saten, dairesel saten ve ayna parlatma. Sonuç, dokunsal olarak da zengin bir yüzey."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/gshock/product.GST-B1000D-2A/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1696,7 +1798,7 @@
       "photos/casio/g-shock_gst-b1000d-2adr.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "Vidalı kurma kolu · Carbon Core Guard yapı."
   },
   {
     "id": "g-shock-gw-bx5600-1a1dr",
@@ -1706,64 +1808,75 @@
     "nickname": null,
     "shortCode": "GWBX56",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
+        "caliber": "Casio modül 3578",
+        "type": "solar",
         "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
-        "radioControlled": null,
-        "bluetooth": null,
+        "batteryLife": "Normal kullanımda ~6 ay, güç tasarrufuyla karanlıkta 22 ay",
+        "accuracy": "±15 saniye/ay (sinyal alınmadığında)",
+        "radioControlled": "Multi-Band 6 (DCF77, MSF, WWVB, JJY, BPC)",
+        "bluetooth": true,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Resin / Bio-based resin",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 44.1,
+        "thickness": 13.4,
+        "lugToLug": 49.1,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 51,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 200,
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (beyaz), tam otomatik",
         "color": "Black"
       },
       "dial": {
         "color": "Black",
-        "display": null,
+        "display": "digital",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Hourly time signal",
+          "Full auto-calendar",
+          "Shock resistant",
+          "Radio-controlled",
+          "Bluetooth smartphone link",
+          "Power saving"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Bio-based resin",
         "color": "Black",
         "clasp": null,
-        "sizeRange": null
+        "sizeRange": "145–205 mm"
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "High-visibility MIP LCD with solar power, radio control and Bluetooth.",
+      "tr": "Yüksek okunabilirlikli MIP ekran; solar, radyo senkronu ve Bluetooth bir arada."
     },
     "story": {
       "en": null,
       "tr": null
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/gshock/product.GW-BX5600-1A1/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1780,7 +1893,7 @@
       "photos/casio/g-shock_gw-bx5600-1a1dr.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "38 zaman dilimi / 55 şehir · 5 alarm (biri ertelemeli) · kasa, bezel ve kayışta biyo-bazlı reçine."
   },
   {
     "id": "oceanus-ocw-s400rl-8ajr",
@@ -1790,64 +1903,71 @@
     "nickname": null,
     "shortCode": "OCWS40",
     "year": null,
-    "category": null,
+    "category": "analog",
     "status": "owned",
     "specs": {
       "movement": {
         "caliber": null,
-        "type": null,
+        "type": "solar",
         "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
-        "radioControlled": null,
-        "bluetooth": null,
+        "batteryLife": "Şarjsız ~5 ay, güç tasarrufunda ~19 ay",
+        "accuracy": "±15 saniye/ay (radyo/telefon senkronu yokken)",
+        "radioControlled": "Multi-Band 6",
+        "bluetooth": true,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
-        "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "material": "Titanium",
+        "bezelMaterial": "Sapphire (buzlu safir bezel halkası)",
+        "diameter": 41.3,
+        "thickness": 9.2,
+        "lugToLug": 46.5,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
-        "crystalCoating": null,
-        "crystalShape": null,
-        "waterResistance": null,
+        "weight": 38,
+        "crystal": "Sapphire",
+        "crystalCoating": "Çift yönlü yansıma önleyici",
+        "crystalShape": "Curved",
+        "waterResistance": 100,
         "bezel": null,
         "backlight": null,
         "color": "Silver / rose gold"
       },
       "dial": {
         "color": "Grey",
-        "display": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Date display",
+          "World time",
+          "Radio-controlled",
+          "Bluetooth smartphone link",
+          "Full auto-calendar",
+          "Power saving"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Leather",
         "color": "Black",
         "clasp": null,
         "sizeRange": null
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Retro Tone Collection — a half-matte gradient dial under a frosted sapphire bezel.",
+      "tr": "Retro Tone Collection — buzlu safir bezelin altında yarı mat degrade kadran."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "A limited edition of 300 units domestically. The half-matte gradient dial sits under a frosted sapphire bezel, paired with leather from a heritage Japanese tannery — a contemporary take on classic watchmaking with solar and radio-wave technology.",
+      "tr": "Japonya’da 300 adetle sınırlı bir üretim. Yarı mat degrade kadran, buzlu safir bezelin altında duruyor; kayış köklü bir Japon tabakhanesinin derisinden. Klasik saatçiliğe solar ve radyo teknolojisiyle çağdaş bir bakış."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/jp/watches/oceanus/product.OCW-S400RL-8A/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1863,8 +1983,11 @@
     "photos": [
       "photos/casio/oceanus_ocw-s400rl-8ajr.webp"
     ],
-    "tags": [],
-    "notes": null
+    "tags": [
+      "limited edition",
+      "titanyum"
+    ],
+    "notes": "Limited edition — Japonya iç pazarında 300 adet. Kasa titanyum, bezel halkası buzlu safir."
   },
   {
     "id": "oceanus-ocw-t200s-1ajf",
@@ -1874,64 +1997,70 @@
     "nickname": null,
     "shortCode": "OCWT20",
     "year": null,
-    "category": null,
+    "category": "analog",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
+        "caliber": "Casio modül 5596",
+        "type": "solar",
         "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
-        "radioControlled": null,
-        "bluetooth": null,
+        "batteryLife": "Şarjsız ~5 ay, güç tasarrufunda ~20 ay",
+        "accuracy": "±15 saniye/ay (radyo sinyali alınmadığında)",
+        "radioControlled": "Multi-Band 6",
+        "bluetooth": true,
         "powerReserve": null,
         "frequency": null,
         "jewels": null,
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 41.4,
+        "thickness": 10.7,
+        "lugToLug": 49.5,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
-        "crystalCoating": null,
+        "weight": 133,
+        "crystal": "Sapphire",
+        "crystalCoating": "Anti-reflective (iç yüzey)",
         "crystalShape": null,
-        "waterResistance": null,
-        "bezel": null,
+        "waterResistance": 100,
+        "bezel": "Düz, mavi iç kaplama",
         "backlight": null,
         "color": "Silver"
       },
       "dial": {
         "color": "Navy blue",
-        "display": null,
+        "display": "analog",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Date display",
+          "Radio-controlled",
+          "Bluetooth smartphone link",
+          "Full auto-calendar",
+          "Power saving"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Bracelet",
+        "material": "Stainless steel",
         "color": "Silver",
-        "clasp": null,
+        "clasp": "One-touch three-fold clasp",
         "sizeRange": null
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Elegance and technology in a refined three-hand dial.",
+      "tr": "Zarafet ve teknoloji, sade bir üç ibreli kadranda."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "A refined dial with striking blue accents on a black face. The stainless steel case and flat bezel suit contemporary business wear; sapphire crystal with anti-reflective coating and an inner blue coating on the bezel add durability and depth. Time corrects itself by radio wave and by Bluetooth.",
+      "tr": "Siyah zemin üzerinde çarpıcı mavi vurgularla işlenmiş sade bir kadran. Paslanmaz çelik kasa ve düz bezel modern iş kıyafetine yakışıyor; yansıma önleyici kaplamalı safir cam ve bezelin iç yüzeyindeki mavi kaplama hem dayanıklılık hem derinlik katıyor. Saat kendini hem radyo sinyaliyle hem Bluetooth ile düzeltiyor."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/jp/watches/oceanus/product.OCW-T200S-1A/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -1948,7 +2077,7 @@
       "photos/casio/oceanus_ocw-t200s-1ajf.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "Otomatik ibre konum düzeltme · radyo alımı günde 6 kez (Çin sinyalinde 5)."
   },
   {
     "id": "pro-trek-prw-35ld-5jf",
@@ -1958,16 +2087,16 @@
     "nickname": null,
     "shortCode": "PRW35L",
     "year": null,
-    "category": null,
+    "category": "dijital",
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
+        "caliber": "Casio modül 3582",
+        "type": "solar",
         "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
-        "radioControlled": null,
+        "batteryLife": "Normal kullanımda ~6 ay, güç tasarrufuyla karanlıkta 22 ay",
+        "accuracy": "±15 saniye/ay (sinyal alınmadığında)",
+        "radioControlled": "Multi-Band 6",
         "bluetooth": null,
         "powerReserve": null,
         "frequency": null,
@@ -1975,47 +2104,58 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Bio-based Resin / Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 44.6,
+        "thickness": 13,
+        "lugToLug": 51.2,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 45,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 100,
         "bezel": null,
-        "backlight": null,
+        "backlight": "LED (Super Illuminator), beyaz, tam otomatik",
         "color": "Navy blue"
       },
       "dial": {
         "color": "Grey LCD",
-        "display": null,
+        "display": "digital",
         "indices": null,
-        "lume": null,
-        "complications": []
+        "lume": "Fosforlu LCD",
+        "complications": [
+          "Altimeter",
+          "Barometer",
+          "Compass",
+          "Thermometer",
+          "Radio-controlled",
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Full auto-calendar",
+          "Power saving"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
+        "type": "Band",
+        "material": "Bio-based resin",
         "color": "Khaki",
         "clasp": null,
         "sizeRange": null
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "The first phosphorescent LCD in a Casio watch.",
+      "tr": "Bir Casio saatte ilk kez fosforlu LCD."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "Luminous material beneath the display emits a soft glow after minimal light exposure, enabling quick time checks in the dark. Triple Sensor provides compass, pressure, altitude and temperature; case and band use bio-based resin.",
+      "tr": "Ekranın altındaki ışıldayan malzeme, az bir ışık aldıktan sonra yumuşak bir parıltı veriyor; karanlıkta saate hızlıca bakmayı sağlıyor. Triple Sensor pusula, basınç, yükseklik ve sıcaklık ölçüyor; kasa ve kayışta biyo-bazlı reçine kullanılıyor."
     },
     "source": {
-      "productUrl": null,
-      "fetchedAt": null,
+      "productUrl": "https://www.casio.com/intl/watches/protrek/product.PRW-35LD-5/",
+      "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
     },
@@ -2032,6 +2172,6 @@
       "photos/casio/pro_trek_prw-35ld-5jf.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "Yükseklik −700 / +10.000 m · basınç 260–1.100 hPa, 42 saatlik eğilim grafiği · pusula 0–359° · sıcaklık −10 / +60 °C · düşük sıcaklığa dayanıklı (−10 °C)."
   }
 ]
