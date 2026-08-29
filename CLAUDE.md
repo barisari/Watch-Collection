@@ -54,8 +54,15 @@ oradaki A her zaman renk kodunun parçasıdır. 6 sayfa çekilerek doğrulandı.
 | casiofanmag.com | — | Üretim yılı, renk varyantları (resmi değil) |
 
 Seri → URL yolu: `casio`, `gshock`, `edifice`, `protrek`, `oceanus`.
-**Oceanus yalnızca `jp` yerelinde**, diğerleri `intl`. TR sayfalarında ne
-teknik tablo ne tanıtım metni var — kullanma.
+**Oceanus yalnızca `jp` yerelinde**, diğerleri `intl`.
+
+**Neden TR değil de `intl`:** TR sayfasında da her şey yazıyor — ama teknik
+tablo JavaScript ile yükleniyor. casio.com'a tek erişimimiz JS çalıştırmayan
+WebFetch: başsız tarayıcı proxy'den geçemiyor (`ERR_CONNECTION_RESET`), curl
+403 alıyor (Akamai). `intl` sayfası sunucudan hazır geldiği için okunabiliyor.
+Yani TR'yi "boş olduğu için" değil, **okuyamadığımız için** kullanmıyoruz.
+Kullanıcı tarayıcısında TR sayfasını görebilir; bir çelişki çıkarsa kaynak
+odur.
 
 `MRS-301` için hiçbir resmi sayfa yok (404).
 
