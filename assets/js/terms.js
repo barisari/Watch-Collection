@@ -24,6 +24,25 @@ const TR = {
   'Cloth': 'Kumaş',
   'Chrome plated': 'Krom kaplama',
 
+  // --- renkler (Casio'nun resmi ürün görsellerinden okundu) ---
+  'Silver': 'Gümüş',
+  'Black': 'Siyah',
+  'White': 'Beyaz',
+  'Off-white': 'Kırık beyaz',
+  'Green': 'Yeşil',
+  'Grey': 'Gri',
+  'Navy blue': 'Lacivert',
+  'Blue': 'Mavi',
+  'Ice blue': 'Buz mavisi',
+  'Beige': 'Bej',
+  'Khaki': 'Haki',
+  'Bronze': 'Bronz',
+  'Burgundy': 'Bordo',
+  'Grey LCD': 'Gri LCD',
+  'Green LCD': 'Yeşil LCD',
+  'Silver / rose gold': 'Gümüş / rose gold',
+  'Black (Pac-Man graphic)': 'Siyah (Pac-Man baskılı)',
+
   // --- cam ---
   'Mineral Glass': 'Mineral cam',
   'Mineral glass': 'Mineral cam',

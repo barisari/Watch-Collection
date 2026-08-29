@@ -75,6 +75,7 @@ export function renderDetail(root, id, navigate) {
         ]),
         specCard('Kasa', [
           ['Malzeme', term(s.case?.material)],
+          ['Renk', term(s.case?.color)],
           ['Bezel malzemesi', term(s.case?.bezelMaterial)],
           ['Genişlik', s.case?.diameter && `${s.case.diameter} mm`],
           ['Kalınlık', s.case?.thickness && `${s.case.thickness} mm`],
