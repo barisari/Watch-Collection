@@ -2380,7 +2380,7 @@
       "productUrl": null,
       "fetchedAt": null,
       "imageColorsFrom": "Kullanıcının doğruladığı görsel",
-      "imageFrom": "Yapay zekâ ile üretildi — düşük çözünürlüklü orijinal görselden, kullanıcının kendi ürettiği kare. Görsel dosyası henüz depoya eklenmedi.",
+      "imageFrom": "Yapay zekâ ile üretildi — kullanıcının düşük çözünürlüklü orijinalden ürettiği kare; yazıları orijinal saatle uyuşacak şekilde düzelttirmiş. Ön yüzde belirtilmiyor.",
       "specsFrom": "Modül no + 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Kadran yazıları kullanıcının doğruladığı görselden."
     },
     "acquisition": {
@@ -2392,7 +2392,9 @@
       "lastServiceDate": null,
       "intervalYears": null
     },
-    "photos": [],
+    "photos": [
+      "photos/casio/casio_mrs-301-2evdf.webp"
+    ],
     "tags": [],
     "notes": "Japonya üretimi. Kasa arkasında modül no 2385 ve 10 bar yazıyor.",
     "msrp": {}

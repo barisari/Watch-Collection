@@ -81,6 +81,9 @@ const TR = {
   // --- fonksiyonlar ---
   'World time': 'Dünya saati',
   'Stopwatch': 'Kronometre',
+  'Depth meter': 'Derinlik ölçer',
+  'Max depth memory': 'Azami derinlik hafızası',
+  'Data recall': 'Veri geri çağırma',
   'Countdown timer': 'Geri sayım sayacı',
   'Daily alarm': 'Günlük alarm',
   'Hourly time signal': 'Saat başı sinyali',

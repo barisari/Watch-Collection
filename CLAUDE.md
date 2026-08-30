@@ -94,7 +94,7 @@ Envanterde artık **25 saat** var — MRS-301 eklendi.
 |---|---|
 | Teknik özellikler | 25/25 — MRS-301 dahil (modül 2385 kasa arkasından) |
 | Kadran / kasa / kayış rengi | 25/25 — resmi ürün görselinden okundu |
-| Görsel | 24/25 — geçici, üreticinin görselleri, 900×900 WebP |
+| Görsel | 25/25 — geçici; 24'ü üreticinin görseli, MRS-301 kullanıcının karesi |
 | Çıkış tarihi | 17/25 |
 | Liste fiyatı | 22/25 |
 | Tanıtım metni | 15/25 |
@@ -179,9 +179,9 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 2. **Kaynağın vermediği alanlar** — kadran rengi, kayış rengi, cam formu ve
    üretim yılı Casio'nun teknik tablosunda **yok**. Model kodundan/görselden
    çıkarım gerekir → mutlaka kullanıcıya sorulacak, tahmin yazılmayacak.
-3. **`MRS-301-2E` görseli** — kullanıcı yapay zekâyla ürettiği kareyi sohbette
-   paylaştı, ama sohbet eki diske düşmüyor: dosya hâlâ depoda yok. Kullanıcı
-   dosyayı koyunca `photos/casio/` altına girip kayda eklenecek.
+3. ~~`MRS-301-2E` görseli~~ — **tamam.** Kullanıcı GitHub üzerinden yükledi;
+   fon kenarlardan taşma-doldurma ile silinip diğerleriyle aynı biçime sokuldu
+   (saydam zemin, 900×900 WebP). Betik: `scratchpad/mrsimg.mjs`.
    Üretim bilgisi `source.imageFrom` alanında duruyor; **ön yüzde
    gösterilmiyor** (`sourceNote` yalnızca `productUrl` + `fetchedAt` basıyor).
 4. **`MRS-301-2E` satın alma tarihi** tabloda yok — kullanıcıyla konuşulacak.
