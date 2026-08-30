@@ -234,12 +234,24 @@ Aug-2001 **modülün** tarihi; saatin çıkış tarihi değil, `releaseDate` bo�
 **Ders:** servis listesi modülü modele bağlamıyor, ama elinde modül numarası
 varsa pil/hassasiyet/tarih oradan geliyor. Numara kasa arkasında.
 
-**Saatin yaşı için alt sınır: Ağustos 2001.** PDF'in son sütununun başlığı
-`Release` — yani Aug-2001 modülün çıkış tarihi. Saat modülünden önce
-üretilemeyeceğine göre MRS-301 **2001 veya sonrası**. Aramalarda çıkan
-"1997 üretimi" iddiası (eBay/sahibinden ilanları) bununla çelişiyor ve
-elenmeli: kasa arkasındaki 2385 kullanıcının kendi okuması, ilanlar ise
-satıcı tahmini.
+**Saatin yaşı için alt sınır: Ağustos 2001.** İki bağımsız kanıt, ikisi de
+Casio'nun kendi servis listesinden:
+
+1. **Tarih sütunu.** PDF'in son sütununun başlığı `Release` — Aug-2001
+   modülün çıkış tarihi. Saat modülünden önce üretilemez.
+2. **Numaranın kendisi.** Listede modül numaraları tarihle birlikte artıyor.
+   1997 tarihli modüller **1375–1826** aralığında (49 satır); 2385 bu bandın
+   tamamen dışında, 2001–2002 aralığına düşüyor. Yani tarih sütununa hiç
+   bakmadan da 2385 bir 1997 modülü olamaz.
+
+Buna karşılık dolaşan "1997" iddiasının dayanağı eBay ilanları ve bir Facebook
+gönderisindeki *"circa 1997"* — yani satıcı/koleksiyoner tahmini. Yapay zekâ
+arama özeti ısrar etse de resmi bir kaynak gösteremiyor, hatta Casio'nun
+sitesinde böyle bir sayfa olmadığını kendisi kabul ediyor.
+
+**Doğru ifade:** model hattı daha eski olsa bile **kullanıcının saati modül
+2385 taşıyor**, dolayısıyla o saat 2001 veya sonrasıdır. Tahmini satın alma
+tarihi bu tabandan hesaplanmalı.
 
 ### İki dillilik
 
