@@ -173,9 +173,14 @@ function storyCard(watch) {
 function sourceNote(watch) {
   const url = watch.source?.productUrl;
   if (!url) return null;
+  // Alan adı adresten okunur — sabit "casio.com" yazmak Mondaine sayfasında
+  // yanlış kaynak gösteriyordu.
+  let host;
+  try { host = new URL(url).hostname.replace(/^www\./, ''); } catch { host = 'ürün sayfası'; }
+
   return el('p.muted', { style: { margin: 0 } },
     'Teknik bilgiler üreticinin ürün sayfasından alındı: ',
-    el('a', { href: url, target: '_blank', rel: 'noopener' }, 'casio.com'),
+    el('a', { href: url, target: '_blank', rel: 'noopener' }, host),
     watch.source.fetchedAt ? ` · ${fmtDate(watch.source.fetchedAt)}` : '');
 }
 

@@ -19,7 +19,7 @@ const isPrivateBuild = process.argv.includes('--private');
 const COPY = ['index.html', 'assets', 'photos', 'data', 'site.config.json'];
 
 /* Yayına GİTMEYECEK klasörler. photos/originals işlenmemiş asılları tutuyor
- * (saat başına megabaytlar); sitede gösterilen 900×900 WebP'ler photos/casio
+ * (saat başına megabaytlar); sitede gösterilen 900×900 WebP'ler photos/watches
  * altında. Asılları depoda saklıyoruz ama Pages'e taşımanın anlamı yok. */
 const SKIP = ['photos/originals'];
 const skipped = (src) => SKIP.some((s) => src === s || src.startsWith(`${s}/`));

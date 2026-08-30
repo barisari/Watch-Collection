@@ -322,7 +322,7 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    depoya **hiç girmiyor**; alım günü ECB kuruyla EUR/USD karşılıkları
    hesaplanıp ayrı bir Drive tablosuna yazıldı:
    *"Casio Collection — Alım Fiyatları (EUR/USD)"*
-   `1n5W6I-SHJokSpYyZEfwCpmRtwQDMylTmOyl88E4DrX4`
+   `1YHTxIBeXxeS-Ryieufo54EH3QWenyJ8abCurCJaZUK8`
    Depoya girmemesi gereken başka bir şey çıkarsa yeri orası.
 2. **Depo public mi kalacak?** Şu an public (Pages ücretsiz hesapta bunu
    gerektiriyor). Yayınlanan site hassas alanları göstermiyor ama **depodaki
@@ -358,7 +358,7 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
   doğrulayıcısını tekrar çalıştır.
 - **İşlenmemiş asıllar `photos/originals/` altında saklanır** ve `build.mjs`
   bunları `dist/`e kopyalamaz (`SKIP` listesi) — depoda duruyorlar ama Pages
-  yayınını şişirmiyorlar. Sitede gösterilen 900×900 WebP'ler `photos/casio/`.
+  yayınını şişirmiyorlar. Sitede gösterilen 900×900 WebP'ler `photos/watches/`.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır (Escape kapatır).
 - `id` alanı sabittir; değiştirirsen `data/wears.json` içindeki `watchId`
   değerlerini de güncelle.

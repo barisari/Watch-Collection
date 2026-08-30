@@ -25,9 +25,9 @@ const force = process.argv.includes('--force');
 const watches = JSON.parse(await readFile('data/watches.json', 'utf8'));
 await mkdir('photos/originals', { recursive: true });
 
-/** photos/casio/x.webp → photos/originals/x.png */
+/** photos/watches/x.webp → photos/originals/x.png */
 const originalPath = (webp) =>
-  webp.replace('photos/casio/', 'photos/originals/').replace(/\.webp$/, '.png');
+  webp.replace('photos/watches/', 'photos/originals/').replace(/\.webp$/, '.png');
 
 const done = [], skip = [], fail = [];
 
