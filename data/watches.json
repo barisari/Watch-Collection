@@ -161,7 +161,8 @@
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
-      "releaseFrom": "casiofanmag.com (resmi değil)"
+      "releaseFrom": "casio.com/jp (Japonya sürümü)",
+      "msrpFrom": "casio.com/jp — メーカー希望小売価格 (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-01-19",
@@ -177,7 +178,10 @@
     ],
     "tags": [],
     "notes": null,
-    "releaseDate": "2023"
+    "releaseDate": "2024-01",
+    "msrp": {
+      "JPY": 22000
+    }
   },
   {
     "id": "casio-a1100d-1df",
@@ -252,7 +256,8 @@
       "fetchedAt": "2026-08-28",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
-      "releaseFrom": "casiofanmag.com (resmi değil)"
+      "releaseFrom": "casio.com/jp (Japonya sürümü)",
+      "msrpFrom": "casio.com/jp — メーカー希望小売価格 (vergi dahil)"
     },
     "acquisition": {
       "date": "2025-10-28",
@@ -268,7 +273,10 @@
     ],
     "tags": [],
     "notes": null,
-    "releaseDate": "2023"
+    "releaseDate": "2024-01",
+    "msrp": {
+      "JPY": 16500
+    }
   },
   {
     "id": "casio-a158wa-1df",
@@ -357,7 +365,7 @@
       "photos/casio/casio_a158wa-1df.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": "Japonya'da 2021-07 tarihinde yeniden sürülmüş (¥3.300); bu saat ondan önce alındığı için o tarih buraya yazılmadı."
   },
   {
     "id": "casio-ae-1200whl-5avdf",
@@ -448,7 +456,7 @@
       "photos/casio/casio_ae-1200whl-5avdf.webp"
     ],
     "tags": [],
-    "notes": "31 zaman dilimi / 48 şehir dünya saati, 4 şehir aynı anda izlenebiliyor."
+    "notes": "31 zaman dilimi / 48 şehir dünya saati, 4 şehir aynı anda izlenebiliyor. AE-1200WH serisi ilk kez 2012’de çıktı; bu deri kayışlı varyantın kendi çıkış tarihi ayrıca doğrulanmalı."
   },
   {
     "id": "casio-ca-53w-1z",
@@ -1136,7 +1144,9 @@
       "productUrl": "https://www.casio.com/intl/watches/edifice/product.EFK-110D-1A/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casio.com/jp (Japonya sürümü)",
+      "msrpFrom": "casio.com/jp — メーカー希望小売価格 (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-08-27",
@@ -1151,7 +1161,11 @@
       "photos/casio/edifice_efk-110d-1a.webp"
     ],
     "tags": [],
-    "notes": "Koleksiyondaki tek mekanik saat — otomatik, elle de kurulabiliyor. Şeffaf arka kapaktan mekanizma görülüyor."
+    "notes": "Koleksiyondaki tek mekanik saat — otomatik, elle de kurulabiliyor. Şeffaf arka kapaktan mekanizma görülüyor.",
+    "releaseDate": "2026-04",
+    "msrp": {
+      "JPY": 49500
+    }
   },
   {
     "id": "edifice-efs-s570d-3audf",
@@ -2027,7 +2041,9 @@
       "productUrl": "https://www.casio.com/jp/watches/oceanus/product.OCW-S400RL-8A/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casio.com/jp (Japonya sürümü)",
+      "msrpFrom": "casio.com/jp — メーカー希望小売価格 (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-08-18",
@@ -2045,7 +2061,11 @@
       "limited edition",
       "titanyum"
     ],
-    "notes": "Limited edition — Japonya iç pazarında 300 adet. Kasa titanyum, bezel halkası buzlu safir."
+    "notes": "Limited edition — Japonya iç pazarında 300 adet. Kasa titanyum, bezel halkası buzlu safir. Japonya çıkışı planlanan tarih.",
+    "releaseDate": "2026-08",
+    "msrp": {
+      "JPY": 165000
+    }
   },
   {
     "id": "oceanus-ocw-t200s-1ajf",
@@ -2120,7 +2140,9 @@
       "productUrl": "https://www.casio.com/jp/watches/oceanus/product.OCW-T200S-1A/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casio.com/jp (Japonya sürümü)",
+      "msrpFrom": "casio.com/jp — メーカー希望小売価格 (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-04-08",
@@ -2135,7 +2157,11 @@
       "photos/casio/oceanus_ocw-t200s-1ajf.webp"
     ],
     "tags": [],
-    "notes": "Otomatik ibre konum düzeltme · radyo alımı günde 6 kez (Çin sinyalinde 5)."
+    "notes": "Otomatik ibre konum düzeltme · radyo alımı günde 6 kez (Çin sinyalinde 5).",
+    "releaseDate": "2019-04",
+    "msrp": {
+      "JPY": 71500
+    }
   },
   {
     "id": "pro-trek-prw-35ld-5jf",
@@ -2215,7 +2241,9 @@
       "productUrl": "https://www.casio.com/intl/watches/protrek/product.PRW-35LD-5/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casio.com/jp (Japonya sürümü)",
+      "msrpFrom": "casio.com/jp — メーカー希望小売価格 (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-04-08",
@@ -2230,6 +2258,10 @@
       "photos/casio/pro_trek_prw-35ld-5jf.webp"
     ],
     "tags": [],
-    "notes": "Yükseklik −700 / +10.000 m · basınç 260–1.100 hPa, 42 saatlik eğilim grafiği · pusula 0–359° · sıcaklık −10 / +60 °C · düşük sıcaklığa dayanıklı (−10 °C)."
+    "notes": "Yükseklik −700 / +10.000 m · basınç 260–1.100 hPa, 42 saatlik eğilim grafiği · pusula 0–359° · sıcaklık −10 / +60 °C · düşük sıcaklığa dayanıklı (−10 °C).",
+    "releaseDate": "2025-05",
+    "msrp": {
+      "JPY": 48400
+    }
   }
 ]
