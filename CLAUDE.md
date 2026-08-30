@@ -110,6 +110,12 @@ Dönüşüm eki (`.transform/main-visual-pc/image.png`) 408×408 veriyor —
 
 Asıllar `photos/originals/` altında: depoda 68 MB, yayında 0 (build atlıyor).
 
+**KURAL — üreticinin yayımladığı görsel her zaman önceliklidir.** Kullanıcının
+Photoshop ile ürettiği/büyüttüğü bir görselle resmi görsel çakışırsa resmi olan
+kullanılır (GA-2100'de böyle oldu: büyütmede yazılar ve LCD yumuşuyordu).
+**Tek istisna MRS-301** — bu saatin hiçbir yerde resmi görseli yok, kullanıcının
+ürettiği kare kalıcı çözüm.
+
 ### Doldurulma durumu (30 Ağustos 2026)
 
 Envanterde artık **25 saat** var — MRS-301 eklendi.
@@ -118,10 +124,13 @@ Envanterde artık **25 saat** var — MRS-301 eklendi.
 |---|---|
 | Teknik özellikler | 25/25 — MRS-301 dahil (modül 2385 kasa arkasından) |
 | Kadran / kasa / kayış rengi | 25/25 — resmi ürün görselinden okundu |
-| Görsel | 25/25 — geçici; 24'ü üreticinin görseli, MRS-301 kullanıcının karesi |
+| Görsel | 25/25 — 24'ü üreticinin görseli, MRS-301 kullanıcının karesi |
+| **Görsel aslı (arşiv)** | 25/25 — `photos/originals/`, çoğu 2000×2000 |
+| Satın alma tarihi | 24/25 — MRS-301 tabloda yok |
 | Çıkış tarihi | 17/25 |
 | Liste fiyatı | 22/25 |
-| Tanıtım metni | 15/25 |
+| Tanıtım metni | 20/25 kısa tanıtım · 15/25 uzun metin |
+| Rotasyon kaydı | 0 — günlük henüz başlamadı |
 
 Liste fiyatı eksik kalan 3: **CA-53W-1**, **MDV-106-1A**, **MRS-301-2E**.
 İlk ikisi Hindistan'da da Tayland'da da satılmıyor (404), Japonya'da da yok;
