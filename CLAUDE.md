@@ -208,6 +208,13 @@ Aug-2001 **modülün** tarihi; saatin çıkış tarihi değil, `releaseDate` bo�
 **Ders:** servis listesi modülü modele bağlamıyor, ama elinde modül numarası
 varsa pil/hassasiyet/tarih oradan geliyor. Numara kasa arkasında.
 
+**Saatin yaşı için alt sınır: Ağustos 2001.** PDF'in son sütununun başlığı
+`Release` — yani Aug-2001 modülün çıkış tarihi. Saat modülünden önce
+üretilemeyeceğine göre MRS-301 **2001 veya sonrası**. Aramalarda çıkan
+"1997 üretimi" iddiası (eBay/sahibinden ilanları) bununla çelişiyor ve
+elenmeli: kasa arkasındaki 2385 kullanıcının kendi okuması, ilanlar ise
+satıcı tahmini.
+
 ### İki dillilik
 
 Teknik değerler **İngilizce** (üreticinin yazdığı gibi) saklanır, ekranda

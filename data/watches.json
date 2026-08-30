@@ -73,7 +73,8 @@
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "msrpFrom": "casio.com/my — MSRP",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/in/en/timepiece/product/watch/A/A1/A10/a1000dn-7/assets/A1000DN-7.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/in/en/timepiece/product/watch/A/A1/A10/a1000dn-7/assets/A1000DN-7.png",
+      "releaseFrom": "hypebeast.com · g-central.com — Temmuz 2024 Japonya lansmanı (resmi değil); gün için kaynaklar 12/19 Temmuz diye ayrışıyor"
     },
     "acquisition": {
       "date": "2026-01-11",
@@ -92,7 +93,8 @@
     "msrp": {
       "INR": 13495,
       "MYR": 839
-    }
+    },
+    "releaseDate": "2024-07"
   },
   {
     "id": "casio-a1100b-1df",
@@ -1120,7 +1122,8 @@
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "msrpFrom": "casio.com/in — MRP (vergi dahil)",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/E/EF/EFB/efb-730d-7av/assets/EFB-730D-7AV.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/E/EF/EFB/efb-730d-7av/assets/EFB-730D-7AV.png",
+      "releaseFrom": "bulunamadı — aramada çıkan Haziran/Temmuz 2026 tarihi alım tarihinden sonra, o yüzden yazılmadı (yeni renk varyantlarının lansmanı)"
     },
     "acquisition": {
       "date": "2026-03-09",
