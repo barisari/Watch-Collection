@@ -181,7 +181,7 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    çıkarım gerekir → mutlaka kullanıcıya sorulacak, tahmin yazılmayacak.
 3. ~~`MRS-301-2E` görseli~~ — **tamam.** Kullanıcı GitHub üzerinden yükledi;
    fon kenarlardan taşma-doldurma ile silinip diğerleriyle aynı biçime sokuldu
-   (saydam zemin, 900×900 WebP). Betik: `scratchpad/mrsimg.mjs`.
+   (saydam zemin, 900×900 WebP). Betik: `scripts/normalize-photo.mjs`.
    Üretim bilgisi `source.imageFrom` alanında duruyor; **ön yüzde
    gösterilmiyor** (`sourceNote` yalnızca `productUrl` + `fetchedAt` basıyor).
 4. **`MRS-301-2E` satın alma tarihi** tabloda yok — kullanıcıyla konuşulacak.
@@ -239,3 +239,4 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 | `node scripts/import-casio-sheet.mjs <csv> [--reset]` | Casio Collection tablosundan içe aktarır |
 | `node scripts/log-wear.mjs "<saat>" [tarih] ["not"]` | Rotasyon kaydı ekler |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
+| `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafın fonunu siler, 900×900 WebP yazar (`npm i sharp` gerekir) |
