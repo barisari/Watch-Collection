@@ -110,11 +110,23 @@ Dönüşüm eki (`.transform/main-visual-pc/image.png`) 408×408 veriyor —
 
 Asıllar `photos/originals/` altında: depoda 68 MB, yayında 0 (build atlıyor).
 
-**KURAL — üreticinin yayımladığı görsel her zaman önceliklidir.** Kullanıcının
-Photoshop ile ürettiği/büyüttüğü bir görselle resmi görsel çakışırsa resmi olan
-kullanılır (GA-2100'de böyle oldu: büyütmede yazılar ve LCD yumuşuyordu).
-**Tek istisna MRS-301** — bu saatin hiçbir yerde resmi görseli yok, kullanıcının
-ürettiği kare kalıcı çözüm.
+**KURAL — resmi görsel önceliklidir, AMA yeterli çözünürlükte olanı.**
+Üreticinin görseli her zaman tercih edilir; yapay büyütme gerçek ayrıntı
+üretmez, yalnızca hale ekler. Ne var ki "resmi" tek başına yetmiyor: **aynı
+model yerele göre farklı çözünürlükte yayımlanıyor.** Sıra şu:
+
+1. Tablodaki CDN adresini indir, **ölçüsüne bak**. 2000×2000 ise iş bitti.
+2. Küçükse (GA-2100 `tr` yerelinde 500×600) **pes etme, öbür yerelleri dene** —
+   özellikle `jp`, ve `_Seq01` gibi ekleri olan/olmayan varyantları. GA-2100'ün
+   gerçek 2000×2000 sürümü `jp` yerelinde, eksiz dosya adında duruyordu.
+3. Hiçbir yerelde yeterli çözünürlük yoksa ancak o zaman elle büyütme gündeme
+   gelir — ve resmi büyüğü sonradan bulunursa onunla değiştirilir.
+
+Yani kullanıcının GA-2100'ü büyütmesi doğru bir tepkiydi (TR görseli gerçekten
+düşüktü); eksik olan adım 2'ydi.
+
+**Tek istisna MRS-301** — bu saatin hiçbir yerelde resmi görseli yok (hepsi
+404). Kullanıcının ürettiği kare kalıcı çözüm, çözünürlük kıyaslaması yapılmaz.
 
 ### Doldurulma durumu (30 Ağustos 2026)
 
