@@ -32,7 +32,7 @@ function releaseLabel(watch) {
 /* Yalnızca bu dört birim gösterilir. INR/THB/MYR veride kaynak izi olarak
  * duruyor ama ekranda işe yaramıyor — kullanıcı o pazarlarda alışveriş
  * etmiyor. Hiçbiri yoksa elde ne varsa o gösterilir, satır boş kalmasın. */
-const MSRP_GOSTER = ['EUR', 'USD', 'TRY', 'JPY'];
+const MSRP_GOSTER = ['USD', 'EUR', 'TRY', 'JPY'];
 const msrpRank = (cur) => {
   const i = MSRP_GOSTER.indexOf(cur);
   return i === -1 ? MSRP_GOSTER.length : i;
