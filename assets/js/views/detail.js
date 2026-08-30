@@ -29,31 +29,31 @@ function releaseLabel(watch) {
  * Fiyat, saatin satıldığı pazarın parasıyla saklanır: Casio her ülkede ayrı
  * fiyat veriyor, hepsini tek kura çevirip saklamak kaynağı kaybetmek olurdu.
  * Ekranda en çok 3 tanesi gösteriliyor. */
-const MSRP_ORDER = ['EUR', 'USD', 'GBP', 'TRY', 'JPY', 'INR', 'THB', 'MYR'];
+/* Yalnızca bu dört birim gösterilir. INR/THB/MYR veride kaynak izi olarak
+ * duruyor ama ekranda işe yaramıyor — kullanıcı o pazarlarda alışveriş
+ * etmiyor. Hiçbiri yoksa elde ne varsa o gösterilir, satır boş kalmasın. */
+const MSRP_GOSTER = ['EUR', 'USD', 'TRY', 'JPY'];
 const msrpRank = (cur) => {
-  const i = MSRP_ORDER.indexOf(cur);
-  return i === -1 ? MSRP_ORDER.length : i;   // tanımadığımız birim sona gider
+  const i = MSRP_GOSTER.indexOf(cur);
+  return i === -1 ? MSRP_GOSTER.length : i;
 };
 
+/* Kaynaktan gelen ve türetilen fiyatlar TEK satırda. Türetilmiş olan başındaki
+ * "~" ile zaten belli oluyor; ayrı satır açmak gereksiz karmaşa yaratıyordu.
+ * Veride ayrım duruyor (msrp / msrpEstimated), yalnızca gösterim birleşik. */
 function msrpRow(watch) {
-  const m = watch.msrp;
-  if (!m || !Object.keys(m).length) return null;
-  return Object.entries(m)
-    .sort((a, b) => msrpRank(a[0]) - msrpRank(b[0]))
-    .slice(0, 3)
-    .map(([cur, amt]) => fmtMoney(amt, cur))
-    .join(' · ');
-}
+  const hepsi = [
+    ...Object.entries(watch.msrp || {}).map(([cur, amt]) => ({ cur, amt, tahmin: false })),
+    ...Object.entries(watch.msrpEstimated || {}).map(([cur, amt]) => ({ cur, amt, tahmin: true })),
+  ];
+  if (!hepsi.length) return null;
 
-/* Türetilmiş karşılık — ölçülmüş bir ülke-çifti oranıyla hesaplandı, üreticinin
- * açıkladığı fiyat DEĞİL. Bu yüzden ayrı satırda ve "~" ile gösteriliyor;
- * gerçek liste fiyatıyla aynı yere yazmak ikisini karıştırırdı. */
-function msrpEstimatedRow(watch) {
-  const m = watch.msrpEstimated;
-  if (!m || !Object.keys(m).length) return null;
-  return Object.entries(m)
-    .sort((a, b) => msrpRank(a[0]) - msrpRank(b[0]))
-    .map(([cur, amt]) => `~${fmtMoney(amt, cur)}`)
+  const gosterilecek = hepsi.filter((p) => MSRP_GOSTER.includes(p.cur));
+  return (gosterilecek.length ? gosterilecek : hepsi)
+    // Önce kaynaktan gelen gerçek fiyatlar, sonra türetilenler.
+    .sort((a, b) => (a.tahmin - b.tahmin) || (msrpRank(a.cur) - msrpRank(b.cur)))
+    .slice(0, 3)
+    .map((p) => (p.tahmin ? '~' : '') + fmtMoney(p.amt, p.cur))
     .join(' · ');
 }
 
@@ -265,7 +265,6 @@ function acquisitionCard(watch) {
     // "(çıkışta)" yazıyordu ama elimizdeki değerler üreticinin/yetkili
     // satıcının GÜNCEL liste fiyatları — çıkış anındaki fiyat değil.
     ['Liste fiyatı', msrpRow(watch)],
-    ['Tahmini karşılık', msrpEstimatedRow(watch)],
     // Miras/eski saatlerde tarih tahmin olabiliyor. Kesinmiş gibi göstermek
     // yanlış olurdu; dateApprox işaretliyse ay/yıl düzeyinde ve "civarı" diye.
     ['Satın alma tarihi', a.date
