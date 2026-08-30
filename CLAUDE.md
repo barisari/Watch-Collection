@@ -316,10 +316,14 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 
 ### Verilmemiş kararlar
 
-1. **Fiyatlar.** Kullanıcının kararı: *"Fiyatları biz bilelim ama sistem public
-   ken yazmayalım siteye."* Fiyatlar Drive tablosunda duruyor, depoya
-   **girilmedi**. Site bitince fiyatlarla bir hesap yapılacak — o zaman ya depo
-   private olacak ya da ayrı bir çözüm bulunacak.
+1. **Fiyatlar — çözüldü.** Kullanıcının kararı: *"Fiyatları biz bilelim ama
+   sistem public ken yazmayalım siteye."* İş bölümü: **depo herkese açık**
+   (teknik veri, görseller, kod), **Drive özel** (fiyatlar). Alım fiyatları
+   depoya **hiç girmiyor**; alım günü ECB kuruyla EUR/USD karşılıkları
+   hesaplanıp ayrı bir Drive tablosuna yazıldı:
+   *"Casio Collection — Alım Fiyatları (EUR/USD)"*
+   `1n5W6I-SHJokSpYyZEfwCpmRtwQDMylTmOyl88E4DrX4`
+   Depoya girmemesi gereken başka bir şey çıkarsa yeri orası.
 2. **Depo public mi kalacak?** Şu an public (Pages ücretsiz hesapta bunu
    gerektiriyor). Yayınlanan site hassas alanları göstermiyor ama **depodaki
    kaynak dosyayı herkes okuyabilir** — fiyat/seri no bu yüzden girilmiyor.
