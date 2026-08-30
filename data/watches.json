@@ -572,7 +572,7 @@
       "photos/casio/casio_ca-53w-1z.webp"
     ],
     "tags": [],
-    "notes": "8 haneli hesap makinesi. Arka aydınlatması yok.",
+    "notes": "8 haneli hesap makinesi. Arka aydınlatması yok. Geri Dönüşüm serisinin saati: Marty McFly ilk filmde (1985) selefi CA-50’yi, ikinci ve üçüncü filmlerde bu CA-53W’yi takıyor. Model 1988’de CA-50’nin ardılı olarak çıktı — envanterdeki çıkış yılıyla örtüşüyor.",
     "releaseDate": "1988"
   },
   {
@@ -796,16 +796,16 @@
       "case": {
         "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 44.2,
+        "thickness": 12.1,
+        "lugToLug": 49.5,
         "lugWidth": null,
-        "weight": null,
-        "crystal": null,
+        "weight": 92,
+        "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
-        "bezel": null,
+        "waterResistance": 200,
+        "bezel": "Unidirectional",
         "backlight": null,
         "color": "Silver"
       },
@@ -840,7 +840,8 @@
       "movementFrom": "Casio modül listesi (servis dokümanı), QW-2784 — Şubat 2003",
       "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/ca/en/timepiece/product/watch/M/md/mdv/mdv-106-1av/assets/MDV-106-1AV.png",
       "releaseFrom": "casiofanmag.com (temel model, resmi değil)",
-      "msrpFrom": "WatchCharts — Casio ABD MSRP olarak veriyor (resmi sayfadan doğrulanamadı)"
+      "msrpFrom": "WatchCharts — Casio ABD MSRP olarak veriyor (resmi sayfadan doğrulanamadı)",
+      "specsFrom": "casio.com/uk — MDV-107-1A1V (logosuz birebir aynı model); MDV-106’nın kendi sayfası okunabilir hiçbir yerelde yok"
     },
     "acquisition": {
       "date": "2026-02-04",
@@ -855,7 +856,7 @@
       "photos/casio/casio_mdv-106-1avdf.webp"
     ],
     "tags": [],
-    "notes": "Casio bu modeli intl sitesinde yayımlamıyor (Amerika pazarı — \"Duro\"). Kasa ölçüleri, cam ve su geçirmezlik değeri henüz doldurulmadı; mekanizma bilgisi Casio’nun modül servis listesinden alındı.",
+    "notes": "Casio bu modeli intl sitesinde yayımlamıyor (Amerika pazarı — “Duro”). Kasa ölçüleri logosuz ikizi MDV-107-1A1V’nin resmi sayfasından alındı; mekanizma bilgisi Casio’nun modül servis listesinden. Koleksiyoncuların “Marlin” dediği ikonik ucuz dalgıç; ilk on yılında 600 binden fazla satmış. Kadranındaki ve kasa arkasındaki kılıç balığı logosunun lisansı Casio’da kalmayınca aynı saat, logosuz olarak MDV-107 adıyla ABD dışı pazarlara verildi — Türkiye’de satılan da o.",
     "releaseDate": "2011",
     "msrp": {
       "USD": 84.95
@@ -1307,7 +1308,8 @@
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "msrpFrom": "casio.com/th — MSRP",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/E/EF/EFS/efs-s570d-3a/assets/EFS-S570D-3AU.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/E/EF/EFS/efs-s570d-3a/assets/EFS-S570D-3AU.png",
+      "releaseFrom": "casiofanmag.com — EFS-S570 serisinin ilk çıkışı (resmi değil); bu varyantın kendi tarihi bulunamadı, kullanıcı onayıyla seri yılı kullanıldı"
     },
     "acquisition": {
       "date": "2026-01-11",
@@ -1325,7 +1327,8 @@
     "notes": null,
     "msrp": {
       "THB": 9700
-    }
+    },
+    "releaseDate": "2020"
   },
   {
     "id": "g-shock-dw-6900rgm-5dr",
