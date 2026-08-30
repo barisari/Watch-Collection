@@ -86,6 +86,30 @@ varyanta mal etme (F-91W 1989 ≠ Pac-Man sürümü 2024).
 **ABD sitesi (`/us/`):** ürün başlığında renk adı var, teknik tablo JS ile
 yükleniyor — okunamıyor.
 
+### Ürün görselleri — adresler TABLODA yazılı
+
+**Önce Drive tablosunun CDN sütununa bak.** Her saatin resmi görsel adresi
+orada; envanterde `source.imageOriginal` alanına da geçirildi. Bunu atlayıp
+yol kalıbını türetmeye çalışmak vakit kaybı: yol modelden modele değişiyor —
+yerel (`tr/tr`, `jp/ja`, `in/en`, `europe/en-gb`, `ca/en`), klasör
+harflerinin büyük/küçüklüğü ve dosya adındaki `_Seq01` / `_Seq1` ekleri
+tutarsız. Kalıbı kurmayı denedim, 24 modelin **ancak 4 tanesinde** tuttu.
+
+**Erişim:** ürün sayfası curl ile **403** veriyor (Akamai), CDN varlıkları
+**200**. Yani sayfayı WebFetch okur, görseli curl indirir. TR sayfası JS ile
+yüklendiği için okunamıyor ama **TR CDN varlıkları gayet çalışıyor**.
+
+**Aynı model yerele göre farklı çözünürlükte olabiliyor:** GA-2100-1A1
+`tr` / `intl` / `in` / `europe` yerellerinde 500×600, **`jp` yerelinde
+2000×2000**. Yeni saat eklerken jp yerelini de dene. Kullanıcı bu yüzden
+GA-2100 görselini Photoshop ile büyütmüştü; Casio kendi 2000 pikselliği daha
+iyi çıktı (büyütmede yazılar ve LCD yumuşuyor).
+
+Dönüşüm eki (`.transform/main-visual-pc/image.png`) 408×408 veriyor —
+**eki at**, düz `.png` asıl boyutu getiriyor (çoğunda 2000×2000).
+
+Asıllar `photos/originals/` altında: depoda 68 MB, yayında 0 (build atlıyor).
+
 ### Doldurulma durumu (30 Ağustos 2026)
 
 Envanterde artık **25 saat** var — MRS-301 eklendi.
@@ -247,3 +271,4 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 | `node scripts/log-wear.mjs "<saat>" [tarih] ["not"]` | Rotasyon kaydı ekler |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
 | `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafın fonunu siler, 900×900 WebP yazar (`npm i sharp` gerekir) |
+| `node scripts/fetch-originals.mjs [--force]` | Görsel asıllarını `photos/originals/` altına indirir |
