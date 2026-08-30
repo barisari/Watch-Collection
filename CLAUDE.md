@@ -92,8 +92,8 @@ Envanterde artık **25 saat** var — MRS-301 eklendi.
 
 | Alan | Durum |
 |---|---|
-| Teknik özellikler | 23/25 |
-| Kadran / kasa / kayış rengi | 24/25 — resmi ürün görselinden okundu |
+| Teknik özellikler | 24/25 — MRS-301 hariç; onda da yalnızca modül eksik |
+| Kadran / kasa / kayış rengi | 25/25 — resmi ürün görselinden okundu |
 | Görsel | 24/25 — geçici, üreticinin görselleri, 900×900 WebP |
 | Çıkış tarihi | 17/25 |
 | Liste fiyatı | 22/25 |
@@ -123,8 +123,9 @@ odur.
 
 ### MRS-301 — modül bilmecesi (çözülmedi)
 
-`MRS-301` için hiçbir resmi sayfa yok (404). Envantere **teknik özellikleri boş**
-girildi, çünkü elimdeki üç kaynak birbirini tutmuyor:
+`MRS-301` için hiçbir resmi sayfa yok (404). Kasa/kadran/kayış bilgileri
+kullanıcının doğruladığı görselden girildi (aşağıda), ama **modül hâlâ boş** —
+elimdeki üç kaynak birbirini tutmuyor:
 
 - Modül servis listesinde `QW-2376` satırı var: `S/M-747 · ±15 sn/ay ·
   SR927W ×2 + CR1216 · 2 yıl · Aug-2001`. Ama **o PDF'te model adı hiç
@@ -140,12 +141,18 @@ girildi, çünkü elimdeki üç kaynak birbirini tutmuyor:
 yazıyor. Derinlik ölçen saat **basınç sensörü** taşır; altimetre/barometre
 modülleri de aynı sensörü kullanır. Yani QW-2376 kılavuzundaki basınç modları
 artık çelişki değil, beklenen şey olabilir — SR927W×2 + CR1216 düzeni de
-sensörlü saate uyuyor. **Ama görsel yapay zekâ üretimi**, üstündeki yazılar
-uydurulmuş olabilir; bu yüzden envantere hiçbir şey yazılmadı.
+sensörlü saate uyuyor.
 
-Kullanıcının elindeki saate bakılarak çözülecek: kasa arkasındaki modül
-numarası kesin cevabı verir. Kadranda okunanlar (100 m, depthmeter, sensör,
-çift zaman/ST-W) da saatin kendisinden doğrulanmalı.
+Görsel yapay zekâ üretimi, ama **kullanıcı yazıları orijinal saatle uyuşacak
+şekilde düzelttirdiğini ve doğru olduklarını söyledi** — yani doğrulama
+kullanıcıdan geliyor. Bu yüzden kadrandan okunanlar envantere girdi: 100 m su
+geçirmezlik, mavi kadran/kasa/kayış, reçine kayış, çelik+reçine kasa ve
+`MAX · DEPTH · TIME · RECALL · ST-W` mod satırından çıkan işlevler
+(derinlik ölçer, azami derinlik hafızası, veri geri çağırma, kronometre).
+Renk kodu da destekliyor: Casio'da **"-2" mavi** demek (MRS-301-**2**E).
+
+**`movement` hâlâ boş** — kadran modülü söylemiyor. Kasa arkasındaki numara
+kesin cevabı verecek; QW-2376 bağlantısı hâlâ kanıtlanmış değil.
 
 ### İki dillilik
 

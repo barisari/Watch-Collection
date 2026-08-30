@@ -2333,8 +2333,8 @@
         "certification": null
       },
       "case": {
-        "material": null,
-        "bezelMaterial": null,
+        "material": "Stainless steel / Resin",
+        "bezelMaterial": "Resin",
         "diameter": null,
         "thickness": null,
         "lugToLug": null,
@@ -2343,22 +2343,27 @@
         "crystal": null,
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": 100,
         "bezel": null,
         "backlight": null,
-        "color": null
+        "color": "Blue"
       },
       "dial": {
-        "color": null,
+        "color": "Blue",
         "display": "ana-digi",
         "indices": null,
         "lume": null,
-        "complications": []
+        "complications": [
+          "Depth meter",
+          "Max depth memory",
+          "Data recall",
+          "Stopwatch"
+        ]
       },
       "strap": {
-        "type": null,
-        "material": null,
-        "color": null,
+        "type": "Band",
+        "material": "Resin",
+        "color": "Blue",
         "clasp": null,
         "sizeRange": null
       }
@@ -2374,8 +2379,9 @@
     "source": {
       "productUrl": null,
       "fetchedAt": null,
-      "imageColorsFrom": null,
-      "imageFrom": "Yapay zekâ ile üretildi — düşük çözünürlüklü orijinal görselden, kullanıcının kendi ürettiği kare. Görsel dosyası henüz depoya eklenmedi."
+      "imageColorsFrom": "Kullanıcının doğruladığı görsel",
+      "imageFrom": "Yapay zekâ ile üretildi — düşük çözünürlüklü orijinal görselden, kullanıcının kendi ürettiği kare. Görsel dosyası henüz depoya eklenmedi.",
+      "specsFrom": "Kadran yazıları — kullanıcının orijinaliyle uyuştuğunu doğruladığı görselden okundu"
     },
     "acquisition": {
       "date": null,
