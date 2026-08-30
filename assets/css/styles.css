@@ -257,12 +257,14 @@ textarea { min-height: 72px; resize: vertical; width: 100%; }
 .watch-card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
 .watch-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+/* Kare çerçeve: görseller tek tip 900×900 tuvale ortalandığı için her saat
+   aynı boşlukla, aynı ölçekte oturur. contain — kırpma yok. */
 .watch-photo {
-  aspect-ratio: 4 / 3; background: var(--surface-3);
+  aspect-ratio: 1; background: var(--surface-3);
   display: grid; place-items: center; position: relative;
   border-bottom: 1px solid var(--border);
 }
-.watch-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.watch-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .watch-photo .placeholder { font-size: 40px; opacity: .28; }
 
 .watch-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
