@@ -2320,11 +2320,11 @@
     "status": "owned",
     "specs": {
       "movement": {
-        "caliber": null,
-        "type": null,
-        "battery": null,
-        "batteryLife": null,
-        "accuracy": null,
+        "caliber": "Casio modül 2385",
+        "type": "quartz",
+        "battery": "SR927W ×2 + CR1216",
+        "batteryLife": "Yaklaşık 2 yıl",
+        "accuracy": "±15 saniye/ay",
         "radioControlled": null,
         "bluetooth": null,
         "powerReserve": null,
@@ -2381,7 +2381,7 @@
       "fetchedAt": null,
       "imageColorsFrom": "Kullanıcının doğruladığı görsel",
       "imageFrom": "Yapay zekâ ile üretildi — düşük çözünürlüklü orijinal görselden, kullanıcının kendi ürettiği kare. Görsel dosyası henüz depoya eklenmedi.",
-      "specsFrom": "Kadran yazıları — kullanıcının orijinaliyle uyuştuğunu doğruladığı görselden okundu"
+      "specsFrom": "Modül no + 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Kadran yazıları kullanıcının doğruladığı görselden."
     },
     "acquisition": {
       "date": null,
@@ -2394,7 +2394,7 @@
     },
     "photos": [],
     "tags": [],
-    "notes": null,
+    "notes": "Japonya üretimi. Kasa arkasında modül no 2385 ve 10 bar yazıyor.",
     "msrp": {}
   }
 ]

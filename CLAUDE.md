@@ -121,7 +121,7 @@ Yani TR'yi "boş olduğu için" değil, **okuyamadığımız için** kullanmıyo
 Kullanıcı tarayıcısında TR sayfasını görebilir; bir çelişki çıkarsa kaynak
 odur.
 
-### MRS-301 — modül bilmecesi (çözülmedi)
+### MRS-301 — modül çözüldü: **2385**
 
 `MRS-301` için hiçbir resmi sayfa yok (404). Kasa/kadran/kayış bilgileri
 kullanıcının doğruladığı görselden girildi (aşağıda), ama **modül hâlâ boş** —
@@ -151,8 +151,17 @@ geçirmezlik, mavi kadran/kasa/kayış, reçine kayış, çelik+reçine kasa ve
 (derinlik ölçer, azami derinlik hafızası, veri geri çağırma, kronometre).
 Renk kodu da destekliyor: Casio'da **"-2" mavi** demek (MRS-301-**2**E).
 
-**`movement` hâlâ boş** — kadran modülü söylemiyor. Kasa arkasındaki numara
-kesin cevabı verecek; QW-2376 bağlantısı hâlâ kanıtlanmış değil.
+**Çözüm (30 Ağustos):** kullanıcı kasa arkasını okudu — **modül 2385**, ayrıca
+`JAPAN` ve `10 BAR`. Servis listesinde QW-2385 satırı zaten vardı ve QW-2376
+ile **birebir aynı** değerleri taşıyor (ikisi de `S/M-747 · ±15 sn/ay ·
+SR927W ×2 + CR1216 · 2 yıl · Aug-2001`) — aynı servis kılavuzu ailesi, bu
+yüzden manuals.plus 2376 demiş. Doğrusu 2385. Modül değerleri envantere girdi.
+
+`10 BAR` = 100 m, kadrandan okuduğumuz su geçirmezliği saatin kendisi doğruladı.
+Aug-2001 **modülün** tarihi; saatin çıkış tarihi değil, `releaseDate` boş kaldı.
+
+**Ders:** servis listesi modülü modele bağlamıyor, ama elinde modül numarası
+varsa pil/hassasiyet/tarih oradan geliyor. Numara kasa arkasında.
 
 ### İki dillilik
 
