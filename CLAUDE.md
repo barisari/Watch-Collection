@@ -92,7 +92,7 @@ Envanterde artık **25 saat** var — MRS-301 eklendi.
 
 | Alan | Durum |
 |---|---|
-| Teknik özellikler | 24/25 — MRS-301 hariç; onda da yalnızca modül eksik |
+| Teknik özellikler | 25/25 — MRS-301 dahil (modül 2385 kasa arkasından) |
 | Kadran / kasa / kayış rengi | 25/25 — resmi ürün görselinden okundu |
 | Görsel | 24/25 — geçici, üreticinin görselleri, 900×900 WebP |
 | Çıkış tarihi | 17/25 |
@@ -124,8 +124,8 @@ odur.
 ### MRS-301 — modül çözüldü: **2385**
 
 `MRS-301` için hiçbir resmi sayfa yok (404). Kasa/kadran/kayış bilgileri
-kullanıcının doğruladığı görselden girildi (aşağıda), ama **modül hâlâ boş** —
-elimdeki üç kaynak birbirini tutmuyor:
+kullanıcının doğruladığı görselden girildi. Modül **2385** (kasa arkasından);
+aşağıdaki üç kaynak bunu bulana kadar birbirini tutmuyordu:
 
 - Modül servis listesinde `QW-2376` satırı var: `S/M-747 · ±15 sn/ay ·
   SR927W ×2 + CR1216 · 2 yıl · Aug-2001`. Ama **o PDF'te model adı hiç
