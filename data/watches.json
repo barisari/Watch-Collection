@@ -2433,9 +2433,10 @@
       "specsFrom": "Modül no + 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Kadran yazıları kullanıcının doğruladığı görselden."
     },
     "acquisition": {
-      "date": null,
+      "date": "2002-06-01",
       "condition": null,
-      "boxPapers": null
+      "boxPapers": null,
+      "dateApprox": true
     },
     "service": {
       "lastServiceDate": null,
@@ -2445,7 +2446,7 @@
       "photos/casio/casio_mrs-301-2evdf.webp"
     ],
     "tags": [],
-    "notes": "Japonya üretimi. Kasa arkasında modül no 2385 ve 10 bar yazıyor.",
+    "notes": "Babadan kalma. Satın alma tarihi tahmini: kullanıcının hatırladığı kadarıyla 2002 ya da 2003 yazının başı. Modül 2385 Ağustos 2001 çıkışlı olduğu için saat en erken o tarihli olabilir; tahmin bu tabanla uyumlu.",
     "msrp": {}
   }
 ]

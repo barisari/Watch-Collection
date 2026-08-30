@@ -253,7 +253,13 @@ function acquisitionCard(watch) {
     // "(çıkışta)" yazıyordu ama elimizdeki değerler üreticinin/yetkili
     // satıcının GÜNCEL liste fiyatları — çıkış anındaki fiyat değil.
     ['Liste fiyatı', msrpRow(watch)],
-    ['Satın alma tarihi', a.date ? fmtDate(a.date) : null],
+    // Miras/eski saatlerde tarih tahmin olabiliyor. Kesinmiş gibi göstermek
+    // yanlış olurdu; dateApprox işaretliyse ay/yıl düzeyinde ve "civarı" diye.
+    ['Satın alma tarihi', a.date
+      ? (a.dateApprox
+          ? `${fmtDate(a.date, { year: 'numeric', month: 'long' })} civarı (tahmini)`
+          : fmtDate(a.date))
+      : null],
     ['Durum', CONDITION_TR[a.condition] || a.condition],
     ['Kutu & belgeler', a.boxPapers == null ? null : (a.boxPapers ? 'Var' : 'Yok')],
     ['Koleksiyon durumu', STATUS_TR[watch.status ?? 'owned'] || watch.status],
