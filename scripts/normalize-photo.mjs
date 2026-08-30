@@ -7,17 +7,28 @@
  * TEK BAĞIMLILIK: sharp. Site onu KULLANMIYOR — bu yalnızca fotoğraf
  * hazırlarken elle çalıştırılan bir araç. Gerekirse: npm i sharp
  *
- * NEDEN KÜÇÜLTÜP MASKE ÇIKARIYORUZ:
- * Tam çözünürlükte fonu renkle ayırmak işe yaramıyor — fırçalanmış çelikte
- * fona uzaklığı 1 olan, yani fonla birebir aynı renkte pikseller var. Hangi
- * eşiği koyarsan koy, taşma-doldurma o piksellerden içeri sızıp kasayı deliyor.
+ * ── NASIL ÇALIŞIYOR ────────────────────────────────────────────────────────
+ * Fonu tam çözünürlükte yalnızca renge bakarak silmek işe yaramıyor:
+ * fırçalanmış çelikte fona uzaklığı 1 olan, yani fonla birebir aynı renkte
+ * pikseller var. Taşma-doldurma oradan içeri sızıp kasayı deliyor.
  *
- * Ama çeliğin YEREL ORTALAMASI fondan açıkça farklı (~34 uzaklık). Görüntüyü
- * 1/4'e küçültünce tek piksellik çakışmalar ortalamada kayboluyor ve sızıntı
- * kanalları kapanıyor. Maskeyi orada çıkarıp geri büyütüyoruz.
+ * Küçültülmüş görüntüde maske çıkarmak sızıntıyı durduruyor ama bu sefer kenar
+ * ±4 piksel kabalaşıyor: maskenin siluetin dışına taştığı yerde fon kalıyor
+ * (beyaz hare), içine düştüğü yerde saat kesiliyor.
  *
- * Eşikler ortam değişkeniyle ayarlanabilir: SCALE, STEP, CAP, CUT, TOL.
- * DUMP=1 küçük maskeyi mask-small.png olarak yazar (ayar yaparken faydalı).
+ * Bu yüzden kaba maske SINIR olarak değil, SIZINTI BARİYERİ olarak kullanılıyor:
+ *   1. 1/4 ölçekte kaba fon maskesi çıkar (silueti güvenle bulur).
+ *   2. Onu büyütüp birkaç piksel şişir → doldurmanın girmesine izin verilen alan.
+ *      Şişme payı halenin yenmesine yetecek kadar, muhafazanın içine ulaşmaya
+ *      yetmeyecek kadar küçük.
+ *   3. Asıl doldurmayı TAM ÇÖZÜNÜRLÜKTE, bu alanla sınırlı yap → kenar piksel
+ *      hassasiyetinde, sızıntı yok.
+ *
+ * Doldurma sabit bir renge değil KOMŞUDAN KOMŞUYA adım farkına bakıyor; fon düz
+ * değil, ortaya doğru koyulaşan bir degrade (köşeler ~211, orta ~199).
+ *
+ * Eşikler ortam değişkeniyle ayarlanabilir: SCALE, STEP, CAP, GROW, FEATHER.
+ * DUMP=1 kaba maskeyi mask-small.png olarak yazar.
  */
 import sharp from 'sharp';
 
@@ -26,79 +37,127 @@ if (!SRC || !OUT) {
   console.error('Kullanım: node scripts/normalize-photo.mjs <girdi> <çıktı.webp>');
   process.exit(1);
 }
-const SCALE = Number(process.env.SCALE || 4);
-const TOL = Number(process.env.TOL || 22);
-const MIN_LIGHT = 150;
-const BOX = 770, CANVAS = 900;
+
+const SCALE = Number(process.env.SCALE || 4);      // kaba maske ölçeği
+const STEP = Number(process.env.STEP || 9);        // komşular arası izin verilen fark
+const CAP = Number(process.env.CAP || 70);         // fon renginden toplam kayma sınırı
+const GROW = Number(process.env.GROW || 6);        // bariyerin şişme payı (tam çöz. piksel)
+const FEATHER = Number(process.env.FEATHER || 0.6);
+const MIN_LIGHT = 150;                             // bundan koyu piksel fon sayılmaz
+const BOX = 770, CANVAS = 900;                     // diğer görsellerin ölçüsü
 
 const meta = await sharp(SRC).metadata();
 const W = meta.width, H = meta.height;
-const sw = Math.round(W / SCALE), sh = Math.round(H / SCALE);
 
-// --- 1. Küçük ölçekte fon maskesi ---
-const { data: s, info: si } = await sharp(SRC)
-  .resize(sw, sh, { kernel: 'lanczos3' }).raw().toBuffer({ resolveWithObject: true });
-const C = si.channels;
-
-let r0 = 0, g0 = 0, b0 = 0;
-for (const [x, y] of [[0, 0], [sw - 1, 0], [0, sh - 1], [sw - 1, sh - 1]]) {
-  const i = (y * sw + x) * C;
-  r0 += s[i]; g0 += s[i + 1]; b0 += s[i + 2];
-}
-r0 /= 4; g0 /= 4; b0 /= 4;
-
-/* Fon düz değil: köşeler ~211, ortaya doğru ~199'a iniyor. Sabit toleranslı
- * dolgu bu degradeyi geçemiyor. Onun yerine KOMŞUDAN KOMŞUYA adım farkına
- * bakıyoruz — degrade yumuşak olduğu için adım küçük, saatin kenarında ise
- * sert bir sıçrama var ve dolgu orada duruyor. CAP toplam kaymayı sınırlar. */
-const STEP = Number(process.env.STEP || 9);
-const CAP = Number(process.env.CAP || 70);
-const px = (p) => { const i = p * C; return [s[i], s[i + 1], s[i + 2]]; };
-
-const mask = Buffer.alloc(sw * sh, 255);               // 255 = saati tut
-const stack = [];
-for (let x = 0; x < sw; x++) { stack.push([x, null]); stack.push([(sh - 1) * sw + x, null]); }
-for (let y = 0; y < sh; y++) { stack.push([y * sw, null]); stack.push([y * sw + sw - 1, null]); }
-
-let filled = 0;
-while (stack.length) {
-  const [p, from] = stack.pop();
-  if (mask[p] === 0) continue;
-  const [r, g, b] = px(p);
-  if ((r + g + b) / 3 < MIN_LIGHT) continue;
-  if (Math.hypot(r - r0, g - g0, b - b0) > CAP) continue;
-  if (from !== null) {
-    const [pr, pg, pb] = px(from);
-    if (Math.hypot(r - pr, g - pg, b - pb) > STEP) continue;
+/** Kenardan başlayan, komşu farkına bakan taşma-doldurma.
+ *  allowed verilirse dolgu yalnızca o piksellerden geçebilir. */
+function floodBackground(buf, w, h, ch, allowed) {
+  const bgAt = (p) => { const i = p * ch; return [buf[i], buf[i + 1], buf[i + 2]]; };
+  let r0 = 0, g0 = 0, b0 = 0;
+  for (const [x, y] of [[0, 0], [w - 1, 0], [0, h - 1], [w - 1, h - 1]]) {
+    const [r, g, b] = bgAt(y * w + x); r0 += r; g0 += g; b0 += b;
   }
-  mask[p] = 0; filled++;
-  const x = p % sw, y = (p - x) / sw;
-  if (x > 0) stack.push([p - 1, p]);
-  if (x < sw - 1) stack.push([p + 1, p]);
-  if (y > 0) stack.push([p - sw, p]);
-  if (y < sh - 1) stack.push([p + sw, p]);
-}
-console.log(`maske: %${((filled / (sw * sh)) * 100).toFixed(1)} fon (${sw}×${sh}, fon rgb ${r0 | 0},${g0 | 0},${b0 | 0})`);
+  r0 /= 4; g0 /= 4; b0 /= 4;
 
-// --- 2. Maskeyi tam çözünürlüğe büyüt, kenarı yumuşat ---
-// Hafif bulanıklık + eşik: büyütmeden gelen basamakları siler, kenarı 1-2 px
-// yumuşak bırakır (koyu zeminde sert kesim testere gibi görünüyor).
-// DİKKAT: sharp tek kanallı ham girdiyi yeniden boyutlarken sRGB'ye çevirip
-// 3 kanal döndürüyor. toColourspace('b-w') olmadan tampon kayıyor ve alfa
-// 0/85/170/255 gibi dört kademeye düşüyor. channels'ı ayrıca doğruluyoruz.
-const { data: alpha, info: ai } = await sharp(mask, { raw: { width: sw, height: sh, channels: 1 } })
-  .resize(W, H, { kernel: 'lanczos3' })
-  .blur(1.5)
-  .linear(4, Number(process.env.CUT || -436))
+  const out = new Uint8Array(w * h);               // 1 = fon
+  const stack = [];
+  for (let x = 0; x < w; x++) { stack.push(x, -1, (h - 1) * w + x, -1); }
+  for (let y = 0; y < h; y++) { stack.push(y * w, -1, y * w + w - 1, -1); }
+
+  while (stack.length) {
+    const from = stack.pop(), p = stack.pop();
+    if (out[p]) continue;
+    if (allowed && !allowed[p]) continue;
+    const [r, g, b] = bgAt(p);
+    if ((r + g + b) / 3 < MIN_LIGHT) continue;
+    if (Math.hypot(r - r0, g - g0, b - b0) > CAP) continue;
+    if (from >= 0) {
+      const [pr, pg, pb] = bgAt(from);
+      if (Math.hypot(r - pr, g - pg, b - pb) > STEP) continue;
+    }
+    out[p] = 1;
+    const x = p % w, y = (p - x) / w;
+    if (x > 0) stack.push(p - 1, p);
+    if (x < w - 1) stack.push(p + 1, p);
+    if (y > 0) stack.push(p - w, p);
+    if (y < h - 1) stack.push(p + w, p);
+  }
+  return { mask: out, bg: [r0 | 0, g0 | 0, b0 | 0] };
+}
+
+/** Ayrılabilir maksimum süzgeç — ikili maskeyi r piksel şişirir. */
+function dilate(src, w, h, r) {
+  const tmp = new Uint8Array(w * h), dst = new Uint8Array(w * h);
+  for (let y = 0; y < h; y++) {
+    const row = y * w;
+    for (let x = 0; x < w; x++) {
+      let v = 0;
+      for (let d = -r; d <= r && !v; d++) {
+        const xx = x + d;
+        if (xx >= 0 && xx < w && src[row + xx]) v = 1;
+      }
+      tmp[row + x] = v;
+    }
+  }
+  for (let x = 0; x < w; x++) {
+    for (let y = 0; y < h; y++) {
+      let v = 0;
+      for (let d = -r; d <= r && !v; d++) {
+        const yy = y + d;
+        if (yy >= 0 && yy < h && tmp[yy * w + x]) v = 1;
+      }
+      dst[y * w + x] = v;
+    }
+  }
+  return dst;
+}
+
+// ── 1. Kaba maske (küçük ölçek) ────────────────────────────────────────────
+const sw = Math.round(W / SCALE), sh = Math.round(H / SCALE);
+const { data: small, info: si } = await sharp(SRC)
+  .resize(sw, sh, { kernel: 'lanczos3' }).raw().toBuffer({ resolveWithObject: true });
+const coarse = floodBackground(small, sw, sh, si.channels, null);
+console.log(`kaba maske: %${((coarse.mask.reduce((a, v) => a + v, 0) / (sw * sh)) * 100).toFixed(1)} fon ` +
+  `(${sw}×${sh}, fon rgb ${coarse.bg.join(',')})`);
+
+// ── 2. Bariyer: kaba fonu tam çözünürlüğe taşı ve GROW kadar şişir ─────────
+const barrier = new Uint8Array(W * H);
+for (let y = 0; y < H; y++) {
+  const sy = Math.min(sh - 1, (y / SCALE) | 0);
+  for (let x = 0; x < W; x++) {
+    const sx = Math.min(sw - 1, (x / SCALE) | 0);
+    barrier[y * W + x] = coarse.mask[sy * sw + sx];
+  }
+}
+const allowed = dilate(barrier, W, H, GROW);
+
+// ── 3. Asıl doldurma: tam çözünürlük, bariyerle sınırlı ────────────────────
+const { data: full, info: fi } = await sharp(SRC).raw().toBuffer({ resolveWithObject: true });
+const fine = floodBackground(full, W, H, fi.channels, allowed);
+const cut = fine.mask.reduce((a, v) => a + v, 0);
+console.log(`ince maske: %${((cut / (W * H)) * 100).toFixed(1)} fon silindi`);
+
+// ── 4. Alfayı uygula ───────────────────────────────────────────────────────
+const alphaRaw = Buffer.alloc(W * H);
+for (let p = 0; p < W * H; p++) alphaRaw[p] = fine.mask[p] ? 0 : 255;
+
+// DİKKAT: sharp tek kanallı ham girdiyi işlerken sRGB'ye çevirip 3 kanal
+// döndürebiliyor; toColourspace('b-w') olmazsa tampon kayıyor ve alfa
+// 0/85/170/255 gibi kademelere düşüyor.
+const { data: alpha, info: ai } = await sharp(alphaRaw, { raw: { width: W, height: H, channels: 1 } })
+  .blur(FEATHER)                       // kenarı 1 px yumuşat, testere izi kalmasın
   .toColourspace('b-w')
   .raw().toBuffer({ resolveWithObject: true });
 if (ai.channels !== 1) throw new Error(`maske ${ai.channels} kanal döndü, 1 bekleniyordu`);
 
-// --- 3. Uygula, kırp, ölçekle, ortala ---
-const cut = await sharp(SRC).joinChannel(alpha, { raw: { width: W, height: H, channels: 1 } })
+const rgba = await sharp(SRC)
+  .joinChannel(alpha, { raw: { width: W, height: H, channels: 1 } })
   .png().toBuffer();
 
-const scaled = await sharp(cut).trim().resize(BOX, BOX, { fit: 'inside' }).png().toBuffer();
+// ── 5. Kırp, ölçekle, ortala ───────────────────────────────────────────────
+// Diğer görsellerin hepsinde içerik tam 770 px. fit:'contain' KÜÇÜK görseli
+// hedefe büyütür — o yüzden ölçekleme değil, kenar payı ekliyoruz.
+const scaled = await sharp(rgba).trim().resize(BOX, BOX, { fit: 'inside' }).png().toBuffer();
 const sm = await sharp(scaled).metadata();
 const padX = CANVAS - sm.width, padY = CANVAS - sm.height;
 
@@ -108,10 +167,11 @@ await sharp(scaled).extend({
   background: { r: 0, g: 0, b: 0, alpha: 0 },
 }).webp({ quality: 90 }).toFile(OUT);
 
-console.log(`yazıldı: ${sm.width}×${sm.height} içerik → ${CANVAS}×${CANVAS} (oran ${(Math.max(sm.width, sm.height) / CANVAS).toFixed(3)})`);
+console.log(`yazıldı: ${OUT} → ${sm.width}×${sm.height} içerik, ${CANVAS}×${CANVAS} tuval ` +
+  `(oran ${(Math.max(sm.width, sm.height) / CANVAS).toFixed(3)})`);
 
 if (process.env.DUMP) {
-  await sharp(mask, { raw: { width: sw, height: sh, channels: 1 } })
-    .png().toFile('mask-small.png');
-  console.log('maske dökümü: mask-small.png');
+  await sharp(Buffer.from(coarse.mask.map((v) => (v ? 0 : 255))),
+    { raw: { width: sw, height: sh, channels: 1 } }).png().toFile('mask-small.png');
+  console.log('kaba maske dökümü: mask-small.png');
 }
