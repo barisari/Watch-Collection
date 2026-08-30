@@ -94,6 +94,28 @@ MRS-301 için dolaşan "1997" de aynı şekilde elendi (modül 2001 çıkışlı
 ABD MSRP'si değil. Fiyatları bir gün tek para birimine çevirirken bu fark
 hatırlanmalı — aksi hâlde elmayla armut toplanır.
 
+**Ülke çifti oranları — hangisi sabit, hangisi değil (ölçüldü):**
+Soru şuydu: bir saatin A/B ülke fiyat oranı, başka saatler için de geçerli mi?
+Elimizdeki fiyatlarla ölçüldü (oranların saatten saate değişkenlik katsayısı):
+
+| Çift | n | Oran | Değişkenlik | Türetme |
+|---|---|---|---|---|
+| **USD / EUR** | 5 | **1,10** | **%0** | ✅ güvenle |
+| TRY / THB | 3 | 2,00 | %4 | ~%10 hatayla |
+| EUR / JPY | 5 | ~157 | %11 | ✗ |
+| USD / JPY | 6 | — | %13 | ✗ |
+| TRY / INR | 4 | 1,21 | %22 | ✗ |
+
+Yani Casio **Batı pazarlarını tek blok** fiyatlıyor (USD = 1,10 × EUR, beş
+saatte de tuttu), ama Japonya kendi pazarı ve TR/IN yerel vergi-gümrük
+rejimlerine göre ayrışıyor.
+
+**Pratikte işe yaramıyor:** USD/EUR'su eksik olan 17 saatin elinde yalnızca
+TRY/JPY/INR/THB var — yani tam da oranı oynak olan birimler. Sabit oran
+onlara ulaşamıyor. Bu saatlerin USD/EUR fiyatı **türetilemez, bulunmalı**
+(G-Shock'lar için shockbase 14 para birimi veriyor; diğerleri için ABD/AB
+perakendecileri).
+
 **shockbase okuma uyarısı:** özellik ızgarasında var/yok ayrımı CSS ile yapılıyor
 (`cellactive` / `cellinactive`). Düz metin çıkarımı hepsini "var" gösterir —
 ham HTML'den sınıf adına bakarak ayrıştır.
