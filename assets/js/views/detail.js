@@ -29,7 +29,7 @@ function releaseLabel(watch) {
  * Fiyat, saatin satıldığı pazarın parasıyla saklanır: Casio her ülkede ayrı
  * fiyat veriyor, hepsini tek kura çevirip saklamak kaynağı kaybetmek olurdu.
  * Ekranda en çok 3 tanesi gösteriliyor. */
-const MSRP_ORDER = ['EUR', 'USD', 'GBP', 'JPY', 'TRY', 'INR', 'THB'];
+const MSRP_ORDER = ['EUR', 'USD', 'GBP', 'TRY', 'JPY', 'INR', 'THB', 'MYR'];
 const msrpRank = (cur) => {
   const i = MSRP_ORDER.indexOf(cur);
   return i === -1 ? MSRP_ORDER.length : i;   // tanımadığımız birim sona gider
@@ -250,7 +250,9 @@ function acquisitionCard(watch) {
   const v = watch.valuation;
   const rows = [
     ['Piyasaya çıkış', releaseLabel(watch)?.replace(' çıkışlı', '')],
-    ['Liste fiyatı (çıkışta)', msrpRow(watch)],
+    // "(çıkışta)" yazıyordu ama elimizdeki değerler üreticinin/yetkili
+    // satıcının GÜNCEL liste fiyatları — çıkış anındaki fiyat değil.
+    ['Liste fiyatı', msrpRow(watch)],
     ['Satın alma tarihi', a.date ? fmtDate(a.date) : null],
     ['Durum', CONDITION_TR[a.condition] || a.condition],
     ['Kutu & belgeler', a.boxPapers == null ? null : (a.boxPapers ? 'Var' : 'Yok')],

@@ -559,7 +559,8 @@
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "releaseFrom": "casiofanmag.com (temel model, resmi değil)",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/europe/en-gb/timepiece/product/watch/C/CA/CA5/CA-53W-1/assets/CA-53W-1.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/europe/en-gb/timepiece/product/watch/C/CA/CA5/CA-53W-1/assets/CA-53W-1.png",
+      "msrpFrom": "ersasaat.com — Casio Türkiye yetkili satıcısı, indirim öncesi liste fiyatı (güncel, resmi Casio sayfası değil)"
     },
     "acquisition": {
       "date": "2026-01-19",
@@ -575,7 +576,10 @@
     ],
     "tags": [],
     "notes": "8 haneli hesap makinesi. Arka aydınlatması yok. Geri Dönüşüm serisinin saati: Marty McFly ilk filmde (1985) selefi CA-50’yi, ikinci ve üçüncü filmlerde bu CA-53W’yi takıyor. Model 1988’de CA-50’nin ardılı olarak çıktı — envanterdeki çıkış yılıyla örtüşüyor.",
-    "releaseDate": "1988"
+    "releaseDate": "1988",
+    "msrp": {
+      "TRY": 2619
+    }
   },
   {
     "id": "casio-dbc-611-1df",

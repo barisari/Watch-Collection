@@ -68,6 +68,18 @@ bile aynı saatin `J` sonekli Japonya sürümü olabilir ve o sayfa hem 発売�
 
 **Fiyat aramanın sırası:** `jp` → `in` → `th` → `my`. Dördü de sunucudan
 hazır geliyor (`my` = Malezya, MSRP veriyor).
+
+**Casio hiçbirinde satmıyorsa: ersasaat.com** — Casio'nun Türkiye yetkili
+satıcısı. Ürün sayfasındaki **üstü çizili** fiyat liste fiyatıdır (yanındaki
+indirimli rakam kampanya fiyatı, onu alma). CA-53W-1 böyle bulundu: dört
+Casio yerelinin hiçbirinde yok, Ersa'da 2.619 ₺.
+₺ değerleri enflasyona çok duyarlı ve **bugünkü** fiyat — kur işinde diğer
+para birimleriyle aynı kefeye koyma.
+
+**Perakendeci teknik verisi ikincildir:** Ersa CA-53W-1 için "0 Mt Su
+Geçirmezlik" ve "Organik Cam" yazıyor; Casio kendi sayfasında "Water
+Resistant" ve "Resin Glass" diyor. Üreticinin verisi esas, perakendecininki
+yalnızca fiyat için kullanılır.
 Bir model bir yerelde satılmıyorsa sayfa 404 verir; o zaman sıradakine geç.
 `intl`, `europe`, `sg`, `id`, `uk` fiyat **vermiyor**; `us` fiyatı JS ile yüklüyor.
 
