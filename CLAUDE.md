@@ -110,11 +110,22 @@ Yani Casio **Batı pazarlarını tek blok** fiyatlıyor (USD = 1,10 × EUR, beş
 saatte de tuttu), ama Japonya kendi pazarı ve TR/IN yerel vergi-gümrük
 rejimlerine göre ayrışıyor.
 
-**Pratikte işe yaramıyor:** USD/EUR'su eksik olan 17 saatin elinde yalnızca
-TRY/JPY/INR/THB var — yani tam da oranı oynak olan birimler. Sabit oran
-onlara ulaşamıyor. Bu saatlerin USD/EUR fiyatı **türetilemez, bulunmalı**
-(G-Shock'lar için shockbase 14 para birimi veriyor; diğerleri için ABD/AB
-perakendecileri).
+**TRY köprüsü denendi ve çöktü.** USD fiyatı bilinen G-Shock'ların Ersa'daki
+₺ liste fiyatı çekildi; ₺/USD oranı **51,6 · 85,4 · 85,6 · 88,2** çıktı (%71
+saçılma). Türkiye fiyatı doların doğrusal işlevi değil — pahalı modelde oran
+çöküyor. Yani TRY-only saatlere USD türetilemez.
+
+**Kullanıcının kararı: yalnızca EUR ↔ USD çevirisi yapılır.** THB→TRY oranı
+sabit olsa da gereksiz (₺ zaten Ersa'dan doğrudan geliyor); JPY→USD'nin %11
+hatası fazla.
+
+**JDM modellere hiç türetme yapılmaz.** Oceanus'lar ve PRW-35LD-5JF Japonya iç
+pazarına özel; başka ülkedeki fiyatları olsa bile alakasız olurdu. Referansları
+**yen** olarak kalır. (Kullanıcı bunları zaten Japonya'dan aldı.)
+
+**Türetilen değerler `msrpEstimated` alanında**, `msrp` yalnızca kaynaktan
+gelen gerçek liste fiyatlarını tutar. Ekranda ayrı satırda ve "~" ile
+gösteriliyor ("Tahmini karşılık"), üreticinin fiyatıyla karışmasın.
 
 **shockbase okuma uyarısı:** özellik ızgarasında var/yok ayrımı CSS ile yapılıyor
 (`cellactive` / `cellinactive`). Düz metin çıkarımı hepsini "var" gösterir —

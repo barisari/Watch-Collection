@@ -45,6 +45,18 @@ function msrpRow(watch) {
     .join(' · ');
 }
 
+/* Türetilmiş karşılık — ölçülmüş bir ülke-çifti oranıyla hesaplandı, üreticinin
+ * açıkladığı fiyat DEĞİL. Bu yüzden ayrı satırda ve "~" ile gösteriliyor;
+ * gerçek liste fiyatıyla aynı yere yazmak ikisini karıştırırdı. */
+function msrpEstimatedRow(watch) {
+  const m = watch.msrpEstimated;
+  if (!m || !Object.keys(m).length) return null;
+  return Object.entries(m)
+    .sort((a, b) => msrpRank(a[0]) - msrpRank(b[0]))
+    .map(([cur, amt]) => `~${fmtMoney(amt, cur)}`)
+    .join(' · ');
+}
+
 export function renderDetail(root, id, navigate) {
   const watch = getWatch(id);
   if (!watch) {
@@ -253,6 +265,7 @@ function acquisitionCard(watch) {
     // "(çıkışta)" yazıyordu ama elimizdeki değerler üreticinin/yetkili
     // satıcının GÜNCEL liste fiyatları — çıkış anındaki fiyat değil.
     ['Liste fiyatı', msrpRow(watch)],
+    ['Tahmini karşılık', msrpEstimatedRow(watch)],
     // Miras/eski saatlerde tarih tahmin olabiliyor. Kesinmiş gibi göstermek
     // yanlış olurdu; dateApprox işaretliyse ay/yıl düzeyinde ve "civarı" diye.
     ['Satın alma tarihi', a.date

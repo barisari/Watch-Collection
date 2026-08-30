@@ -852,7 +852,8 @@
       "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/ca/en/timepiece/product/watch/M/md/mdv/mdv-106-1av/assets/MDV-106-1AV.png",
       "releaseFrom": "casiofanmag.com (temel model, resmi değil)",
       "msrpFrom": "WatchCharts — Casio ABD MSRP olarak veriyor (resmi sayfadan doğrulanamadı)",
-      "specsFrom": "casio.com/uk — MDV-107-1A1V (logosuz birebir aynı model); MDV-106’nın kendi sayfası okunabilir hiçbir yerelde yok"
+      "specsFrom": "casio.com/uk — MDV-107-1A1V (logosuz birebir aynı model); MDV-106’nın kendi sayfası okunabilir hiçbir yerelde yok",
+      "msrpEstimatedFrom": "EUR ↔ USD oranıyla türetildi (USD = 1.103 × EUR). Oran, ikisi de bilinen 5 saatte 1,093–1,107 arasında; birini dışarıda bırakma sınamasında hata ~%1. Gerçek liste fiyatı değil, hesaplanmış karşılıktır."
     },
     "acquisition": {
       "date": "2026-02-04",
@@ -871,6 +872,9 @@
     "releaseDate": "2011",
     "msrp": {
       "USD": 84.95
+    },
+    "msrpEstimated": {
+      "EUR": 77
     }
   },
   {
@@ -1733,7 +1737,8 @@
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "releaseFrom": "shockbase.org",
       "msrpFrom": "shockbase.org",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/G/GB/GBX/gbx-100-8/assets/GBX-100-8.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/G/GB/GBX/gbx-100-8/assets/GBX-100-8.png",
+      "msrpEstimatedFrom": "EUR ↔ USD oranıyla türetildi (USD = 1.103 × EUR). Oran, ikisi de bilinen 5 saatte 1,093–1,107 arasında; birini dışarıda bırakma sınamasında hata ~%1. Gerçek liste fiyatı değil, hesaplanmış karşılıktır."
     },
     "acquisition": {
       "date": "2026-03-10",
@@ -1753,6 +1758,9 @@
     "msrp": {
       "USD": 160,
       "JPY": 27500
+    },
+    "msrpEstimated": {
+      "EUR": 145
     }
   },
   {
