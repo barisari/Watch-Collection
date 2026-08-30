@@ -64,15 +64,15 @@
       "tr": "Değiştirilebilir metal ve kumaş kayışlarıyla, tek renk gümüş bir tam metal kasa."
     },
     "story": {
-      "en": "This two-band set pairs a full-metal watch case with interchangeable metal and cloth bands, all in a minimalist, monochromatic silver colour scheme — mix and match with the grey cloth band for different looks to suit different occasions.",
-      "tr": "Bu iki kayışlı set, tam metal kasayı değiştirilebilir metal ve kumaş kayışlarla bir araya getiriyor; hepsi sade, tek renk gümüş bir düzende. Gri kumaş kayışla değiştirerek farklı ortamlara farklı görünümler kurabilirsin."
+      "en": "Up your game with a versatile watch set that takes you wherever you wish to go — a full-metal watch case with interchangeable metal and cloth bands, all in a minimalist, monochromatic silver color scheme. The solid metal band features bold links with a hairline finish to stylishly pair with the hairline-finished dial. Mix and match with the gray cloth band for different looks to suit different occasions. The high-brightness LED backlight, stopwatch, alarm and other handy functions make life just that much easier. Packaged in a special box, this timepiece set also makes an unforgettable gift.",
+      "tr": "Seni istediğin her yere götüren çok yönlü bir set: tam metal kasa, değiştirilebilir metal ve kumaş kayışlar, hepsi sade ve tek renk gümüş bir düzende. Masif metal kayışın saç teli dokulu iri baklaları, aynı dokudaki kadranla uyum kuruyor. Gri kumaş kayışla değiştirerek farklı ortamlara farklı görünümler hazırlayabilirsin. Yüksek parlaklıklı LED aydınlatma, kronometre, alarm ve diğer işlevler günlük kullanımı kolaylaştırıyor. Özel kutusuyla birlikte unutulmaz bir hediye de oluyor."
     },
     "source": {
       "productUrl": "https://www.casio.com/europe/watches/casio/vintage/product.A1000DN-7/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
-      "msrpFrom": "casio.com/in — MRP (vergi dahil)",
+      "msrpFrom": "casio.com/my — MSRP",
       "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/in/en/timepiece/product/watch/A/A1/A10/a1000dn-7/assets/A1000DN-7.png"
     },
     "acquisition": {
@@ -90,7 +90,8 @@
     "tags": [],
     "notes": "Sette ayrıca gri kumaş kayış geliyor.",
     "msrp": {
-      "INR": 13495
+      "INR": 13495,
+      "MYR": 839
     }
   },
   {
@@ -457,7 +458,8 @@
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "msrpFrom": "casio.com/in — MRP (vergi dahil)",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/A/AE/AE1/ae-1200whl-5av/assets/AE-1200WHL-5AV.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/A/AE/AE1/ae-1200whl-5av/assets/AE-1200WHL-5AV.png",
+      "releaseFrom": "g-central.com · gizmochina.com · notebookcheck.net (Ekim 2024 duyuru, resmi değil)"
     },
     "acquisition": {
       "date": "2025-12-06",
@@ -472,10 +474,11 @@
       "photos/casio/casio_ae-1200whl-5avdf.webp"
     ],
     "tags": [],
-    "notes": "31 zaman dilimi / 48 şehir dünya saati, 4 şehir aynı anda izlenebiliyor. AE-1200WH serisi ilk kez 2012’de çıktı; bu deri kayışlı varyantın kendi çıkış tarihi ayrıca doğrulanmalı.",
+    "notes": null,
     "msrp": {
       "INR": 4495
-    }
+    },
+    "releaseDate": "2024-10"
   },
   {
     "id": "casio-ca-53w-1z",
@@ -835,7 +838,9 @@
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "movementFrom": "Casio modül listesi (servis dokümanı), QW-2784 — Şubat 2003",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/ca/en/timepiece/product/watch/M/md/mdv/mdv-106-1av/assets/MDV-106-1AV.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/ca/en/timepiece/product/watch/M/md/mdv/mdv-106-1av/assets/MDV-106-1AV.png",
+      "releaseFrom": "casiofanmag.com (temel model, resmi değil)",
+      "msrpFrom": "WatchCharts — Casio ABD MSRP olarak veriyor (resmi sayfadan doğrulanamadı)"
     },
     "acquisition": {
       "date": "2026-02-04",
@@ -850,7 +855,11 @@
       "photos/casio/casio_mdv-106-1avdf.webp"
     ],
     "tags": [],
-    "notes": "Casio bu modeli intl sitesinde yayımlamıyor (Amerika pazarı — \"Duro\"). Kasa ölçüleri, cam ve su geçirmezlik değeri henüz doldurulmadı; mekanizma bilgisi Casio’nun modül servis listesinden alındı."
+    "notes": "Casio bu modeli intl sitesinde yayımlamıyor (Amerika pazarı — \"Duro\"). Kasa ölçüleri, cam ve su geçirmezlik değeri henüz doldurulmadı; mekanizma bilgisi Casio’nun modül servis listesinden alındı.",
+    "releaseDate": "2011",
+    "msrp": {
+      "USD": 84.95
+    }
   },
   {
     "id": "casio-mtp-b185d-2a2vdf",
@@ -923,7 +932,8 @@
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "msrpFrom": "casio.com/th — MSRP",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/M/MT/MTP/mtp-b185d-2a2v/assets/MTP-B185D-2A2V.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/M/MT/MTP/mtp-b185d-2a2v/assets/MTP-B185D-2A2V.png",
+      "releaseFrom": "MTP-B185 serisi lansmanı, Mayıs 2025 (resmi değil) — bu varyantın kendi tarihi doğrulanamadı"
     },
     "acquisition": {
       "date": "2026-04-02",
@@ -941,7 +951,8 @@
     "notes": null,
     "msrp": {
       "THB": 3300
-    }
+    },
+    "releaseDate": "2025"
   },
   {
     "id": "casio-mtp-b195l-1avdf",
@@ -1014,7 +1025,8 @@
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "msrpFrom": "casio.com/in — MRP (vergi dahil)",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/M/MT/MTP/mtp-b195l-1av/assets/MTP-B195L-1AV.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/M/MT/MTP/mtp-b195l-1av/assets/MTP-B195L-1AV.png",
+      "releaseFrom": "MTP-B195 serisi tanıtımı, Kasım 2025 (resmi değil) — bu varyantın kendi tarihi doğrulanamadı"
     },
     "acquisition": {
       "date": "2026-04-08",
@@ -1032,7 +1044,8 @@
     "notes": null,
     "msrp": {
       "INR": 6495
-    }
+    },
+    "releaseDate": "2025"
   },
   {
     "id": "edifice-efb-730d-7avudf",
