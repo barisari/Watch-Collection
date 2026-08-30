@@ -1121,9 +1121,9 @@
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
-      "msrpFrom": "casio.com/in — MRP (vergi dahil)",
+      "msrpFrom": "casio.com/in — MRP (vergi dahil) · casio.com/jp — メーカー希望小売価格 ¥26.400 (vergi dahil)",
       "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/E/EF/EFB/efb-730d-7av/assets/EFB-730D-7AV.png",
-      "releaseFrom": "bulunamadı — aramada çıkan Haziran/Temmuz 2026 tarihi alım tarihinden sonra, o yüzden yazılmadı (yeni renk varyantlarının lansmanı)"
+      "releaseFrom": "casio.com/jp — EFB-730DJ-7AJF, 発売日 2024年9月 (Japonya sürümü)"
     },
     "acquisition": {
       "date": "2026-03-09",
@@ -1140,8 +1140,10 @@
     "tags": [],
     "notes": null,
     "msrp": {
-      "INR": 11995
-    }
+      "INR": 11995,
+      "JPY": 26400
+    },
+    "releaseDate": "2024-09"
   },
   {
     "id": "edifice-efk-110d-1a",

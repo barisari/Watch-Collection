@@ -60,9 +60,23 @@ oradaki A her zaman renk kodunun parçasıdır. 6 sayfa çekilerek doğrulandı.
 | casiofanmag.com | `casiofanmag.com/retro/<aile>/` · `/standard/<aile>/` | Serinin ilk çıkış yılı (resmi değil) | — |
 | Modül servis listesi | PDF, depoda yok — `casio-watch.fastcr.cz` | Modülün pil/hassasiyet/tarihi | **model adı hiç geçmiyor** — modülü saate bağlamaz |
 
-**Fiyat aramanın sırası:** `jp` → `in` → `th`. Üçü de sunucudan hazır geliyor.
+**J SONEKLİ JAPONYA SÜRÜMÜNÜ ARA.** Uluslararası model `jp` yerelinde yoksa
+bile aynı saatin `J` sonekli Japonya sürümü olabilir ve o sayfa hem 発売日 hem
+希望小売価格 verir. EFB-730D-7AV'nin tarihi böyle bulundu: uluslararası kodla
+404, ama **EFB-730DJ-7AJF** → `2024年9月` + ¥26.400. Aynı saat olduğunu kasa
+ölçüsünden doğrula (47×40×11 mm ikisinde de aynıydı).
+
+**Fiyat aramanın sırası:** `jp` → `in` → `th` → `my`. Dördü de sunucudan
+hazır geliyor (`my` = Malezya, MSRP veriyor).
 Bir model bir yerelde satılmıyorsa sayfa 404 verir; o zaman sıradakine geç.
-`intl`, `europe`, `sg`, `id` fiyat **vermiyor**; `us` fiyatı JS ile yüklüyor.
+`intl`, `europe`, `sg`, `id`, `uk` fiyat **vermiyor**; `us` fiyatı JS ile yüklüyor.
+
+**Yapay zekâ arama özetlerine güvenme.** Aynı araç EFB-730D-7AV için önce
+"Haziran/Temmuz 2026", sonra "geç 2024/erken 2025" dedi; doğrusu Casio'nun
+kendi sayfasındaki **Eylül 2024**. Üstelik ilk cevabı "güvenilir kaynaklardan
+doğrulanmıştır" diye sunmuştu. **Her tarihi satın alma tarihine karşı sına** —
+2026 Haziran çıkışı, Mart 2026 alımıyla çelişiyordu ve elenmesi bu sayede oldu.
+MRS-301 için dolaşan "1997" de aynı şekilde elendi (modül 2001 çıkışlı).
 
 **Vergi uyarısı:** Hindistan MRP'si ve Japonya 希望小売価格'i vergi **dahil**,
 ABD MSRP'si değil. Fiyatları bir gün tek para birimine çevirirken bu fark
