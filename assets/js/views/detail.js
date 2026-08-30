@@ -167,15 +167,54 @@ function sourceNote(watch) {
     watch.source.fetchedAt ? ` · ${fmtDate(watch.source.fetchedAt)}` : '');
 }
 
+/* Fotoğrafa tıklayınca büyük hâli. Görseller 900×900 saklanıyor ama panelde
+ * ~400 px görünüyor; büyütme onları tam boyutunda gösteriyor. */
+function openLightbox(src, alt) {
+  const previous = document.activeElement;
+  const close = () => {
+    box.remove();
+    document.removeEventListener('keydown', onKey);
+    if (previous && previous.focus) previous.focus();
+  };
+  const onKey = (e) => { if (e.key === 'Escape') close(); };
+
+  const button = el('button.lightbox-close', {
+    type: 'button', 'aria-label': 'Kapat', onclick: close,
+  }, '×');
+
+  const box = el('div.lightbox', {
+    role: 'dialog', 'aria-modal': 'true', 'aria-label': alt,
+    // Boşluğa tıklayınca kapansın; görselin kendisine tıklamak kapatmasın.
+    onclick: (e) => { if (e.target === box) close(); },
+  }, el('img', { src, alt }), button);
+
+  document.addEventListener('keydown', onKey);
+  document.body.append(box);
+  button.focus();
+}
+
+function zoomable(src, alt, extra = {}) {
+  return el('img.zoomable', {
+    src, alt, role: 'button', tabindex: '0',
+    title: 'Büyütmek için tıkla',
+    onclick: () => openLightbox(src, alt),
+    onkeydown: (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(src, alt); }
+    },
+    ...extra,
+  });
+}
+
 function photoPanel(watch) {
   const photos = watch.photos || [];
   return el('div.card',
     el('div.watch-photo', { style: { borderRadius: '8px', border: '1px solid var(--border)', marginBottom: photos.length > 1 ? '12px' : '0' } },
       photos[0]
-        ? el('img', { src: photos[0], alt: watchLabel(watch) })
+        ? zoomable(photos[0], watchLabel(watch))
         : el('span.placeholder', { 'aria-hidden': 'true' }, '⌚')),
     photos.length > 1 && el('div.gallery',
-      photos.slice(1).map((src, i) => el('img', { src, alt: `${watchLabel(watch)} — fotoğraf ${i + 2}`, loading: 'lazy' }))),
+      photos.slice(1).map((src, i) =>
+        zoomable(src, `${watchLabel(watch)} — fotoğraf ${i + 2}`, { loading: 'lazy' }))),
     !photos.length && el('p.muted', { style: { margin: '10px 0 0', textAlign: 'center' } },
       'Fotoğraf eklemek için dosyayı photos/ klasörüne koy ve yolunu saat kaydına yaz.'),
   );

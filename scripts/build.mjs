@@ -18,6 +18,12 @@ const isPrivateBuild = process.argv.includes('--private');
 
 const COPY = ['index.html', 'assets', 'photos', 'data', 'site.config.json'];
 
+/* Yayına GİTMEYECEK klasörler. photos/originals işlenmemiş asılları tutuyor
+ * (saat başına megabaytlar); sitede gösterilen 900×900 WebP'ler photos/casio
+ * altında. Asılları depoda saklıyoruz ama Pages'e taşımanın anlamı yok. */
+const SKIP = ['photos/originals'];
+const skipped = (src) => SKIP.some((s) => src === s || src.startsWith(`${s}/`));
+
 function stripPath(obj, path) {
   const keys = path.split('.');
   let node = obj;
@@ -37,7 +43,7 @@ async function main() {
 
   for (const entry of COPY) {
     try {
-      await cp(entry, join(OUT, entry), { recursive: true });
+      await cp(entry, join(OUT, entry), { recursive: true, filter: (src) => !skipped(src) });
     } catch (err) {
       if (err.code !== 'ENOENT') throw err;
     }

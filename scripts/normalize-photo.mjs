@@ -27,8 +27,12 @@
  * Doldurma sabit bir renge değil KOMŞUDAN KOMŞUYA adım farkına bakıyor; fon düz
  * değil, ortaya doğru koyulaşan bir degrade (köşeler ~211, orta ~199).
  *
+ * ELLE KESİLMİŞ GİRDİ: dosya zaten saydam zeminliyse (alfası var ve %5'ten
+ * fazlası saydam) fon silme adımı tamamen atlanır, yalnızca çerçeveleme yapılır.
+ * Photoshop'ta yapılmış kesim her zaman buradaki otomatikten iyi. Yine de
+ * otomatik kesim istenirse: CUTOUT=force
+ *
  * Eşikler ortam değişkeniyle ayarlanabilir: SCALE, STEP, CAP, GROW, FEATHER.
- * DUMP=1 kaba maskeyi mask-small.png olarak yazar.
  */
 import sharp from 'sharp';
 
@@ -112,6 +116,22 @@ function dilate(src, w, h, r) {
   return dst;
 }
 
+/** Girdi zaten saydam zeminli mi? Öyleyse fon silmeye hiç girmiyoruz —
+ *  elle (Photoshop vb.) yapılmış kesim her zaman daha iyi. */
+async function alreadyCut() {
+  if (process.env.CUTOUT === 'force') return false;
+  if (!meta.hasAlpha) return false;
+  const { data, info } = await sharp(SRC).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  let clear = 0;
+  for (let p = 0; p < info.width * info.height; p++) if (data[p * info.channels + 3] < 128) clear++;
+  return clear / (info.width * info.height) > 0.05;
+}
+
+let rgba;
+if (await alreadyCut()) {
+  console.log('girdi zaten saydam zeminli — fon silme atlandı, yalnızca çerçeveleniyor.');
+  rgba = await sharp(SRC).ensureAlpha().png().toBuffer();
+} else {
 // ── 1. Kaba maske (küçük ölçek) ────────────────────────────────────────────
 const sw = Math.round(W / SCALE), sh = Math.round(H / SCALE);
 const { data: small, info: si } = await sharp(SRC)
@@ -150,9 +170,10 @@ const { data: alpha, info: ai } = await sharp(alphaRaw, { raw: { width: W, heigh
   .raw().toBuffer({ resolveWithObject: true });
 if (ai.channels !== 1) throw new Error(`maske ${ai.channels} kanal döndü, 1 bekleniyordu`);
 
-const rgba = await sharp(SRC)
+rgba = await sharp(SRC)
   .joinChannel(alpha, { raw: { width: W, height: H, channels: 1 } })
   .png().toBuffer();
+}
 
 // ── 5. Kırp, ölçekle, ortala ───────────────────────────────────────────────
 // Diğer görsellerin hepsinde içerik tam 770 px. fit:'contain' KÜÇÜK görseli
@@ -169,9 +190,3 @@ await sharp(scaled).extend({
 
 console.log(`yazıldı: ${OUT} → ${sm.width}×${sm.height} içerik, ${CANVAS}×${CANVAS} tuval ` +
   `(oran ${(Math.max(sm.width, sm.height) / CANVAS).toFixed(3)})`);
-
-if (process.env.DUMP) {
-  await sharp(Buffer.from(coarse.mask.map((v) => (v ? 0 : 255))),
-    { raw: { width: sw, height: sh, channels: 1 } }).png().toFile('mask-small.png');
-  console.log('kaba maske dökümü: mask-small.png');
-}

@@ -267,6 +267,33 @@ textarea { min-height: 72px; resize: vertical; width: 100%; }
 .watch-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .watch-photo .placeholder { font-size: 40px; opacity: .28; }
 
+/* --- Büyütme --------------------------------------------------------------
+   Görseller 900×900 saklanıyor, panelde ~400 px görünüyor. Tıklayınca tam
+   boyutunda açılıyor. */
+.zoomable { cursor: zoom-in; }
+.zoomable:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 90;
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px;
+  background: rgba(0, 0, 0, .82);
+  cursor: zoom-out;
+}
+.lightbox img {
+  max-width: min(100%, 900px); max-height: 100%;
+  object-fit: contain; cursor: default;
+}
+.lightbox-close {
+  position: absolute; top: 14px; right: 18px;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .3);
+  background: rgba(0, 0, 0, .45); color: #fff;
+  font-size: 22px; line-height: 1; cursor: pointer;
+}
+.lightbox-close:hover { background: rgba(0, 0, 0, .7); }
+@media (max-width: 600px) { .lightbox { padding: 16px; } }
+
 .watch-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
 .watch-brand { font-size: 12px; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); }
 .watch-model { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }

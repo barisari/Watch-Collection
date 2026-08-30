@@ -179,9 +179,12 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 2. **Kaynağın vermediği alanlar** — kadran rengi, kayış rengi, cam formu ve
    üretim yılı Casio'nun teknik tablosunda **yok**. Model kodundan/görselden
    çıkarım gerekir → mutlaka kullanıcıya sorulacak, tahmin yazılmayacak.
-3. ~~`MRS-301-2E` görseli~~ — **tamam.** Kullanıcı GitHub üzerinden yükledi;
-   fon kenarlardan taşma-doldurma ile silinip diğerleriyle aynı biçime sokuldu
-   (saydam zemin, 900×900 WebP). Betik: `scripts/normalize-photo.mjs`.
+3. ~~`MRS-301-2E` görseli~~ — **tamam.** Fonu **kullanıcı Photoshop ile**
+   temizledi; betik yalnızca çerçeveledi (saydam zemin, 900×900 WebP).
+   Otomatik kesim bu görselde çalışmadı: fırçalanmış çelikte fona uzaklığı 1
+   olan, yani fonla birebir aynı renkte pikseller var — hangi eşik denenirse
+   denensin ya hale kalıyor ya SENSOR muhafazası siliniyordu. **Ders:** böyle
+   bir çakışma varsa otomatikte ısrar etme, elle kesim iste.
    Üretim bilgisi `source.imageFrom` alanında duruyor; **ön yüzde
    gösterilmiyor** (`sourceNote` yalnızca `productUrl` + `fetchedAt` basıyor).
 4. **`MRS-301-2E` satın alma tarihi** tabloda yok — kullanıcıyla konuşulacak.
@@ -226,6 +229,10 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
   sabit sırasına bağlıdır, sıralamaya değil. 8'den fazla saatte renk bırakılır
   ve kimlik yalnızca yazıyla taşınır. Paleti değiştirirsen dataviz
   doğrulayıcısını tekrar çalıştır.
+- **İşlenmemiş asıllar `photos/originals/` altında saklanır** ve `build.mjs`
+  bunları `dist/`e kopyalamaz (`SKIP` listesi) — depoda duruyorlar ama Pages
+  yayınını şişirmiyorlar. Sitede gösterilen 900×900 WebP'ler `photos/casio/`.
+- Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır (Escape kapatır).
 - `id` alanı sabittir; değiştirirsen `data/wears.json` içindeki `watchId`
   değerlerini de güncelle.
 
