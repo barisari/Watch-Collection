@@ -350,7 +350,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.A158WA-1/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casiofanmag.com (temel model, resmi değil)"
     },
     "acquisition": {
       "date": "2013-12-21",
@@ -365,7 +366,8 @@
       "photos/casio/casio_a158wa-1df.webp"
     ],
     "tags": [],
-    "notes": "Japonya'da 2021-07 tarihinde yeniden sürülmüş (¥3.300); bu saat ondan önce alındığı için o tarih buraya yazılmadı."
+    "notes": "Japonya'da 2021-07 tarihinde yeniden sürülmüş (¥3.300); bu saat ondan önce alındığı için o tarih buraya yazılmadı.",
+    "releaseDate": "2009"
   },
   {
     "id": "casio-ae-1200whl-5avdf",
@@ -533,7 +535,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.CA-53W-1/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casiofanmag.com (temel model, resmi değil)"
     },
     "acquisition": {
       "date": "2026-01-19",
@@ -548,7 +551,8 @@
       "photos/casio/casio_ca-53w-1z.webp"
     ],
     "tags": [],
-    "notes": "8 haneli hesap makinesi. Arka aydınlatması yok."
+    "notes": "8 haneli hesap makinesi. Arka aydınlatması yok.",
+    "releaseDate": "1988"
   },
   {
     "id": "casio-dbc-611-1df",
@@ -624,7 +628,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.DBC-611-1/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casiofanmag.com (temel model, resmi değil)"
     },
     "acquisition": {
       "date": "2025-12-13",
@@ -639,7 +644,8 @@
       "photos/casio/casio_dbc-611-1df.webp"
     ],
     "tags": [],
-    "notes": "8 haneli hesap makinesi · 25 kayıtlık veri bankası (8 karakter ad, 15 hane telefon) · 13 dil desteği · 5 alarm (biri ertelemeli). Casio bu model için su geçirmezlik değeri vermiyor."
+    "notes": "8 haneli hesap makinesi · 25 kayıtlık veri bankası (8 karakter ad, 15 hane telefon) · 13 dil desteği · 5 alarm (biri ertelemeli). Casio bu model için su geçirmezlik değeri vermiyor.",
+    "releaseDate": "2011"
   },
   {
     "id": "casio-f-91wpc-1adr",
@@ -713,7 +719,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.F-91WPC-1A/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casio.com basın bülteni (Kasım 2024 duyuru, Aralık 2024 çıkış)"
     },
     "acquisition": {
       "date": "2026-01-05",
@@ -728,7 +735,8 @@
       "photos/casio/casio_f-91wpc-1adr.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "releaseDate": "2024-12"
   },
   {
     "id": "casio-mdv-106-1avdf",
