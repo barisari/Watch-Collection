@@ -135,8 +135,17 @@ girildi, çünkü elimdeki üç kaynak birbirini tutmuyor:
 - Aramada çıkan "100 m, siyah kadran, çift zaman" tarifi aslında
   **AMW-320R'ye ait**, bu saate değil (xmission sayfası doğrulandı).
 
+**Yeni ipucu (30 Ağustos):** kullanıcının paylaştığı görselde kadranda
+`DEPTHMETER`, kasanın sol yanında `SENSOR`, kadranda `WATER RESIST 100M`
+yazıyor. Derinlik ölçen saat **basınç sensörü** taşır; altimetre/barometre
+modülleri de aynı sensörü kullanır. Yani QW-2376 kılavuzundaki basınç modları
+artık çelişki değil, beklenen şey olabilir — SR927W×2 + CR1216 düzeni de
+sensörlü saate uyuyor. **Ama görsel yapay zekâ üretimi**, üstündeki yazılar
+uydurulmuş olabilir; bu yüzden envantere hiçbir şey yazılmadı.
+
 Kullanıcının elindeki saate bakılarak çözülecek: kasa arkasındaki modül
-numarası kesin cevabı verir.
+numarası kesin cevabı verir. Kadranda okunanlar (100 m, depthmeter, sensör,
+çift zaman/ST-W) da saatin kendisinden doğrulanmalı.
 
 ### İki dillilik
 
