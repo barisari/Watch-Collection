@@ -2558,5 +2558,98 @@
     "msrp": {
       "EUR": 729
     }
+  },
+  {
+    "id": "seiko-sne529p",
+    "brand": "Seiko",
+    "model": "SNE529",
+    "reference": "SNE529P",
+    "nickname": null,
+    "shortCode": "SNE529",
+    "year": null,
+    "category": "analog",
+    "status": "owned",
+    "specs": {
+      "movement": {
+        "caliber": "Seiko V158",
+        "type": "solar",
+        "battery": null,
+        "batteryLife": "Tam şarjda yaklaşık 10 ay",
+        "accuracy": "±15 saniye/ay",
+        "radioControlled": null,
+        "bluetooth": null,
+        "powerReserve": null,
+        "frequency": null,
+        "jewels": 2,
+        "certification": null
+      },
+      "case": {
+        "material": "Stainless Steel",
+        "bezelMaterial": null,
+        "diameter": 40,
+        "thickness": 9.7,
+        "lugToLug": 47,
+        "lugWidth": 20,
+        "weight": 45,
+        "crystal": "Sapphire Crystal",
+        "crystalCoating": null,
+        "crystalShape": null,
+        "waterResistance": 100,
+        "bezel": null,
+        "backlight": null,
+        "color": "Steel"
+      },
+      "dial": {
+        "color": "Green",
+        "display": "analog",
+        "indices": "Baton",
+        "lume": null,
+        "complications": [
+          "Day/Date"
+        ]
+      },
+      "strap": {
+        "type": "Strap",
+        "material": "Leather",
+        "color": "Brown",
+        "clasp": "Pin buckle",
+        "sizeRange": null
+      }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": "https://www.seikowatches.com/se-en/products/discovermore/sne529",
+      "fetchedAt": "2026-08-30",
+      "imageColorsFrom": "Seiko resmi ürün görseli",
+      "imageFrom": "Seiko resmi ürün görselleri (geçici)",
+      "imageOriginal": "https://cdn.shopify.com/s/files/1/0019/1184/9012/files/SNE529_1_43b4eed6-109f-4c8b-9964-dae8a8ee4c90.png",
+      "msrpFrom": "seikousa.com — $250"
+    },
+    "acquisition": {
+      "date": "2026-01-07",
+      "condition": null,
+      "boxPapers": null
+    },
+    "service": {
+      "lastServiceDate": null,
+      "intervalYears": null
+    },
+    "photos": [
+      "photos/watches/seiko_sne529p.webp",
+      "photos/watches/seiko_sne529p-2.webp",
+      "photos/watches/seiko_sne529p-3.webp"
+    ],
+    "tags": [],
+    "notes": "Vidalı kasa arkası. Kadran yeşil sunray, altın tonu indeksler.",
+    "msrp": {
+      "USD": 250
+    }
   }
 ]
