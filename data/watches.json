@@ -2484,9 +2484,9 @@
         "accuracy": null,
         "radioControlled": null,
         "bluetooth": null,
-        "powerReserve": null,
-        "frequency": null,
-        "jewels": null,
+        "powerReserve": 38,
+        "frequency": 28800,
+        "jewels": 26,
         "certification": null
       },
       "case": {
@@ -2536,7 +2536,8 @@
       "imageColorsFrom": "Mondaine resmi ürün görseli",
       "imageFrom": "Mondaine resmi ürün görselleri (geçici)",
       "imageOriginal": "https://cdn.shopify.com/s/files/1/0101/1017/3243/products/MSE.40610.LB-S90-_2022_1.jpg",
-      "msrpFrom": "eu.mondaine.com — €729 · uk.mondaine.com — £739"
+      "msrpFrom": "eu.mondaine.com — €729 · uk.mondaine.com — £739",
+      "specsFrom": "uk.mondaine.com · kalibre değerleri Sellita SW220-1 künyesinden"
     },
     "acquisition": {
       "date": "2026-06-11",
