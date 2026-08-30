@@ -160,7 +160,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.A1100B-1/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casiofanmag.com (resmi değil)"
     },
     "acquisition": {
       "date": "2026-01-19",
@@ -175,7 +176,8 @@
       "photos/casio/casio_a1100b-1df.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "releaseDate": "2023"
   },
   {
     "id": "casio-a1100d-1df",
@@ -249,7 +251,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.A1100D-1/",
       "fetchedAt": "2026-08-28",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "casiofanmag.com (resmi değil)"
     },
     "acquisition": {
       "date": "2025-10-28",
@@ -264,7 +267,8 @@
       "photos/casio/casio_a1100d-1df.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "releaseDate": "2023"
   },
   {
     "id": "casio-a158wa-1df",
@@ -1312,7 +1316,9 @@
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.DW-6900RGM-5/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "shockbase.org",
+      "msrpFrom": "shockbase.org"
     },
     "acquisition": {
       "date": "2026-01-28",
@@ -1327,7 +1333,13 @@
       "photos/casio/g-shock_dw-6900rgm-5dr.webp"
     ],
     "tags": [],
-    "notes": "Origami koleksiyonu · Japonya üretimi · özel kutu."
+    "notes": "Origami koleksiyonu · Japonya üretimi · özel kutu.",
+    "releaseDate": "2025-11",
+    "msrp": {
+      "EUR": 149,
+      "USD": 165,
+      "JPY": 19800
+    }
   },
   {
     "id": "g-shock-ga-2100-1a1dr",
@@ -1405,7 +1417,9 @@
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.GA-2100-1A1/",
       "fetchedAt": "2026-08-28",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "shockbase.org",
+      "msrpFrom": "shockbase.org"
     },
     "acquisition": {
       "date": "2025-12-07",
@@ -1420,7 +1434,13 @@
       "photos/casio/g-shock_ga-2100-1a1dr.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "releaseDate": "2019-08",
+    "msrp": {
+      "EUR": 99.9,
+      "USD": 110,
+      "JPY": 17600
+    }
   },
   {
     "id": "g-shock-gbd-200-1dr",
@@ -1499,7 +1519,9 @@
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.GBD-200-1/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "shockbase.org",
+      "msrpFrom": "shockbase.org"
     },
     "acquisition": {
       "date": "2025-12-19",
@@ -1514,7 +1536,13 @@
       "photos/casio/g-shock_gbd-200-1dr.webp"
     ],
     "tags": [],
-    "notes": "38 zaman dilimi · 100 koşuya kadar antrenman kaydı, koşu başına 140 tur · adım sayar, mesafe ve kalori · 4 alarm (ertelemeli) · uçuş modu."
+    "notes": "38 zaman dilimi · 100 koşuya kadar antrenman kaydı, koşu başına 140 tur · adım sayar, mesafe ve kalori · 4 alarm (ertelemeli) · uçuş modu.",
+    "releaseDate": "2021-07",
+    "msrp": {
+      "EUR": 149,
+      "USD": 165,
+      "JPY": 25300
+    }
   },
   {
     "id": "g-shock-gbx-100-8dr",
@@ -1594,7 +1622,9 @@
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.GBX-100-8/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "shockbase.org",
+      "msrpFrom": "shockbase.org"
     },
     "acquisition": {
       "date": "2026-03-10",
@@ -1609,7 +1639,12 @@
       "photos/casio/g-shock_gbx-100-8dr.webp"
     ],
     "tags": [],
-    "notes": "MIP ekran · 38 zaman dilimi · 100 koşuya kadar antrenman kaydı."
+    "notes": "MIP ekran · 38 zaman dilimi · 100 koşuya kadar antrenman kaydı.",
+    "releaseDate": "2024-05",
+    "msrp": {
+      "USD": 160,
+      "JPY": 27500
+    }
   },
   {
     "id": "g-shock-gm-b2100d-1adr",
@@ -1690,7 +1725,9 @@
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.GM-B2100D-1A/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "shockbase.org",
+      "msrpFrom": "shockbase.org"
     },
     "acquisition": {
       "date": "2025-12-19",
@@ -1705,7 +1742,13 @@
       "photos/casio/g-shock_gm-b2100d-1adr.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "releaseDate": "2022-08",
+    "msrp": {
+      "EUR": 549,
+      "USD": 600,
+      "JPY": 77000
+    }
   },
   {
     "id": "g-shock-gst-b1000d-2adr",
@@ -1784,7 +1827,9 @@
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.GST-B1000D-2A/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "shockbase.org",
+      "msrpFrom": "shockbase.org"
     },
     "acquisition": {
       "date": "2026-01-22",
@@ -1799,7 +1844,13 @@
       "photos/casio/g-shock_gst-b1000d-2adr.webp"
     ],
     "tags": [],
-    "notes": "Vidalı kurma kolu · Carbon Core Guard yapı."
+    "notes": "Vidalı kurma kolu · Carbon Core Guard yapı.",
+    "releaseDate": "2025-10",
+    "msrp": {
+      "EUR": 399,
+      "USD": 440,
+      "JPY": 66000
+    }
   },
   {
     "id": "g-shock-gw-bx5600-1a1dr",
@@ -1879,7 +1930,9 @@
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.GW-BX5600-1A1/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "releaseFrom": "shockbase.org",
+      "msrpFrom": "shockbase.org"
     },
     "acquisition": {
       "date": "2025-12-24",
@@ -1894,7 +1947,11 @@
       "photos/casio/g-shock_gw-bx5600-1a1dr.webp"
     ],
     "tags": [],
-    "notes": "38 zaman dilimi / 55 şehir · 5 alarm (biri ertelemeli) · kasa, bezel ve kayışta biyo-bazlı reçine."
+    "notes": "38 zaman dilimi / 55 şehir · 5 alarm (biri ertelemeli) · kasa, bezel ve kayışta biyo-bazlı reçine.",
+    "releaseDate": "2025-11",
+    "msrp": {
+      "JPY": 30800
+    }
   },
   {
     "id": "oceanus-ocw-s400rl-8ajr",

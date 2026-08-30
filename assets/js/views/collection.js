@@ -18,6 +18,9 @@ const SORTS = {
 
 const uniq = (values) => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'tr'));
 
+/** releaseDate "2019-08" ya da "2023" biçiminde; karta yalnızca yıl yazılır. */
+const releaseYear = (w) => (w.releaseDate ? String(w.releaseDate).slice(0, 4) : null);
+
 export function renderCollection(root, navigate) {
   const rows = perWatchStats();
 
@@ -133,10 +136,11 @@ function watchCard(row, navigate) {
       ].filter(Boolean).join(' · ')),
       el('div.watch-meta',
         el('span', row.days ? `${row.days} gün takıldı` : 'Henüz takılmadı'),
-        el('span', { style: { color: 'var(--text-muted)' } },
-          price ? fmtMoney(price.amount, price.currency)
-                : row.lastWorn ? relDays(row.daysSince)
-                : w.acquisition?.date ? fmtDate(w.acquisition.date, { year: 'numeric' })
-                : ''))),
+        // Sağ alt: saatin piyasaya çıkış yılı. Bilinmiyorsa boş bırakılır —
+        // satın alma yılına düşmek iki farklı şeyi aynı yere yazmak olurdu.
+        el('span', {
+          style: { color: 'var(--text-muted)' },
+          title: w.releaseDate ? 'Piyasaya çıkış' : null,
+        }, releaseYear(w) || ''))),
   );
 }

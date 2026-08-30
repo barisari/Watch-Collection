@@ -13,6 +13,28 @@ const CONDITION_TR = {
 };
 const STATUS_TR = { owned: 'Koleksiyonda', sold: 'Satıldı', wishlist: 'İstek listesi' };
 
+const AYLAR = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+               'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+
+/** "2019-08" → "Ağustos 2019 çıkışlı" · "2023" → "2023 çıkışlı" */
+function releaseLabel(watch) {
+  const r = watch.releaseDate;
+  if (!r) return null;
+  const [y, m] = String(r).split('-');
+  return m ? `${AYLAR[Number(m) - 1]} ${y} çıkışlı` : `${y} çıkışlı`;
+}
+
+/** Liste fiyatı — herkese açık bir veri, gizli alan değil. */
+function msrpRow(watch) {
+  const m = watch.msrp;
+  if (!m || !Object.keys(m).length) return null;
+  const order = ['EUR', 'USD', 'JPY', 'GBP', 'TRY'];
+  return Object.entries(m)
+    .sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]))
+    .map(([cur, amt]) => fmtMoney(amt, cur))
+    .join(' · ');
+}
+
 export function renderDetail(root, id, navigate) {
   const watch = getWatch(id);
   if (!watch) {
@@ -38,7 +60,7 @@ export function renderDetail(root, id, navigate) {
         el('p.muted',
           [
             watch.reference !== watch.model ? watch.reference : null,
-            watch.year,
+            releaseLabel(watch),
             watch.nickname && `“${watch.nickname}”`,
           ].filter(Boolean).join(' · '))),
       el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } },
@@ -178,6 +200,8 @@ function acquisitionCard(watch) {
   const a = watch.acquisition || {};
   const v = watch.valuation;
   const rows = [
+    ['Piyasaya çıkış', releaseLabel(watch)?.replace(' çıkışlı', '')],
+    ['Liste fiyatı (çıkışta)', msrpRow(watch)],
     ['Satın alma tarihi', a.date ? fmtDate(a.date) : null],
     ['Durum', CONDITION_TR[a.condition] || a.condition],
     ['Kutu & belgeler', a.boxPapers == null ? null : (a.boxPapers ? 'Var' : 'Yok')],
