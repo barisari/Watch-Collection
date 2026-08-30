@@ -71,7 +71,8 @@
       "productUrl": "https://www.casio.com/europe/watches/casio/vintage/product.A1000DN-7/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "msrpFrom": "casio.com/in — MRP (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-01-11",
@@ -86,7 +87,10 @@
       "photos/casio/casio_a1000dn-7er.webp"
     ],
     "tags": [],
-    "notes": "Sette ayrıca gri kumaş kayış geliyor."
+    "notes": "Sette ayrıca gri kumaş kayış geliyor.",
+    "msrp": {
+      "INR": 13495
+    }
   },
   {
     "id": "casio-a1100b-1df",
@@ -351,7 +355,8 @@
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
-      "releaseFrom": "casiofanmag.com (temel model, resmi değil)"
+      "releaseFrom": "casiofanmag.com (temel model, resmi değil)",
+      "msrpFrom": "casio.com/in — MRP (vergi dahil)"
     },
     "acquisition": {
       "date": "2013-12-21",
@@ -367,7 +372,10 @@
     ],
     "tags": [],
     "notes": "Japonya'da 2021-07 tarihinde yeniden sürülmüş (¥3.300); bu saat ondan önce alındığı için o tarih buraya yazılmadı.",
-    "releaseDate": "2009"
+    "releaseDate": "2009",
+    "msrp": {
+      "INR": 1895
+    }
   },
   {
     "id": "casio-ae-1200whl-5avdf",
@@ -443,7 +451,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.AE-1200WHL-5AV/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "msrpFrom": "casio.com/in — MRP (vergi dahil)"
     },
     "acquisition": {
       "date": "2025-12-06",
@@ -458,7 +467,10 @@
       "photos/casio/casio_ae-1200whl-5avdf.webp"
     ],
     "tags": [],
-    "notes": "31 zaman dilimi / 48 şehir dünya saati, 4 şehir aynı anda izlenebiliyor. AE-1200WH serisi ilk kez 2012’de çıktı; bu deri kayışlı varyantın kendi çıkış tarihi ayrıca doğrulanmalı."
+    "notes": "31 zaman dilimi / 48 şehir dünya saati, 4 şehir aynı anda izlenebiliyor. AE-1200WH serisi ilk kez 2012’de çıktı; bu deri kayışlı varyantın kendi çıkış tarihi ayrıca doğrulanmalı.",
+    "msrp": {
+      "INR": 4495
+    }
   },
   {
     "id": "casio-ca-53w-1z",
@@ -629,7 +641,8 @@
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
-      "releaseFrom": "casiofanmag.com (temel model, resmi değil)"
+      "releaseFrom": "casiofanmag.com (temel model, resmi değil)",
+      "msrpFrom": "casio.com/th — MSRP"
     },
     "acquisition": {
       "date": "2025-12-13",
@@ -645,7 +658,10 @@
     ],
     "tags": [],
     "notes": "8 haneli hesap makinesi · 25 kayıtlık veri bankası (8 karakter ad, 15 hane telefon) · 13 dil desteği · 5 alarm (biri ertelemeli). Casio bu model için su geçirmezlik değeri vermiyor.",
-    "releaseDate": "2011"
+    "releaseDate": "2011",
+    "msrp": {
+      "THB": 3600
+    }
   },
   {
     "id": "casio-f-91wpc-1adr",
@@ -720,7 +736,8 @@
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
-      "releaseFrom": "casio.com basın bülteni (Kasım 2024 duyuru, Aralık 2024 çıkış)"
+      "releaseFrom": "casio.com basın bülteni (Kasım 2024 duyuru, Aralık 2024 çıkış)",
+      "msrpFrom": "casio.com/in — MRP (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-01-05",
@@ -736,7 +753,10 @@
     ],
     "tags": [],
     "notes": null,
-    "releaseDate": "2024-12"
+    "releaseDate": "2024-12",
+    "msrp": {
+      "INR": 3695
+    }
   },
   {
     "id": "casio-mdv-106-1avdf",
@@ -892,7 +912,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.MTP-B185D-2A2V/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "msrpFrom": "casio.com/th — MSRP"
     },
     "acquisition": {
       "date": "2026-04-02",
@@ -907,7 +928,10 @@
       "photos/casio/casio_mtp-b185d-2a2vdf.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "msrp": {
+      "THB": 3300
+    }
   },
   {
     "id": "casio-mtp-b195l-1avdf",
@@ -978,7 +1002,8 @@
       "productUrl": "https://www.casio.com/intl/watches/casio/product.MTP-B195L-1AV/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "msrpFrom": "casio.com/in — MRP (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-04-08",
@@ -993,7 +1018,10 @@
       "photos/casio/casio_mtp-b195l-1avdf.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "msrp": {
+      "INR": 6495
+    }
   },
   {
     "id": "edifice-efb-730d-7avudf",
@@ -1065,7 +1093,8 @@
       "productUrl": "https://www.casio.com/intl/watches/edifice/product.EFB-730D-7AV/",
       "fetchedAt": "2026-08-29",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "msrpFrom": "casio.com/in — MRP (vergi dahil)"
     },
     "acquisition": {
       "date": "2026-03-09",
@@ -1080,7 +1109,10 @@
       "photos/casio/edifice_efb-730d-7avudf.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "msrp": {
+      "INR": 11995
+    }
   },
   {
     "id": "edifice-efk-110d-1a",
@@ -1236,18 +1268,19 @@
       }
     },
     "tagline": {
-      "en": null,
-      "tr": null
+      "en": "Slim Line with Sapphire Crystal.",
+      "tr": "Safir camlı ince gövde."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "Although multi-hand chronograph cases tend to be thick, this is a solar powered chronograph with a case kept to a thickness of 9.7 mm to provide an enhanced fit. The watch boasts a flat octagonal bezel with a hairline finish that creates a sporty yet luxurious design. Uses a scratch-resistant sapphire crystal.",
+      "tr": "Çok ibreli kronograf kasaları genelde kalın olur; bu ise kasası 9,7 mm’de tutulmuş, bileğe daha iyi oturan güneş enerjili bir kronograf. Saç teli dokulu, yassı sekizgen çerçevesi sportif ama gösterişli bir duruş veriyor. Çizilmelere dayanıklı safir cam kullanılıyor."
     },
     "source": {
       "productUrl": "https://www.casio.com/intl/watches/edifice/product.EFS-S570D-3A/",
       "fetchedAt": "2026-08-28",
       "imageColorsFrom": "Casio resmi ürün görseli",
-      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)"
+      "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
+      "msrpFrom": "casio.com/th — MSRP"
     },
     "acquisition": {
       "date": "2026-01-11",
@@ -1262,7 +1295,10 @@
       "photos/casio/edifice_efs-s570d-3audf.webp"
     ],
     "tags": [],
-    "notes": null
+    "notes": null,
+    "msrp": {
+      "THB": 9700
+    }
   },
   {
     "id": "g-shock-dw-6900rgm-5dr",
@@ -2271,5 +2307,88 @@
     "msrp": {
       "JPY": 48400
     }
+  },
+  {
+    "id": "casio-mrs-301-2evdf",
+    "brand": "Casio",
+    "model": "MRS-301-2E",
+    "reference": "MRS-301-2EVDF",
+    "nickname": "Marine Gear",
+    "shortCode": "MRS301",
+    "year": null,
+    "category": "ana-dijital",
+    "status": "owned",
+    "specs": {
+      "movement": {
+        "caliber": null,
+        "type": null,
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
+        "powerReserve": null,
+        "frequency": null,
+        "jewels": null,
+        "certification": null
+      },
+      "case": {
+        "material": null,
+        "bezelMaterial": null,
+        "diameter": null,
+        "thickness": null,
+        "lugToLug": null,
+        "lugWidth": null,
+        "weight": null,
+        "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
+        "waterResistance": null,
+        "bezel": null,
+        "backlight": null,
+        "color": null
+      },
+      "dial": {
+        "color": null,
+        "display": "ana-digi",
+        "indices": null,
+        "lume": null,
+        "complications": []
+      },
+      "strap": {
+        "type": null,
+        "material": null,
+        "color": null,
+        "clasp": null,
+        "sizeRange": null
+      }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null,
+      "imageColorsFrom": null,
+      "imageFrom": "Yapay zekâ ile üretildi — düşük çözünürlüklü orijinal görselden, kullanıcının kendi ürettiği kare. Görsel dosyası henüz depoya eklenmedi."
+    },
+    "acquisition": {
+      "date": null,
+      "condition": null,
+      "boxPapers": null
+    },
+    "service": {
+      "lastServiceDate": null,
+      "intervalYears": null
+    },
+    "photos": [],
+    "tags": [],
+    "notes": null,
+    "msrp": {}
   }
 ]

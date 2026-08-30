@@ -24,13 +24,23 @@ function releaseLabel(watch) {
   return m ? `${AYLAR[Number(m) - 1]} ${y} çıkışlı` : `${y} çıkışlı`;
 }
 
-/** Liste fiyatı — herkese açık bir veri, gizli alan değil. */
+/* Liste fiyatı — herkese açık bir veri, gizli alan değil.
+ *
+ * Fiyat, saatin satıldığı pazarın parasıyla saklanır: Casio her ülkede ayrı
+ * fiyat veriyor, hepsini tek kura çevirip saklamak kaynağı kaybetmek olurdu.
+ * Ekranda en çok 3 tanesi gösteriliyor. */
+const MSRP_ORDER = ['EUR', 'USD', 'GBP', 'JPY', 'TRY', 'INR', 'THB'];
+const msrpRank = (cur) => {
+  const i = MSRP_ORDER.indexOf(cur);
+  return i === -1 ? MSRP_ORDER.length : i;   // tanımadığımız birim sona gider
+};
+
 function msrpRow(watch) {
   const m = watch.msrp;
   if (!m || !Object.keys(m).length) return null;
-  const order = ['EUR', 'USD', 'JPY', 'GBP', 'TRY'];
   return Object.entries(m)
-    .sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]))
+    .sort((a, b) => msrpRank(a[0]) - msrpRank(b[0]))
+    .slice(0, 3)
     .map(([cur, amt]) => fmtMoney(amt, cur))
     .join(' · ');
 }

@@ -51,15 +51,31 @@ oradaki A her zaman renk kodunun parçasıdır. 6 sayfa çekilerek doğrulandı.
 |---|---|---|---|
 | Ürün sayfası | `casio.com/intl/watches/<seri>/product.<MODEL>/` | Kasa ölçüleri, ağırlık, malzeme, cam, su geçirmezlik, pil/solar, hassasiyet, fonksiyonlar, **tanıtım metni** | fiyat, çıkış tarihi, renk |
 | **Japonya sayfası** | `casio.com/jp/watches/<seri>/product.<MODEL>/` | Yukarıdakilerin hepsi **+ 発売日 (çıkış) + メーカー希望小売価格 (liste fiyatı, vergi dahil)** | — |
+| **Hindistan sayfası** | `casio.com/in/watches/<seri>/product.<MODEL>/` | Teknik tablonun tamamı **+ MRP (liste fiyatı, vergi dahil)** | çıkış tarihi |
+| **Tayland sayfası** | `casio.com/th/watches/<seri>/product.<MODEL>/` | Teknik tablo **+ MSRP** | çıkış tarihi |
 | `europe` yolu | `casio.com/europe/watches/casio/vintage/product.<MODEL>/` | Yalnızca `intl`'de olmayan modeller için teknik özellik | fiyat, tarih |
+| Singapur / Endonezya | `casio.com/sg/…` · `casio.com/id/…` | Teknik tablo + tanıtım metni | fiyat |
 | Destek sayfası | `casio.com/<ülke>/watches/<seri>/support.<MODEL>/` | **Modül numarası** (kılavuz PDF adından: `qw3503`) | — |
 | **shockbase.org** | `shockbase.org/watches/watch_dyn.php?model=<MODEL>&subseries=..&series=..` | Çıkış tarihi, 14 para biriminde liste fiyatı, yazılı renk alanları, pil hücresi | **yalnızca G-Shock** |
 | casiofanmag.com | `casiofanmag.com/retro/<aile>/` · `/standard/<aile>/` | Serinin ilk çıkış yılı (resmi değil) | — |
-| Modül servis listesi | PDF, depoda yok — `casio-watch.fastcr.cz` | Eski modüllerin pil/hassasiyet/çıkış tarihi (QW-2376 = MRS-301) | 3200+ modüllerin çoğu |
+| Modül servis listesi | PDF, depoda yok — `casio-watch.fastcr.cz` | Modülün pil/hassasiyet/tarihi | **model adı hiç geçmiyor** — modülü saate bağlamaz |
+
+**Fiyat aramanın sırası:** `jp` → `in` → `th`. Üçü de sunucudan hazır geliyor.
+Bir model bir yerelde satılmıyorsa sayfa 404 verir; o zaman sıradakine geç.
+`intl`, `europe`, `sg`, `id` fiyat **vermiyor**; `us` fiyatı JS ile yüklüyor.
+
+**Vergi uyarısı:** Hindistan MRP'si ve Japonya 希望小売価格'i vergi **dahil**,
+ABD MSRP'si değil. Fiyatları bir gün tek para birimine çevirirken bu fark
+hatırlanmalı — aksi hâlde elmayla armut toplanır.
 
 **shockbase okuma uyarısı:** özellik ızgarasında var/yok ayrımı CSS ile yapılıyor
 (`cellactive` / `cellinactive`). Düz metin çıkarımı hepsini "var" gösterir —
 ham HTML'den sınıf adına bakarak ayrıştır.
+
+**shockbase rengi de her zaman doğru değil:** GBX-100-8 için "Grey" yazıyor,
+oysa Casio'nun kendi Türkçe sayfası "yumuşak **kum beji**" diyor. Envanterdeki
+`Beige` — resmi ürün görselinden okunan değer — doğru olan. Renk çelişkisinde
+**Casio'nun kendi metni ve görseli esas**, shockbase ikincil.
 
 **Çıkış tarihi tuzağı:** Japonya sayfasındaki tarih o modelin *Japonya
 sürümünün* çıkışıdır; casiofanmag'inki *serinin* ilk çıkışıdır. İkisi de bu
@@ -70,20 +86,28 @@ varyanta mal etme (F-91W 1989 ≠ Pac-Man sürümü 2024).
 **ABD sitesi (`/us/`):** ürün başlığında renk adı var, teknik tablo JS ile
 yükleniyor — okunamıyor.
 
-### Doldurulma durumu (29 Ağustos 2026)
+### Doldurulma durumu (30 Ağustos 2026)
+
+Envanterde artık **25 saat** var — MRS-301 eklendi.
 
 | Alan | Durum |
 |---|---|
-| Teknik özellikler | 23/24 |
-| Kadran / kasa / kayış rengi | 24/24 — resmi ürün görselinden okundu |
-| Görsel | 24/24 — geçici, üreticinin görselleri, 900×900 WebP |
-| Çıkış tarihi | 17/24 |
-| Liste fiyatı | 13/24 |
-| Tanıtım metni | 14/24 |
+| Teknik özellikler | 23/25 |
+| Kadran / kasa / kayış rengi | 24/25 — resmi ürün görselinden okundu |
+| Görsel | 24/25 — geçici, üreticinin görselleri, 900×900 WebP |
+| Çıkış tarihi | 17/25 |
+| Liste fiyatı | 22/25 |
+| Tanıtım metni | 15/25 |
 
-Tarih + fiyat eksik olan 7: A1000DN-7, AE-1200WHL-5AV, MDV-106-1A,
-MTP-B185D-2A2V, MTP-B195L-1AV, EFB-730D-7AV, EFS-S570D-3A. Ortak nedeni:
-hiçbiri Japonya'da satılmıyor, o yüzden 発売日 / 希望小売価格 yok.
+Liste fiyatı eksik kalan 3: **CA-53W-1**, **MDV-106-1A**, **MRS-301-2E**.
+İlk ikisi Hindistan'da da Tayland'da da satılmıyor (404), Japonya'da da yok;
+Casio'nun fiyat veren üç yereli de bunları kapsamıyor. Perakende ilanlarında
+gördüğüm rakamlar (CA-53W için $35–43, MDV-106 için $84,95) **liste fiyatı
+değil sokak fiyatı** — o yüzden yazılmadı.
+
+Çıkış tarihi eksik kalan 8: A1000DN-7, AE-1200WHL-5AV, MDV-106-1A,
+MTP-B185D-2A2V, MTP-B195L-1AV, EFB-730D-7AV, EFS-S570D-3A, MRS-301-2E.
+Hindistan ve Tayland sayfaları **tarih vermiyor**, yalnızca fiyat veriyor.
 MDV-106-1A'nın teknik özellikleri de eksik (Amerika pazarına özel).
 
 Seri → URL yolu: `casio`, `gshock`, `edifice`, `protrek`, `oceanus`.
@@ -97,7 +121,22 @@ Yani TR'yi "boş olduğu için" değil, **okuyamadığımız için** kullanmıyo
 Kullanıcı tarayıcısında TR sayfasını görebilir; bir çelişki çıkarsa kaynak
 odur.
 
-`MRS-301` için hiçbir resmi sayfa yok (404).
+### MRS-301 — modül bilmecesi (çözülmedi)
+
+`MRS-301` için hiçbir resmi sayfa yok (404). Envantere **teknik özellikleri boş**
+girildi, çünkü elimdeki üç kaynak birbirini tutmuyor:
+
+- Modül servis listesinde `QW-2376` satırı var: `S/M-747 · ±15 sn/ay ·
+  SR927W ×2 + CR1216 · 2 yıl · Aug-2001`. Ama **o PDF'te model adı hiç
+  geçmiyor** (`MRS` dizesi dosyada yok) — yani modülü bu saate bağlamıyor.
+- manuals.plus "MRS-300/301 = modül 2376" diyor; aynı modülün kılavuzu
+  manualslib'de **altimetre/barometre** modları anlatıyor. Dalgıç saatiyle
+  uyuşmuyor, ikisinden biri yanlış.
+- Aramada çıkan "100 m, siyah kadran, çift zaman" tarifi aslında
+  **AMW-320R'ye ait**, bu saate değil (xmission sayfası doğrulandı).
+
+Kullanıcının elindeki saate bakılarak çözülecek: kasa arkasındaki modül
+numarası kesin cevabı verir.
 
 ### İki dillilik
 
@@ -108,17 +147,21 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 
 ### Bekleyen adımlar
 
-1. **Teknik özellikler** — 24 saatten **3'ü dolduruldu** (A1100D-1, GA-2100-1A1,
-   EFS-S570D-3A). Kalan 21 seri seri çekilecek: Casio 10 → G-Shock 6 →
-   Edifice 2 → Pro Trek 1 → Oceanus 2. Her partiden sonra kullanıcıya doğrulat.
+1. **Teknik özellikler** — 25 saatten 23'ü dolduruldu. Eksik ikisi: MDV-106-1A
+   (yalnızca Amerika pazarına özel, hiçbir okunabilir yerelde sayfası yok) ve
+   MRS-301-2E (yukarıdaki modül bilmecesi). Her partiden sonra kullanıcıya
+   doğrulat — aynı modelin varyantları arasında ölçüler değişebiliyor.
 2. **Kaynağın vermediği alanlar** — kadran rengi, kayış rengi, cam formu ve
    üretim yılı Casio'nun teknik tablosunda **yok**. Model kodundan/görselden
    çıkarım gerekir → mutlaka kullanıcıya sorulacak, tahmin yazılmayacak.
-3. **EFS-S570D-3A tanıtım metni** çekilmedi (yalnızca teknik veri alındı).
-4. **`Casio MRS-301-2EVDF`** — tabloda tarihi yok, içe aktarılmadı; resmi
-   sayfası da yok. Kullanıcıyla konuşulacak.
+3. **`MRS-301-2E` görseli** — kullanıcı yapay zekâyla ürettiği kareyi sohbette
+   paylaştı, ama sohbet eki diske düşmüyor: dosya hâlâ depoda yok. Kullanıcı
+   dosyayı koyunca `photos/casio/` altına girip kayda eklenecek.
+   Üretim bilgisi `source.imageFrom` alanında duruyor; **ön yüzde
+   gösterilmiyor** (`sourceNote` yalnızca `productUrl` + `fetchedAt` basıyor).
+4. **`MRS-301-2E` satın alma tarihi** tabloda yok — kullanıcıyla konuşulacak.
 5. **Casio dışı saatler** — Seiko'lar ve diğerleri henüz girilmedi.
-6. **Fotoğraflar** — hepsi boş.
+6. **Fotoğraflar** — hepsi geçici (üreticinin görselleri).
 
 ### Verilmemiş kararlar
 
