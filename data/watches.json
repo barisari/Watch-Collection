@@ -2652,5 +2652,97 @@
     "msrp": {
       "USD": 250
     }
+  },
+  {
+    "id": "braun-bn0021bkg",
+    "brand": "Braun",
+    "model": "BN0021",
+    "reference": "BN0021BKG",
+    "nickname": null,
+    "shortCode": "BN0021",
+    "year": null,
+    "category": "analog",
+    "status": "owned",
+    "specs": {
+      "movement": {
+        "caliber": null,
+        "type": "quartz",
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
+        "powerReserve": null,
+        "frequency": null,
+        "jewels": null,
+        "certification": null
+      },
+      "case": {
+        "material": "Stainless Steel",
+        "bezelMaterial": null,
+        "diameter": 38,
+        "thickness": 8.5,
+        "lugToLug": null,
+        "lugWidth": null,
+        "weight": 54,
+        "crystal": "Mineral Glass",
+        "crystalCoating": null,
+        "crystalShape": null,
+        "waterResistance": 50,
+        "bezel": null,
+        "backlight": null,
+        "color": "Steel"
+      },
+      "dial": {
+        "color": "White",
+        "display": "analog",
+        "indices": "Arabic",
+        "lume": null,
+        "complications": []
+      },
+      "strap": {
+        "type": "Strap",
+        "material": "Leather",
+        "color": "Black",
+        "clasp": "Pin buckle",
+        "sizeRange": null
+      }
+    },
+    "tagline": {
+      "en": "Matt stainless steel case, quartz movement and the iconic yellow second hand.",
+      "tr": "Mat çelik kasa, kuvars mekanizma ve Braun’un simgesi olan sarı saniye ibresi."
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": "https://us.braun-clocks.com/products/gents-bn0021-classic-watch-white-dial-and-black-leather-strap",
+      "fetchedAt": "2026-08-31",
+      "imageColorsFrom": "Braun resmi ürün görseli",
+      "imageFrom": "Braun resmi ürün görselleri (geçici)",
+      "imageOriginal": "https://cdn.shopify.com/s/files/1/0278/8851/7235/products/a742bc87-65f3-40b9-b55b-ee52294ab0c0.jpg",
+      "msrpFrom": "us.braun-clocks.com — $160 · braun-clocks.com — £100"
+    },
+    "acquisition": {
+      "date": "2026-02-20",
+      "condition": null,
+      "boxPapers": null
+    },
+    "service": {
+      "lastServiceDate": null,
+      "intervalYears": null
+    },
+    "photos": [
+      "photos/watches/braun_bn0021bkg.webp",
+      "photos/watches/braun_bn0021bkg-2.webp",
+      "photos/watches/braun_bn0021bkg-3.webp"
+    ],
+    "tags": [],
+    "notes": "İspanya’dan alındı. Çıtçıtlı (snap) kasa arkası.",
+    "msrp": {
+      "USD": 160,
+      "GBP": 100
+    }
   }
 ]
