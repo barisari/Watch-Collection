@@ -9,9 +9,11 @@ Ayrıntılı belgeler: [`README.md`](README.md) (kullanım, yayınlama) ve
 
 ---
 
-## KALDIĞIMIZ YER (28 Ağustos 2026)
+## KALDIĞIMIZ YER (13 Eylül 2026)
 
-Site kurulu ve yayında. Örnek veri silindi; **24 Casio envantere girdi**.
+Site kurulu ve yayında. **28 saat, 8 marka**: Casio, Edifice, G-Shock, Oceanus,
+Pro Trek, Mondaine, Seiko, Braun. Vitrin tarafı büyük ölçüde bitti; sıradaki iş
+**rotasyon günlüğü** (aşağıda ayrı bölüm).
 
 ### Veri kaynağı
 
@@ -187,32 +189,32 @@ düşüktü); eksik olan adım 2'ydi.
 **Tek istisna MRS-301** — bu saatin hiçbir yerelde resmi görseli yok (hepsi
 404). Kullanıcının ürettiği kare kalıcı çözüm, çözünürlük kıyaslaması yapılmaz.
 
-### Doldurulma durumu (30 Ağustos 2026)
+### Doldurulma durumu (13 Eylül 2026)
 
-Envanterde artık **25 saat** var — MRS-301 eklendi.
+**28 saat.** Casio dışı üçü: Mondaine evo2 (MSE.40610.LBV), Seiko SNE529P,
+Braun BN0021BKG.
 
 | Alan | Durum |
 |---|---|
-| Teknik özellikler | 25/25 — MRS-301 dahil (modül 2385 kasa arkasından) |
-| Kadran / kasa / kayış rengi | 25/25 — resmi ürün görselinden okundu |
-| Görsel | 25/25 — 24'ü üreticinin görseli, MRS-301 kullanıcının karesi |
-| **Görsel aslı (arşiv)** | 25/25 — `photos/originals/`, çoğu 2000×2000 |
-| Satın alma tarihi | 24/25 — MRS-301 tabloda yok |
-| Çıkış tarihi | 17/25 |
-| Liste fiyatı | 22/25 |
-| Tanıtım metni | 20/25 kısa tanıtım · 15/25 uzun metin |
-| Rotasyon kaydı | 0 — günlük henüz başlamadı |
+| Teknik özellikler | 28/28 |
+| Kadran / kasa / kayış rengi | 28/28 |
+| Görsel | 28/28 |
+| Görsel aslı (arşiv) | 28/28 — `photos/originals/` |
+| Satın alma tarihi | 28/28 |
+| Liste fiyatı | 27/28 |
+| Çıkış tarihi | 24/28 |
+| Tanıtım metni | 22/28 kısa · 16/28 uzun |
+| Rotasyon kaydı | 0 — mimarisi kararlaştırılıyor |
 
-Liste fiyatı eksik kalan 3: **CA-53W-1**, **MDV-106-1A**, **MRS-301-2E**.
-İlk ikisi Hindistan'da da Tayland'da da satılmıyor (404), Japonya'da da yok;
-Casio'nun fiyat veren üç yereli de bunları kapsamıyor. Perakende ilanlarında
-gördüğüm rakamlar (CA-53W için $35–43, MDV-106 için $84,95) **liste fiyatı
-değil sokak fiyatı** — o yüzden yazılmadı.
+Liste fiyatı eksik: **MRS-301-2E** (hiçbir yerde resmi kaydı yok).
 
-Çıkış tarihi eksik kalan 8: A1000DN-7, AE-1200WHL-5AV, MDV-106-1A,
-MTP-B185D-2A2V, MTP-B195L-1AV, EFB-730D-7AV, EFS-S570D-3A, MRS-301-2E.
-Hindistan ve Tayland sayfaları **tarih vermiyor**, yalnızca fiyat veriyor.
-MDV-106-1A'nın teknik özellikleri de eksik (Amerika pazarına özel).
+Çıkış tarihi eksik 4: MRS-301-2E, MSE.40610.LBV, SNE529, BN0021.
+
+Kısa tanıtım eksik 6: A158WA-1, CA-53W-1, DBC-611-1, MDV-106-1A,
+MRS-301-2E, SNE529P. İlk üçünde **Casio metin yazmamış** — sayfada yalnızca
+madde listesi var, aranacak bir şey kalmadı. MDV-106-1A'nın okunabilir yerelde
+sayfası, MRS-301-2E'nin hiçbir yerde resmi sayfası yok. SNE529P'ye (Seiko)
+henüz bakılmadı.
 
 Seri → URL yolu: `casio`, `gshock`, `edifice`, `protrek`, `oceanus`.
 **Oceanus yalnızca `jp` yerelinde**, diğerleri `intl`.
@@ -295,10 +297,10 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 
 ### Bekleyen adımlar
 
-1. **Teknik özellikler** — 25 saatten 23'ü dolduruldu. Eksik ikisi: MDV-106-1A
-   (yalnızca Amerika pazarına özel, hiçbir okunabilir yerelde sayfası yok) ve
-   MRS-301-2E (yukarıdaki modül bilmecesi). Her partiden sonra kullanıcıya
-   doğrulat — aynı modelin varyantları arasında ölçüler değişebiliyor.
+1. ~~Teknik özellikler~~ — 28/28 dolu. MDV-106-1A perakendeci verisinden,
+   MRS-301-2E kasa arkası + kadrandan tamamlandı. Yeni saat eklerken kural aynı:
+   her partiden sonra kullanıcıya doğrulat — aynı modelin varyantları arasında
+   ölçüler değişebiliyor.
 2. **Kaynağın vermediği alanlar** — kadran rengi, kayış rengi, cam formu ve
    üretim yılı Casio'nun teknik tablosunda **yok**. Model kodundan/görselden
    çıkarım gerekir → mutlaka kullanıcıya sorulacak, tahmin yazılmayacak.
@@ -310,9 +312,77 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    bir çakışma varsa otomatikte ısrar etme, elle kesim iste.
    Üretim bilgisi `source.imageFrom` alanında duruyor; **ön yüzde
    gösterilmiyor** (`sourceNote` yalnızca `productUrl` + `fetchedAt` basıyor).
-4. **`MRS-301-2E` satın alma tarihi** tabloda yok — kullanıcıyla konuşulacak.
-5. **Casio dışı saatler** — Seiko'lar ve diğerleri henüz girilmedi.
-6. **Fotoğraflar** — hepsi geçici (üreticinin görselleri).
+4. ~~`MRS-301-2E` satın alma tarihi~~ — babadan kalma; modül 2385'in Ağustos
+   2001 tabanından tahmin edildi ve `acquisition.dateApprox` ile işaretlendi
+   (ön yüzde "… civarı (tahmini)" basılıyor).
+5. ~~Casio dışı saatler~~ — Mondaine, Seiko, Braun girdi. Eksik saatler
+   olabilir; kullanıcı listeyi henüz tamamlamadı.
+6. **Fotoğraflar** — hepsi üreticinin görselleri. Kullanıcı kendi fotoğraflarını
+   çekmeyecek; bunun yerine **mevcut modeller için ek fotoğraf** indirilecek
+   (üreticiler genelde 3–8 kare yayımlıyor). Sırası kullanıcıya ait, kendiliğinden
+   başlama.
+7. **Rotasyon** — aşağıdaki bölüm. Veri girilmeden önce `build.mjs` public
+   derlemeden `data/wears.json`'ı çıkarmalı.
+
+### Rotasyon mimarisi (13 Eylül 2026 — karar verildi)
+
+Günlük aylardır boş. Sebebi tembellik değil **kayıt sürtünmesi**: sitedeki
+düğme yalnızca `localStorage`'a yazıyor; kalıcı kayıt için JSON indirip commit
+atmak gerekiyor, telefondan kimse bunu yapmaz. Karar: kaydı siteden çıkar,
+zaten her gün elde olan bir yere taşı.
+
+**1. Model: aralık, satır değil.**
+"Bugün bunu taktım" değil, "**şu an bunu takıyorum**". Kullanıcı saati
+değiştirdikçe işaretler; iki işaret arası o saatin takılı olduğu aralıktır.
+Günde bir satır varsayımı yanlıştı — kullanıcının kendi ifadesiyle: *"Ben her
+gün bu saati takıyorum diye girmem ki."* Süre aralıktan hesaplanır, satır
+saymaktan değil.
+
+**2. `None` = çıplak bilek.**
+Seçeneklerden biri bilerek `None`. Saat takılmayan aralıklar bir önceki saate
+yazılmasın diye. Bu sentinel olmadan "en uzun seri" ve "takılma payı" şişerdi.
+
+**3. Kayıt katmanı: Home Assistant.**
+Kullanıcının evinde HA var ve içinde `input_select.watch_rotation` yardımcısı
+duruyor; saatlerin çoğu seçenek olarak girilmiş. Aradığımız her şeyi bedava
+veriyor:
+- **Sürtünme sıfır** — telefondaki HA uygulamasından tek dokunuş; widget ya da
+  NFC etiketi de konabilir.
+- **Durum makinesi hazır** — `input_select` zaten "tek seçili değer" demek,
+  aralık modeli kendiliğinden çıkıyor.
+- **`last_changed`** = "ne zamandır takılı"; ayrıca hesaplamaya gerek yok.
+- **Mahremiyet** — veri kullanıcının evinde kalır. Depo public olduğu sürece
+  rotasyon oraya girmez.
+
+**4. TUZAK — HA geçmişi kendiliğinden silinir.**
+`recorder` varsayılanı `purge_keep_days: 10`: on günden eski durum geçmişi
+**sessizce** silinir. Uzun dönem istatistikler yalnızca `state_class` taşıyan
+**sayısal** varlıkları kapsar; `input_select` metin olduğu için kapsam dışı.
+Yani hiçbir şey yapılmazsa geçmiş on günde bir buharlaşır. Çözüm: her
+değişimde aralığı **dışarı yazan** bir otomasyon. HA'nın kendi geçmişini
+arşiv sanmak hatadır.
+
+**5. Seçenek adları kalıcı anahtardır.**
+`input_select` geçmişi ham metin saklar. Bir seçeneği yeniden adlandırırsan
+eski kayıtlar **eski adla** kalır ve eşleşme kopar. Kural: **ekle, yeniden
+adlandırma.** Adlandırma kararları (Edifice mi Casio mu, "Pro Trek" ayrı mı
+yazılıyor) geçmiş daha birkaç günlükken — yani şimdi — verilmeli.
+
+**6. Hibrit: HA dışarı iter, oturum okur.**
+Kullanıcı hem GitHub yapısını hem de "bilgisayar kapalıyken müdahale
+edebilme"yi istiyor. Bunun için oturumun HA'ya **içeri** erişmesi gerekmiyor:
+HA her değişimde kaydı dışarı yazar, oturum o hedeften okur. Ev ağına delik
+açılmaz, bilgisayar kapalıyken de kayıt akmaya devam eder.
+
+**7. `data/wears.json` public derlemeye GİRMEYECEK.**
+Şu an boş. Veri girmeden önce `build.mjs`'in `SKIP` listesine eklenmeli —
+`photos/originals` için yapılanın aynısı. `privateFields` bunu çözmez: o
+alan siler, dosya silmez.
+
+**Açık kalanlar:** `stats.js` aralık modeline göre yeniden yazılacak (şu an
+satır = gün sayıyor); HA seçenek listesi `watches.json`'dan üretilecek (Braun
+eksik); "takılma payı"nın paydası (tüm günler mi, saat takılan günler mi);
+aynı gün içindeki değişim ne kadar ince kaydedilecek.
 
 ### Verilmemiş kararlar
 
@@ -321,8 +391,12 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    (teknik veri, görseller, kod), **Drive özel** (fiyatlar). Alım fiyatları
    depoya **hiç girmiyor**; alım günü ECB kuruyla EUR/USD karşılıkları
    hesaplanıp ayrı bir Drive tablosuna yazıldı:
-   *"Casio Collection — Alım Fiyatları (EUR/USD)"*
-   `1YHTxIBeXxeS-Ryieufo54EH3QWenyJ8abCurCJaZUK8`
+   *"Saat Koleksiyonu — Alım Fiyatları (EUR/USD)"*
+   `1pmkLXSWEx0zN49HnQQcsjDKbrLdV3j0-NkLeCa6eEos` (27 alım)
+
+   **Kural: özel veri üretildiği ANDA Drive'a yazılır, sonraya bırakılmaz.**
+   Konteyner da deponun kopyası da geçicidir; scratchpad'de biriktirmek veri
+   kaybı riskidir. (Bir kez ucuz atlatıldı — 27 satırlık defter şansa sağ kaldı.)
    Depoya girmemesi gereken başka bir şey çıkarsa yeri orası.
 2. **Depo public mi kalacak?** Şu an public (Pages ücretsiz hesapta bunu
    gerektiriyor). Yayınlanan site hassas alanları göstermiyor ama **depodaki
