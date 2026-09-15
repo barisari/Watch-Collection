@@ -95,7 +95,8 @@
       "MYR": 839,
       "JPY": 19800
     },
-    "releaseDate": "2024-10"
+    "releaseDate": "2024-10",
+    "haOption": "Casio A1000DN"
   },
   {
     "id": "casio-a1100b-1df",
@@ -191,7 +192,8 @@
     "releaseDate": "2024-01",
     "msrp": {
       "JPY": 22000
-    }
+    },
+    "haOption": "Casio A1100B"
   },
   {
     "id": "casio-a1100d-1df",
@@ -287,7 +289,8 @@
     "releaseDate": "2024-01",
     "msrp": {
       "JPY": 16500
-    }
+    },
+    "haOption": "Casio A1100D"
   },
   {
     "id": "casio-a158wa-1df",
@@ -384,7 +387,8 @@
     "msrp": {
       "INR": 1895,
       "TRY": 1969
-    }
+    },
+    "haOption": "Casio A158WA"
   },
   {
     "id": "casio-ae-1200whl-5avdf",
@@ -483,7 +487,8 @@
       "INR": 4495,
       "TRY": 4199
     },
-    "releaseDate": "2024-10"
+    "releaseDate": "2024-10",
+    "haOption": "Casio AE-1200WHL"
   },
   {
     "id": "casio-ca-53w-1z",
@@ -582,7 +587,8 @@
     "releaseDate": "1988",
     "msrp": {
       "TRY": 2619
-    }
+    },
+    "haOption": "Casio CA-53W"
   },
   {
     "id": "casio-dbc-611-1df",
@@ -681,7 +687,8 @@
     "msrp": {
       "THB": 3600,
       "TRY": 6799
-    }
+    },
+    "haOption": "Casio DBC-611"
   },
   {
     "id": "casio-f-91wpc-1adr",
@@ -778,7 +785,8 @@
     "msrp": {
       "INR": 3695,
       "TRY": 6069
-    }
+    },
+    "haOption": "Casio F-91WPC"
   },
   {
     "id": "casio-mdv-106-1avdf",
@@ -875,7 +883,8 @@
     },
     "msrpEstimated": {
       "EUR": 77
-    }
+    },
+    "haOption": "Casio MDV-106"
   },
   {
     "id": "casio-mtp-b185d-2a2vdf",
@@ -969,7 +978,8 @@
       "THB": 3300,
       "TRY": 6869
     },
-    "releaseDate": "2025"
+    "releaseDate": "2025",
+    "haOption": "Casio MTP-B185D"
   },
   {
     "id": "casio-mtp-b195l-1avdf",
@@ -1063,7 +1073,8 @@
       "INR": 6495,
       "TRY": 7819
     },
-    "releaseDate": "2025"
+    "releaseDate": "2025",
+    "haOption": "Casio MTP-B195L"
   },
   {
     "id": "edifice-efb-730d-7avudf",
@@ -1158,7 +1169,8 @@
       "INR": 11995,
       "JPY": 26400
     },
-    "releaseDate": "2024-09"
+    "releaseDate": "2024-09",
+    "haOption": "Edifice EFB-730D"
   },
   {
     "id": "edifice-efk-110d-1a",
@@ -1252,7 +1264,8 @@
     "releaseDate": "2026-04",
     "msrp": {
       "JPY": 49500
-    }
+    },
+    "haOption": "Edifice EFK-110D"
   },
   {
     "id": "edifice-efs-s570d-3audf",
@@ -1349,7 +1362,8 @@
       "THB": 9700,
       "TRY": 19689
     },
-    "releaseDate": "2020"
+    "releaseDate": "2020",
+    "haOption": "Edifice EFS-S570D"
   },
   {
     "id": "g-shock-dw-6900rgm-5dr",
@@ -1449,7 +1463,8 @@
       "EUR": 149,
       "USD": 165,
       "JPY": 19800
-    }
+    },
+    "haOption": "G-Shock DW-6900 RGM"
   },
   {
     "id": "g-shock-ga-2100-1a1dr",
@@ -1551,7 +1566,8 @@
       "EUR": 99.9,
       "USD": 110,
       "JPY": 17600
-    }
+    },
+    "haOption": "G-Shock GA-2100"
   },
   {
     "id": "g-shock-gbd-200-1dr",
@@ -1654,7 +1670,8 @@
       "EUR": 149,
       "USD": 165,
       "JPY": 25300
-    }
+    },
+    "haOption": "G-Shock GBD-200"
   },
   {
     "id": "g-shock-gbx-100-8dr",
@@ -1761,7 +1778,8 @@
     },
     "msrpEstimated": {
       "EUR": 145
-    }
+    },
+    "haOption": "G-Shock GBX-100"
   },
   {
     "id": "g-shock-gm-b2100d-1adr",
@@ -1866,7 +1884,8 @@
       "EUR": 549,
       "USD": 600,
       "JPY": 77000
-    }
+    },
+    "haOption": "G-Shock GM-B2100 D"
   },
   {
     "id": "g-shock-gst-b1000d-2adr",
@@ -1969,7 +1988,8 @@
       "EUR": 399,
       "USD": 440,
       "JPY": 66000
-    }
+    },
+    "haOption": "G-Shock GST-B1000 D"
   },
   {
     "id": "g-shock-gw-bx5600-1a1dr",
@@ -2071,7 +2091,8 @@
     "releaseDate": "2025-11",
     "msrp": {
       "JPY": 30800
-    }
+    },
+    "haOption": "G-Shock GW-BX5600"
   },
   {
     "id": "oceanus-ocw-s400rl-8ajr",
@@ -2172,7 +2193,8 @@
     "releaseDate": "2026-08",
     "msrp": {
       "JPY": 165000
-    }
+    },
+    "haOption": "Oceanus OCW-S400 RL"
   },
   {
     "id": "oceanus-ocw-t200s-1ajf",
@@ -2269,7 +2291,8 @@
     "releaseDate": "2019-04",
     "msrp": {
       "JPY": 71500
-    }
+    },
+    "haOption": "Oceanus OCW-T200 S"
   },
   {
     "id": "pro-trek-prw-35ld-5jf",
@@ -2371,7 +2394,8 @@
     "releaseDate": "2025-05",
     "msrp": {
       "JPY": 48400
-    }
+    },
+    "haOption": "Pro Trek PRW-35 LD"
   },
   {
     "id": "casio-mrs-301-2evdf",
@@ -2463,7 +2487,8 @@
     ],
     "tags": [],
     "notes": "Babadan kalma. Satın alma tarihi tahmini: kullanıcının hatırladığı kadarıyla 2002 ya da 2003 yazının başı. Modül 2385 Ağustos 2001 çıkışlı olduğu için saat en erken o tarihli olabilir; tahmin bu tabanla uyumlu.",
-    "msrp": {}
+    "msrp": {},
+    "haOption": "Casio MRS-301"
   },
   {
     "id": "mondaine-mse-40610-lbv",
@@ -2558,7 +2583,8 @@
     "notes": "Koleksiyondaki ilk Casio dışı saat. Kasa arkası camlı — Sellita SW220-1 görünüyor.",
     "msrp": {
       "EUR": 729
-    }
+    },
+    "haOption": "Mondaine Evo2"
   },
   {
     "id": "seiko-sne529p",
@@ -2651,7 +2677,8 @@
     "notes": "Vidalı kasa arkası. Kadran yeşil sunray, altın tonu indeksler.",
     "msrp": {
       "USD": 250
-    }
+    },
+    "haOption": "Seiko SNE529"
   },
   {
     "id": "braun-bn0021bkg",
