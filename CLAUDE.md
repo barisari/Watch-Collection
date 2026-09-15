@@ -420,6 +420,15 @@ aynı gün içindeki değişim ne kadar ince kaydedilecek.
 
 ## Çalışma alışkanlıkları
 
+- **Bu site kullanıcının kendisi için. Ölçüt eksiksizlik değil, bakma kolaylığı.**
+  Tekrar eden hata: veriyi makineye tam, insana kalabalık sunmak. Üç örnek —
+  HA seçeneklerine renk kodu koymak (`GA-2100-1A1`; oysa `GA-2100` yetiyor,
+  malzeme harfi zaten modelin parçası), bulunan her para birimini ayrı satır
+  basmak, türetilmiş her değere "tahmin" etiketi iliştirmek. Kullanıcının
+  ifadesiyle: *"Ya herşeyi ayrı ayrı gösterince çok komplike bir hale
+  getiriyorsun. Biz bu siteyi kendimiz için yapıyoruz."*
+  Kural: **ekranda ve listelerde kullanıcının tanıdığı kısa biçimi kullan**,
+  tam kimliği veride sakla. Açıklamalarda da aynısı geçerli — kısa yaz.
 - Veriyi değiştiren her işten sonra `node scripts/validate-data.mjs` çalıştır.
 - Site metinleri Türkçe; kod içi yorumlar da Türkçe.
 - Bilinen bir referansın teknik özelliklerini doldururken **kullanıcıya
