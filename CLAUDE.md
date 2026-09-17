@@ -423,23 +423,6 @@ denetimi gitti. Kullanıcının sorusu yerindeydi: 28/28 `owned` olduğu için
 filtre hiçbir şeyi filtrelemiyordu, ve sahip olmadığı saatlerin vitrinini
 yapmak istemiyor.
 
-**İSKELET DERSİ — en pahalı ders.** Kullanıcı *"sahip olduğum saatlerin
-vitrinini"* istedi; ben ilk commit'te (`bb86d27`) bir envanter yönetim sistemi
-kurdum. İstenmeden eklenenler: rotasyon takvimi, istatistik sayfası,
-tarayıcıdan kayıt/düzenleme, localStorage taslak katmanı, `status` filtresi,
-istek listesi. Hepsi 17 Eylül'de silindi — **~1600 satır.**
-
-Bedeli satır sayısı değil: bu özellikler **yanlış problemler üretti.** İki
-oturum "rotasyonu herkese açık bir sistemde nasıl saklarız", "`wears.json`'ı
-yayından nasıl çıkarırız", "özel istatistik sayfası nereye" diye tartışıldı.
-Hiçbiri gerçek problem değildi. Üstelik kullanıcı bunları kendi kararı sanıp
-kendini suçladı.
-
-**Ayrım:** yapı kurmak zorunludur (dosya düzeni, yönlendirme, veri şeması —
-her ayrıntı sorulamaz). Ama **bölüm/özellik eklemek karar vermektir, sorulur.**
-"Rotasyon takvimi de olsun" yapı değil, özelliktir. Bu depoda yeni bir sekme,
-sayfa, filtre ya da alan eklemeden önce **sor.**
-
 **Kullanıcı rotasyon kaydı birikmesini bekliyor**, gösterim tarafına ondan sonra
 başlanacak. Kendiliğinden başlama.
 
@@ -483,6 +466,25 @@ mi); aynı gün içindeki değişim ne kadar ince gösterilecek; HA takvimindeki
 ---
 
 ## Çalışma alışkanlıkları
+
+- ## SORULMAYANI KURMA — bu deponun en pahalı dersi.
+  Kullanıcı *"sahip olduğum saatlerin vitrinini"* istedi; ilk commit'te
+  (`bb86d27`) bir envanter yönetim sistemi kuruldu. İstenmeden eklenenler:
+  rotasyon takvimi, istatistik sayfası, tarayıcıdan kayıt/düzenleme,
+  localStorage taslak katmanı, `status` filtresi, istek listesi. 17 Eylül
+  2026'da hepsi silindi — **~1600 satır.**
+
+  Bedeli satır sayısı değil, **ürettikleri yanlış problemler:** iki oturum
+  "rotasyonu herkese açık bir sistemde nasıl saklarız", "`wears.json`'ı
+  yayından nasıl çıkarırız", "özel istatistik sayfası nereye" diye tartışıldı.
+  Hiçbiri gerçek problem değildi. Kullanıcının parası ve token'ı buna gitti.
+  Üstelik bunları kendi kararı sanıp kendini suçladı.
+
+  **Ayrım:** yapı kurmak zorunludur — dosya düzeni, yönlendirme, veri şeması
+  için her ayrıntı sorulamaz. Ama **bölüm/özellik eklemek karar vermektir.**
+  "Rotasyon takvimi de olsun" yapı değil, özelliktir. Yeni bir sekme, sayfa,
+  filtre, alan ya da düğme eklemeden önce **sor.** Emin değilsen en azını kur,
+  kullanıcı söyledikçe ekle. Bu site bir vitrin; başka bir şeye dönüştürme.
 
 - **Bu site kullanıcının kendisi için. Ölçüt eksiksizlik değil, bakma kolaylığı.**
   Tekrar eden hata: veriyi makineye tam, insana kalabalık sunmak. Üç örnek —
