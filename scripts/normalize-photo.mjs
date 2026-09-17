@@ -29,8 +29,18 @@
  *
  * ELLE KESİLMİŞ GİRDİ: dosya zaten saydam zeminliyse (alfası var ve %5'ten
  * fazlası saydam) fon silme adımı tamamen atlanır, yalnızca çerçeveleme yapılır.
- * Photoshop'ta yapılmış kesim her zaman buradaki otomatikten iyi. Yine de
- * otomatik kesim istenirse: CUTOUT=force
+ *
+ * ── CUTOUT=off — KESMEDEN ÇERÇEVELE ───────────────────────────────────────
+ * Kullanıcının kararı (17 Eylül 2026): fon kesimi ARTIK BU BETİKLE YAPILMIYOR.
+ * Kesim gerekiyorsa kullanıcı Photoshop'ta yapar; buradaki otomatik sonuç
+ * yeterince iyi değil. Kapak da dahil.
+ *
+ * CUTOUT=off: fona hiç dokunulmaz. Kenardaki düz zemin kırpılır, içerik yine
+ * 770 pikselde ölçeklenir (diğer görsellerle aynı boy), ama kalan pay saydam
+ * yerine görselin KENDİ zemin rengiyle doldurulur. Sonuç: tuvali baştan sona
+ * dolduran, dikişsiz, opak bir kare. Ek (kapak dışı) fotoğraflar böyle üretilir.
+ *
+ * Otomatik kesim yine de istenirse: CUTOUT=force
  *
  * Eşikler ortam değişkeniyle ayarlanabilir: SCALE, STEP, CAP, GROW, FEATHER.
  */
@@ -127,8 +137,28 @@ async function alreadyCut() {
   return clear / (info.width * info.height) > 0.05;
 }
 
-let rgba;
-if (await alreadyCut()) {
+/** Görselin kendi zemin rengi: en dış 1 px çerçevenin kanal bazında ortancası.
+ *  Ortalama değil ortanca — saat kenara değiyorsa o pikseller sonucu kaydırmasın. */
+async function borderColor() {
+  const { data, info } = await sharp(SRC).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const { width: w, height: h, channels: c } = info;
+  const ch = [[], [], []];
+  const push = (x, y) => { const i = (y * w + x) * c; for (let k = 0; k < 3; k++) ch[k].push(data[i + k]); };
+  for (let x = 0; x < w; x++) { push(x, 0); push(x, h - 1); }
+  for (let y = 0; y < h; y++) { push(0, y); push(w - 1, y); }
+  const med = (a) => a.sort((p, q) => p - q)[a.length >> 1];
+  return { r: med(ch[0]), g: med(ch[1]), b: med(ch[2]), alpha: 1 };
+}
+
+const NO_CUT = process.env.CUTOUT === 'off';
+let rgba, padBg = { r: 0, g: 0, b: 0, alpha: 0 };
+
+if (NO_CUT) {
+  padBg = await borderColor();
+  console.log(`CUTOUT=off — fona dokunulmuyor, pay görselin kendi zeminiyle doldurulacak ` +
+    `(rgb ${padBg.r},${padBg.g},${padBg.b}).`);
+  rgba = await sharp(SRC).removeAlpha().png().toBuffer();
+} else if (await alreadyCut()) {
   console.log('girdi zaten saydam zeminli — fon silme atlandı, yalnızca çerçeveleniyor.');
   rgba = await sharp(SRC).ensureAlpha().png().toBuffer();
 } else {
@@ -185,7 +215,7 @@ const padX = CANVAS - sm.width, padY = CANVAS - sm.height;
 await sharp(scaled).extend({
   left: Math.floor(padX / 2), right: Math.ceil(padX / 2),
   top: Math.floor(padY / 2), bottom: Math.ceil(padY / 2),
-  background: { r: 0, g: 0, b: 0, alpha: 0 },
+  background: padBg,
 }).webp({ quality: 90 }).toFile(OUT);
 
 console.log(`yazıldı: ${OUT} → ${sm.width}×${sm.height} içerik, ${CANVAS}×${CANVAS} tuval ` +
