@@ -3,6 +3,7 @@
 import { getWatch } from '../data.js';
 import {
   el, fmtDate, fmtMoney, fmtNum, watchLabel, colorForWatch, emptyState,
+  photoSm, photoLarge,
 } from '../ui.js';
 import { term, termList, waterResistance } from '../terms.js';
 
@@ -196,10 +197,9 @@ function openLightbox(src, alt) {
   button.focus();
 }
 
-/* İki boy var: photos/watches/ altındaki 900 px kareler galeri için (küçük
- * kare 90-130 CSS px, 3× ekranda bile yeter), photos/watches/large/ altındaki
- * 1500 px sürümler kapak ve büyütme için. Yol veriden değil buradan türetiliyor. */
-const largeOf = (src) => src.replace('photos/watches/', 'photos/watches/large/');
+/* Üç boy: sm 600 · taban 900 · large 1500. Yollar ui.js'te türetiliyor.
+ * Kapak ekranda ~400 px görünüyor → 1× ve 2× ekranda 900 yetiyor, 1500'ü
+ * yalnızca 3× ekran çekiyor. Büyütmede her zaman 1500 açılıyor. */
 
 function zoomable(src, alt, extra = {}) {
   const { zoom = src, ...attrs } = extra;
@@ -219,12 +219,18 @@ function photoPanel(watch) {
   return el('div.card',
     el('div.watch-photo', { style: { borderRadius: '8px', border: '1px solid var(--border)', marginBottom: photos.length > 1 ? '12px' : '0' } },
       photos[0]
-        ? zoomable(largeOf(photos[0]), watchLabel(watch))
+        ? zoomable(photos[0], watchLabel(watch), {
+            srcset: `${photos[0]} 900w, ${photoLarge(photos[0])} 1500w`,
+            sizes: '(min-width: 900px) 400px, 90vw',
+            zoom: photoLarge(photos[0]),
+          })
         : el('span.placeholder', { 'aria-hidden': 'true' }, '⌚')),
     photos.length > 1 && el('div.gallery',
       photos.slice(1).map((src, i) =>
-        zoomable(src, `${watchLabel(watch)} — fotoğraf ${i + 2}`,
-          { loading: 'lazy', zoom: largeOf(src) }))),
+        /* Küçük kare 90-130 px görünüyor; 600'lük boy 3× ekranda bile fazlasıyla
+           yetiyor. Tıklayınca 1500 açılıyor. */
+        zoomable(photoSm(src), `${watchLabel(watch)} — fotoğraf ${i + 2}`,
+          { loading: 'lazy', zoom: photoLarge(src) }))),
     !photos.length && el('p.muted', { style: { margin: '10px 0 0', textAlign: 'center' } },
       'Fotoğraf eklemek için dosyayı photos/ klasörüne koy ve yolunu saat kaydına yaz.'),
   );

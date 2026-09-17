@@ -559,6 +559,10 @@ yani 11 MB Pages yayınını şişirmiyor.
   **Kapak dışındaki ek fotoğraflara temizlik hiç gerekmez** — oldukları gibi
   kalır. Zaten çoğu asıl CDN'den saydam zeminli iniyor; kesim gereken tek
   durum JPG kaynaklar (Mondaine, Braun).
+- **Açık ve koyu tema renk jetonları AYRI tanımlanır.** `--text-muted` uzun
+  süre iki temada da `#898781` idi: koyu zeminde 4,85 veriyordu ama açık
+  zeminde 3,41-3,50'de kalıyordu (WCAG AA eşiği 4,5). Açık tema `#74736e`
+  oldu. Bir jetonu iki temada aynı bırakmadan önce ölç.
 - Veriyi değiştiren her işten sonra `node scripts/validate-data.mjs` çalıştır.
 - Site metinleri Türkçe; kod içi yorumlar da Türkçe.
 - Bilinen bir referansın teknik özelliklerini doldururken **kullanıcıya
@@ -572,14 +576,20 @@ yani 11 MB Pages yayınını şişirmiyor.
 - **İşlenmemiş asıllar `photos/originals/` altında saklanır** ve `build.mjs`
   bunları `dist/`e kopyalamaz (`SKIP` listesi) — depoda duruyorlar ama Pages
   yayınını şişirmiyorlar. Sitede gösterilen 900×900 WebP'ler `photos/watches/`.
-- **İki boy yayınlanıyor.** `photos/watches/` 900×900 — anasayfa ızgarası ve
-  detay sayfasındaki küçük kareler (kare 90-130 CSS px, 3× ekranda bile yeter).
-  `photos/watches/large/` 1500×1500 — kapak görseli ve büyütme; kapak panelde
-  ~400 px görünüyor, 3× ekran 1200 istiyor. Yol veride değil `detail.js >
-  largeOf()` içinde türetiliyor, `watches.json`'a iki kayıt yazılmıyor.
-  Büyükler `NO_ENLARGE=1` ile üretilir: kaynağı yetmeyen dosya büyütülmez,
-  gerçek boyunda kalır (üreticinin 1080'lik ek kareleri böyle). 28 kapağın
-  hepsi 1283 px içeriğe gerçek pikselle çıkıyor.
+- **Üç boy yayınlanıyor, hepsi `srcset` ile bağlı.** Yollar veride değil
+  `ui.js > photoSm()` / `photoLarge()` içinde türetiliyor — `watches.json`'a
+  tek kayıt yazılıyor.
+
+  | Klasör | Boy | Nerede |
+  |---|---|---|
+  | `photos/watches/sm/` | 600 | Izgara kartı, künyedeki küçük kareler |
+  | `photos/watches/` | 900 | `srcset`'in üst basamağı (3× telefon), künye kapağı 1-2× |
+  | `photos/watches/large/` | 1500 | Künye kapağı 3×, büyütme |
+
+  Ölçüldü: ızgara masaüstünde **1,63 → 1,04 MB** (%36), künye sayfası 1×
+  ekranda 180 → 110 KB (kapak artık her ziyarette 1500 indirmiyor).
+  `NO_ENLARGE=1` ile üretilir: kaynağı yetmeyen dosya büyütülmez, gerçek
+  boyunda kalır. 28 kapağın hepsi 1283 px içeriğe gerçek pikselle çıkıyor.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır (Escape kapatır).
 - `id` alanı sabittir; fotoğraf yolları ve `haOption` eşleşmesi ona bağlı.
 
@@ -593,5 +603,5 @@ yani 11 MB Pages yayınını şişirmiyor.
 | `node scripts/import-casio-sheet.mjs <csv> [--reset]` | Casio Collection tablosundan içe aktarır |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
 | `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafı 900×900 WebP'ye çerçeveler (`npm i sharp`). `CUTOUT=off` fona dokunmaz — varsayılan yol bu. `CANVAS`/`NO_ENLARGE` ile boy ayarlanır |
-| `node scripts/build-large-photos.mjs` | Büyütme için 1500 px sürümleri üretir → `photos/watches/large/` |
+| `node scripts/build-photo-sizes.mjs` | 600 ve 1500 px sürümleri üretir → `photos/watches/sm/` ve `large/` |
 | `node scripts/fetch-originals.mjs [--force]` | Görsel asıllarını `photos/originals/` altına indirir |

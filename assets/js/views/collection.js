@@ -1,7 +1,7 @@
 /* Koleksiyon ızgarası: arama, filtre, sıralama ve saat kartları. */
 
 import { state } from '../data.js';
-import { el, watchLabel, colorForWatch, emptyState } from '../ui.js';
+import { el, watchLabel, colorForWatch, emptyState, photoSm } from '../ui.js';
 
 const filters = { q: '', brand: '', category: '', sort: 'brand' };
 
@@ -108,7 +108,15 @@ function watchCard(row, navigate) {
   },
     el('div.watch-photo',
       photo
-        ? el('img', { src: photo, alt: watchLabel(w), loading: 'lazy' })
+        /* Kart ekranda 268-333 px görünüyor. sizes tarayıcıya hangi genişlikte
+           çizileceğini söylüyor; o da srcset'ten doğru basamağı seçiyor.
+           1× masaüstü 600'ü, 3× telefon 900'ü alır. */
+        ? el('img', {
+            src: photo,
+            srcset: `${photoSm(photo)} 600w, ${photo} 900w`,
+            sizes: '(min-width: 1220px) 270px, (min-width: 820px) 33vw, (min-width: 560px) 50vw, 100vw',
+            alt: watchLabel(w), loading: 'lazy',
+          })
         : el('span.placeholder', { 'aria-hidden': 'true' }, '⌚')),
     el('div.watch-body',
       el('div.watch-brand',

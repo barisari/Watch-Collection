@@ -14,7 +14,9 @@
 
   --text-primary: #0b0b0b;
   --text-secondary: #52514e;
-  --text-muted: #898781;
+  /* Açık ve koyu temada AYRI olmalı: #898781 koyu zeminde 4,85 veriyor ama
+     açık zeminde 3,41-3,50'de kalıyor (AA eşiği 4,5). Ölçülüp düzeltildi. */
+  --text-muted: #74736e;
 
   --gridline: #e1e0d9;
   --axis: #c3c2b7;
@@ -121,7 +123,7 @@ body {
   background: var(--surface-2);
   color: var(--text-primary);
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
@@ -242,8 +244,8 @@ textarea { min-height: 72px; resize: vertical; width: 100%; }
 @media (max-width: 600px) { .lightbox { padding: 16px; } }
 
 .watch-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
-.watch-brand { font-size: 12px; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); }
-.watch-model { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+.watch-brand { font-size: 12.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); }
+.watch-model { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
 .watch-ref { font-size: 12.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .watch-meta {
   margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--gridline);

@@ -70,6 +70,14 @@ export function fmtMoney(amount, currency) {
 export const fmtNum = (n, digits = 0) =>
   n == null ? '—' : n.toLocaleString(locale(), { minimumFractionDigits: digits, maximumFractionDigits: digits });
 
+/* Görselin üç boyu var; yollar veriden değil buradan türetiliyor, envantere
+   tek kayıt yazılıyor. Üretimi: scripts/build-photo-sizes.mjs
+     sm     600 px  ızgara kartı + künyedeki küçük kareler
+     (taban) 900 px srcset'in üst basamağı (3× telefon)
+     large 1500 px  künye kapağı + büyütme                                   */
+export const photoSm = (src) => src.replace('photos/watches/', 'photos/watches/sm/');
+export const photoLarge = (src) => src.replace('photos/watches/', 'photos/watches/large/');
+
 export const watchLabel = (w) => (w ? `${w.brand} ${w.model}` : 'Bilinmeyen saat');
 
 /* -------------------------------------------------------------------- renk */
