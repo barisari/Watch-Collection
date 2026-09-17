@@ -394,10 +394,33 @@ detaydaki ROTASYON kutusu ve "Bugün bunu taktım" düğmesi, `data.js` içindek
 tüm wears tesisatı (`upsertWear`, `deleteWear`, `wearKey`, taslaklar).
 `npm run wear` betiği de kalktı.
 
-Korunanlar: **"Kayıt ekle" sekmesi duruyor** — içindeki rotasyon formu gitti ama
-saat ekleme/düzenleme ve `watches.json` dışa aktarımı orada, onlar rotasyonla
-ilgili değil. Kart alt satırındaki rotasyon sayacının yerine kasa çapı kondu.
-`todayISO()` `stats.js`'ten `ui.js`'e taşındı.
+Kart alt satırındaki rotasyon sayacının yerine kasa çapı kondu (`watch-meta`
+`space-between` olduğu için sol yuva boş kalmasın).
+
+**"Kayıt ekle" sekmesi de kaldırıldı (aynı gün, ikinci adım).** İlk turda
+korumuştum çünkü içinde saat ekleme/düzenleme ve dışa aktarım vardı. Kullanıcı
+silinmesini istedi, gerekçe sağlam: **o form gerçek giriş yolu olamıyordu.**
+Bir saat eklemek sadece satır yazmak değil — görseli indirmek, aslını
+arşivlemek, 900/1500 sürümlerini üretmek, teknik özellikleri üreticinin
+sayfasından doğrulamak gerekiyor; tarayıcıdaki form bunların hiçbirini yapamaz.
+28 saatin hepsi zaten betiklerle girdi, form bir kez kullanılmadı.
+
+Bununla birlikte **tüm taslak katmanı gitti**: `data.js` içindeki `drafts`,
+`upsertWatch`, `deleteWatch`, `clearDrafts`, `draftCount`, `recompute`,
+`fileWatches`, `exportJSON`, `downloadJSON`, `makeId` ve `DRAFT_KEY`.
+`localStorage`'da artık yalnızca tercihler duruyor (tema + koleksiyoner modu).
+Detaydaki "Düzenle" düğmesi ve alt bilgideki taslak sayacı da kalktı.
+
+**Site artık salt okunur.** Tek sekme: Koleksiyon. Eski `#/kayit`, `#/takvim`,
+`#/istatistik` bağlantıları varsayılan rotaya düşüyor, kırılmıyor.
+`todayISO()` `stats.js`'ten `ui.js`'e taşınmıştı; onu kullanan tek yer saat
+formuydu, o da gittiği için artık kullanılmıyor ama `ui.js`'te duruyor.
+
+**İskelet dersi:** kullanıcının istemediği ama ilk commit'te (`bb86d27`)
+kendiliğinden eklenmiş özellikler epey vardı — tarayıcıdan kayıt, rotasyon
+arayüzü, `status` filtresi (satılanlar / istek listesi; envanterin 28/28'i
+`owned`). Kullanıcı bunları görünce kendini suçladı, oysa hiçbirini o
+istemedi. Yeni bölüm eklerken **istenmeyeni kurma.**
 
 **Kullanıcı rotasyon kaydı birikmesini bekliyor**, gösterim tarafına ondan sonra
 başlanacak. Kendiliğinden başlama.

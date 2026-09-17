@@ -2,7 +2,7 @@
 
 import { getWatch, canShow, isPrivateField } from '../data.js';
 import {
-  el, fmtDate, fmtMoney, fmtNum, relDays, watchLabel, colorForWatch, emptyState, toast,
+  el, fmtDate, fmtMoney, fmtNum, watchLabel, colorForWatch, emptyState,
 } from '../ui.js';
 import { term, termList, waterResistance } from '../terms.js';
 
@@ -83,8 +83,6 @@ export function renderDetail(root, id, navigate) {
             releaseLabel(watch),
             watch.nickname && `“${watch.nickname}”`,
           ].filter(Boolean).join(' · '))),
-      el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } },
-        el('button.btn', { type: 'button', onclick: () => navigate(`#/kayit?duzenle=${encodeURIComponent(id)}`) }, 'Düzenle')),
     ),
 
     el('div.detail-grid',

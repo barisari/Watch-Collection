@@ -1,7 +1,7 @@
 /* Koleksiyon ızgarası: arama, filtre, sıralama ve saat kartları. */
 
 import { state, canShow } from '../data.js';
-import { el, fmtDate, fmtMoney, relDays, watchLabel, colorForWatch, emptyState } from '../ui.js';
+import { el, watchLabel, colorForWatch, emptyState } from '../ui.js';
 
 const filters = { q: '', brand: '', category: '', status: 'owned', sort: 'brand' };
 

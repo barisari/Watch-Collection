@@ -25,31 +25,18 @@ node scripts/serve.mjs        # http://localhost:8080
 Kendi koleksiyonuna geçmek için:
 
 1. `data/watches.json` içindekileri sil, kendi saatlerini ekle
-   (siteden "Kayıt ekle" sekmesini kullanabilirsin — aşağıya bak)
+   (`scripts/add-watches.mjs` ile listeden toplu ekleyebilirsin)
 2. `site.config.json` içinde koleksiyon adını ve para birimini değiştir
 
 ---
 
-## Veri nerede duruyor? (ve siteye giren biri veriyi değiştirebilir mi?)
+## Veri nerede duruyor?
 
-Hayır, değiştiremez. İki ayrı katman var:
+Tek yerde: depodaki `data/watches.json`. **Site salt okunur** — form yok, sunucu
+yok, veritabanı yok. Ziyaretçinin tarayıcısında yalnızca iki tercih saklanıyor
+(tema ve koleksiyoner modu).
 
-| | Nerede | Kim değiştirebilir |
-|---|---|---|
-| **Asıl veri** | Depodaki `data/*.json` | Sadece depoya yazma yetkisi olan sen |
-| **Taslak** | Ziyaretçinin kendi tarayıcısı (`localStorage`) | Herkes — ama sadece kendi ekranında |
-
-Sitedeki formlar taslağa yazar. Taslak o cihazdan dışarı çıkmaz: sunucu yok,
-veritabanı yok, gönderilecek bir yer yok. Bir ziyaretçi form doldurursa yalnızca
-kendi sekmesindeki görüntüyü değiştirmiş olur; sayfayı yenilediğinde bile senin
-verinde hiçbir şey değişmez.
-
-Sen bir kayıt eklediğinde de aynısı olur — bu yüzden kalıcı hale getirmek için
-bir adım daha var:
-
-**Kayıt ekle → `watches.json` indir → dosyayı `data/` klasörüne koy → commit et.**
-
-Terminali tercih ediyorsan taslak adımını tamamen atlayabilirsin:
+Envanter depo tarafındaki betiklerle yönetilir:
 
 ```bash
 node scripts/add-watches.mjs liste.txt              # listeden toplu saat ekle
@@ -119,9 +106,9 @@ assets/
   css/styles.css         tüm stiller ve renk jetonları
   js/
     app.js               yönlendirme, tema, görünürlük modu
-    data.js              veri yükleme, tarayıcı taslakları, dışa aktarım
+    data.js              veri yükleme, gizli alan filtresi
     ui.js                DOM yardımcıları, biçimlendiriciler, ipuçları
-    views/               koleksiyon · detay · kayıt
+    views/               koleksiyon · detay
 data/
   watches.json           envanter
   README.md              alan alan şema açıklaması

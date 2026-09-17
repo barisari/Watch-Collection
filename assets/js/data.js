@@ -1,38 +1,25 @@
 /* ---------------------------------------------------------------------------
-   Veri katmanı.
+   Veri katmanı. Tek kaynak: `data/watches.json` — depoda, versiyonlu.
 
-   İki kaynak vardır ve ikisi bilinçli olarak ayrıdır:
+   Site SALT OKUNUR. Eskiden tarayıcı taslakları (localStorage) üzerinden
+   ekleme/düzenleme yapılabiliyordu; 17 Eylül 2026'da kaldırıldı. Sebebi:
+   o form gerçek giriş yolu olamıyordu. Bir saat eklemek sadece satır yazmak
+   değil — görseli indirmek, aslını arşivlemek, 900/1500 sürümlerini üretmek
+   ve teknik özellikleri üreticinin sayfasından doğrulamak gerekiyor. Envanter
+   depo tarafındaki betiklerle yönetiliyor (bkz. CLAUDE.md > Komutlar).
 
-   1) data/*.json  — ASIL VERİ. Depoda (git) durur, versiyonludur, yedeklidir.
-      Sitede gördüğün her şeyin temeli budur.
-
-   2) tarayıcı taslakları (localStorage) — SADECE O TARAYICIDA. Site üzerinden
-      yaptığın ekleme/düzenleme buraya yazılır; kimse başkasının verisini
-      değiştiremez, çünkü herkesin taslağı kendi cihazında kalır. Taslaklar
-      "JSON indir" ile dosyaya aktarılıp depoya işlenerek kalıcı hale gelir.
-
-   Yani siteyi ziyaret eden biri form doldurursa yalnızca kendi ekranını
-   değiştirmiş olur; senin verine ulaşamaz.
+   localStorage'da yalnızca tercihler duruyor: tema ve koleksiyoner modu.
 --------------------------------------------------------------------------- */
 
-const DRAFT_KEY = 'watch-collection:drafts:v1';
 const PREFS_KEY = 'watch-collection:prefs:v1';
 
 export const state = {
   config: {},
-  fileWatches: [],
   watches: [],
-  drafts: emptyDrafts(),
   prefs: { collectorMode: false, theme: null },
   /** Yayınlanan veride gizli alanlar temizlenmişse true. */
   strippedBuild: false,
 };
-
-function emptyDrafts() {
-  return {
-    watches: { upserts: {}, deletes: [] },
-  };
-}
 
 /* ---------------------------------------------------------------- depolama */
 
@@ -56,7 +43,6 @@ function writeStore(key, value) {
 }
 
 export function savePrefs() { writeStore(PREFS_KEY, state.prefs); }
-function saveDrafts() { writeStore(DRAFT_KEY, state.drafts); }
 
 /* ------------------------------------------------------------------ yükle */
 
@@ -87,62 +73,14 @@ export async function loadAll() {
     ...config,
   };
 
-  state.fileWatches = Array.isArray(watches) ? watches : [];
+  state.watches = Array.isArray(watches) ? watches : [];
 
   // Yayın derlemesinde gizli alanlar silinmiş olabilir. Bunu verinin
   // yokluğundan TAHMİN ETMİYORUZ — "silindi" ile "hiç girilmedi" aynı görünür.
   // scripts/build.mjs temizlediği derlemeye bu bayrağı açıkça yazar.
   state.strippedBuild = state.config.strippedBuild === true;
 
-  state.drafts = readStore(DRAFT_KEY, emptyDrafts());
   state.prefs = readStore(PREFS_KEY, { collectorMode: false, theme: null });
-
-  recompute();
-}
-
-/* --------------------------------------------------- dosya + taslak birleşimi */
-
-export function recompute() {
-  const wd = state.drafts.watches;
-  const watchDeletes = new Set(wd.deletes);
-  const byId = new Map();
-  for (const w of state.fileWatches) {
-    if (!watchDeletes.has(w.id)) byId.set(w.id, w);
-  }
-  for (const [id, w] of Object.entries(wd.upserts)) {
-    if (!watchDeletes.has(id)) byId.set(id, w);
-  }
-  state.watches = [...byId.values()];
-}
-
-export const draftCount = () => {
-  const d = state.drafts;
-  return Object.keys(d.watches.upserts).length + d.watches.deletes.length;
-};
-
-/* ----------------------------------------------------------- değiştiriciler */
-
-export function upsertWatch(watch) {
-  state.drafts.watches.upserts[watch.id] = watch;
-  state.drafts.watches.deletes = state.drafts.watches.deletes.filter((id) => id !== watch.id);
-  saveDrafts();
-  recompute();
-}
-
-export function deleteWatch(id) {
-  delete state.drafts.watches.upserts[id];
-  if (state.fileWatches.some((w) => w.id === id) && !state.drafts.watches.deletes.includes(id)) {
-    state.drafts.watches.deletes.push(id);
-  }
-  saveDrafts();
-  recompute();
-}
-
-
-export function clearDrafts() {
-  state.drafts = emptyDrafts();
-  saveDrafts();
-  recompute();
 }
 
 /* ---------------------------------------------------------- gizli alanlar */
@@ -166,42 +104,4 @@ export function privateValue(watch, path) {
   return getPath(watch, path);
 }
 
-/* ------------------------------------------------------------------ dışa aktarım */
-
-export function exportJSON() {
-  const sorted = [...state.watches]
-    .sort((a, b) => `${a.brand} ${a.model}`.localeCompare(`${b.brand} ${b.model}`, 'tr'));
-  return JSON.stringify(sorted, null, 2) + '\n';
-}
-
-export function downloadJSON() {
-  const blob = new Blob([exportJSON()], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'watches.json';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
 export const getWatch = (id) => state.watches.find((w) => w.id === id) || null;
-
-/** Marka + model + referanstan çakışmayan bir kimlik üretir. */
-export function makeId(brand, model, reference) {
-  const slug = [brand, model, reference]
-    .filter(Boolean).join(' ')
-    .toLowerCase()
-    .replace(/ı/g, 'i').replace(/ğ/g, 'g').replace(/ü/g, 'u')
-    .replace(/ş/g, 's').replace(/ö/g, 'o').replace(/ç/g, 'c')
-    .normalize('NFD').replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 60);
-  const base = slug || 'saat';
-  let id = base;
-  let n = 2;
-  while (state.watches.some((w) => w.id === id)) id = `${base}-${n++}`;
-  return id;
-}

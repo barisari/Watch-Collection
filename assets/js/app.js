@@ -1,10 +1,9 @@
 /* Uygulama kabuğu: yönlendirme, tema ve görünürlük modu. */
 
-import { state, loadAll, savePrefs, draftCount } from './data.js';
+import { state, loadAll, savePrefs } from './data.js';
 import { el, clear, hideTip, toast } from './ui.js';
 import { renderCollection } from './views/collection.js';
 import { renderDetail } from './views/detail.js';
-import { renderLog } from './views/log.js';
 
 const viewHost = document.getElementById('view');
 
@@ -41,14 +40,6 @@ function bindChrome() {
   set('tagline', state.config.tagline || '');
   set('watchCount', String(state.watches.length));
   document.title = state.config.collectionName || 'Saat Koleksiyonum';
-
-  const status = document.getElementById('draft-status');
-  if (status) {
-    const n = draftCount();
-    status.textContent = n
-      ? `${n} değişiklik bu tarayıcıda bekliyor — “Kayıt ekle” sekmesinden JSON olarak indirip depoya işleyebilirsin.`
-      : '';
-  }
 }
 
 /* ------------------------------------------------------------- yönlendirme */
@@ -95,7 +86,6 @@ function render() {
   try {
     switch (route) {
       case 'saat':      renderDetail(viewHost, id, navigate); break;
-      case 'kayit':     renderLog(viewHost, params, navigate); break;
       default:          renderCollection(viewHost, navigate); break;
     }
   } catch (err) {
