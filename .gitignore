@@ -3,3 +3,8 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+
+# Python önbelleği (beceri betiklerini çalıştırınca oluşuyor)
+__pycache__/
+*.pyc
+.coverage
