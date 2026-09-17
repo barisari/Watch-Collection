@@ -78,9 +78,19 @@ function markTabs(route) {
   }
 }
 
+/* Sorun: ızgarada aşağı inip bir saate tıklayınca detay sayfası ortasından
+ * açılıyordu. Hash yönlendirmesi içeriği değiştiriyor ama tarayıcı kaydırmayı
+ * olduğu yerde bırakıyor.
+ *
+ * Koşulsuz başa sarmak yanlış olurdu: render() aynı görünüm için de çağrılıyor
+ * (mod düğmesi, rotasyon kaydı). O durumda sayfa yerinden oynamamalı. Bu yüzden
+ * yalnızca rota ya da kimlik değişince sarıyor. */
+let lastKey = null;
+
 function render() {
   hideTip();
   const { route, id, params } = parseHash();
+  const key = `${route}/${id || ''}`;
   clear(viewHost);
   markTabs(route);
   bindChrome();
@@ -100,6 +110,11 @@ function render() {
         el('h2', 'Bir şeyler ters gitti'),
         el('p', 'Bu bölüm çizilemedi. Tarayıcı konsolunda ayrıntı var.'),
         el('p.muted', String(err && err.message ? err.message : err))));
+  }
+
+  if (key !== lastKey) {
+    window.scrollTo(0, 0);
+    lastKey = key;
   }
 }
 
