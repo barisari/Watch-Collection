@@ -501,6 +501,11 @@ deposundan (MIT, sürüm 2.13.0, commit `15de38f`). Kullanıcının talebi:
 | `design` · `design-system` | Tasarım kararları, jeton mimarisi |
 | `brand` · `banner-design` · `slides` | Marka, afiş, sunum |
 
+Ayrıca **`frontend-design`** — Anthropic'in kendi becerisi (Apache-2.0,
+`anthropics/skills` commit `34040c9`). Öbürleri veri sorgulatıyor, bu tek
+dosyalık bir *tutum* metni: "üretilmiş sayfa" izlenimi veren varsayılanları
+adıyla sayıyor ve onlardan kaçınmayı öğretiyor.
+
 Arama Python ile çalışıyor (3.11 kurulu):
 ```bash
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<sorgu>" --domain style|color|typography|ux|chart
