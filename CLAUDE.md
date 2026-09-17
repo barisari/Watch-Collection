@@ -488,6 +488,33 @@ mi); aynı gün içindeki değişim ne kadar ince gösterilecek; HA takvimindeki
 
 ---
 
+## Tasarım becerileri (17 Eylül 2026)
+
+`.claude/skills/` altında yedi beceri kurulu — `nextlevelbuilder/ui-ux-pro-max-skill`
+deposundan (MIT, sürüm 2.13.0, commit `15de38f`). Kullanıcının talebi:
+*"saçma sapan tasarımlar istemiyorum artık."*
+
+| Beceri | Ne veriyor |
+|---|---|
+| `ui-ux-pro-max` | Ana veritabanı: 79 stil, 192 palet, 74 font eşleşmesi, 119 UX kuralı, 25 grafik tipi, 22 teknoloji yığını |
+| `ui-styling` | Stil uygulaması |
+| `design` · `design-system` | Tasarım kararları, jeton mimarisi |
+| `brand` · `banner-design` · `slides` | Marka, afiş, sunum |
+
+Arama Python ile çalışıyor (3.11 kurulu):
+```bash
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<sorgu>" --domain style|color|typography|ux|chart
+```
+`--json` tam veriyi verir; düz çıktı uzun alanları 300 karakterde kesiyor.
+
+**Arayüzde bir şey değiştirmeden önce bu becerilere danış.** Veritabanı eşleşme
+bulamazsa kendi kafana göre uydurma — eşleşme bulunamadığını açıkça söyle.
+
+`build.mjs` `.claude/` klasörünü yayına kopyalamıyor (`COPY` listesinde yok),
+yani 11 MB Pages yayınını şişirmiyor.
+
+---
+
 ## Çalışma alışkanlıkları
 
 - ## SORULMAYANI KURMA — bu deponun en pahalı dersi.
