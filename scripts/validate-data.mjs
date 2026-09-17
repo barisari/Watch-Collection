@@ -70,39 +70,11 @@ function checkWatches(watches) {
   return ids;
 }
 
-function checkWears(wears, watchIds) {
-  if (!Array.isArray(wears)) {
-    errors.push('data/wears.json bir dizi (array) olmalı.');
-    return;
-  }
-
-  const seen = new Set();
-  const today = new Date().toISOString().slice(0, 10);
-
-  wears.forEach((w, i) => {
-    const at = `wears[${i}]`;
-    if (!w || typeof w !== 'object') { errors.push(`${at}: nesne değil.`); return; }
-
-    if (!isISODate(w.date)) errors.push(`${at}: date "${w.date}" YYYY-MM-DD olmalı.`);
-    else if (w.date > today) warnings.push(`${at}: ${w.date} gelecekte bir tarih.`);
-
-    if (!w.watchId) errors.push(`${at}: watchId zorunlu.`);
-    else if (watchIds.size && !watchIds.has(w.watchId)) {
-      errors.push(`${at}: "${w.watchId}" kimliğinde bir saat yok.`);
-    }
-
-    const key = `${w.date}|${w.watchId}`;
-    if (seen.has(key)) warnings.push(`${at}: ${w.date} için "${w.watchId}" iki kez kayıtlı.`);
-    seen.add(key);
-  });
-}
 
 async function main() {
   const watches = await readJSON('data/watches.json');
-  const wears = await readJSON('data/wears.json');
 
   const ids = watches ? checkWatches(watches) : new Set();
-  if (wears) checkWears(wears, ids);
 
   for (const w of warnings) console.warn(`  uyarı  ${w}`);
   for (const e of errors) console.error(`  HATA   ${e}`);
@@ -111,7 +83,7 @@ async function main() {
     console.error(`\n  ${errors.length} hata bulundu.\n`);
     process.exit(1);
   }
-  console.log(`\n  ✓ Veri geçerli — ${watches?.length ?? 0} saat, ${wears?.length ?? 0} rotasyon kaydı` +
+  console.log(`\n  ✓ Veri geçerli — ${watches?.length ?? 0} saat` +
     (warnings.length ? `, ${warnings.length} uyarı` : '') + '.\n');
 }
 

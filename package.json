@@ -1,7 +1,7 @@
 {
   "name": "watch-collection",
   "version": "1.0.0",
-  "description": "Saat koleksiyonu envanteri, sergi sitesi ve rotasyon günlüğü",
+  "description": "Saat koleksiyonu envanteri ve sergi sitesi",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,8 +9,7 @@
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/validate-data.mjs && node scripts/build.mjs",
     "build:private": "node scripts/validate-data.mjs && node scripts/build.mjs --private",
-    "validate": "node scripts/validate-data.mjs",
-    "wear": "node scripts/log-wear.mjs"
+    "validate": "node scripts/validate-data.mjs"
   },
   "engines": {
     "node": ">=18"

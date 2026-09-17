@@ -4,8 +4,6 @@ import { state, loadAll, savePrefs, draftCount } from './data.js';
 import { el, clear, hideTip, toast } from './ui.js';
 import { renderCollection } from './views/collection.js';
 import { renderDetail } from './views/detail.js';
-import { renderCalendar } from './views/calendar.js';
-import { renderStats } from './views/stats.js';
 import { renderLog } from './views/log.js';
 
 const viewHost = document.getElementById('view');
@@ -42,7 +40,6 @@ function bindChrome() {
   set('collectionName', state.config.collectionName || 'Saat Koleksiyonum');
   set('tagline', state.config.tagline || '');
   set('watchCount', String(state.watches.length));
-  set('wearCount', String(state.wears.length));
   document.title = state.config.collectionName || 'Saat Koleksiyonum';
 
   const status = document.getElementById('draft-status');
@@ -98,8 +95,6 @@ function render() {
   try {
     switch (route) {
       case 'saat':      renderDetail(viewHost, id, navigate); break;
-      case 'takvim':    renderCalendar(viewHost, navigate); break;
-      case 'istatistik': renderStats(viewHost, navigate); break;
       case 'kayit':     renderLog(viewHost, params, navigate); break;
       default:          renderCollection(viewHost, navigate); break;
     }

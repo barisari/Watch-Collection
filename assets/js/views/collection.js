@@ -1,17 +1,12 @@
 /* Koleksiyon ızgarası: arama, filtre, sıralama ve saat kartları. */
 
 import { state, canShow } from '../data.js';
-import { perWatchStats } from '../stats.js';
 import { el, fmtDate, fmtMoney, relDays, watchLabel, colorForWatch, emptyState } from '../ui.js';
 
 const filters = { q: '', brand: '', category: '', status: 'owned', sort: 'brand' };
 
 const SORTS = {
   brand: { label: 'Marka (A→Z)', cmp: (a, b) => watchLabel(a.watch).localeCompare(watchLabel(b.watch), 'tr') },
-  mostWorn: { label: 'En çok takılan', cmp: (a, b) => b.days - a.days },
-  leastWorn: { label: 'En az takılan', cmp: (a, b) => a.days - b.days },
-  recent: { label: 'En son takılan', cmp: (a, b) => (b.lastWorn || '').localeCompare(a.lastWorn || '') },
-  stale: { label: 'En uzun süredir takılmayan', cmp: (a, b) => (b.daysSince ?? 1e9) - (a.daysSince ?? 1e9) },
   acquired: { label: 'Satın alma (yeniden eskiye)', cmp: (a, b) => (b.watch.acquisition?.date || '').localeCompare(a.watch.acquisition?.date || '') },
   size: { label: 'Kasa çapı', cmp: (a, b) => (a.watch.specs?.case?.diameter ?? 0) - (b.watch.specs?.case?.diameter ?? 0) },
 };
@@ -22,7 +17,9 @@ const uniq = (values) => [...new Set(values.filter(Boolean))].sort((a, b) => a.l
 const releaseYear = (w) => (w.releaseDate ? String(w.releaseDate).slice(0, 4) : null);
 
 export function renderCollection(root, navigate) {
-  const rows = perWatchStats();
+  /* Rotasyon sitede tutulmuyor (kayıt Home Assistant'ta) — kartlar yalnızca
+     envanter verisiyle çiziliyor. */
+  const rows = state.watches.map((watch) => ({ id: watch.id, watch }));
 
   root.append(
     el('div.section-head',
@@ -135,7 +132,10 @@ function watchCard(row, navigate) {
         w.nickname && `“${w.nickname}”`,
       ].filter(Boolean).join(' · ')),
       el('div.watch-meta',
-        el('span', row.days ? `${row.days} gün takıldı` : 'Henüz takılmadı'),
+        // Sol alt: kasa çapı. Buradaki yer eskiden rotasyon sayacıydı; rotasyon
+        // siteden kalktı (kayıt Home Assistant'ta), kutu boş kalmasın diye
+        // envanterden gelen en ayırt edici tek değer kondu.
+        el('span', w.specs?.case?.diameter ? `${w.specs.case.diameter} mm` : ''),
         // Sağ alt: saatin piyasaya çıkış yılı. Bilinmiyorsa boş bırakılır —
         // satın alma yılına düşmek iki farklı şeyi aynı yere yazmak olurdu.
         el('span', {

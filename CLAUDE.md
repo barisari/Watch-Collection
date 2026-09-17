@@ -12,8 +12,9 @@ Ayrıntılı belgeler: [`README.md`](README.md) (kullanım, yayınlama) ve
 ## KALDIĞIMIZ YER (13 Eylül 2026)
 
 Site kurulu ve yayında. **28 saat, 8 marka**: Casio, Edifice, G-Shock, Oceanus,
-Pro Trek, Mondaine, Seiko, Braun. Vitrin tarafı büyük ölçüde bitti; sıradaki iş
-**rotasyon günlüğü** (aşağıda ayrı bölüm).
+Pro Trek, Mondaine, Seiko, Braun. Vitrin tarafı bitti. Rotasyon kaydı **Home
+Assistant'ta** tutuluyor ve sitedeki rotasyon arayüzü kaldırıldı — site şu an
+saf vitrin. Ayrıntı: aşağıdaki *Rotasyon mimarisi* bölümü.
 
 ### Veri kaynağı
 
@@ -204,7 +205,7 @@ Braun BN0021BKG.
 | Liste fiyatı | 27/28 |
 | Çıkış tarihi | 24/28 |
 | Tanıtım metni | 22/28 kısa · 16/28 uzun |
-| Rotasyon kaydı | 0 — mimarisi kararlaştırılıyor |
+| Rotasyon kaydı | sitede yok — kayıt HA'da (aşağıya bak) |
 
 Liste fiyatı eksik: **MRS-301-2E** (hiçbir yerde resmi kaydı yok).
 
@@ -321,8 +322,10 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    çekmeyecek; bunun yerine **mevcut modeller için ek fotoğraf** indirilecek
    (üreticiler genelde 3–8 kare yayımlıyor). Sırası kullanıcıya ait, kendiliğinden
    başlama.
-7. **Rotasyon** — aşağıdaki bölüm. Veri girilmeden önce `build.mjs` public
-   derlemeden `data/wears.json`'ı çıkarmalı.
+7. ~~Rotasyon~~ — sitedeki rotasyon arayüzü **17 Eylül 2026'da kaldırıldı**,
+   `data/wears.json` silindi. Yani "public derlemeden çıkar" maddesi düştü:
+   çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
+   gösterim tarafı sıfırdan yazılacak (aşağıdaki bölüm).
 
 ### Rotasyon mimarisi (13 Eylül 2026 — karar verildi)
 
@@ -379,10 +382,30 @@ açılmaz, bilgisayar kapalıyken de kayıt akmaya devam eder.
 `photos/originals` için yapılanın aynısı. `privateFields` bunu çözmez: o
 alan siler, dosya silmez.
 
-**Açık kalanlar:** `stats.js` aralık modeline göre yeniden yazılacak (şu an
-satır = gün sayıyor); HA seçenek listesi `watches.json`'dan üretilecek (Braun
-eksik); "takılma payı"nın paydası (tüm günler mi, saat takılan günler mi);
-aynı gün içindeki değişim ne kadar ince kaydedilecek.
+**8. Site tarafı BOŞALTILDI (17 Eylül 2026).**
+HA kayıt almaya başladı. Sitedeki rotasyon arayüzü tümden kaldırıldı — bekleyen
+bir şey değil, bilinçli bir karar: mevcut kod "bir satır = bir gün" varsayıyordu,
+aralık modeliyle çalışmıyor, zaten sıfırdan yazılacaktı. Yanlış kodu taşımak
+yerine silindi.
+
+Silinenler: `assets/js/stats.js`, `views/calendar.js`, `views/stats.js`,
+`scripts/log-wear.mjs`, `data/wears.json`, Takvim ve İstatistik sekmeleri,
+detaydaki ROTASYON kutusu ve "Bugün bunu taktım" düğmesi, `data.js` içindeki
+tüm wears tesisatı (`upsertWear`, `deleteWear`, `wearKey`, taslaklar).
+`npm run wear` betiği de kalktı.
+
+Korunanlar: **"Kayıt ekle" sekmesi duruyor** — içindeki rotasyon formu gitti ama
+saat ekleme/düzenleme ve `watches.json` dışa aktarımı orada, onlar rotasyonla
+ilgili değil. Kart alt satırındaki rotasyon sayacının yerine kasa çapı kondu.
+`todayISO()` `stats.js`'ten `ui.js`'e taşındı.
+
+**Kullanıcı rotasyon kaydı birikmesini bekliyor**, gösterim tarafına ondan sonra
+başlanacak. Kendiliğinden başlama.
+
+**Açık kalanlar (gösterim yazılırken):** HA seçenek listesine Braun eklenecek
+(`haOption` 27/28); "takılma payı"nın paydası (tüm günler mi, saat takılan günler
+mi); aynı gün içindeki değişim ne kadar ince gösterilecek; HA takvimindeki
+`.ics` verisinin siteye hangi yolla geleceği.
 
 ### Verilmemiş kararlar
 
@@ -401,7 +424,7 @@ aynı gün içindeki değişim ne kadar ince kaydedilecek.
 2. **Depo public mi kalacak?** Şu an public (Pages ücretsiz hesapta bunu
    gerektiriyor). Yayınlanan site hassas alanları göstermiyor ama **depodaki
    kaynak dosyayı herkes okuyabilir** — fiyat/seri no bu yüzden girilmiyor.
-3. **Telefondan hızlı kayıt** — şu an JSON indirip commit gerekiyor.
+3. ~~Telefondan hızlı kayıt~~ — rotasyon için çözüldü (HA). Saat *ekleme* için hâlâ JSON indirip commit gerekiyor.
 
 **Depo public olduğu sürece fiyat ve seri numarası girme.**
 
@@ -460,8 +483,7 @@ aynı gün içindeki değişim ne kadar ince kaydedilecek.
   gerçek boyunda kalır (üreticinin 1080'lik ek kareleri böyle). 28 kapağın
   hepsi 1283 px içeriğe gerçek pikselle çıkıyor.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır (Escape kapatır).
-- `id` alanı sabittir; değiştirirsen `data/wears.json` içindeki `watchId`
-  değerlerini de güncelle.
+- `id` alanı sabittir; fotoğraf yolları ve `haOption` eşleşmesi ona bağlı.
 
 ## Komutlar
 
@@ -471,7 +493,6 @@ aynı gün içindeki değişim ne kadar ince kaydedilecek.
 | `node scripts/validate-data.mjs` | Veriyi doğrular, hatada 1 ile çıkar |
 | `node scripts/add-watches.mjs <liste> [--reset]` | Listeden toplu saat ekler |
 | `node scripts/import-casio-sheet.mjs <csv> [--reset]` | Casio Collection tablosundan içe aktarır |
-| `node scripts/log-wear.mjs "<saat>" [tarih] ["not"]` | Rotasyon kaydı ekler |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
 | `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafı 900×900 WebP'ye çerçeveler (`npm i sharp`). `CUTOUT=off` fona dokunmaz — varsayılan yol bu. `CANVAS`/`NO_ENLARGE` ile boy ayarlanır |
 | `node scripts/build-large-photos.mjs` | Büyütme için 1500 px sürümleri üretir → `photos/watches/large/` |

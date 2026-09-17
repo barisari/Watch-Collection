@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Saat Koleksiyonum</title>
-  <meta name="description" content="Saat koleksiyonu envanteri, teknik özellikler ve rotasyon günlüğü.">
+  <meta name="description" content="Saat koleksiyonu envanteri ve teknik özellikler.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌚</text></svg>">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -35,8 +35,6 @@
 
     <nav class="tabs wrap" aria-label="Bölümler">
       <a href="#/koleksiyon" data-route="koleksiyon">Koleksiyon</a>
-      <a href="#/takvim"     data-route="takvim">Takvim</a>
-      <a href="#/istatistik" data-route="istatistik">İstatistik</a>
       <a href="#/kayit"      data-route="kayit">Kayıt ekle</a>
     </nav>
   </header>
@@ -48,8 +46,7 @@
   <footer class="site-footer wrap">
     <p>
       <span data-bind="watchCount"></span> saat ·
-      <span data-bind="wearCount"></span> rotasyon kaydı ·
-      veri kaynağı <code>data/watches.json</code> &amp; <code>data/wears.json</code>
+      veri kaynağı <code>data/watches.json</code>
     </p>
     <p class="muted" id="draft-status"></p>
   </footer>

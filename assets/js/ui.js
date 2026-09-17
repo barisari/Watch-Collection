@@ -87,6 +87,12 @@ export function relDays(days) {
   return `${days} gün önce`;
 }
 
+/** Bugünün tarihi, ISO (yerel saate göre — UTC'ye çevirirsek gün kayabilir). */
+export function todayISO() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
 export const watchLabel = (w) => (w ? `${w.brand} ${w.model}` : 'Bilinmeyen saat');
 export const watchShort = (w) => (w ? (w.nickname || w.model) : '—');
 

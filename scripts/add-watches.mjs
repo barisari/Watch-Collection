@@ -4,9 +4,7 @@
  *   node scripts/add-watches.mjs liste.txt
  *   node scripts/add-watches.mjs liste.txt --reset   # örnek veriyi silip sıfırdan kur
  *
- * --reset hem envanteri hem rotasyon günlüğünü boşaltır. İkisi birlikte
- * sıfırlanmalı: günlük kayıtları saat kimliklerine bağlı olduğu için yalnızca
- * envanteri silmek geride sahipsiz kayıtlar bırakır.
+ * --reset envanteri boşaltır.
  *
  * Dosya biçimi — her satır bir saat, alanlar | ile ayrılır:
  *
@@ -27,7 +25,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const WATCHES = 'data/watches.json';
-const WEARS = 'data/wears.json';
 
 const slug = (s) =>
   String(s ?? '').toLowerCase()
@@ -114,9 +111,7 @@ async function main() {
 
   if (reset) {
     const oldWatches = JSON.parse(await readFile(WATCHES, 'utf8'));
-    const oldWears = JSON.parse(await readFile(WEARS, 'utf8'));
-    await writeFile(WEARS, '[]\n');
-    console.log(`  --reset: ${oldWatches.length} saat ve ${oldWears.length} rotasyon kaydı silindi.\n`);
+    console.log(`  --reset: ${oldWatches.length} saat silindi.\n`);
   }
 
   const existing = reset ? [] : JSON.parse(await readFile(WATCHES, 'utf8'));

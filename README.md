@@ -1,16 +1,13 @@
 # Saat Koleksiyonu
 
-Saat koleksiyonu için envanter, sergi sitesi ve rotasyon günlüğü. Kurulum
-gerektirmez: derleme aracı, çerçeve, bağımlılık yok — sadece HTML, CSS ve
-JavaScript. Veri, depoda duran iki JSON dosyasında.
+Saat koleksiyonu için envanter ve sergi sitesi. Kurulum gerektirmez: derleme
+aracı, çerçeve, bağımlılık yok — sadece HTML, CSS ve JavaScript. Veri, depoda
+duran `data/watches.json` dosyasında.
 
 **Neler var**
 
-- **Koleksiyon** — saat kartları, arama, marka/tür filtresi, yedi farklı sıralama
+- **Koleksiyon** — saat kartları, arama, marka/tür filtresi, sıralama
 - **Künye** — mekanizma, kasa, kadran, kayış özellikleri; satın alma tarihi ve bilgileri
-- **Rotasyon takvimi** — hangi gün hangi saati taktığın, aylık takvim görünümünde
-- **İstatistik** — saat başına takılma günü ve payı, en çok/en az takılan, en uzun seri,
-  uzun süredir takılmayanlar, sıradaki için öneri, servis takvimi, takılma başına maliyet
 - **İki görünüm modu** — herkese açık (fiyat/seri no gizli) ve koleksiyoner (her şey görünür)
 - Karanlık/aydınlık tema, telefon uyumlu yerleşim, klavye erişilebilirliği
 
@@ -25,13 +22,11 @@ node scripts/serve.mjs        # http://localhost:8080
 > Dosyayı çift tıklayarak (`file://`) açma — JSON dosyaları `fetch` ile
 > okunduğu için sayfanın bir `http://` adresinden gelmesi gerekir.
 
-Açılışta örnek olarak dört saat ve dört aylık bir rotasyon günlüğü gelir.
 Kendi koleksiyonuna geçmek için:
 
 1. `data/watches.json` içindekileri sil, kendi saatlerini ekle
    (siteden "Kayıt ekle" sekmesini kullanabilirsin — aşağıya bak)
-2. `data/wears.json` içeriğini `[]` yap
-3. `site.config.json` içinde koleksiyon adını ve para birimini değiştir
+2. `site.config.json` içinde koleksiyon adını ve para birimini değiştir
 
 ---
 
@@ -52,20 +47,15 @@ verinde hiçbir şey değişmez.
 Sen bir kayıt eklediğinde de aynısı olur — bu yüzden kalıcı hale getirmek için
 bir adım daha var:
 
-**Kayıt ekle → `watches.json` indir / `wears.json` indir → dosyaları `data/`
-klasörüne koy → commit et.**
+**Kayıt ekle → `watches.json` indir → dosyayı `data/` klasörüne koy → commit et.**
 
 Terminali tercih ediyorsan taslak adımını tamamen atlayabilirsin:
 
 ```bash
-node scripts/log-wear.mjs "Speedmaster"             # bugün için kaydet
-node scripts/log-wear.mjs "BB58" 2026-08-20         # belirli bir gün
-node scripts/log-wear.mjs "SKX" dün "yağmurlu gün"  # notlu
+node scripts/add-watches.mjs liste.txt              # listeden toplu saat ekle
+node scripts/import-casio-sheet.mjs casio.csv       # Casio tablosundan aktar
 node scripts/validate-data.mjs                      # commit öncesi doğrula
 ```
-
-`log-wear.mjs` saati marka, model, takma ad veya referanstan bulur; birden fazla
-eşleşme olursa sana sorar.
 
 ---
 
@@ -130,17 +120,14 @@ assets/
   js/
     app.js               yönlendirme, tema, görünürlük modu
     data.js              veri yükleme, tarayıcı taslakları, dışa aktarım
-    stats.js             rotasyon istatistiği hesaplamaları
     ui.js                DOM yardımcıları, biçimlendiriciler, ipuçları
-    views/               koleksiyon · detay · takvim · istatistik · kayıt
+    views/               koleksiyon · detay · kayıt
 data/
   watches.json           envanter
-  wears.json             rotasyon günlüğü
   README.md              alan alan şema açıklaması
 photos/                  fotoğraflar
 scripts/
   serve.mjs              yerel sunucu
-  log-wear.mjs           terminalden rotasyon kaydı
   validate-data.mjs      veri doğrulama
   build.mjs              dist/ hazırlama (hassas alanları temizler)
 ```
@@ -156,7 +143,6 @@ Veri şemasının tamamı — hangi alan ne işe yarıyor, hangileri zorunlu —
 |---|---|
 | `npm start` | Yerel sunucuyu başlatır (`http://localhost:8080`) |
 | `npm run validate` | `data/*.json` dosyalarını doğrular |
-| `npm run wear -- "BB58"` | Bugün için rotasyon kaydı ekler |
 | `npm run build` | `dist/` hazırlar, hassas alanları siler |
 | `npm run build:private` | `dist/` hazırlar, her şeyi dahil eder |
 
@@ -166,12 +152,10 @@ Node 18 veya üstü yeterli; kurulacak paket yok.
 
 ## Renkler
 
-Takvim ve grafiklerdeki renkler, renk körlüğü ayrımı ve zemin kontrastı için
-doğrulanmış sekiz yuvalı bir paletten gelir. Her yuva bir saate **koleksiyondaki
-sabit sırasına göre** atanır — filtre değiştirmek renkleri kaydırmaz. Koleksiyon
-sekiz saatten büyükse renk tamamen bırakılır ve kimliği yalnızca yazı taşır;
-zaten her takvim hücresinde saatin kısa adı, her grafiğin altında da aynı veriyi
-veren bir tablo görünümü vardır.
+Kart ve künye renkleri, renk körlüğü ayrımı ve zemin kontrastı için doğrulanmış
+sekiz yuvalı bir paletten gelir. Her yuva bir saate **koleksiyondaki sabit
+sırasına göre** atanır — filtre değiştirmek renkleri kaydırmaz. Koleksiyon sekiz
+saatten büyükse renk tamamen bırakılır ve kimliği yalnızca yazı taşır.
 
 Kendi renklerini kullanmak istersen `assets/css/styles.css` başındaki
 `--series-1 … --series-8` değişkenlerini değiştir; hem aydınlık hem karanlık mod
@@ -181,8 +165,8 @@ için ayrı ayrı tanımlı.
 
 ## Notlar
 
-- `data/watches.json` içindeki dört saat **örnektir**; teknik özellikler yaklaşık
-  değerlerdir, kendi kayıtlarını girerken üreticinin verisinden doğrula.
-- Bir saatin `id` alanını sonradan değiştirme — rotasyon kayıtları o kimliğe bağlı.
-  Değiştirmen gerekirse `data/wears.json` içindeki `watchId` değerlerini de güncelle.
-- Aynı güne birden fazla saat yazabilirsin; takvim hepsini gösterir.
+- Bir saatin `id` alanını sonradan değiştirme — fotoğraf yolları ve `haOption`
+  eşleşmesi o kimliğe bağlı.
+- Rotasyon günlüğü bu depoda **tutulmuyor.** Kayıt Home Assistant'ta
+  (`input_select.watch_rotation` → Local Calendar); sitedeki rotasyon arayüzü
+  17 Eylül 2026'da kaldırıldı. Ayrıntı: `CLAUDE.md > Rotasyon mimarisi`.

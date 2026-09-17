@@ -1,7 +1,6 @@
-/* Tek bir saatin künyesi: teknik özellikler, satın alma bilgisi, rotasyon özeti. */
+/* Tek bir saatin künyesi: teknik özellikler ve satın alma bilgisi. */
 
-import { state, getWatch, canShow, isPrivateField, upsertWear } from '../data.js';
-import { perWatchStats, todayISO } from '../stats.js';
+import { getWatch, canShow, isPrivateField } from '../data.js';
 import {
   el, fmtDate, fmtMoney, fmtNum, relDays, watchLabel, colorForWatch, emptyState, toast,
 } from '../ui.js';
@@ -66,7 +65,6 @@ export function renderDetail(root, id, navigate) {
     return;
   }
 
-  const row = perWatchStats().find((r) => r.id === id);
   const color = colorForWatch(id);
   const s = watch.specs || {};
 
@@ -86,21 +84,12 @@ export function renderDetail(root, id, navigate) {
             watch.nickname && `“${watch.nickname}”`,
           ].filter(Boolean).join(' · '))),
       el('div', { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } },
-        el('button.btn.btn-primary', {
-          type: 'button',
-          onclick: () => {
-            upsertWear({ date: todayISO(), watchId: id, note: '' });
-            toast(`${watchLabel(watch)} bugüne kaydedildi (tarayıcı taslağı).`);
-            navigate(`#/saat/${encodeURIComponent(id)}`, true);
-          },
-        }, 'Bugün bunu taktım'),
         el('button.btn', { type: 'button', onclick: () => navigate(`#/kayit?duzenle=${encodeURIComponent(id)}`) }, 'Düzenle')),
     ),
 
     el('div.detail-grid',
       el('div.stack',
         photoPanel(watch),
-        rotationPanel(row, watch),
       ),
       el('div.stack',
         storyCard(watch),
@@ -244,30 +233,6 @@ function photoPanel(watch) {
   );
 }
 
-function rotationPanel(row, watch) {
-  if (!row) return null;
-  const recent = state.wears
-    .filter((w) => w.watchId === watch.id)
-    .slice(-8).reverse();
-
-  return el('div.card',
-    el('h3', 'Rotasyon'),
-    el('table.spec-table',
-      el('tbody',
-        specRow('Toplam takılma', row.days ? `${row.days} gün` : 'Henüz takılmadı'),
-        specRow('Rotasyon payı', row.days ? `%${Math.round(row.share * 100)}` : '—'),
-        specRow('Son takılma', row.lastWorn ? `${fmtDate(row.lastWorn)} (${relDays(row.daysSince)})` : '—'),
-        specRow('İlk takılma', row.firstWorn ? fmtDate(row.firstWorn) : '—'),
-        specRow('En uzun seri', row.longestStreak ? `${row.longestStreak} gün` : '—'),
-        row.costPerWear != null && canShow('acquisition.price')
-          ? specRow('Takılma başına maliyet', fmtMoney(row.costPerWear, row.currency))
-          : null,
-      )),
-    recent.length ? el('div', { style: { marginTop: '14px' } },
-      el('h3', 'Son kayıtlar'),
-      el('div.chips', recent.map((w) => el('span.chip', fmtDate(w.date, { day: 'numeric', month: 'short' }))))) : null,
-  );
-}
 
 function acquisitionCard(watch) {
   const a = watch.acquisition || {};

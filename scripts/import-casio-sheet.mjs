@@ -22,7 +22,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const WATCHES = 'data/watches.json';
-const WEARS = 'data/wears.json';
 
 /** MODEL hücresindeki seri adları — uzundan kısaya denenir. */
 const BRANDS = ['Pro Trek', 'G-Shock', 'Oceanus', 'Edifice', 'Casio'];
@@ -204,9 +203,7 @@ async function main() {
 
   if (reset) {
     const oldW = JSON.parse(await readFile(WATCHES, 'utf8'));
-    const oldR = JSON.parse(await readFile(WEARS, 'utf8'));
-    await writeFile(WEARS, '[]\n');
-    console.log(`  --reset: ${oldW.length} saat ve ${oldR.length} rotasyon kaydı silindi.\n`);
+    console.log(`  --reset: ${oldW.length} saat silindi.\n`);
   }
 
   const existing = reset ? [] : JSON.parse(await readFile(WATCHES, 'utf8'));

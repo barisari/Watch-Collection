@@ -1,4 +1,4 @@
-/* "Kayıt ekle": rotasyon kaydı, saat ekleme/düzenleme ve JSON dışa aktarımı.
+/* "Kayıt ekle": saat ekleme/düzenleme ve JSON dışa aktarımı.
 
    Buradaki her değişiklik önce TARAYICI TASLAĞINA yazılır (localStorage).
    Taslak yalnızca bu cihazda durur — siteyi açan başka biri kendi kopyasını
@@ -6,11 +6,10 @@
    depodaki data/ klasörüne koyman gerekir. */
 
 import {
-  state, upsertWear, upsertWatch, deleteWatch, downloadJSON, clearDrafts,
+  state, upsertWatch, deleteWatch, downloadJSON, clearDrafts,
   draftCount, getWatch, makeId,
 } from '../data.js';
-import { todayISO } from '../stats.js';
-import { el, fmtDate, watchLabel, toast, emptyState } from '../ui.js';
+import { el, fmtDate, watchLabel, toast, emptyState, todayISO } from '../ui.js';
 
 export function renderLog(root, params, navigate) {
   const editId = params.get('duzenle');
@@ -23,49 +22,10 @@ export function renderLog(root, params, navigate) {
       'aşağıdan JSON dosyalarını indirip depodaki data/ klasörüne koy ve commit et.'),
 
     el('div.stack',
-      wearForm(navigate),
       watchForm(editing, navigate),
       exportCard(navigate),
     ),
   );
-}
-
-/* ------------------------------------------------------- rotasyon kaydı formu */
-
-function wearForm(navigate) {
-  const owned = state.watches.filter((w) => (w.status ?? 'owned') === 'owned');
-  if (!owned.length) {
-    return el('div.card', el('h2', 'Bugün ne taktın?'),
-      emptyState('⌚', 'Önce koleksiyona bir saat ekle.', 'Aşağıdaki formu kullanabilirsin.'));
-  }
-
-  const date = el('input', { type: 'date', value: todayISO(), required: true, id: 'wear-date' });
-  const watch = el('select', { id: 'wear-watch', required: true },
-    owned.map((w) => el('option', { value: w.id }, watchLabel(w))));
-  const note = el('input', { type: 'text', id: 'wear-note', placeholder: 'örn. toplantı, tatil, yağmurlu gün' });
-
-  const form = el('form', {
-    onsubmit: (e) => {
-      e.preventDefault();
-      upsertWear({ date: date.value, watchId: watch.value, note: note.value.trim() });
-      toast(`${watchLabel(getWatch(watch.value))} → ${fmtDate(date.value)} kaydedildi.`);
-      note.value = '';
-      navigate('#/kayit', true);
-    },
-  },
-    el('div.form-grid',
-      field('Tarih', date),
-      field('Saat', watch),
-      field('Not (isteğe bağlı)', note)),
-    el('div.form-actions',
-      el('button.btn.btn-primary', { type: 'submit' }, 'Rotasyon kaydını ekle'),
-      el('button.btn', {
-        type: 'button',
-        onclick: () => { date.value = todayISO(); },
-      }, 'Bugüne ayarla')),
-  );
-
-  return el('div.card', el('h2', 'Bugün ne taktın?'), form);
 }
 
 /* ------------------------------------------------------ saat ekleme/düzenleme */
@@ -289,12 +249,8 @@ function exportCard(navigate) {
     el('div.form-actions',
       el('button.btn.btn-primary', {
         type: 'button',
-        onclick: () => { downloadJSON('watches'); toast('watches.json indirildi.'); },
+        onclick: () => { downloadJSON(); toast('watches.json indirildi.'); },
       }, 'watches.json indir'),
-      el('button.btn.btn-primary', {
-        type: 'button',
-        onclick: () => { downloadJSON('wears'); toast('wears.json indirildi.'); },
-      }, 'wears.json indir'),
       n ? el('button.btn.btn-danger', {
         type: 'button',
         onclick: () => {
@@ -315,8 +271,7 @@ function exportCard(navigate) {
             fontSize: '12.5px', overflowX: 'auto', margin: 0,
           },
         },
-          'node scripts/log-wear.mjs "Speedmaster"        # bugün için kaydet\n' +
-          'node scripts/log-wear.mjs "BB58" 2026-08-20    # belirli bir gün\n' +
+          'node scripts/add-watches.mjs liste.txt         # listeden toplu saat ekle\n' +
           'node scripts/validate-data.mjs                 # veriyi doğrula'))),
   );
 }

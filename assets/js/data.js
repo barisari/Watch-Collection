@@ -21,9 +21,7 @@ const PREFS_KEY = 'watch-collection:prefs:v1';
 export const state = {
   config: {},
   fileWatches: [],
-  fileWears: [],
   watches: [],
-  wears: [],
   drafts: emptyDrafts(),
   prefs: { collectorMode: false, theme: null },
   /** Yayınlanan veride gizli alanlar temizlenmişse true. */
@@ -33,11 +31,8 @@ export const state = {
 function emptyDrafts() {
   return {
     watches: { upserts: {}, deletes: [] },
-    wears: { upserts: {}, deletes: [] },
   };
 }
-
-export const wearKey = (w) => `${w.date}|${w.watchId}`;
 
 /* ---------------------------------------------------------------- depolama */
 
@@ -77,10 +72,9 @@ async function loadJSON(path, fallback) {
 }
 
 export async function loadAll() {
-  const [config, watches, wears] = await Promise.all([
+  const [config, watches] = await Promise.all([
     loadJSON('site.config.json', {}),
     loadJSON('data/watches.json', []),
-    loadJSON('data/wears.json', []),
   ]);
 
   state.config = {
@@ -94,7 +88,6 @@ export async function loadAll() {
   };
 
   state.fileWatches = Array.isArray(watches) ? watches : [];
-  state.fileWears = Array.isArray(wears) ? wears : [];
 
   // Yayın derlemesinde gizli alanlar silinmiş olabilir. Bunu verinin
   // yokluğundan TAHMİN ETMİYORUZ — "silindi" ile "hiç girilmedi" aynı görünür.
@@ -120,28 +113,11 @@ export function recompute() {
     if (!watchDeletes.has(id)) byId.set(id, w);
   }
   state.watches = [...byId.values()];
-
-  const rd = state.drafts.wears;
-  const wearDeletes = new Set(rd.deletes);
-  const byKey = new Map();
-  for (const w of state.fileWears) {
-    const k = wearKey(w);
-    if (!wearDeletes.has(k)) byKey.set(k, w);
-  }
-  for (const [k, w] of Object.entries(rd.upserts)) {
-    if (!wearDeletes.has(k)) byKey.set(k, w);
-  }
-  // Var olmayan saate bağlı kayıtları düşür (saat silinmiş olabilir).
-  const known = new Set(state.watches.map((w) => w.id));
-  state.wears = [...byKey.values()]
-    .filter((w) => known.has(w.watchId))
-    .sort((a, b) => a.date.localeCompare(b.date));
 }
 
 export const draftCount = () => {
   const d = state.drafts;
-  return Object.keys(d.watches.upserts).length + d.watches.deletes.length +
-         Object.keys(d.wears.upserts).length + d.wears.deletes.length;
+  return Object.keys(d.watches.upserts).length + d.watches.deletes.length;
 };
 
 /* ----------------------------------------------------------- değiştiriciler */
@@ -162,23 +138,6 @@ export function deleteWatch(id) {
   recompute();
 }
 
-export function upsertWear(entry) {
-  const k = wearKey(entry);
-  state.drafts.wears.upserts[k] = entry;
-  state.drafts.wears.deletes = state.drafts.wears.deletes.filter((x) => x !== k);
-  saveDrafts();
-  recompute();
-}
-
-export function deleteWear(entry) {
-  const k = wearKey(entry);
-  delete state.drafts.wears.upserts[k];
-  if (state.fileWears.some((w) => wearKey(w) === k) && !state.drafts.wears.deletes.includes(k)) {
-    state.drafts.wears.deletes.push(k);
-  }
-  saveDrafts();
-  recompute();
-}
 
 export function clearDrafts() {
   state.drafts = emptyDrafts();
@@ -209,20 +168,18 @@ export function privateValue(watch, path) {
 
 /* ------------------------------------------------------------------ dışa aktarım */
 
-export function exportJSON(kind) {
-  const data = kind === 'watches' ? state.watches : state.wears;
-  const sorted = kind === 'watches'
-    ? [...data].sort((a, b) => `${a.brand} ${a.model}`.localeCompare(`${b.brand} ${b.model}`, 'tr'))
-    : [...data].sort((a, b) => a.date.localeCompare(b.date) || a.watchId.localeCompare(b.watchId));
+export function exportJSON() {
+  const sorted = [...state.watches]
+    .sort((a, b) => `${a.brand} ${a.model}`.localeCompare(`${b.brand} ${b.model}`, 'tr'));
   return JSON.stringify(sorted, null, 2) + '\n';
 }
 
-export function downloadJSON(kind) {
-  const blob = new Blob([exportJSON(kind)], { type: 'application/json' });
+export function downloadJSON() {
+  const blob = new Blob([exportJSON()], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = kind === 'watches' ? 'watches.json' : 'wears.json';
+  a.download = 'watches.json';
   document.body.appendChild(a);
   a.click();
   a.remove();

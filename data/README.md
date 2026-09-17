@@ -18,7 +18,7 @@ görünmez, "—" bile yazmaz.
 ```jsonc
 {
   "id": "omega-speedmaster-3861",   // benzersiz, kısa, sabit. Sonradan değiştirme:
-                                    // rotasyon kayıtları bu kimliğe bağlı.
+                                    // sabit; fotoğraf yolları ve haOption buna bağlı.
   "brand": "Omega",
   "model": "Speedmaster Professional Moonwatch",
   "nickname": "Moonwatch",          // kartlarda ve listelerde kısa ad
@@ -97,34 +97,10 @@ görüntüyü kapatmak yeterli değildir. Siteyi herkese açık yayınlıyorsan
 
 ---
 
-## `wears.json` — rotasyon günlüğü
-
-Her satır "şu gün şu saati taktım" demektir.
-
-```jsonc
-[
-  { "date": "2026-08-25", "watchId": "omega-speedmaster-3861", "note": "" },
-  { "date": "2026-08-24", "watchId": "tudor-black-bay-58", "note": "düğün" }
-]
-```
-
-| Alan | Zorunlu | Açıklama |
-|---|---|---|
-| `date` | evet | `YYYY-MM-DD` |
-| `watchId` | evet | `watches.json` içindeki bir `id` |
-| `note` | hayır | serbest metin; takvimde ipucu olarak görünür |
-
-Aynı güne birden fazla saat yazabilirsin (gün içinde değiştirdiysen); takvim
-hücresi ikisini de gösterir. Aynı gün + aynı saat ikilisi tekrar edilmemeli —
-doğrulayıcı bunu uyarı olarak bildirir.
-
----
-
 ## Sık yapılan işler
 
 ```bash
-node scripts/log-wear.mjs "Speedmaster"             # bugün için kaydet
-node scripts/log-wear.mjs "BB58" 2026-08-20         # belirli bir gün
-node scripts/log-wear.mjs "SKX" dün "yağmurlu gün"  # notlu
+node scripts/add-watches.mjs liste.txt              # listeden toplu saat ekle
+node scripts/import-casio-sheet.mjs casio.csv       # Casio tablosundan aktar
 node scripts/validate-data.mjs                      # doğrula
 ```
