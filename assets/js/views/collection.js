@@ -1,44 +1,69 @@
-/* Koleksiyon: markaya göre gruplanmış kontakt baskı + arama.
- *
- * Sıralama ve marka/tür açılır listeleri yok. 28 saatlik kişisel bir vitrinde
- * yapı, kontrol değil gruplama ile verilir: her marka bir bölüm, bölüm başlığı
- * adet taşır. Kartta marka satırı yok — başlık zaten söylüyor. */
+/* Koleksiyon ızgarası: arama, marka/tür filtresi, sıralama ve saat kartları.
+ * (Markaya göre gruplama denendi, kullanıcı açılır listeleri tercih etti.) */
 
 import { state } from '../data.js';
 import { el, watchLabel, emptyState, photoSm } from '../ui.js';
 
-/* Kullanıcının kendi sırası (HA listesiyle aynı). Listede olmayan marka sona,
-   alfabetik. */
-const MARKA_SIRASI = ['Casio', 'G-Shock', 'Edifice', 'Pro Trek', 'Oceanus', 'Mondaine', 'Seiko', 'Braun'];
-const markaSira = (b) => { const i = MARKA_SIRASI.indexOf(b); return i === -1 ? MARKA_SIRASI.length : i; };
+const filters = { q: '', brand: '', category: '', sort: 'brand' };
 
-const filters = { q: '' };
+const SORTS = {
+  brand: { label: 'Marka (A–Z)', cmp: (a, b) => watchLabel(a).localeCompare(watchLabel(b), 'tr') },
+  acquired: { label: 'Satın alma (yeniden eskiye)', cmp: (a, b) => (b.acquisition?.date || '').localeCompare(a.acquisition?.date || '') },
+  size: { label: 'Kasa çapı', cmp: (a, b) => (a.specs?.case?.diameter ?? 0) - (b.specs?.case?.diameter ?? 0) },
+};
+
+const uniq = (values) => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'tr'));
 
 /** releaseDate "2019-08" ya da "2023" biçiminde; karta yalnızca yıl yazılır. */
 const releaseYear = (w) => (w.releaseDate ? String(w.releaseDate).slice(0, 4) : null);
 
 export function renderCollection(root, navigate) {
-  const search = el('input', {
-    type: 'search', placeholder: 'Marka, model, referans…', value: filters.q,
-    'aria-label': 'Koleksiyonda ara',
-    oninput: (e) => { filters.q = e.target.value; paint(root, navigate); },
-  });
-
   root.append(
     el('div.section-head',
       el('h1', 'Koleksiyon'),
       el('p.muted', `${state.watches.length} saat`)),
-    el('div.filters', search),
+    buildFilters(root, navigate),
     el('div#collection-grid'),
   );
   paint(root, navigate);
 }
 
+function buildFilters(root, navigate) {
+  const brands = uniq(state.watches.map((w) => w.brand));
+  const categories = uniq(state.watches.map((w) => w.category));
+  const rerender = () => paint(root, navigate);
+
+  const search = el('input', {
+    type: 'search', placeholder: 'Marka, model, referans…', value: filters.q,
+    'aria-label': 'Koleksiyonda ara',
+    oninput: (e) => { filters.q = e.target.value; rerender(); },
+  });
+  const select = (key, options, allLabel) =>
+    el('select', { 'aria-label': allLabel, onchange: (e) => { filters[key] = e.target.value; rerender(); } },
+      el('option', { value: '' }, allLabel),
+      options.map((o) => el('option', { value: o, selected: filters[key] === o }, o)));
+
+  return el('div.filters',
+    search,
+    brands.length > 1 && select('brand', brands, 'Tüm markalar'),
+    categories.length > 1 && select('category', categories, 'Tüm türler'),
+    el('span.spacer'),
+    el('label', 'Sırala',
+      el('select', { onchange: (e) => { filters.sort = e.target.value; rerender(); } },
+        Object.entries(SORTS).map(([key, s]) =>
+          el('option', { value: key, selected: filters.sort === key }, s.label)))),
+  );
+}
+
 function matches(w) {
-  if (!filters.q) return true;
-  const hay = [w.brand, w.model, w.nickname, w.reference, ...(w.tags || [])]
-    .filter(Boolean).join(' ').toLocaleLowerCase('tr');
-  return hay.includes(filters.q.toLocaleLowerCase('tr'));
+  if (filters.brand && w.brand !== filters.brand) return false;
+  if (filters.category && w.category !== filters.category) return false;
+  if (filters.q) {
+    const hay = [w.brand, w.model, w.nickname, w.reference, ...(w.tags || [])]
+      .filter(Boolean).join(' ').toLocaleLowerCase('tr');
+    if (!hay.includes(filters.q.toLocaleLowerCase('tr'))) return false;
+  }
+  return true;
 }
 
 function paint(root, navigate) {
@@ -46,24 +71,12 @@ function paint(root, navigate) {
   if (!host) return;
   host.replaceChildren();
 
-  const visible = state.watches.filter(matches);
+  const visible = state.watches.filter(matches).sort(SORTS[filters.sort].cmp);
   if (!visible.length) {
-    host.append(emptyState('Eşleşen saat yok.', 'Aramayı kısaltmayı dene.'));
+    host.append(emptyState('Bu filtrelerle eşleşen saat yok.', 'Filtreleri gevşetmeyi dene.'));
     return;
   }
-
-  const gruplar = new Map();
-  for (const w of visible) (gruplar.get(w.brand) || gruplar.set(w.brand, []).get(w.brand)).push(w);
-  const markalar = [...gruplar.keys()]
-    .sort((a, b) => (markaSira(a) - markaSira(b)) || a.localeCompare(b, 'tr'));
-
-  for (const marka of markalar) {
-    const saatler = gruplar.get(marka).sort((a, b) => a.model.localeCompare(b.model, 'tr'));
-    const grid = el('div.grid-watches', saatler.map((w) => watchCard(w, navigate)));
-    host.append(el('section.group',
-      el('h2.group-head', marka, el('span.count', String(saatler.length))),
-      grid));
-  }
+  host.append(el('div.grid-watches', visible.map((w) => watchCard(w, navigate))));
 }
 
 function watchCard(w, navigate) {
@@ -84,13 +97,12 @@ function watchCard(w, navigate) {
             alt: watchLabel(w), loading: 'lazy',
           })
         : null),
-    /* Kod en büyük: kullanıcı saatleri koda göre tanıyor. Marka başlıkta. */
+    /* Altyazı fotoğrafın altında ORTALI — görsel kare içinde ortalandığı için
+       sola yaslı yazı saatten kopuk duruyordu. */
     el('div.watch-code', w.model),
+    el('div.watch-brand', w.brand),
     el('div.watch-meta',
-      // Kapaklar gerçek ölçekli; buradaki mm değeri görünen boyutla örtüşür.
       el('span', w.specs?.case?.diameter ? `${w.specs.case.diameter} mm` : ''),
-      // Sağ: piyasaya çıkış yılı. Bilinmiyorsa boş — satın alma yılına düşmek
-      // iki farklı şeyi aynı yere yazmak olurdu.
       el('span', { title: w.releaseDate ? 'Piyasaya çıkış' : null }, releaseYear(w) || '')),
   );
 }

@@ -217,46 +217,8 @@ rgba = await sharp(SRC)
 // ── 5. Kırp, ölçekle, ortala ───────────────────────────────────────────────
 // Diğer görsellerin hepsinde içerik tam 770 px. fit:'contain' KÜÇÜK görseli
 // hedefe büyütür — o yüzden ölçekleme değil, kenar payı ekliyoruz.
-/* ── ÖLÇEKLİ MOD: CASE_MM + PX_PER_MM ─────────────────────────────────────
- * Varsayılan çerçeveleme "içerik yüksekliği = BOX" der; kayışı uzun saat küçük,
- * kısa saat büyük çıkar (ölçüldü: kasa 382-588 px, gerçek boyutla ilgisiz).
- * Bu modda görsel KASA GENİŞLİĞİNE göre ölçeklenir: en geniş opak satır kasadır,
- * o satır CASE_MM × PX_PER_MM piksel olacak şekilde büyütülür/küçültülür.
- * Tuvale sığmayan kayış uçları ortadan kırpılır — kayış ucu bilgi değildir.
- * Sonuç: ızgara gerçek ölçekli; 35 mm A1100 ile 45 mm GA-2100 farkı görünür. */
-const CASE_MM = Number(process.env.CASE_MM) || 0;
-const PX_PER_MM = Number(process.env.PX_PER_MM) || 0;
-
-let scaled;
-if (CASE_MM && PX_PER_MM) {
-  const trimmed = await sharp(rgba).trim().png().toBuffer();
-  const { data, info } = await sharp(trimmed).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  let casePx = 0;
-  for (let y = 0; y < info.height; y++) {
-    let l = -1, r = -1;
-    for (let x = 0; x < info.width; x++) {
-      if (data[(y * info.width + x) * info.channels + 3] > 16) { if (l < 0) l = x; r = x; }
-    }
-    if (r >= 0) casePx = Math.max(casePx, r - l + 1);
-  }
-  const f = Math.min(NO_ENLARGE ? 1 : Infinity, (CASE_MM * PX_PER_MM) / casePx);
-  let buf = await sharp(trimmed)
-    .resize(Math.max(1, Math.round(info.width * f)), Math.max(1, Math.round(info.height * f)))
-    .png().toBuffer();
-  const m = await sharp(buf).metadata();
-  if (m.width > CANVAS || m.height > CANVAS) {
-    const w = Math.min(m.width, CANVAS), h = Math.min(m.height, CANVAS);
-    buf = await sharp(buf).extract({
-      left: Math.floor((m.width - w) / 2), top: Math.floor((m.height - h) / 2), width: w, height: h,
-    }).png().toBuffer();
-  }
-  scaled = buf;
-  console.log(`ölçek: kasa ${casePx} px → ${Math.round(casePx * f)} px (${CASE_MM} mm × ${PX_PER_MM.toFixed(2)} px/mm)` +
-    (m.height > CANVAS ? `, kayış ${m.height - CANVAS} px kırpıldı` : ''));
-} else {
-  scaled = await sharp(rgba).trim()
-    .resize(BOX, BOX, { fit: 'inside', withoutEnlargement: NO_ENLARGE }).png().toBuffer();
-}
+const scaled = await sharp(rgba).trim()
+  .resize(BOX, BOX, { fit: 'inside', withoutEnlargement: NO_ENLARGE }).png().toBuffer();
 const sm = await sharp(scaled).metadata();
 const padX = CANVAS - sm.width, padY = CANVAS - sm.height;
 
