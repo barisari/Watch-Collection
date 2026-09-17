@@ -1,8 +1,10 @@
 # Proje notları
 
-Saat koleksiyonu envanteri + sergi sitesi + rotasyon günlüğü.
-Kurulum yok: çerçeve, derleme aracı, bağımlılık yok — düz HTML/CSS/JS, veri
-`data/` altında iki JSON dosyasında. Node 18+ yeterli.
+Sahip olunan saatlerin **vitrini**. Salt okunur: form yok, sunucu yok,
+veritabanı yok. Kurulum yok da: çerçeve, derleme aracı, bağımlılık yok — düz
+HTML/CSS/JS, tek veri dosyası `data/watches.json`. Node 18+ yeterli.
+
+Rotasyon günlüğü bu depoda **tutulmuyor** — kayıt Home Assistant'ta.
 
 Ayrıntılı belgeler: [`README.md`](README.md) (kullanım, yayınlama) ve
 [`data/README.md`](data/README.md) (alan alan şema).
