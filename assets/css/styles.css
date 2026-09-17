@@ -80,8 +80,7 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; 
    tepeye yapışıktı. */
 .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: 20px; }
 
-main { padding-top: 72px; padding-bottom: 80px; min-height: 60vh; }
-@media (max-width: 600px) { main { padding-top: 40px; } }
+main { padding-top: 24px; padding-bottom: 80px; min-height: 60vh; }
 main:focus { outline: none; }
 
 h1, h2, h3, p { margin: 0; }
