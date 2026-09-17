@@ -9,30 +9,6 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">İçeriğe atla</a>
-
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true">⌚</span>
-        <span class="brand-text">
-          <span class="brand-title" data-bind="collectionName">Saat Koleksiyonum</span>
-          <span class="brand-tagline" data-bind="tagline"></span>
-        </span>
-      </div>
-
-      <div class="header-actions">
-        <button type="button" class="btn btn-icon" id="theme-toggle" aria-label="Açık/koyu tema">
-          <span aria-hidden="true">◐</span>
-        </button>
-      </div>
-    </div>
-
-    <nav class="tabs wrap" aria-label="Bölümler">
-      <a href="#/koleksiyon" data-route="koleksiyon">Koleksiyon</a>
-    </nav>
-  </header>
-
   <main id="main" class="wrap" tabindex="-1">
     <div id="view" aria-live="polite"></div>
   </main>
@@ -42,6 +18,9 @@
       <span data-bind="watchCount"></span> saat ·
       veri kaynağı <code>data/watches.json</code>
     </p>
+    <button type="button" class="btn btn-icon" id="theme-toggle" aria-label="Açık/koyu tema">
+      <span aria-hidden="true">◐</span>
+    </button>
   </footer>
 
 

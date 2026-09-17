@@ -413,8 +413,16 @@ Bununla birlikte **tüm taslak katmanı gitti**: `data.js` içindeki `drafts`,
 `localStorage`'da artık yalnızca tema tercihi duruyor.
 Detaydaki "Düzenle" düğmesi ve alt bilgideki taslak sayacı da kalktı.
 
-**Site artık salt okunur.** Tek sekme: Koleksiyon. Eski `#/kayit`, `#/takvim`,
+**Site artık salt okunur ve tek sayfalı.** Eski `#/kayit`, `#/takvim`,
 `#/istatistik` bağlantıları varsayılan rotaya düşüyor, kırılmıyor.
+
+**Başlık çubuğu da tümden kaldırıldı (17 Eylül, üçüncü adım).** Kullanıcının
+ifadesiyle "hiçbir anlamı yok": içinde ⌚ simgesi, koleksiyon adı, boş bir
+slogan alanı ve tek bağlantılı bir sekme çubuğu vardı. Tema düğmesi
+**altbilgiye** taşındı — metin solda, düğme sağda; altbilgi `#view`'ın dışında
+olduğu için her sayfada duruyor. Koleksiyon adı `document.title`'da kalıyor,
+ekranda `<h1>` yeterli. `markTabs()`, `.skip-link`, `.site-header`, `.brand*`,
+`.tabs` ve `.header-actions` silindi.
 `todayISO()` `stats.js`'ten `ui.js`'e taşınmıştı; onu kullanan tek yer saat
 formuydu, o da gittiği için artık kullanılmıyor ama `ui.js`'te duruyor.
 

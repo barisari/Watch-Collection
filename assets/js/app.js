@@ -1,4 +1,4 @@
-/* Uygulama kabuğu: yönlendirme, tema ve görünürlük modu. */
+/* Uygulama kabuğu: yönlendirme ve tema. */
 
 import { state, loadAll, savePrefs } from './data.js';
 import { el, clear } from './ui.js';
@@ -26,8 +26,6 @@ function bindChrome() {
   const set = (name, value) => {
     for (const node of document.querySelectorAll(`[data-bind="${name}"]`)) node.textContent = value;
   };
-  set('collectionName', state.config.collectionName || 'Saat Koleksiyonum');
-  set('tagline', state.config.tagline || '');
   set('watchCount', String(state.watches.length));
   document.title = state.config.collectionName || 'Saat Koleksiyonum';
 }
@@ -48,14 +46,6 @@ function navigate(hash, replace = false) {
   if (replace) render();
 }
 
-function markTabs(route) {
-  for (const a of document.querySelectorAll('.tabs a')) {
-    const active = a.dataset.route === route || (route === 'saat' && a.dataset.route === 'koleksiyon');
-    if (active) a.setAttribute('aria-current', 'page');
-    else a.removeAttribute('aria-current');
-  }
-}
-
 /* Sorun: ızgarada aşağı inip bir saate tıklayınca detay sayfası ortasından
  * açılıyordu. Hash yönlendirmesi içeriği değiştiriyor ama tarayıcı kaydırmayı
  * olduğu yerde bırakıyor.
@@ -69,7 +59,6 @@ function render() {
   const { route, id, params } = parseHash();
   const key = `${route}/${id || ''}`;
   clear(viewHost);
-  markTabs(route);
   bindChrome();
 
   try {
