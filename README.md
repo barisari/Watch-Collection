@@ -6,7 +6,7 @@ duran `data/watches.json` dosyasında.
 
 **Neler var**
 
-- **Koleksiyon** — saat kartları, arama, marka/tür filtresi, sıralama
+- **Koleksiyon** — markaya göre gruplu, gerçek ölçekli kontakt baskı; arama
 - **Künye** — mekanizma, kasa, kadran, kayış özellikleri; satın alma tarihi ve bilgileri
 - Karanlık/aydınlık tema, telefon uyumlu yerleşim, klavye erişilebilirliği
 
@@ -139,14 +139,13 @@ Node 18 veya üstü yeterli; kurulacak paket yok.
 
 ## Renkler
 
-Kart ve künye renkleri, renk körlüğü ayrımı ve zemin kontrastı için doğrulanmış
-sekiz yuvalı bir paletten gelir. Her yuva bir saate **koleksiyondaki sabit
-sırasına göre** atanır — filtre değiştirmek renkleri kaydırmaz. Koleksiyon sekiz
-saatten büyükse renk tamamen bırakılır ve kimliği yalnızca yazı taşır.
+Sayfada renk yok. Zemin akromatik bir stüdyo grisi; fotoğraflar saydam olduğu
+için 28 saatin kendi rengi tek renk kaynağı. Dört jeton var (`--ground`,
+`--ink`, `--ink-2`, `--rule`), açık ve koyu tema için ayrı ayrı tanımlı ve
+her ikisi ölçülmüş: en düşük kontrast 4,56 (WCAG AA eşiği 4,5).
 
-Kendi renklerini kullanmak istersen `assets/css/styles.css` başındaki
-`--series-1 … --series-8` değişkenlerini değiştir; hem aydınlık hem karanlık mod
-için ayrı ayrı tanımlı.
+Yazı tek aile: Archivo, `assets/fonts/` altında gömülü (OFL). Üçüncü taraf
+isteği yok.
 
 ---
 

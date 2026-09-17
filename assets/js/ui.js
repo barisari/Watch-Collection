@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------
-   Küçük arayüz yardımcıları: DOM kurucu, biçimlendiriciler, renk eşlemesi.
+   Küçük arayüz yardımcıları: DOM kurucu, biçimlendiriciler.
    Metin her zaman textContent ile yazılır — veri hiçbir zaman HTML olarak
    yorumlanmaz.
 
@@ -80,22 +80,7 @@ export const photoLarge = (src) => src.replace('photos/watches/', 'photos/watche
 
 export const watchLabel = (w) => (w ? `${w.brand} ${w.model}` : 'Bilinmeyen saat');
 
-/* -------------------------------------------------------------------- renk */
-
-/**
- * Saat kimliğini sabit bir renk yuvasına eşler.
- * Renk saatin KENDİSİNE bağlıdır (koleksiyondaki sırasına), sıralamaya değil —
- * filtreleme renkleri kaydırmaz. Palet 8 yuvayla sınırlıdır; 8'den fazla saat
- * varsa renk tamamen bırakılır ve kimliği yalnızca yazı taşır.
- */
-export function colorForWatch(id) {
-  const order = state.watches.map((w) => w.id);
-  if (order.length > 8) return null;
-  const i = order.indexOf(id);
-  return i === -1 ? null : `var(--series-${i + 1})`;
-}
-
 /* ------------------------------------------------------------ ortak parçalar */
 
-export const emptyState = (icon, message, hint) =>
-  el('div.empty-state', el('span.big', icon), el('p', message), hint && el('p.muted', hint));
+export const emptyState = (message, hint) =>
+  el('div.empty-state', el('p', message), hint && el('p.muted', hint));

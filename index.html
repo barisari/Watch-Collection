@@ -14,12 +14,12 @@
   </main>
 
   <footer class="site-footer wrap">
-    <p>
-      <span data-bind="watchCount"></span> saat ·
-      veri kaynağı <code>data/watches.json</code>
-    </p>
-    <button type="button" class="btn btn-icon" id="theme-toggle" aria-label="Açık/koyu tema">
-      <span aria-hidden="true">◐</span>
+    <p><span data-bind="watchCount"></span> saat<span class="sep">veri kaynağı data/watches.json</span></p>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Açık/koyu tema">
+      <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+        <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 2a8 8 0 0 1 0 16z" fill="currentColor"/>
+      </svg>
     </button>
   </footer>
 

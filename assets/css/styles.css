@@ -1,296 +1,248 @@
 /* ---------------------------------------------------------------------------
    Saat Koleksiyonu — stil katmanı
-   Renk jetonları doğrulanmış paletten gelir (bkz. README > Renkler).
-   Açık mod varsayılan; koyu mod hem işletim sistemi ayarını hem de
-   sitedeki tema düğmesini dinler.
+
+   İLKE: sayfada renk yok, renk saatlerden gelir. Fotoğraflar saydam; zemin
+   akromatik bir stüdyo grisi, 28 nesnenin kendi rengi tek renk kaynağı.
+   Kart yok: yuvarlatma, gölge, çerçeve yok — nesne ile göz arasında hiçbir
+   şey durmaz. Cesaret tek yerde: model kodu.
+
+   Yazı: tek aile, Archivo (grotesk, tabular rakam). Hiyerarşi boy ve
+   ağırlıkla; ikinci aile yok.
+
+   Izgara markaya göre gruplu; kapaklar gerçek ölçekli (mm başına sabit piksel,
+   bkz. scripts/build-photo-sizes.mjs), bu yüzden karttaki "38 mm" görünen
+   boyutla örtüşür.
+
+   Açık/koyu jetonları ayrı tanımlanır ve her ikisi ölçülmüştür:
+   en düşük kontrast --ink-2 / --ground = 4,56 (AA eşiği 4,5).
 --------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Archivo"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("../fonts/archivo-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("../fonts/archivo-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ---------- jetonlar ---------- */
 
 :root {
   color-scheme: light;
+  --ground: #ededea;        /* sayfa: stüdyo grisi. Fotoğrafların fonu da bu. */
+  --ink: #1c1c1b;           /* metin */
+  --ink-2: #6b6b67;         /* ölçü, etiket — ground üstünde 4,56 */
+  --rule: #d3d3ce;          /* satır arası çizgi */
+  --overlay: rgba(0, 0, 0, .86);
 
-  --surface-1: #fcfcfb;          /* kart yüzeyi */
-  --surface-2: #f9f9f7;          /* sayfa zemini */
-  --surface-3: #f2f2ee;          /* içe gömülü alanlar */
-
-  --text-primary: #0b0b0b;
-  --text-secondary: #52514e;
-  /* Açık ve koyu temada AYRI olmalı: #898781 koyu zeminde 4,85 veriyor ama
-     açık zeminde 3,41-3,50'de kalıyor (AA eşiği 4,5). Ölçülüp düzeltildi. */
-  --text-muted: #74736e;
-
-  --gridline: #e1e0d9;
-  --axis: #c3c2b7;
-  --border: rgba(11, 11, 11, 0.10);
-  --border-strong: rgba(11, 11, 11, 0.18);
-
-  --series-1: #2a78d6;
-  --series-2: #eb6834;
-  --series-3: #1baf7a;
-  --series-4: #eda100;
-  --series-5: #e87ba4;
-  --series-6: #008300;
-  --series-7: #4a3aa7;
-  --series-8: #e34948;
-
-  /* tek renkli ölçek (sıralı) — açık→koyu */
-  --seq-100: #cde2fb;
-  --seq-250: #86b6ef;
-  --seq-400: #3987e5;
-  --seq-550: #1c5cab;
-
-  --status-good: #0ca30c;
-  --status-warning: #fab219;
-  --status-serious: #ec835a;
-  --status-critical: #d03b3b;
-
-  --accent: #2a78d6;
-  --accent-ink: #ffffff;
-
-  --radius: 10px;
-  --radius-sm: 6px;
-  --gap: 20px;
+  --sans: "Archivo", system-ui, sans-serif;
   --maxw: 1180px;
-
-  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
-  --shadow: 0 1px 2px rgba(11, 11, 11, 0.04), 0 8px 24px rgba(11, 11, 11, 0.05);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --surface-1: #1a1a19;
-    --surface-2: #0d0d0d;
-    --surface-3: #232322;
-    --text-primary: #ffffff;
-    --text-secondary: #c3c2b7;
-    --text-muted: #898781;
-    --gridline: #2c2c2a;
-    --axis: #383835;
-    --border: rgba(255, 255, 255, 0.10);
-    --border-strong: rgba(255, 255, 255, 0.18);
-    --series-1: #3987e5;
-    --series-2: #d95926;
-    --series-3: #199e70;
-    --series-4: #c98500;
-    --series-5: #d55181;
-    --series-6: #008300;
-    --series-7: #9085e9;
-    --series-8: #e66767;
-    --seq-100: #104281;
-    --seq-250: #184f95;
-    --seq-400: #256abf;
-    --seq-550: #3987e5;
-    --accent: #3987e5;
-    --accent-ink: #0d0d0d;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+    --ground: #181818;
+    --ink: #f4f4f1;
+    --ink-2: #9c9c97;        /* ground üstünde 6,44 */
+    --rule: #2c2c2c;
   }
 }
-
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --surface-1: #1a1a19;
-  --surface-2: #0d0d0d;
-  --surface-3: #232322;
-  --text-primary: #ffffff;
-  --text-secondary: #c3c2b7;
-  --text-muted: #898781;
-  --gridline: #2c2c2a;
-  --axis: #383835;
-  --border: rgba(255, 255, 255, 0.10);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --series-1: #3987e5;
-  --series-2: #d95926;
-  --series-3: #199e70;
-  --series-4: #c98500;
-  --series-5: #d55181;
-  --series-6: #008300;
-  --series-7: #9085e9;
-  --series-8: #e66767;
-  --seq-100: #104281;
-  --seq-250: #184f95;
-  --seq-400: #256abf;
-  --seq-550: #3987e5;
-  --accent: #3987e5;
-  --accent-ink: #0d0d0d;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --ground: #181818;
+  --ink: #f4f4f1;
+  --ink-2: #9c9c97;
+  --rule: #2c2c2c;
 }
 
-* { box-sizing: border-box; }
+/* ---------- taban ---------- */
 
+* { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
 body {
-  background: var(--surface-2);
-  color: var(--text-primary);
-  font-family: var(--font);
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-feature-settings: "tnum" 1;   /* ölçü sütunları hizalansın */
 }
 
-a { color: var(--accent); }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+main { padding-top: 40px; padding-bottom: 64px; min-height: 60vh; }
+main:focus { outline: none; }
+
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+.muted { color: var(--ink-2); font-size: 13px; }
+
+/* Bölüm başlığı: koyu çizgi. Satır arası: açık çizgi. Çizgi ağırlığı hiyerarşi. */
+h3 {
+  font-size: 14px; font-weight: 600; line-height: 1.3;
+  padding-bottom: 6px; margin-bottom: 4px;
+  border-bottom: 1px solid var(--ink);
+}
 
 /* ---------- düğmeler ---------- */
 
 .btn {
-  font: inherit; font-size: 13px;
+  font: inherit; font-size: 14px; line-height: 1;
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 7px 13px; min-height: 34px;
-  border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
-  background: var(--surface-1); color: var(--text-primary);
-  cursor: pointer; transition: background .12s, border-color .12s;
+  padding: 9px 12px;
+  border: 1px solid var(--rule); border-radius: 0;
+  background: none; color: var(--ink);
+  cursor: pointer; transition: border-color .15s;
 }
-.btn:hover { background: var(--surface-3); }
-.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.btn-icon { padding: 7px 10px; min-width: 34px; justify-content: center; font-size: 15px; }
-.btn-sm { font-size: 12.5px; padding: 5px 10px; min-height: 30px; }
+.btn:hover { border-color: var(--ink); }
+.btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
-/* ---------- yerleşim ---------- */
-
-main { padding-top: 28px; padding-bottom: 48px; min-height: 60vh; }
-main:focus { outline: none; }
-
-.section-head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 16px; flex-wrap: wrap; margin-bottom: 14px;
+.theme-toggle {
+  width: 36px; height: 36px; padding: 0;
+  display: inline-grid; place-items: center;
+  border: 1px solid var(--rule); border-radius: 0;
+  background: none; color: var(--ink); cursor: pointer;
+  transition: border-color .15s;
 }
-h1 { font-size: 22px; font-weight: 620; letter-spacing: -0.015em; margin: 0 0 4px; }
-h2 { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
-h3 { font-size: 13px; font-weight: 600; margin: 0 0 10px; color: var(--text-secondary);
-     text-transform: uppercase; letter-spacing: .06em; }
-p { margin: 0 0 10px; }
-.muted { color: var(--text-muted); font-size: 13px; }
+.theme-toggle:hover { border-color: var(--ink); }
+.theme-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.theme-toggle svg { width: 18px; height: 18px; display: block; }
 
-.card {
-  background: var(--surface-1); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow);
+/* ---------- koleksiyon: başlık + filtre ---------- */
+
+.section-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+
+/* Marka bölümleri: başlık = ad + adet, altında koyu çizgi. */
+.group { margin-top: 44px; }
+.group-head {
+  display: flex; align-items: baseline; gap: 10px;
+  font-size: 15px; font-weight: 600; line-height: 1.3;
+  padding-bottom: 8px; margin-bottom: 26px;
+  border-bottom: 1px solid var(--ink);
 }
-.stack { display: grid; gap: var(--gap); }
-
-/* ---------- filtre satırı ---------- */
+.group-head .count { font-weight: 400; color: var(--ink-2); font-size: 14px; }
 
 .filters {
   display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
-  padding: 12px 14px; margin-bottom: var(--gap);
-  background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 18px 0; margin: 14px 0 36px;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
 }
-.filters label { font-size: 12.5px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
-select, input[type="text"], input[type="date"], input[type="number"], input[type="search"], textarea {
-  font: inherit; font-size: 13.5px;
-  padding: 7px 9px; min-height: 34px;
-  border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
-  background: var(--surface-1); color: var(--text-primary);
+input[type="search"] {
+  font: inherit; font-size: 14px;
+  padding: 8px 10px; min-height: 36px;
+  border: 1px solid var(--ink-2); border-radius: 0;
+  background: var(--ground); color: var(--ink);
 }
-select:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 2px solid var(--accent); outline-offset: 1px;
-}
-textarea { min-height: 72px; resize: vertical; width: 100%; }
-.spacer { flex: 1 1 auto; }
+input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
-/* ---------- koleksiyon ızgarası ---------- */
+/* ---------- koleksiyon: kontakt baskı ---------- */
 
 .grid-watches {
-  display: grid; gap: var(--gap);
-  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  column-gap: 28px; row-gap: 40px;
 }
 
 .watch-card {
-  background: var(--surface-1); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
-  display: flex; flex-direction: column; text-align: left;
-  font: inherit; color: inherit; cursor: pointer; padding: 0;
-  transition: transform .12s ease, border-color .12s;
+  display: block; width: 100%; text-align: left;
+  font: inherit; color: inherit; background: none; border: 0; padding: 0;
+  cursor: pointer;
 }
-.watch-card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
-.watch-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.watch-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }
 
-/* Kare çerçeve: görseller tek tip 900×900 tuvale ortalandığı için her saat
-   aynı boşlukla, aynı ölçekte oturur. contain — kırpma yok. */
-.watch-photo {
-  aspect-ratio: 1; background: var(--surface-3);
-  display: grid; place-items: center; position: relative;
-  border-bottom: 1px solid var(--border);
-}
+/* Kare tuval: görseller tek tip 900×900'e ortalandığı için her saat aynı
+   boşlukla, aynı ölçekte oturur. Zemin yok — fotoğraf sayfanın üstünde. */
+.watch-photo { aspect-ratio: 1; display: grid; place-items: center; }
 .watch-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.watch-photo .placeholder { font-size: 40px; opacity: .28; }
 
-/* --- Büyütme --------------------------------------------------------------
-   Galeri kareleri 900×900, kapak ve büyütme photos/watches/large/ altındaki
-   1500×1500 sürümü kullanır. */
+.watch-code {
+  margin-top: 14px;
+  font-size: 22px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em;
+}
+.watch-meta {
+  margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--rule);
+  display: flex; justify-content: space-between; gap: 10px;
+  font-size: 13px; color: var(--ink-2); transition: color .15s;
+}
+.watch-card:hover .watch-meta { color: var(--ink); }
+
+.empty-state { padding: 56px 0; color: var(--ink-2); }
+.empty-state p + p { margin-top: 4px; }
+
+/* ---------- künye ---------- */
+
+.detail-head { margin: 22px 0 40px; }
+.code {
+  font-size: clamp(34px, 6.4vw, 60px); font-weight: 700;
+  line-height: 1; letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+.nickname { margin-top: 12px; font-size: 16px; color: var(--ink-2); }
+
+.detail-grid { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 860px) { .detail-grid { grid-template-columns: 400px minmax(0, 1fr); gap: 56px; } }
+.stack { display: grid; gap: 32px; }
+
 .zoomable { cursor: zoom-in; }
-.zoomable:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.zoomable:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+.gallery { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); margin-top: 12px; }
+.gallery img { width: 100%; aspect-ratio: 1; object-fit: contain; display: block; }
+
+/* Üreticinin tanıtım metni: aynı aile, yalnızca boy ve ağırlıkla ayrılır. */
+.prose { max-width: 62ch; }
+.prose-lead { font-size: 19px; font-weight: 600; line-height: 1.35; letter-spacing: -0.015em; }
+.prose-body { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--ink); }
+.prose .muted { margin-top: 10px; }
+
+.spec-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.spec-table th, .spec-table td { text-align: left; padding: 8px 0; vertical-align: top; }
+.spec-table th { font-weight: 400; color: var(--ink-2); width: 42%; padding-right: 12px; }
+.spec-table td { color: var(--ink); }
+.spec-table tr + tr th, .spec-table tr + tr td { border-top: 1px solid var(--rule); }
+.spec-table .line { display: block; }
+
+.note { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+
+/* ---------- büyütme ---------- */
 
 .lightbox {
   position: fixed; inset: 0; z-index: 90;
   display: flex; align-items: center; justify-content: center;
-  padding: 32px;
-  background: rgba(0, 0, 0, .82);
-  cursor: zoom-out;
+  padding: 32px; background: var(--overlay); cursor: zoom-out;
 }
-.lightbox img {
-  max-width: min(100%, 900px); max-height: 100%;
-  object-fit: contain; cursor: default;
-}
+.lightbox img { max-width: min(100%, 1100px); max-height: 100%; object-fit: contain; cursor: default; }
 .lightbox-close {
-  position: absolute; top: 14px; right: 18px;
-  width: 38px; height: 38px; border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, .3);
-  background: rgba(0, 0, 0, .45); color: #fff;
-  font-size: 22px; line-height: 1; cursor: pointer;
+  position: absolute; top: 16px; right: 16px;
+  width: 40px; height: 40px; border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, .45); background: none; color: #fff;
+  font: inherit; font-size: 24px; line-height: 1; cursor: pointer;
 }
-.lightbox-close:hover { background: rgba(0, 0, 0, .7); }
+.lightbox-close:hover { border-color: #fff; }
+.lightbox-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 @media (max-width: 600px) { .lightbox { padding: 16px; } }
-
-.watch-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
-.watch-brand { font-size: 12.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); }
-.watch-model { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
-.watch-ref { font-size: 12.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
-.watch-meta {
-  margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--gridline);
-  display: flex; justify-content: space-between; gap: 10px;
-  font-size: 12.5px; color: var(--text-secondary);
-}
-
-.swatch { width: 9px; height: 9px; border-radius: 2px; flex: none; }
-
-/* ---------- detay ---------- */
-
-.detail-head { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between;
-               flex-wrap: wrap; margin-bottom: 18px; }
-.detail-grid { display: grid; gap: var(--gap); grid-template-columns: minmax(0, 1fr); align-items: start; }
-@media (min-width: 860px) { .detail-grid { grid-template-columns: 360px minmax(0, 1fr); } }
-
-.spec-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-.spec-table th, .spec-table td { text-align: left; padding: 7px 0; vertical-align: top; }
-.spec-table th { font-weight: 500; color: var(--text-muted); width: 45%; }
-.spec-table td { color: var(--text-primary); font-variant-numeric: tabular-nums; }
-.spec-table tr + tr th, .spec-table tr + tr td { border-top: 1px solid var(--gridline); }
-
-.gallery { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
-.gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm);
-               border: 1px solid var(--border); }
 
 /* ---------- altbilgi ---------- */
 
 .site-footer {
-  padding: 22px 20px 40px; color: var(--text-muted); font-size: 12.5px;
-  border-top: 1px solid var(--border);
+  padding: 28px 20px 56px; color: var(--ink-2); font-size: 13px;
+  border-top: 1px solid var(--rule);
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
-.site-footer p { margin: 0; }
-.site-footer code { font-size: 11.5px; background: var(--surface-3); padding: 1px 5px; border-radius: 3px; }
-
-@media (max-width: 560px) {
-}
+.site-footer .sep { margin-left: 20px; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
-  .watch-card:hover { transform: none; }
 }
 
 @media print {
   .filters, .site-footer { display: none; }
-  .card { box-shadow: none; break-inside: avoid; }
 }

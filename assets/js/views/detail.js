@@ -2,7 +2,7 @@
 
 import { getWatch } from '../data.js';
 import {
-  el, fmtDate, fmtMoney, fmtNum, watchLabel, colorForWatch, emptyState,
+  el, fmtDate, fmtMoney, fmtNum, watchLabel, emptyState,
   photoSm, photoLarge,
 } from '../ui.js';
 import { term, termList, waterResistance } from '../terms.js';
@@ -52,37 +52,30 @@ function msrpRow(watch) {
     // Önce kaynaktan gelen gerçek fiyatlar, sonra türetilenler.
     .sort((a, b) => (a.tahmin - b.tahmin) || (msrpRank(a.cur) - msrpRank(b.cur)))
     .slice(0, 3)
-    .map((p) => (p.tahmin ? '~' : '') + fmtMoney(p.amt, p.cur))
-    .join(' · ');
+    .map((p) => el('span.line', (p.tahmin ? '~' : '') + fmtMoney(p.amt, p.cur)));
 }
 
 export function renderDetail(root, id, navigate) {
   const watch = getWatch(id);
   if (!watch) {
-    root.append(emptyState('🔍', 'Bu saat bulunamadı.', 'Silinmiş ya da bağlantı hatalı olabilir.'),
+    root.append(emptyState('Bu saat bulunamadı.', 'Silinmiş ya da bağlantı hatalı olabilir.'),
       el('p', { style: { textAlign: 'center' } },
         el('button.btn', { type: 'button', onclick: () => navigate('#/koleksiyon') }, 'Koleksiyona dön')));
     return;
   }
 
-  const color = colorForWatch(id);
   const s = watch.specs || {};
 
   root.append(
-    el('p', el('button.btn.btn-sm', { type: 'button', onclick: () => navigate('#/koleksiyon') }, '← Koleksiyon')),
+    el('p', el('button.btn', { type: 'button', onclick: () => navigate('#/koleksiyon') }, '← Koleksiyon')),
 
-    el('div.detail-head',
-      el('div',
-        el('div.watch-brand',
-          color && el('span.swatch', { style: { background: color, display: 'inline-block', marginRight: '6px' }, 'aria-hidden': 'true' }),
-          watch.brand),
-        el('h1', watch.model),
-        el('p.muted',
-          [
-            watch.reference !== watch.model ? watch.reference : null,
-            releaseLabel(watch),
-            watch.nickname && `“${watch.nickname}”`,
-          ].filter(Boolean).join(' · '))),
+    /* Kod kahraman: kullanıcı saatleri koda göre tanıyor. Tam referans burada
+       (satın alındığı haliyle), ızgarada kısa model. Altına marka/tür/çıkış
+       satırı KONMUYOR — hepsi tabloda, tekrar etmek orta noktalı meta dizesinin
+       kılık değiştirmişi olurdu. */
+    el('header.detail-head',
+      el('h1.code', watch.reference),
+      watch.nickname && el('p.nickname', watch.nickname),
     ),
 
     el('div.detail-grid',
@@ -135,7 +128,7 @@ export function renderDetail(root, id, navigate) {
           ['Uyduğu bilek', s.strap?.sizeRange],
         ]),
         acquisitionCard(watch),
-        watch.notes && el('div.card', el('h3', 'Notlar'), el('p', { style: { margin: 0 } }, watch.notes)),
+        watch.notes && el('section.spec', el('h3', 'Notlar'), el('p', { style: { margin: 0 } }, watch.notes)),
         sourceNote(watch),
       ),
     ),
@@ -149,11 +142,10 @@ function storyCard(watch) {
   if (!tagline && !story) return null;
 
   const onlyEnglish = !watch.story?.tr && !watch.tagline?.tr;
-  return el('div.card',
-    tagline && el('p', { style: { fontSize: '15.5px', fontWeight: '520', margin: story ? '0 0 12px' : '0' } }, tagline),
-    story && el('p', { style: { margin: 0, color: 'var(--text-secondary)' } }, story),
-    onlyEnglish && el('p.muted', { style: { marginTop: '10px', marginBottom: 0 } },
-      'Bu metin Casio\'nun İngilizce tanıtımından; Türkçesi henüz eklenmedi.'));
+  return el('div.prose',
+    tagline && el('p.prose-lead', tagline),
+    story && el('p.prose-body', story),
+    onlyEnglish && el('p.muted', 'Bu metin Casio\'nun İngilizce tanıtımından; Türkçesi henüz eklenmedi.'));
 }
 
 /** Teknik bilgilerin nereden geldiği — denetlenebilir olsun diye. */
@@ -165,10 +157,10 @@ function sourceNote(watch) {
   let host;
   try { host = new URL(url).hostname.replace(/^www\./, ''); } catch { host = 'ürün sayfası'; }
 
-  return el('p.muted', { style: { margin: 0 } },
+  return el('p.note',
     'Teknik bilgiler üreticinin ürün sayfasından alındı: ',
     el('a', { href: url, target: '_blank', rel: 'noopener' }, host),
-    watch.source.fetchedAt ? ` · ${fmtDate(watch.source.fetchedAt)}` : '');
+    watch.source.fetchedAt ? ` (${fmtDate(watch.source.fetchedAt)})` : '');
 }
 
 /* Fotoğrafa tıklayınca büyük hâli. Görseller 900×900 saklanıyor ama panelde
@@ -216,7 +208,7 @@ function zoomable(src, alt, extra = {}) {
 
 function photoPanel(watch) {
   const photos = watch.photos || [];
-  return el('div.card',
+  return el('section.spec',
     el('div.watch-photo', { style: { borderRadius: '8px', border: '1px solid var(--border)', marginBottom: photos.length > 1 ? '12px' : '0' } },
       photos[0]
         ? zoomable(photos[0], watchLabel(watch), {
@@ -273,7 +265,7 @@ function specRow(label, value) {
 function specCard(title, rows) {
   const filled = rows.filter(([, v]) => v != null && v !== '');
   if (!filled.length) return null;
-  return el('div.card',
+  return el('section.spec',
     el('h3', title),
     el('table.spec-table', el('tbody', filled.map(([k, v]) => specRow(k, v)))));
 }

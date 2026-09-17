@@ -520,6 +520,40 @@ yani 11 MB Pages yayınını şişirmiyor.
 
 ---
 
+## Görsel kimlik (17 Eylül 2026 — Fable, sıfırdan değerlendirme)
+
+Kullanıcı Opus'un planını devralmamamı, siteyi kendi gözümle yeniden
+değerlendirmemi istedi. Kararlar ve gerekçeleri:
+
+1. **Kapaklar gerçek ölçekli** — en büyük kusur buydu, Opus ertelemişti.
+   Ayrıntı yukarıda ("Kapaklar gerçek ölçekli"). Karttaki "38 mm" artık
+   görünen boyutla örtüşüyor.
+2. **Izgara markaya göre gruplu**: "Casio 12 · G-Shock 7 · …" başlıkları,
+   kullanıcının kendi marka sırasında (HA listesiyle aynı). Marka/tür/sıralama
+   açılır listeleri **kaldırıldı** (kullanıcı onayıyla) — 28 saatlik kişisel
+   vitrinde yapı kontrolle değil gruplamayla verilir. Arama kaldı. Kartta marka
+   satırı yok, başlık söylüyor.
+3. **Kart yok**: yuvarlatma, gölge, çerçeve yok. Fotoğraf doğrudan zeminde.
+4. **Sayfada renk yok**, renk saatlerden. `--ground/--ink/--ink-2/--rule`,
+   iki temada ayrı, ölçülmüş. 8 yuvalı palet ve mavi vurgu silindi.
+5. **Model kodu kahraman**: kartta 22 px, künyede 34–60 px (`clamp`). Künyede
+   tam referans, ızgarada kısa model. Kodun altındaki "marka · tür · çıkış"
+   satırı **konmadı** — orta noktalı meta dizesinin kılık değiştirmişi olurdu,
+   bilgiler tabloda zaten var.
+6. **Tek yazı ailesi**: Archivo (grotesk, tabular rakam), `assets/fonts/`
+   altında gömülü. Opus ikinci bir serif önermişti (üreticinin cümleleri için);
+   reddedildi — kullanıcı tanıtım metnini hiç öncelemedi, ikinci aile künyeyi
+   iki tasarım gibi gösteriyordu.
+7. Emoji ikon yok (tema düğmesi SVG), büyük harfli etiket yok, `·` ile
+   birleştirilmiş meta dizesi yok, `#0b0b0b` yok.
+
+**Becerilerin değeri, dürüstçe:** `ui-ux-pro-max` ölçülebilir kurallarda
+(kontrast 4,5, gövde 16 px, `srcset`, web dokunma hedefi 24 px) işe yaradı;
+`--design-system` çıktısı ise genel SaaS varsayılanıydı (krem zemin + kehribar
+vurgu + Poppins/Open Sans + "Product Demo + Features") — `frontend-design`
+becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
+`frontend-design` haklı; veritabanını sadece kural kontrolü için kullan.
+
 ## Çalışma alışkanlıkları
 
 - ## SORULMAYANI KURMA — bu deponun en pahalı dersi.
@@ -568,11 +602,6 @@ yani 11 MB Pages yayınını şişirmiyor.
 - Bilinen bir referansın teknik özelliklerini doldururken **kullanıcıya
   doğrulat** — aynı modelin varyantları arasında ölçüler değişebiliyor,
   envantere yanlış bilgi yazılmamalı.
-- Takvim/grafik renkleri doğrulanmış 8 yuvalı bir paletten gelir
-  (`--series-1…8`, `assets/css/styles.css` başında). Renk saatin koleksiyondaki
-  sabit sırasına bağlıdır, sıralamaya değil. 8'den fazla saatte renk bırakılır
-  ve kimlik yalnızca yazıyla taşınır. Paleti değiştirirsen dataviz
-  doğrulayıcısını tekrar çalıştır.
 - **İşlenmemiş asıllar `photos/originals/` altında saklanır** ve `build.mjs`
   bunları `dist/`e kopyalamaz (`SKIP` listesi) — depoda duruyorlar ama Pages
   yayınını şişirmiyorlar. Sitede gösterilen 900×900 WebP'ler `photos/watches/`.
@@ -587,9 +616,16 @@ yani 11 MB Pages yayınını şişirmiyor.
   | `photos/watches/large/` | 1500 | Künye kapağı 3×, büyütme |
 
   Ölçüldü: ızgara masaüstünde **1,63 → 1,04 MB** (%36), künye sayfası 1×
-  ekranda 180 → 110 KB (kapak artık her ziyarette 1500 indirmiyor).
-  `NO_ENLARGE=1` ile üretilir: kaynağı yetmeyen dosya büyütülmez, gerçek
-  boyunda kalır. 28 kapağın hepsi 1283 px içeriğe gerçek pikselle çıkıyor.
+  ekranda 180 → 110 KB. `NO_ENLARGE=1` ile üretilir: kaynağı yetmeyen dosya
+  büyütülmez. Üç boyun hepsi artık bu betikten çıkıyor, 900'ler elle üretilmiyor.
+- **Kapaklar gerçek ölçekli.** Eski çerçeveleme "içerik yüksekliği 770 px"
+  diyordu; kayışı uzun saat küçük, kısası büyük çıkıyordu (kasa 382–588 px,
+  %54 saçılma, gerçek boyutla ilgisiz). Şimdi her kapak **kasa çapına** göre
+  ölçekleniyor: mm başına sabit piksel (900 tuvalde 12,96 px/mm, en büyük kasa
+  50 mm tuvalin %72'si). Ölçüldü: 27 kapakta ±%0,1. Kasa genişliği görselden
+  okunuyor (en geniş opak satır), çap `specs.case.diameter`'dan. Çapı olmayan
+  MRS-301 ve yan/arka ek kareler eski çerçevelemeyle. Yeni saat eklerken çapı
+  girmeden görsel üretme — ölçek dışı kalır.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır (Escape kapatır).
 - `id` alanı sabittir; fotoğraf yolları ve `haOption` eşleşmesi ona bağlı.
 
@@ -603,5 +639,5 @@ yani 11 MB Pages yayınını şişirmiyor.
 | `node scripts/import-casio-sheet.mjs <csv> [--reset]` | Casio Collection tablosundan içe aktarır |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
 | `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafı 900×900 WebP'ye çerçeveler (`npm i sharp`). `CUTOUT=off` fona dokunmaz — varsayılan yol bu. `CANVAS`/`NO_ENLARGE` ile boy ayarlanır |
-| `node scripts/build-photo-sizes.mjs` | 600 ve 1500 px sürümleri üretir → `photos/watches/sm/` ve `large/` |
+| `node scripts/build-photo-sizes.mjs` | Üç boyu üretir (600 / 900 / 1500); kapaklar kasa çapına göre ölçekli |
 | `node scripts/fetch-originals.mjs [--force]` | Görsel asıllarını `photos/originals/` altına indirir |
