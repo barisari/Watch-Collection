@@ -3,7 +3,7 @@
 import { state, canShow } from '../data.js';
 import { el, watchLabel, colorForWatch, emptyState } from '../ui.js';
 
-const filters = { q: '', brand: '', category: '', status: 'owned', sort: 'brand' };
+const filters = { q: '', brand: '', category: '', sort: 'brand' };
 
 const SORTS = {
   brand: { label: 'Marka (A→Z)', cmp: (a, b) => watchLabel(a.watch).localeCompare(watchLabel(b.watch), 'tr') },
@@ -57,15 +57,6 @@ function buildFilters(rows, root, navigate) {
     search,
     brands.length > 1 && select('brand', brands, 'Tüm markalar'),
     categories.length > 1 && select('category', categories, 'Tüm türler'),
-    el('select', {
-      'aria-label': 'Durum',
-      onchange: (e) => { filters.status = e.target.value; rerender(); },
-    },
-      el('option', { value: 'owned', selected: filters.status === 'owned' }, 'Sahip olduklarım'),
-      el('option', { value: '', selected: filters.status === '' }, 'Tümü (satılanlar dahil)'),
-      el('option', { value: 'sold', selected: filters.status === 'sold' }, 'Satılanlar'),
-      el('option', { value: 'wishlist', selected: filters.status === 'wishlist' }, 'İstek listesi'),
-    ),
     el('span.spacer'),
     el('label', 'Sırala',
       el('select', {
@@ -77,7 +68,6 @@ function buildFilters(rows, root, navigate) {
 
 function matches(row) {
   const w = row.watch;
-  if (filters.status && (w.status ?? 'owned') !== filters.status) return false;
   if (filters.brand && w.brand !== filters.brand) return false;
   if (filters.category && w.category !== filters.category) return false;
   if (filters.q) {

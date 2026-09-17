@@ -137,7 +137,6 @@ function skeleton(id, brand, code, date) {
     shortCode: shortCodeFor(model),
     year: null,
     category: null,
-    status: 'owned',
     specs: {
       movement: {
         caliber: null,           // Casio modül numarası

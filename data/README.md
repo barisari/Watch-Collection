@@ -27,7 +27,6 @@ görünmez, "—" bile yazmaz.
   "reference": "310.30.42.50.01.001",
   "year": 2022,
   "category": "kronograf",          // serbest metin; filtre kutusunu besler
-  "status": "owned",                // owned | sold | wishlist
 
   "specs": {
     "movement": {

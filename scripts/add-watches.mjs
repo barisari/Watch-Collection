@@ -82,7 +82,6 @@ function skeleton(id, p) {
     reference: p.reference,
     year: null,
     category: null,
-    status: 'owned',
     specs: {
       movement: { caliber: null, type: null, powerReserve: null, frequency: null, jewels: null, certification: null },
       case: { material: null, diameter: null, thickness: null, lugToLug: null, lugWidth: null, crystal: null, waterResistance: null, bezel: null },

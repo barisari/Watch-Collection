@@ -10,7 +10,6 @@ const CONDITION_TR = {
   new: 'Sıfır', 'like-new': 'Sıfır ayarında', excellent: 'Çok iyi',
   good: 'İyi', fair: 'Orta', vintage: 'Vintage',
 };
-const STATUS_TR = { owned: 'Koleksiyonda', sold: 'Satıldı', wishlist: 'İstek listesi' };
 
 const AYLAR = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
                'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
@@ -249,7 +248,6 @@ function acquisitionCard(watch) {
       : null],
     ['Durum', CONDITION_TR[a.condition] || a.condition],
     ['Kutu & belgeler', a.boxPapers == null ? null : (a.boxPapers ? 'Var' : 'Yok')],
-    ['Koleksiyon durumu', STATUS_TR[watch.status ?? 'owned'] || watch.status],
     ['Satın alma fiyatı', privateCell(watch, 'acquisition.price', a.price && fmtMoney(a.price.amount, a.price.currency))],
     ['Satıcı', privateCell(watch, 'acquisition.seller', a.seller)],
     ['Seri numarası', privateCell(watch, 'acquisition.serial', a.serial)],

@@ -8,7 +8,6 @@
     "shortCode": "A1000D",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3479",
@@ -107,7 +106,6 @@
     "shortCode": "A1100B",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3503",
@@ -204,7 +202,6 @@
     "shortCode": "A1100D",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3503",
@@ -301,7 +298,6 @@
     "shortCode": "A158WA",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 593",
@@ -399,7 +395,6 @@
     "shortCode": "AE1200",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3299",
@@ -499,7 +494,6 @@
     "shortCode": "CA53W1",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3208",
@@ -599,7 +593,6 @@
     "shortCode": "DBC611",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3228",
@@ -699,7 +692,6 @@
     "shortCode": "F91WPC",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 593",
@@ -797,7 +789,6 @@
     "shortCode": "MDV106",
     "year": null,
     "category": "dalgıç",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 2784",
@@ -895,7 +886,6 @@
     "shortCode": "MTPB18",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5436",
@@ -990,7 +980,6 @@
     "shortCode": "MTPB19",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5664",
@@ -1085,7 +1074,6 @@
     "shortCode": "EFB730",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5742",
@@ -1181,7 +1169,6 @@
     "shortCode": "EFK110",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": null,
@@ -1276,7 +1263,6 @@
     "shortCode": "EFSS57",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5634",
@@ -1374,7 +1360,6 @@
     "shortCode": "DW6900",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3529",
@@ -1475,7 +1460,6 @@
     "shortCode": "GA2100",
     "year": null,
     "category": "ana-dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5611",
@@ -1578,7 +1562,6 @@
     "shortCode": "GBD200",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3506",
@@ -1682,7 +1665,6 @@
     "shortCode": "GBX100",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3482",
@@ -1790,7 +1772,6 @@
     "shortCode": "GMB210",
     "year": null,
     "category": "ana-dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5691",
@@ -1896,7 +1877,6 @@
     "shortCode": "GSTB10",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5748",
@@ -2000,7 +1980,6 @@
     "shortCode": "GWBX56",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3578",
@@ -2103,7 +2082,6 @@
     "shortCode": "OCWS40",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": null,
@@ -2205,7 +2183,6 @@
     "shortCode": "OCWT20",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5596",
@@ -2303,7 +2280,6 @@
     "shortCode": "PRW35L",
     "year": null,
     "category": "dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3582",
@@ -2406,7 +2382,6 @@
     "shortCode": "MRS301",
     "year": null,
     "category": "ana-dijital",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Casio modül 2385",
@@ -2499,7 +2474,6 @@
     "shortCode": "EVO2",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Sellita SW 220-1",
@@ -2595,7 +2569,6 @@
     "shortCode": "SNE529",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": "Seiko V158",
@@ -2689,7 +2662,6 @@
     "shortCode": "BN0021",
     "year": null,
     "category": "analog",
-    "status": "owned",
     "specs": {
       "movement": {
         "caliber": null,

@@ -416,11 +416,29 @@ Detaydaki "Düzenle" düğmesi ve alt bilgideki taslak sayacı da kalktı.
 `todayISO()` `stats.js`'ten `ui.js`'e taşınmıştı; onu kullanan tek yer saat
 formuydu, o da gittiği için artık kullanılmıyor ama `ui.js`'te duruyor.
 
-**İskelet dersi:** kullanıcının istemediği ama ilk commit'te (`bb86d27`)
-kendiliğinden eklenmiş özellikler epey vardı — tarayıcıdan kayıt, rotasyon
-arayüzü, `status` filtresi (satılanlar / istek listesi; envanterin 28/28'i
-`owned`). Kullanıcı bunları görünce kendini suçladı, oysa hiçbirini o
-istemedi. Yeni bölüm eklerken **istenmeyeni kurma.**
+**`status` filtresi de kaldırıldı (aynı gün).** Koleksiyon sayfasındaki
+"Sahip olduklarım / Satılanlar / İstek listesi" açılır listesi, `status` alanı
+(28 kayıttan silindi), detaydaki "Koleksiyon durumu" satırı ve doğrulayıcıdaki
+denetimi gitti. Kullanıcının sorusu yerindeydi: 28/28 `owned` olduğu için
+filtre hiçbir şeyi filtrelemiyordu, ve sahip olmadığı saatlerin vitrinini
+yapmak istemiyor.
+
+**İSKELET DERSİ — en pahalı ders.** Kullanıcı *"sahip olduğum saatlerin
+vitrinini"* istedi; ben ilk commit'te (`bb86d27`) bir envanter yönetim sistemi
+kurdum. İstenmeden eklenenler: rotasyon takvimi, istatistik sayfası,
+tarayıcıdan kayıt/düzenleme, localStorage taslak katmanı, `status` filtresi,
+istek listesi. Hepsi 17 Eylül'de silindi — **~1600 satır.**
+
+Bedeli satır sayısı değil: bu özellikler **yanlış problemler üretti.** İki
+oturum "rotasyonu herkese açık bir sistemde nasıl saklarız", "`wears.json`'ı
+yayından nasıl çıkarırız", "özel istatistik sayfası nereye" diye tartışıldı.
+Hiçbiri gerçek problem değildi. Üstelik kullanıcı bunları kendi kararı sanıp
+kendini suçladı.
+
+**Ayrım:** yapı kurmak zorunludur (dosya düzeni, yönlendirme, veri şeması —
+her ayrıntı sorulamaz). Ama **bölüm/özellik eklemek karar vermektir, sorulur.**
+"Rotasyon takvimi de olsun" yapı değil, özelliktir. Bu depoda yeni bir sekme,
+sayfa, filtre ya da alan eklemeden önce **sor.**
 
 **Kullanıcı rotasyon kaydı birikmesini bekliyor**, gösterim tarafına ondan sonra
 başlanacak. Kendiliğinden başlama.

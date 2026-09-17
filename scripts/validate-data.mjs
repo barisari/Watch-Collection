@@ -38,10 +38,6 @@ function checkWatches(watches) {
     if (!w.brand) errors.push(`${at}: "brand" zorunlu.`);
     if (!w.model) errors.push(`${at}: "model" zorunlu.`);
 
-    const status = w.status ?? 'owned';
-    if (!['owned', 'sold', 'wishlist'].includes(status)) {
-      errors.push(`${at}: status "${status}" geçersiz (owned | sold | wishlist).`);
-    }
 
     const d = w.acquisition?.date;
     if (d && !isISODate(d)) errors.push(`${at}: acquisition.date "${d}" YYYY-MM-DD olmalı.`);
