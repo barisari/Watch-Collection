@@ -308,8 +308,8 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    temizledi; betik yalnızca çerçeveledi (saydam zemin, 900×900 WebP).
    Otomatik kesim bu görselde çalışmadı: fırçalanmış çelikte fona uzaklığı 1
    olan, yani fonla birebir aynı renkte pikseller var — hangi eşik denenirse
-   denensin ya hale kalıyor ya SENSOR muhafazası siliniyordu. **Ders:** böyle
-   bir çakışma varsa otomatikte ısrar etme, elle kesim iste.
+   denensin ya hale kalıyor ya SENSOR muhafazası siliniyordu. **Ders:** otomatik
+   kesim hiç denenmeyecek — aşağıdaki fotoğraf kuralına bakın.
    Üretim bilgisi `source.imageFrom` alanında duruyor; **ön yüzde
    gösterilmiyor** (`sourceNote` yalnızca `productUrl` + `fetchedAt` basıyor).
 4. ~~`MRS-301-2E` satın alma tarihi~~ — babadan kalma; modül 2385'in Ağustos
@@ -429,6 +429,15 @@ aynı gün içindeki değişim ne kadar ince kaydedilecek.
   getiriyorsun. Biz bu siteyi kendimiz için yapıyoruz."*
   Kural: **ekranda ve listelerde kullanıcının tanıdığı kısa biçimi kullan**,
   tam kimliği veride sakla. Açıklamalarda da aynısı geçerli — kısa yaz.
+- **Arka plan temizliğini otomatik yapma — kullanıcı Photoshop'la yapar.**
+  Kullanıcının kararı: betiğin kesimi *"malesef düzgün olmuyor"*; kendisi hem
+  fonu daha iyi temizliyor hem de başka bir yapay zekâ ile görselin kalitesini
+  yükseltebiliyor. Yani fonlu bir asıl geldiğinde kesmeye çalışma, **kullanıcıya
+  ver.** `normalize-photo.mjs` yalnızca ölçekleme/çerçeveleme için kullanılır
+  (girdide %5'ten fazla saydamlık varsa kesimi kendiliğinden atlıyor).
+  **Kapak dışındaki ek fotoğraflara temizlik hiç gerekmez** — oldukları gibi
+  kalır. Zaten çoğu asıl CDN'den saydam zeminli iniyor; kesim gereken tek
+  durum JPG kaynaklar (Mondaine, Braun).
 - Veriyi değiştiren her işten sonra `node scripts/validate-data.mjs` çalıştır.
 - Site metinleri Türkçe; kod içi yorumlar da Türkçe.
 - Bilinen bir referansın teknik özelliklerini doldururken **kullanıcıya
