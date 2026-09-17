@@ -451,6 +451,14 @@ aynı gün içindeki değişim ne kadar ince kaydedilecek.
 - **İşlenmemiş asıllar `photos/originals/` altında saklanır** ve `build.mjs`
   bunları `dist/`e kopyalamaz (`SKIP` listesi) — depoda duruyorlar ama Pages
   yayınını şişirmiyorlar. Sitede gösterilen 900×900 WebP'ler `photos/watches/`.
+- **İki boy yayınlanıyor.** `photos/watches/` 900×900 — anasayfa ızgarası ve
+  detay sayfasındaki küçük kareler (kare 90-130 CSS px, 3× ekranda bile yeter).
+  `photos/watches/large/` 1500×1500 — kapak görseli ve büyütme; kapak panelde
+  ~400 px görünüyor, 3× ekran 1200 istiyor. Yol veride değil `detail.js >
+  largeOf()` içinde türetiliyor, `watches.json`'a iki kayıt yazılmıyor.
+  Büyükler `NO_ENLARGE=1` ile üretilir: kaynağı yetmeyen dosya büyütülmez,
+  gerçek boyunda kalır (üreticinin 1080'lik ek kareleri böyle). 28 kapağın
+  hepsi 1283 px içeriğe gerçek pikselle çıkıyor.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır (Escape kapatır).
 - `id` alanı sabittir; değiştirirsen `data/wears.json` içindeki `watchId`
   değerlerini de güncelle.
@@ -465,5 +473,6 @@ aynı gün içindeki değişim ne kadar ince kaydedilecek.
 | `node scripts/import-casio-sheet.mjs <csv> [--reset]` | Casio Collection tablosundan içe aktarır |
 | `node scripts/log-wear.mjs "<saat>" [tarih] ["not"]` | Rotasyon kaydı ekler |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
-| `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafın fonunu siler, 900×900 WebP yazar (`npm i sharp` gerekir) |
+| `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafı 900×900 WebP'ye çerçeveler (`npm i sharp`). `CUTOUT=off` fona dokunmaz — varsayılan yol bu. `CANVAS`/`NO_ENLARGE` ile boy ayarlanır |
+| `node scripts/build-large-photos.mjs` | Büyütme için 1500 px sürümleri üretir → `photos/watches/large/` |
 | `node scripts/fetch-originals.mjs [--force]` | Görsel asıllarını `photos/originals/` altına indirir |

@@ -210,15 +210,21 @@ function openLightbox(src, alt) {
   button.focus();
 }
 
+/* İki boy var: photos/watches/ altındaki 900 px kareler galeri için (küçük
+ * kare 90-130 CSS px, 3× ekranda bile yeter), photos/watches/large/ altındaki
+ * 1500 px sürümler kapak ve büyütme için. Yol veriden değil buradan türetiliyor. */
+const largeOf = (src) => src.replace('photos/watches/', 'photos/watches/large/');
+
 function zoomable(src, alt, extra = {}) {
+  const { zoom = src, ...attrs } = extra;
   return el('img.zoomable', {
     src, alt, role: 'button', tabindex: '0',
     title: 'Büyütmek için tıkla',
-    onclick: () => openLightbox(src, alt),
+    onclick: () => openLightbox(zoom, alt),
     onkeydown: (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(src, alt); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(zoom, alt); }
     },
-    ...extra,
+    ...attrs,
   });
 }
 
@@ -227,11 +233,12 @@ function photoPanel(watch) {
   return el('div.card',
     el('div.watch-photo', { style: { borderRadius: '8px', border: '1px solid var(--border)', marginBottom: photos.length > 1 ? '12px' : '0' } },
       photos[0]
-        ? zoomable(photos[0], watchLabel(watch))
+        ? zoomable(largeOf(photos[0]), watchLabel(watch))
         : el('span.placeholder', { 'aria-hidden': 'true' }, '⌚')),
     photos.length > 1 && el('div.gallery',
       photos.slice(1).map((src, i) =>
-        zoomable(src, `${watchLabel(watch)} — fotoğraf ${i + 2}`, { loading: 'lazy' }))),
+        zoomable(src, `${watchLabel(watch)} — fotoğraf ${i + 2}`,
+          { loading: 'lazy', zoom: largeOf(src) }))),
     !photos.length && el('p.muted', { style: { margin: '10px 0 0', textAlign: 'center' } },
       'Fotoğraf eklemek için dosyayı photos/ klasörüne koy ve yolunu saat kaydına yaz.'),
   );

@@ -58,7 +58,16 @@ const CAP = Number(process.env.CAP || 70);         // fon renginden toplam kayma
 const GROW = Number(process.env.GROW || 6);        // bariyerin şişme payı (tam çöz. piksel)
 const FEATHER = Number(process.env.FEATHER || 0.6);
 const MIN_LIGHT = 150;                             // bundan koyu piksel fon sayılmaz
-const BOX = 770, CANVAS = 900;                     // diğer görsellerin ölçüsü
+/* Tuval ve içerik ölçüsü. Varsayılan 900 = sitedeki kare boyu (galeri karesi
+ * 90-130 CSS px, 3× ekranda bile fazlasıyla yeter). Büyütmede açılan sürümler
+ * photos/watches/large/ altında CANVAS=1500 ile üretiliyor — kapak panelde
+ * ~400 px görünüyor, 3× ekran 1200 istiyor.
+ *   CANVAS=1500 NO_ENLARGE=1 node scripts/normalize-photo.mjs <girdi> <çıktı>
+ * NO_ENLARGE=1: kaynak hedefi taşımıyorsa BÜYÜTME YAPILMAZ, içerik gerçek
+ * boyunda kalır. Sahte ayrıntı üretmemek için büyük sürümde hep açık olmalı. */
+const CANVAS = Number(process.env.CANVAS) || 900;
+const BOX = Number(process.env.BOX) || Math.round((CANVAS * 770) / 900);
+const NO_ENLARGE = process.env.NO_ENLARGE === '1';
 
 const meta = await sharp(SRC).metadata();
 const W = meta.width, H = meta.height;
@@ -208,7 +217,8 @@ rgba = await sharp(SRC)
 // ── 5. Kırp, ölçekle, ortala ───────────────────────────────────────────────
 // Diğer görsellerin hepsinde içerik tam 770 px. fit:'contain' KÜÇÜK görseli
 // hedefe büyütür — o yüzden ölçekleme değil, kenar payı ekliyoruz.
-const scaled = await sharp(rgba).trim().resize(BOX, BOX, { fit: 'inside' }).png().toBuffer();
+const scaled = await sharp(rgba).trim()
+  .resize(BOX, BOX, { fit: 'inside', withoutEnlargement: NO_ENLARGE }).png().toBuffer();
 const sm = await sharp(scaled).metadata();
 const padX = CANVAS - sm.width, padY = CANVAS - sm.height;
 
