@@ -62,11 +62,11 @@ görünmez, "—" bile yazmaz.
 
   "acquisition": {
     "date": "2022-04-12",           // YYYY-MM-DD — "ne zaman aldım"
-    "price": { "amount": 6200, "currency": "USD" },   // gizli alan
-    "seller": "Yetkili bayi",                          // gizli alan
+    "price": { "amount": 6200, "currency": "USD" },   // hassas — depoya girmez
+    "seller": "Yetkili bayi",                          // hassas — depoya girmez
     "condition": "new",             // new | like-new | excellent | good | fair | vintage
     "boxPapers": true,
-    "serial": "…"                   // gizli alan
+    "serial": "…"                   // hassas — depoya girmez
   },
 
   "valuation": { "amount": 7400, "currency": "USD", "asOf": "2026-01-01" },  // gizli
@@ -82,17 +82,19 @@ görünmez, "—" bile yazmaz.
 }
 ```
 
-### "Gizli alan" ne demek?
+### "Hassas alan" ne demek?
 
-`site.config.json > privateFields` listesindeki alanlar (varsayılan: satın alma
-fiyatı, satıcı, seri numarası ve güncel değer) sitede **herkese açık modda
-gizlenir**, koleksiyoner modunda görünür.
+`site.config.json > privateFields` listesindeki alanlar: satın alma fiyatı,
+satıcı, seri numarası ve güncel değer.
 
-Bunun bir güvenlik önlemi olmadığını unutma: veri tarayıcıya indiği için
-görüntüyü kapatmak yeterli değildir. Siteyi herkese açık yayınlıyorsan
-`npm run build` kullan — bu komut, `dist/` kopyasındaki JSON'dan o alanları
-**tamamen siler**. Depon private ise ya da siteyi sadece kendin açıyorsan
-`npm run build:private` ile her şeyi dahil edebilirsin.
+**Depo public olduğu sürece bunlar veriye hiç girmez** (fiyatlar ayrı bir Drive
+tablosunda tutulur). `npm run build` bir sigorta: yanlışlıkla girilmiş olsalar
+bile `dist/` kopyasındaki JSON'dan **tamamen silinir**, tarayıcıya inmezler.
+Depo private olsa `npm run build:private` ile her şey dahil edilebilir.
+
+Sitede bunları göster/gizle yapan bir düğme yok — tarayıcıdaki bir düğme
+gizlilik sınırı değildir. **Liste fiyatı (`msrp`) hassas değil**, künyede
+görünür.
 
 ---
 

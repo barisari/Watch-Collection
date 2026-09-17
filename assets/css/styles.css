@@ -171,19 +171,7 @@ a { color: var(--accent); }
 .btn:hover { background: var(--surface-3); }
 .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .btn-icon { padding: 7px 10px; min-width: 34px; justify-content: center; font-size: 15px; }
-.btn-primary {
-  background: var(--accent); color: var(--accent-ink); border-color: transparent; font-weight: 560;
-}
-.btn-primary:hover { background: var(--accent); filter: brightness(1.08); }
-.btn-danger { color: var(--status-critical); border-color: var(--border-strong); }
 .btn-sm { font-size: 12.5px; padding: 5px 10px; min-height: 30px; }
-
-#mode-toggle .dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--text-muted); flex: none;
-}
-#mode-toggle[aria-pressed="true"] .dot { background: var(--status-good); }
-#mode-toggle[aria-pressed="true"] { border-color: var(--status-good); }
 
 /* ---------- sekmeler ---------- */
 
@@ -211,13 +199,11 @@ h3 { font-size: 13px; font-weight: 600; margin: 0 0 10px; color: var(--text-seco
      text-transform: uppercase; letter-spacing: .06em; }
 p { margin: 0 0 10px; }
 .muted { color: var(--text-muted); font-size: 13px; }
-.lead { color: var(--text-secondary); margin-bottom: 20px; max-width: 62ch; }
 
 .card {
   background: var(--surface-1); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow);
 }
-.cards { display: grid; gap: var(--gap); }
 .stack { display: grid; gap: var(--gap); }
 
 /* ---------- filtre satırı ---------- */
@@ -304,12 +290,6 @@ textarea { min-height: 72px; resize: vertical; width: 100%; }
   font-size: 12.5px; color: var(--text-secondary);
 }
 
-.chip {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11.5px; padding: 2px 8px; border-radius: 999px;
-  background: var(--surface-3); color: var(--text-secondary); border: 1px solid var(--border);
-}
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .swatch { width: 9px; height: 9px; border-radius: 2px; flex: none; }
 
 /* ---------- detay ---------- */
@@ -325,136 +305,9 @@ textarea { min-height: 72px; resize: vertical; width: 100%; }
 .spec-table td { color: var(--text-primary); font-variant-numeric: tabular-nums; }
 .spec-table tr + tr th, .spec-table tr + tr td { border-top: 1px solid var(--gridline); }
 
-.locked { color: var(--text-muted); font-style: italic; }
-
 .gallery { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
 .gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm);
                border: 1px solid var(--border); }
-
-/* ---------- istatistik kutuları ---------- */
-
-.tiles { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
-.tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius);
-        padding: 16px 18px; box-shadow: var(--shadow); }
-.tile-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
-.tile-value { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; margin-top: 6px; line-height: 1.1; }
-.tile-sub { font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; }
-
-/* ---------- yatay çubuk grafik ---------- */
-
-.bars { display: grid; gap: 10px; }
-.bar-row { display: grid; grid-template-columns: minmax(90px, 215px) 1fr auto; gap: 12px; align-items: center; }
-.bar-name { font-size: 13px; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.bar-track { background: var(--surface-3); border-radius: 3px; height: 14px; position: relative; }
-.bar-fill { height: 100%; background: var(--series-1); border-radius: 0 4px 4px 0; min-width: 2px; transition: width .2s; }
-.bar-value { font-size: 13px; font-variant-numeric: tabular-nums; color: var(--text-primary); min-width: 62px; text-align: right; }
-.bar-row:hover .bar-name, .bar-row:hover .bar-value { color: var(--text-primary); }
-
-/* ---------- takvim ---------- */
-
-.cal-nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; max-width: 100%; }
-.cal-title { font-size: 15px; font-weight: 600; min-width: 155px; text-align: center; font-variant-numeric: tabular-nums; }
-
-.cal-months { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); }
-.cal-month { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius);
-             padding: 14px 10px 12px; box-shadow: var(--shadow); }
-.cal-month h2 { padding-left: 4px; }
-.cal-month h2 { font-size: 14px; margin-bottom: 10px; }
-
-.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
-.cal-dow { font-size: 11px; color: var(--text-muted); text-align: center; padding-bottom: 4px; font-weight: 500; }
-
-.cal-day {
-  aspect-ratio: 1; border-radius: var(--radius-sm); border: 1px solid transparent;
-  background: var(--surface-3); padding: 3px 2px;
-  display: flex; flex-direction: column; gap: 1px; overflow: hidden;
-  font: inherit; text-align: left; cursor: default; color: var(--text-primary);
-  min-height: 42px;
-}
-.cal-day.empty { background: transparent; }
-.cal-day.worn { cursor: pointer; }
-.cal-day.worn:hover { border-color: var(--border-strong); }
-.cal-day.today { box-shadow: inset 0 0 0 2px var(--accent); }
-.cal-day.dimmed { opacity: .35; }
-.cal-daynum { font-size: 10.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; line-height: 1.2; }
-.cal-tag {
-  font-size: 9px; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  border-left: 2px solid var(--axis); padding-left: 3px; color: var(--text-primary);
-}
-.cal-more { font-size: 9px; color: var(--text-muted); }
-
-.legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 14px; padding-top: 12px;
-          border-top: 1px solid var(--gridline); }
-.legend-item { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px;
-               color: var(--text-secondary); background: none; border: 0; padding: 2px 0;
-               cursor: pointer; font-family: inherit; }
-.legend-item:hover { color: var(--text-primary); }
-.legend-item[aria-pressed="true"] { color: var(--text-primary); font-weight: 600; }
-.legend-item .swatch { width: 10px; height: 10px; border-radius: 3px; }
-
-/* ---------- tablolar ---------- */
-
-.data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-.data-table th, .data-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--gridline); }
-.data-table th { font-size: 12px; color: var(--text-muted); text-transform: uppercase;
-                 letter-spacing: .05em; font-weight: 600; }
-.data-table td.num, .data-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
-.data-table tbody tr:hover { background: var(--surface-3); }
-.table-scroll { overflow-x: auto; }
-
-details.table-view { margin-top: 16px; }
-details.table-view summary { cursor: pointer; font-size: 13px; color: var(--text-secondary); padding: 4px 0; }
-details.table-view summary:hover { color: var(--text-primary); }
-
-/* ---------- durum rozetleri ---------- */
-
-.badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
-         padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border-strong); }
-.badge-good { color: var(--status-good); }
-.badge-warning { color: var(--text-primary); }
-.badge-critical { color: var(--status-critical); }
-
-/* ---------- form ---------- */
-
-.form-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
-.field { display: flex; flex-direction: column; gap: 5px; }
-.field label { font-size: 12.5px; color: var(--text-secondary); font-weight: 520; }
-.field input, .field select, .field textarea { width: 100%; }
-.field .hint { font-size: 11.5px; color: var(--text-muted); }
-.field-wide { grid-column: 1 / -1; }
-fieldset { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin: 0 0 16px; }
-legend { font-size: 12px; font-weight: 600; color: var(--text-secondary);
-         text-transform: uppercase; letter-spacing: .06em; padding: 0 6px; }
-.form-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 4px; }
-
-.notice {
-  border-left: 3px solid var(--accent); background: var(--surface-3);
-  padding: 12px 14px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: 13px; color: var(--text-secondary); margin-bottom: var(--gap);
-}
-.notice strong { color: var(--text-primary); }
-
-.empty-state { text-align: center; padding: 56px 20px; color: var(--text-muted); }
-.empty-state .big { font-size: 40px; opacity: .3; display: block; margin-bottom: 10px; }
-
-/* ---------- ipucu balonu ---------- */
-
-.tooltip {
-  position: fixed; z-index: 60; pointer-events: none;
-  background: var(--surface-1); color: var(--text-primary);
-  border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
-  padding: 8px 10px; font-size: 12.5px; box-shadow: var(--shadow); max-width: 230px;
-}
-.tooltip .t-title { font-weight: 600; margin-bottom: 2px; }
-.tooltip .t-row { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-
-.toast {
-  position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
-  background: var(--text-primary); color: var(--surface-1);
-  padding: 11px 18px; border-radius: var(--radius-sm); font-size: 13.5px;
-  z-index: 80; box-shadow: var(--shadow); max-width: min(92vw, 460px);
-}
 
 /* ---------- altbilgi ---------- */
 
@@ -463,8 +316,6 @@ legend { font-size: 12px; font-weight: 600; color: var(--text-secondary);
 .site-footer code { font-size: 11.5px; background: var(--surface-3); padding: 1px 5px; border-radius: 3px; }
 
 @media (max-width: 560px) {
-  .bar-row { grid-template-columns: minmax(72px, 100px) 1fr auto; }
-  .tile-value { font-size: 25px; }
   .header-inner { padding-bottom: 10px; }
 }
 
@@ -474,6 +325,6 @@ legend { font-size: 12px; font-weight: 600; color: var(--text-secondary);
 }
 
 @media print {
-  .site-header, .filters, .header-actions, .toast { display: none; }
-  .card, .tile, .cal-month { box-shadow: none; break-inside: avoid; }
+  .site-header, .filters, .header-actions { display: none; }
+  .card { box-shadow: none; break-inside: avoid; }
 }

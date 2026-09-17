@@ -1,7 +1,7 @@
 /* Uygulama kabuğu: yönlendirme, tema ve görünürlük modu. */
 
 import { state, loadAll, savePrefs } from './data.js';
-import { el, clear, hideTip, toast } from './ui.js';
+import { el, clear } from './ui.js';
 import { renderCollection } from './views/collection.js';
 import { renderDetail } from './views/detail.js';
 
@@ -18,16 +18,6 @@ function applyTheme() {
 function currentTheme() {
   if (state.prefs.theme) return state.prefs.theme;
   return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
-/* -------------------------------------------------------- görünürlük modu */
-
-function applyMode() {
-  const on = state.prefs.collectorMode;
-  const btn = document.getElementById('mode-toggle');
-  const label = document.getElementById('mode-label');
-  if (btn) btn.setAttribute('aria-pressed', String(on));
-  if (label) label.textContent = on ? 'Koleksiyoner modu' : 'Herkese açık';
 }
 
 /* --------------------------------------------------------------- başlık/altbilgi */
@@ -76,7 +66,6 @@ function markTabs(route) {
 let lastKey = null;
 
 function render() {
-  hideTip();
   const { route, id, params } = parseHash();
   const key = `${route}/${id || ''}`;
   clear(viewHost);
@@ -108,22 +97,11 @@ function render() {
 async function main() {
   await loadAll();
   applyTheme();
-  applyMode();
 
   document.getElementById('theme-toggle')?.addEventListener('click', () => {
     state.prefs.theme = currentTheme() === 'dark' ? 'light' : 'dark';
     savePrefs();
     applyTheme();
-  });
-
-  document.getElementById('mode-toggle')?.addEventListener('click', () => {
-    state.prefs.collectorMode = !state.prefs.collectorMode;
-    savePrefs();
-    applyMode();
-    render();
-    toast(state.prefs.collectorMode
-      ? 'Koleksiyoner modu açık — fiyat, değer ve seri numarası görünür.'
-      : 'Herkese açık mod — hassas alanlar gizli.');
   });
 
   addEventListener('hashchange', render);

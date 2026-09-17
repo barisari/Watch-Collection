@@ -8,7 +8,6 @@ duran `data/watches.json` dosyasında.
 
 - **Koleksiyon** — saat kartları, arama, marka/tür filtresi, sıralama
 - **Künye** — mekanizma, kasa, kadran, kayış özellikleri; satın alma tarihi ve bilgileri
-- **İki görünüm modu** — herkese açık (fiyat/seri no gizli) ve koleksiyoner (her şey görünür)
 - Karanlık/aydınlık tema, telefon uyumlu yerleşim, klavye erişilebilirliği
 
 ---
@@ -34,7 +33,7 @@ Kendi koleksiyonuna geçmek için:
 
 Tek yerde: depodaki `data/watches.json`. **Site salt okunur** — form yok, sunucu
 yok, veritabanı yok. Ziyaretçinin tarayıcısında yalnızca iki tercih saklanıyor
-(tema ve koleksiyoner modu).
+(şu an yalnızca tema tercihi).
 
 Envanter depo tarafındaki betiklerle yönetilir:
 
@@ -46,27 +45,28 @@ node scripts/validate-data.mjs                      # commit öncesi doğrula
 
 ---
 
-## Gizli alanlar — önemli ayrım
+## Hassas alanlar
 
-Üstteki **"Herkese açık / Koleksiyoner modu"** düğmesi satın alma fiyatını,
-satıcıyı, seri numarasını ve güncel değeri gizler. Bu bir **görüntü tercihidir,
-güvenlik önlemi değildir**: veri tarayıcıya indiği için isteyen ham JSON'a
-bakabilir.
-
-Siteyi herkese açık yayınlayacaksan gerçek çözüm, o alanların yayınlanan
-kopyada hiç bulunmamasıdır:
+Satın alma fiyatı, satıcı, seri numarası ve güncel değer bu depoya **hiç
+girmez** — depo public. Bir gün yanlışlıkla girilirse yayına çıkmaması için
+derleme adımı onları `dist/` kopyasından siliyor:
 
 ```bash
 npm run build          # dist/ — hassas alanlar JSON'dan tamamen SİLİNİR
 npm run build:private  # dist/ — her şey dahil (yalnızca özel yayın için)
 ```
 
-`npm run build` depodaki asıl dosyalara dokunmaz; sadece `dist/` kopyasını
-temizler. Hangi alanların gizli sayılacağını `site.config.json` içindeki
-`privateFields` listesi belirler.
+Depodaki asıl dosyalara dokunmaz, yalnızca `dist/` kopyasını temizler. Hangi
+alanların hassas sayılacağını `site.config.json > privateFields` belirler.
 
-Deponun kendisi private ise ve site yalnızca sana açıksa `build:private`
-kullanabilirsin.
+**Sitede bunu göster/gizle yapan bir düğme yok.** Eskiden vardı ("Herkese açık /
+Koleksiyoner modu"); 17 Eylül 2026'da kaldırıldı, çünkü tarayıcıdaki bir düğme
+gizlilik sınırı değildir ve o alanlar yayınlanan veride zaten bulunmuyor —
+düğme hiçbir şey yapmıyor, yalnızca gizli veri varmış izlenimi veriyordu.
+Gerçek koruma: veriyi hiç yayınlamamak.
+
+**Liste fiyatı (`msrp`) hassas değil** ve künyede görünüyor — üreticinin ilan
+ettiği rakam, gizlenecek bir şey yok.
 
 ---
 
@@ -101,12 +101,12 @@ Dosyaları `photos/` klasörüne koy, sonra saat kaydına yolunu yaz:
 
 ```
 index.html               site kabuğu
-site.config.json         koleksiyon adı, para birimi, gizli alan listesi, eşikler
+site.config.json         koleksiyon adı, para birimi, hassas alan listesi
 assets/
   css/styles.css         tüm stiller ve renk jetonları
   js/
     app.js               yönlendirme, tema, görünürlük modu
-    data.js              veri yükleme, gizli alan filtresi
+    data.js              veri yükleme
     ui.js                DOM yardımcıları, biçimlendiriciler, ipuçları
     views/               koleksiyon · detay
 data/

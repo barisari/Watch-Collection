@@ -1,6 +1,6 @@
 /* Koleksiyon ızgarası: arama, filtre, sıralama ve saat kartları. */
 
-import { state, canShow } from '../data.js';
+import { state } from '../data.js';
 import { el, watchLabel, colorForWatch, emptyState } from '../ui.js';
 
 const filters = { q: '', brand: '', category: '', sort: 'brand' };
@@ -100,7 +100,6 @@ function watchCard(row, navigate) {
   const w = row.watch;
   const color = colorForWatch(w.id);
   const photo = w.photos?.[0];
-  const price = canShow('acquisition.price') ? w.acquisition?.price : null;
 
   return el('button.watch-card', {
     type: 'button',

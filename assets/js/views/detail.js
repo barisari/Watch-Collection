@@ -1,6 +1,6 @@
 /* Tek bir saatin künyesi: teknik özellikler ve satın alma bilgisi. */
 
-import { getWatch, canShow, isPrivateField } from '../data.js';
+import { getWatch } from '../data.js';
 import {
   el, fmtDate, fmtMoney, fmtNum, watchLabel, colorForWatch, emptyState,
 } from '../ui.js';
@@ -248,27 +248,16 @@ function acquisitionCard(watch) {
       : null],
     ['Durum', CONDITION_TR[a.condition] || a.condition],
     ['Kutu & belgeler', a.boxPapers == null ? null : (a.boxPapers ? 'Var' : 'Yok')],
-    ['Satın alma fiyatı', privateCell(watch, 'acquisition.price', a.price && fmtMoney(a.price.amount, a.price.currency))],
-    ['Satıcı', privateCell(watch, 'acquisition.seller', a.seller)],
-    ['Seri numarası', privateCell(watch, 'acquisition.serial', a.serial)],
-    ['Güncel değer', privateCell(watch, 'valuation', v && `${fmtMoney(v.amount, v.currency)}${v.asOf ? ` (${fmtDate(v.asOf, { year: 'numeric', month: 'short' })})` : ''}`)],
+    /* Bu dördü depoya HİÇ girmiyor (fiyat/satıcı/seri no/değer Drive'da durur) ve
+       build.mjs yayın kopyasından ayrıca siliyor. Satırlar duruyor ki bir gün yerel
+       olarak girilirse görünsün; boşken specRow zaten basmıyor. */
+    ['Satın alma fiyatı', a.price && fmtMoney(a.price.amount, a.price.currency)],
+    ['Satıcı', a.seller],
+    ['Seri numarası', a.serial],
+    ['Güncel değer', v && `${fmtMoney(v.amount, v.currency)}${v.asOf ? ` (${fmtDate(v.asOf, { year: 'numeric', month: 'short' })})` : ''}`],
     ['Son servis', watch.service?.lastServiceDate ? fmtDate(watch.service.lastServiceDate) : null],
   ];
   return specCard('Satın alma & sahiplik', rows);
-}
-
-/**
- * Gizli alanlar. "gizli" yazısı YALNIZCA veri gerçekten varken çıkar —
- * hiç girilmemiş bir alan için kilit göstermek, elimizde bir şey varmış
- * izlenimi verirdi.
- */
-function privateCell(watch, path, rendered) {
-  if (!isPrivateField(path)) return rendered;
-  if (!canShow(path)) return rendered ? el('span.locked', 'gizli') : null;
-  if (rendered) return rendered;
-  return state.strippedBuild
-    ? el('span.locked', 'bu yayında yer almıyor')
-    : null;
 }
 
 function specRow(label, value) {

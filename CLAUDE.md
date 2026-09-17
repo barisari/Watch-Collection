@@ -410,7 +410,7 @@ sayfasından doğrulamak gerekiyor; tarayıcıdaki form bunların hiçbirini yap
 Bununla birlikte **tüm taslak katmanı gitti**: `data.js` içindeki `drafts`,
 `upsertWatch`, `deleteWatch`, `clearDrafts`, `draftCount`, `recompute`,
 `fileWatches`, `exportJSON`, `downloadJSON`, `makeId` ve `DRAFT_KEY`.
-`localStorage`'da artık yalnızca tercihler duruyor (tema + koleksiyoner modu).
+`localStorage`'da artık yalnızca tema tercihi duruyor.
 Detaydaki "Düzenle" düğmesi ve alt bilgideki taslak sayacı da kalktı.
 
 **Site artık salt okunur.** Tek sekme: Koleksiyon. Eski `#/kayit`, `#/takvim`,
@@ -448,8 +448,21 @@ mi); aynı gün içindeki değişim ne kadar ince gösterilecek; HA takvimindeki
    kaybı riskidir. (Bir kez ucuz atlatıldı — 27 satırlık defter şansa sağ kaldı.)
    Depoya girmemesi gereken başka bir şey çıkarsa yeri orası.
 2. **Depo public mi kalacak?** Şu an public (Pages ücretsiz hesapta bunu
-   gerektiriyor). Yayınlanan site hassas alanları göstermiyor ama **depodaki
-   kaynak dosyayı herkes okuyabilir** — fiyat/seri no bu yüzden girilmiyor.
+   gerektiriyor). **Depodaki kaynak dosyayı herkes okuyabilir** — fiyat/seri no
+   bu yüzden hiç girilmiyor.
+
+   Not: "Herkese açık / Koleksiyoner modu" düğmesi **17 Eylül 2026'da
+   kaldırıldı.** Tarayıcıdaki bir düğme gizlilik sınırı değildir; üstelik o dört
+   alan hem depoda hem yayında boştu, yani düğme hiçbir şey yapmıyor, yalnızca
+   gizli veri varmış izlenimi veriyordu. `privateFields` + `build.mjs`'in silme
+   adımı **kaldı** — sigorta olarak değerli, sınanarak doğrulandı: kaynağa sahte
+   bir fiyat girilip derlendiğinde yayın kopyasında o anahtarlar hiç çıkmıyor.
+   Liste fiyatı (`msrp`) hassas değil, künyede görünüyor.
+
+   Aynı temizlikte ölü kod da gitti: `ui.js`'te 13 yardımcı (ipucu balonu,
+   `toast`, `tableView`, `relDays`, `todayISO`, `watchCode`…), CSS'te 42 ölü
+   sınıf ve 7 bölüm (istatistik kutuları, çubuk grafik, takvim, tablolar,
+   rozetler, form, ipucu). Hepsi kaldırılan ekranlara aitti.
 3. ~~Telefondan hızlı kayıt~~ — rotasyon için çözüldü (HA). Saat *ekleme* için hâlâ JSON indirip commit gerekiyor.
 
 **Depo public olduğu sürece fiyat ve seri numarası girme.**

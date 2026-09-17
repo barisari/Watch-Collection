@@ -16,9 +16,7 @@ const PREFS_KEY = 'watch-collection:prefs:v1';
 export const state = {
   config: {},
   watches: [],
-  prefs: { collectorMode: false, theme: null },
-  /** Yayınlanan veride gizli alanlar temizlenmişse true. */
-  strippedBuild: false,
+  prefs: { theme: null },
 };
 
 /* ---------------------------------------------------------------- depolama */
@@ -75,33 +73,12 @@ export async function loadAll() {
 
   state.watches = Array.isArray(watches) ? watches : [];
 
-  // Yayın derlemesinde gizli alanlar silinmiş olabilir. Bunu verinin
-  // yokluğundan TAHMİN ETMİYORUZ — "silindi" ile "hiç girilmedi" aynı görünür.
-  // scripts/build.mjs temizlediği derlemeye bu bayrağı açıkça yazar.
-  state.strippedBuild = state.config.strippedBuild === true;
-
-  state.prefs = readStore(PREFS_KEY, { collectorMode: false, theme: null });
+  state.prefs = readStore(PREFS_KEY, { theme: null });
 }
 
 /* ---------------------------------------------------------- gizli alanlar */
 
 const getPath = (obj, path) =>
   path.split('.').reduce((acc, key) => (acc == null ? undefined : acc[key]), obj);
-
-/** Koleksiyoner modu kapalıyken bu alan gizlenmeli mi? */
-export function isPrivateField(path) {
-  return (state.config.privateFields || []).includes(path);
-}
-
-/** Alan şu an gösterilebilir mi? */
-export function canShow(path) {
-  return !isPrivateField(path) || state.prefs.collectorMode;
-}
-
-/** Değeri getir; gizliyse ve mod kapalıysa null döner. */
-export function privateValue(watch, path) {
-  if (!canShow(path)) return null;
-  return getPath(watch, path);
-}
 
 export const getWatch = (id) => state.watches.find((w) => w.id === id) || null;
