@@ -143,7 +143,6 @@ export function renderDetail(root, id, navigate) {
         ]),
         acquisitionCard(watch),
         watch.notes && el('section', el('h3', 'Notlar'), el('p', watch.notes)),
-        sourceNote(watch),
       ),
     ),
   );
@@ -160,22 +159,6 @@ function storyCard(watch) {
     tagline && el('p.prose-lead', tagline),
     story && el('p.prose-body', story),
     onlyEnglish && el('p.muted', 'Bu metin Casio\'nun İngilizce tanıtımından; Türkçesi henüz eklenmedi.'));
-}
-
-/** Teknik bilgilerin nereden geldiği — denetlenebilir olsun diye. */
-function sourceNote(watch) {
-  const url = watch.source?.productUrl;
-  if (!url) return null;
-  // Alan adı adresten okunur — sabit "casio.com" yazmak Mondaine sayfasında
-  // yanlış kaynak gösteriyordu.
-  let host;
-  try { host = new URL(url).hostname.replace(/^www\./, ''); } catch { host = 'ürün sayfası'; }
-
-  // Çekilme tarihi veride duruyor (source.fetchedAt) ama BASILMIYOR: siteyi
-  // gezen için bir şey ifade etmiyor, deponun kendi kaydı.
-  return el('p.note',
-    'Teknik bilgiler üreticinin ürün sayfasından alındı: ',
-    el('a', { href: url, target: '_blank', rel: 'noopener' }, host));
 }
 
 /* Fotoğrafa tıklayınca büyük hâli: panelde ~400 px görünen kapak, büyütmede

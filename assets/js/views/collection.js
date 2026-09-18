@@ -18,7 +18,7 @@ export function renderCollection(root, navigate) {
   root.append(
     el('div.section-head',
       el('h1', 'Koleksiyon'),
-      el('p.muted', `${state.watches.length} saat`)),
+      el('p#gorunen-sayi.muted')),   // el(): kimlik sınıftan ÖNCE yazılır
     buildFilters(root, navigate),
     el('div#collection-grid'),
   );
@@ -69,6 +69,13 @@ function paint(root, navigate) {
   host.replaceChildren();
 
   const visible = state.watches.filter(matches).sort(SORTS[filters.sort].cmp);
+
+  // Başlığın yanındaki sayaç GÖRÜNENİ yazar, koleksiyonun tamamını değil:
+  // marka filtresi açıkken iki saat gösterip "28 saat" demek yanlıştı.
+  // Toplam altbilgide duruyor.
+  const sayac = root.querySelector('#gorunen-sayi');
+  if (sayac) sayac.textContent = `${visible.length} saat`;
+
   if (!visible.length) {
     host.append(emptyState('Bu filtrelerle eşleşen saat yok.', 'Filtreleri gevşetmeyi dene.'));
     return;

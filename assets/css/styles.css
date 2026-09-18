@@ -43,6 +43,11 @@
   /* Yuvarlatma YALNIZCA denetimlerde (açılır liste, arama, düğmeler).
      İçerik — fotoğraf, tablo, kart — köşesiz kalır. */
   --radius: 4px;
+  /* Açılır listenin oku. Tarayıcınınki kullanılmıyor: sağ payı büyütmek onu
+     içeri çekiyordu ama boşluk okun SOLUNDA birikiyordu, çünkü tarayıcı oku
+     payın ortasına koyuyor. Kendi okumuz tam konumlanabiliyor. Rengi metne
+     uyması için temaya göre ayrı tanımlı. */
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%231c1c1b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,6 +57,7 @@
     --ink: #f4f4f1;
     --ink-2: #9c9c97;        /* ground üstünde 6,44 */
     --rule: #2c2c2c;
+    --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%23f4f4f1' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 }
 :root[data-theme="dark"] {
@@ -60,6 +66,7 @@
   --ink: #f4f4f1;
   --ink-2: #9c9c97;
   --rule: #2c2c2c;
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%23f4f4f1' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 /* ---------- taban ---------- */
@@ -137,9 +144,14 @@ select, input[type="search"] {
   border: 1px solid var(--ink-2); border-radius: var(--radius);
   background: var(--ground); color: var(--ink);
 }
-/* Tarayıcının kendi oku sağ kenara yapışıyordu; sağ payı büyütmek onu içeri
-   çekiyor. 10 → 24 px ölçülerek seçildi. */
-select { padding-right: 24px; }
+select {
+  appearance: none; -webkit-appearance: none;
+  padding-right: 34px;                     /* ok + ok ile metin arası pay */
+  background-image: var(--chevron);
+  background-repeat: no-repeat;
+  background-position: right 12px center;  /* okun kenara uzaklığı */
+  background-size: 12px 8px;
+}
 select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .filters label { font-size: 13px; color: var(--ink-2); display: flex; align-items: center; gap: 8px; }
 .spacer { flex: 1 1 auto; }
@@ -250,7 +262,6 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
 .spec-table tr + tr th, .spec-table tr + tr td { border-top: 1px solid var(--rule); }
 .spec-table .line { display: block; }
 
-.note { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
 
 /* ---------- büyütme ---------- */
 
