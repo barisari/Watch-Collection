@@ -55,6 +55,16 @@ function msrpRow(watch) {
     .map((p) => el('span.line', (p.tahmin ? '~' : '') + fmtMoney(p.amt, p.cur)));
 }
 
+/* Künye başlığının kod altındaki tek satırı: lakap ve tam referans.
+ * Referans başlıktaki kodun aynısıysa (6309-5000) tekrar edilmez; ikisi de
+ * yoksa satır hiç açılmaz, boş bir <p> boşluk bırakmasın. */
+function altSatir(watch) {
+  const ref = gridCode(watch) === watch.reference ? null : watch.reference;
+  const metin = watch.nickname && ref ? `${watch.nickname} (${ref})`
+              : (watch.nickname || ref);
+  return metin ? el('p.detail-sub', metin) : null;
+}
+
 export function renderDetail(root, id, navigate) {
   const watch = getWatch(id);
   if (!watch) {
@@ -80,18 +90,20 @@ export function renderDetail(root, id, navigate) {
        tabloda var.
 
        Başlık bloğu insandan makineye doğru okunur: MARKA → saatin adı →
-       lakabı → tam referans. Eskiden h1'de tam referans (GA-2100-1A1DR)
+       lakap ve tam referans. Eskiden h1'de tam referans (GA-2100-1A1DR)
        duruyordu; kullanıcı: "çok uzun ve kalabalık, Robocop okusun diye site
-       yapmışız gibi". Artık h1 ızgaradaki kısa kodun aynısı, tam referans
-       en altta kendi satırında.
+       yapmışız gibi". Artık h1 ızgaradaki kısa kodun aynısı.
+
+       Lakap ve referans TEK satırda (kullanıcının isteği). Ayırıcı parantez:
+       orta nokta da uzun tire de bu sitede yasak kalıplar. Parantez zaten
+       "bunun tam kodu şu" diye okunuyor, ayırıcı gibi durmuyor.
 
        `name` = üreticinin saate verdiği ad (Mondaine: "evo2 Automatic",
        MSE.40610.LBV bir SKU). gridCode() adı varsa onu döndürüyor. */
     el('header.detail-head',
       el('p.detail-brand', watch.brand),
       el('h1.code', gridCode(watch)),
-      watch.nickname && el('p.nickname', watch.nickname),
-      gridCode(watch) !== watch.reference && el('p.detail-ref', watch.reference),
+      altSatir(watch),
     ),
 
     el('div.detail-grid',

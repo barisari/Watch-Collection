@@ -225,16 +225,12 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
   line-height: 1; letter-spacing: -0.035em;
   overflow-wrap: anywhere;
 }
-.nickname { margin-top: 12px; font-size: 16px; color: var(--ink-2); }
-
-/* Tam referans başlıktan çıkarıldı, en alta kendi satırına indi: bloğun en
-   küçük, en kuru satırı. Tabular rakam kodu hizalı tutuyor. */
-.detail-ref {
-  margin-top: 12px; font-size: 14px; color: var(--ink-2);
+/* Kodun altındaki tek satır: lakap ve tam referans birlikte. Tabular rakam
+   kodu hizalı tutuyor. */
+.detail-sub {
+  margin-top: 12px; font-size: 15px; color: var(--ink-2);
   font-variant-numeric: tabular-nums; overflow-wrap: anywhere;
 }
-/* Lakap varsa referans onun hemen altına yapışır — ikisi tek grup. */
-.nickname + .detail-ref { margin-top: 4px; }
 
 .detail-grid { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); align-items: start; }
 @media (min-width: 860px) {
