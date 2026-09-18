@@ -2,14 +2,38 @@
  * (Markaya göre gruplama denendi, kullanıcı açılır listeleri tercih etti.) */
 
 import { state } from '../data.js';
-import { el, watchLabel, emptyState, photoSm } from '../ui.js';
+import { el, watchLabel, emptyState, photoSm, fmtDate } from '../ui.js';
 
 const filters = { q: '', brand: '', category: '', sort: 'brand' };
 
+/* Her sıralama kendi ALTYAZISINI da tanımlıyor: kartta model kodunun altındaki
+   satır, o an neye göre sıralandığını gösterir. Kasa çapına göre sıralarken
+   "Casio" yazması sırayı doğrulanamaz kılıyordu; artık "38 mm" yazıyor ve göz
+   sıranın doğru olduğunu görebiliyor.
+   Üç anahtar da 28/28 dolu, yani altyazı hiçbir kartta boş kalmıyor. */
 const SORTS = {
-  brand: { label: 'Marka (A–Z)', cmp: (a, b) => watchLabel(a).localeCompare(watchLabel(b), 'tr') },
-  acquired: { label: 'Satın alma (yeniden eskiye)', cmp: (a, b) => (b.acquisition?.date || '').localeCompare(a.acquisition?.date || '') },
-  size: { label: 'Kasa çapı', cmp: (a, b) => (a.specs?.case?.diameter ?? 0) - (b.specs?.case?.diameter ?? 0) },
+  brand: {
+    label: 'Marka (A–Z)',
+    cmp: (a, b) => watchLabel(a).localeCompare(watchLabel(b), 'tr'),
+    alt: (w) => w.brand,
+  },
+  acquired: {
+    label: 'Satın alma (yeniden eskiye)',
+    cmp: (a, b) => (b.acquisition?.date || '').localeCompare(a.acquisition?.date || ''),
+    // Kartta gün gereksiz; ay + yıl yetiyor. Tahmini tarihler kesinmiş gibi
+    // görünmesin diye "civarı" ekiyle.
+    alt: (w) => {
+      const a = w.acquisition;
+      if (!a?.date) return null;
+      const t = fmtDate(a.date, { year: 'numeric', month: 'long' });
+      return a.dateApprox ? `${t} civarı` : t;
+    },
+  },
+  size: {
+    label: 'Kasa çapı',
+    cmp: (a, b) => (a.specs?.case?.diameter ?? 0) - (b.specs?.case?.diameter ?? 0),
+    alt: (w) => (w.specs?.case?.diameter ? `${w.specs.case.diameter} mm` : null),
+  },
 };
 
 const uniq = (values) => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'tr'));
@@ -106,6 +130,6 @@ function watchCard(w, navigate) {
     /* Altyazı fotoğrafın altında ORTALI — görsel kare içinde ortalandığı için
        sola yaslı yazı saatten kopuk duruyordu. */
     el('div.watch-code', w.name || w.model),
-    el('div.watch-brand', w.brand),
+    el('div.watch-sub', SORTS[filters.sort].alt(w)),
   );
 }

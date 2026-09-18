@@ -192,8 +192,10 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
      kaydırma ekliyorlardı. Nokta kendiliğinden kırılma noktası değil. */
   overflow-wrap: anywhere;
 }
-.watch-brand { margin-top: 2px; font-size: 13px; color: var(--ink-2); transition: color .15s; }
-.watch-card:hover .watch-brand { color: var(--ink); }
+/* Kod altındaki satır: içeriği sıralamaya göre değişiyor (marka / mm /
+   satın alma), o yüzden adı "brand" değil. */
+.watch-sub { margin-top: 2px; font-size: 13px; color: var(--ink-2); transition: color .15s; }
+.watch-card:hover .watch-sub { color: var(--ink); }
 
 /* Taban telefon ölçeği; dar kartta 21 px kod iki satıra düşüyordu. Bu blok
    kart kurallarından SONRA gelmeli — @media özgüllük eklemez, kaynak sırası

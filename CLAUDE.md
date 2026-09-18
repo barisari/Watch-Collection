@@ -566,7 +566,15 @@ reddedildi ve geri alındı.** Reddedilenleri tekrar denemeyin.
    iki tasarım gibi gösteriyordu.
 7. Emoji ikon yok (tema düğmesi SVG), büyük harfli etiket yok, `·` ile
    birleştirilmiş meta dizesi yok, `#0b0b0b` yok.
-8. **Kartta alt bilgi satırı yok** (18 Eylül). Orada kasa çapı + çıkış yılı
+8. **Kart altyazısı sıralamayı izler** (18 Eylül, kullanıcının fikri). Model
+   kodunun altındaki satır, o an hangi sıralama seçiliyse onun değerini yazar:
+   markaya göre sıralarken "Casio", kasa çapına göre "38 mm", satın almaya göre
+   "Şubat 2026". Gerekçe: kasa çapına göre sıralarken altyazıda marka yazması
+   sırayı doğrulanamaz kılıyordu — şimdi göz ızgarada değerlerin arttığını
+   görüyor. Altyazı `SORTS[...].alt()` ile tanımlı, yani her sıralama kendi
+   metnini taşıyor. Üç anahtar da 28/28 dolu, altyazı boş kalmıyor. Tahmini
+   satın alma tarihi "civarı" ekiyle basılıyor (tek örnek MRS-301).
+9. **Kartta ölçü/çıkış satırı yok** (18 Eylül). Orada kasa çapı + çıkış yılı
    duruyordu. Kullanıcı ikisini de sordu ve ikisi de savunulamadı: mm oraya
    bilgi ihtiyacından değil, rotasyon sayacı kaldırılınca **boş kalan yuvayı
    doldurmak için** konmuştu; çıkış yılı 28 saatin 24'ünde bilindiği için
