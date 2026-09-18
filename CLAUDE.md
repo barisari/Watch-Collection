@@ -385,8 +385,16 @@ Seiko'nun **EAN kodunu** veriyor: `4954628094384`. Bu yüzden başta "doğrulanm
 diye kenara ayırdığım **kalibre 7T62** ve **tam referans SNAB71P1** envantere
 girdi: artık arama özeti değil, iki bağımsız kaynak + barkod.
 
-**Kasa kodu (`7T62-0HM0` gibi) hâlâ doğrulanmadı** — kalibre kısmı (7T62) iki
-kaynakta var, kasa eki hiçbirinde yok. Gerekirse kullanıcının kasa arkası.
+**Üçüncü kaynak: watchsleuth.com** — kasa kodunu da veren tek yer. Sayfa
+form-tabanlı, ama sonuç sayfası doğrudan çekiliyor:
+`watchsleuth.com/seikochronofinder/search/?MOD=<MODEL>` (GET; POST'u
+Mod_Security 406 ile kesiyor, `Referer` başlığı ver). Kasa kodu **0HM0**,
+yani kasa arkası damgası `7T62-0HM0`. Pil ömrü 3 yıl, dış bezel sabit,
+hesap cetveli **iç** bezelde, sayaçlar 6-9-12, ikinci kuron var.
+**Ama aynı katalog kulak genişliğine 20 mm, kalınlığa 12 mm diyor** — ikisi de
+yanlış/çelişkili; kullanıcının kumpası (24 mm) ve iki perakendeci (11 mm)
+esas alındı. Kasa çapı için "43mm (without crown)" demesi ise kullanıcının
+43,5 mm'sini ve 50 mm'nin kuronlarla olduğunu doğruluyor.
 
 **GÖRSELLER KULLANICININ HAZIRLADIĞI, SAATE SADIK KARELER.** Üç Seiko'nun
 `photos/` altındaki görselleri kullanıcı hazırlamış: internette bulduğu düşük
