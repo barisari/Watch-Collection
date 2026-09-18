@@ -15,12 +15,12 @@ const CONDITION_TR = {
 const AYLAR = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
                'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
 
-/** "2019-08" → "Ağustos 2019 çıkışlı" · "2023" → "2023 çıkışlı" */
+/** "2019-08" → "Ağustos 2019" · "2023" → "2023" */
 function releaseLabel(watch) {
   const r = watch.releaseDate;
   if (!r) return null;
   const [y, m] = String(r).split('-');
-  return m ? `${AYLAR[Number(m) - 1]} ${y} çıkışlı` : `${y} çıkışlı`;
+  return m ? `${AYLAR[Number(m) - 1]} ${y}` : y;
 }
 
 /* Liste fiyatı — herkese açık bir veri, gizli alan değil.
@@ -84,6 +84,7 @@ export function renderDetail(root, id, navigate) {
       ),
       el('div.stack',
         storyCard(watch),
+        modelCard(watch),
         specCard('Mekanizma', [
           ['Kalibre / modül', s.movement?.caliber],
           ['Tip', term(s.movement?.type)],
@@ -227,14 +228,23 @@ function photoPanel(watch) {
 }
 
 
+/* Modelin kendisine ait olanlar. Eskiden çıkış tarihi de "Satın alma &
+   sahiplik" başlığının altındaydı; bir modelin piyasaya çıkışının o saati
+   satın almamla ilgisi yok. */
+function modelCard(watch) {
+  return specCard('Model', [
+    ['Piyasaya çıkış', releaseLabel(watch)],
+    // "(çıkışta)" yazıyordu ama elimizdeki değerler üreticinin/yetkili
+    // satıcının GÜNCEL liste fiyatları — çıkış anındaki fiyat değil.
+    ['Liste fiyatı', msrpRow(watch)],
+  ]);
+}
+
+/** Kullanıcının kendi nüshasına ait olanlar. */
 function acquisitionCard(watch) {
   const a = watch.acquisition || {};
   const v = watch.valuation;
   const rows = [
-    ['Piyasaya çıkış', releaseLabel(watch)?.replace(' çıkışlı', '')],
-    // "(çıkışta)" yazıyordu ama elimizdeki değerler üreticinin/yetkili
-    // satıcının GÜNCEL liste fiyatları — çıkış anındaki fiyat değil.
-    ['Liste fiyatı', msrpRow(watch)],
     // Miras/eski saatlerde tarih tahmin olabiliyor. Kesinmiş gibi göstermek
     // yanlış olurdu; dateApprox işaretliyse ay/yıl düzeyinde ve "civarı" diye.
     ['Satın alma tarihi', a.date
@@ -253,7 +263,7 @@ function acquisitionCard(watch) {
     ['Güncel değer', v && `${fmtMoney(v.amount, v.currency)}${v.asOf ? ` (${fmtDate(v.asOf, { year: 'numeric', month: 'short' })})` : ''}`],
     ['Son servis', watch.service?.lastServiceDate ? fmtDate(watch.service.lastServiceDate) : null],
   ];
-  return specCard('Satın alma & sahiplik', rows);
+  return specCard('Sahiplik', rows);
 }
 
 function specRow(label, value) {
