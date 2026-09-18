@@ -2506,7 +2506,7 @@
         "crystalCoating": null,
         "crystalShape": null,
         "waterResistance": 50,
-        "bezel": null,
+        "bezel": "Şeffaf arka kapak",
         "backlight": null,
         "color": "Steel"
       },
@@ -2542,7 +2542,7 @@
       "imageFrom": "Kapak: Mondaine resmi ürün görseli, fonu KULLANICI Photoshop ile temizledi (2048×2048 PNG). Ek fotoğraflar üreticinin JPG kareleri.",
       "imageOriginal": "https://cdn.shopify.com/s/files/1/0101/1017/3243/products/MSE.40610.LB-S90-_2022_1.jpg",
       "msrpFrom": "eu.mondaine.com — €729 · uk.mondaine.com — £739",
-      "specsFrom": "uk.mondaine.com · kalibre değerleri Sellita SW220-1 künyesinden"
+      "specsFrom": "uk.mondaine.com · kalibre değerleri Sellita SW220-1 künyesinden Şeffaf (see-through) arka kapak mondaine.com ürün sayfasından — SKU MSE.40610.LBV. Aynı sayfada kulaktan kulağa ve çıkış tarihi YOK; Mondaine bu iki değeri hiç yayımlamıyor."
     },
     "acquisition": {
       "date": "2026-06-11",
@@ -2601,7 +2601,7 @@
         "crystalCoating": null,
         "crystalShape": null,
         "waterResistance": 100,
-        "bezel": null,
+        "bezel": "Vidalı arka kapak",
         "backlight": null,
         "color": "Steel"
       },
@@ -2611,7 +2611,9 @@
         "indices": "Baton",
         "lume": null,
         "complications": [
-          "Day/Date"
+          "Day/Date",
+          "Overcharge prevention",
+          "Quick-start"
         ]
       },
       "strap": {
@@ -2636,7 +2638,8 @@
       "imageColorsFrom": "Seiko resmi ürün görseli",
       "imageFrom": "Seiko resmi ürün görselleri (geçici)",
       "imageOriginal": "https://cdn.shopify.com/s/files/1/0019/1184/9012/files/SNE529_1_43b4eed6-109f-4c8b-9964-dae8a8ee4c90.png",
-      "msrpFrom": "seikousa.com — $250"
+      "msrpFrom": "seikousa.com — $250 · seikowatches.com/uk-en — £250",
+      "specsFrom": "seikowatches.com/uk-en/products/discovermore/sne529 — Seiko'nun kendi sayfası. Ölçüler envanterdekiyle birebir tuttu (40,0 / 9,7 / 47,0 / 20 mm / 45 g / 10 bar / V158 / ±15 sn-ay / ~10 ay / 2 taş). Vidalı arka kapak ve solar fonksiyonlar (aşırı şarj koruması, hızlı başlatma) oradan eklendi. ÇELİŞKİ: Seiko \"Three-fold clasp with push button release\" diyor, yani bilezikli varyantı anlatıyor; kullanıcının saati kahverengi deri kayışlı ve tokası pimli — görselden okunan değer korundu. Sayfada TANITIM METNİ HİÇ YOK, yalnızca teknik tablo var: kısa/uzun tanıtımın boş kalmasının sebebi bu, arama eksikliği değil. Çıkış tarihi de yok."
     },
     "acquisition": {
       "date": "2026-01-07",
@@ -2655,7 +2658,8 @@
     "tags": [],
     "notes": "Vidalı kasa arkası. Kadran yeşil sunray, altın tonu indeksler.",
     "msrp": {
-      "USD": 250
+      "USD": 250,
+      "GBP": 250
     },
     "haOption": "Seiko SNE529"
   },
@@ -2688,13 +2692,13 @@
         "diameter": 38,
         "thickness": 8.5,
         "lugToLug": null,
-        "lugWidth": null,
+        "lugWidth": 22,
         "weight": 54,
         "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": null,
         "waterResistance": 50,
-        "bezel": null,
+        "bezel": "Geçmeli arka kapak",
         "backlight": null,
         "color": "Steel"
       },
@@ -2718,8 +2722,8 @@
       "tr": "Mat çelik kasa, kuvars mekanizma ve Braun’un simgesi olan sarı saniye ibresi."
     },
     "story": {
-      "en": null,
-      "tr": null
+      "en": "Instantly recognisable as a classic Braun timepiece. The BN0021 carries all of the hallmarks of the distinctive Braun design language. From the minimal dial face to the simple leather strap.",
+      "tr": "İlk bakışta klasik bir Braun saati olduğu anlaşılır. BN0021, Braun'un kendine özgü tasarım dilinin bütün izlerini taşıyor — yalın kadranından sade deri kayışına kadar."
     },
     "source": {
       "productUrl": "https://us.braun-clocks.com/products/gents-bn0021-classic-watch-white-dial-and-black-leather-strap",
@@ -2728,7 +2732,9 @@
       "imageFrom": "Kapak: Braun resmi ürün görseli, fonu KULLANICI Photoshop ile temizledi (1696×2528 PNG). Ek fotoğraflar üreticinin JPG kareleri.",
       "imageOriginal": "https://cdn.shopify.com/s/files/1/0278/8851/7235/products/a742bc87-65f3-40b9-b55b-ee52294ab0c0.jpg",
       "msrpFrom": "us.braun-clocks.com — $160 · braun-clocks.com — £100",
-      "referenceFrom": "Kasa arkasında BKG okundu (kullanıcı, 17 Eylül 2026) — ürün sayfası eşleştirmesini teyit etti. Sipariş kaydı yok, saat İspanya'dan alındı."
+      "referenceFrom": "Kasa arkasında BKG okundu (kullanıcı, 17 Eylül 2026) — ürün sayfası eşleştirmesini teyit etti. Sipariş kaydı yok, saat İspanya'dan alındı.",
+      "storyFrom": "braun-clocks.com (İngiltere) ürün sayfası, SKU BN0021BKG ile birebir eşleşiyor.",
+      "specsFrom": "Kulak genişliği 22 mm ve geçmeli (snap) arka kapak braun-clocks.com İngiltere sayfasından — aynı sayfada SKU BN0021BKG yazıyor. UYARI: o sayfanın teknik tablosunda \"Dial Colour: Black\" yazıyor ama sayfa BAŞLIĞI \"white dial and black leather strap\" diyor ve ürün görseli de beyaz kadran gösteriyor; tablo siyah kadranlı kardeş modelden kopyalanmış. Kadran White kalır. Aynı sayfa kalınlığa 8,7 mm diyor, ABD sayfası 8,5 demişti — 0,2 mm fark, ABD değeri korundu."
     },
     "acquisition": {
       "date": "2026-02-20",
