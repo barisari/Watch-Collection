@@ -2777,10 +2777,10 @@
       "case": {
         "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
+        "diameter": 37,
         "thickness": null,
         "lugToLug": null,
-        "lugWidth": null,
+        "lugWidth": 22,
         "weight": null,
         "crystal": null,
         "crystalCoating": null,
@@ -2823,7 +2823,8 @@
       "specsFrom": "Kadrandan okundu: SEIKO · AUTOMATIC · 17 JEWELS · 3'te gün+tarih. Kalibre kodu referanstan (6309). Kasa arkasındaki seri numarası 604786 → Ekim, yılı 6 ile biten yıl; 6309 kalibresi 1976-1988 arası üretildiği için 1976 mı 1986 mı belirsiz, releaseDate BOŞ bırakıldı. Kasa arkası ayrıca: STAINLESS STEEL, WATER RESISTANT (metre verilmemiş).",
       "serialFrom": "Kasa arkası: 604786",
       "releaseDateFrom": "Kasa arkası seri numarası 604786 → Ekim, yılı 6 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1976 ya da 1986 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1986 elendi, Ekim 1976 kaldı.",
-      "strapNote": "Kayış sonradan takılmış (aftermarket); özgün kayış çelik bileklikti."
+      "strapNote": "Kayış sonradan takılmış (aftermarket); özgün kayış çelik bileklikti — kullanıcının amcasından öyle gelmiş, ikinci ilanda da 'Strap: Original' olarak çelik bileklik görünüyor.",
+      "dimensionsFrom": "İki bağımsız satış ilanı. eBay (286723564496): kuronsuz 37 mm, kuronla 38 mm, kalınlık 11 mm, kulak 22 mm — satıcı elle ölçmüş, yapılandırılmış alanlarla serbest metni tutuyor. İkinci satıcı sitesi: 37 x 41 mm kulaktan kulağa, kulak 22 mm. YAZILANLAR yalnızca ikisinin birden verdiği değerler (37 ve 22). Tek kaynakta kalanlar: kalınlık 11 mm (eBay), kulaktan kulağa 41 mm (satıcı sitesi)."
     },
     "acquisition": {
       "date": null,
