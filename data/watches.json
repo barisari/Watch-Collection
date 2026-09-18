@@ -2409,7 +2409,7 @@
         "crystalShape": "Curved",
         "waterResistance": 100,
         "bezel": null,
-        "backlight": "Var",
+        "backlight": "Var (yalnızca analog kadran)",
         "color": "Grey / Navy blue"
       },
       "dial": {
@@ -2423,7 +2423,8 @@
           "Data recall",
           "Stopwatch",
           "Daily alarm",
-          "Auto calendar"
+          "Auto calendar",
+          "Hourly time signal"
         ]
       },
       "strap": {
@@ -2447,7 +2448,7 @@
       "fetchedAt": null,
       "imageColorsFrom": "Kullanıcının doğruladığı görsel",
       "imageFrom": "Yapay zekâ ile üretildi — kullanıcının düşük çözünürlüklü orijinalden ürettiği kare; yazıları orijinal saatle uyuşacak şekilde düzelttirmiş. Ön yüzde belirtilmiyor.",
-      "specsFrom": "Kasa ölçüleri, malzeme, renkler, cam formu ve fonksiyonlar Ersa Saat (Casio Türkiye yetkili distribütörü) ürün sayfasından. Modül no ve 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından."
+      "specsFrom": "Kasa ölçüleri, malzeme, renkler, cam formu ve fonksiyonlar Ersa Saat (Casio Türkiye yetkili distribütörü) ürün sayfasından. Modül no ve 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Fonksiyon ayrıntıları ve aydınlatma, Casio modül 2385 kullanma kılavuzundan."
     },
     "acquisition": {
       "date": "2002-06-01",
@@ -2463,7 +2464,7 @@
       "photos/watches/casio_mrs-301-2evdf.webp"
     ],
     "tags": [],
-    "notes": "Babadan kalma. Satın alma tarihi tahmini: kullanıcının hatırladığı kadarıyla 2002 ya da 2003 yazının başı. Modül 2385 Ağustos 2001 çıkışlı olduğu için saat en erken o tarihli olabilir; tahmin bu tabanla uyumlu.",
+    "notes": "Babadan kalma. Satın alma tarihi tahmini: kullanıcının hatırladığı kadarıyla 2002 ya da 2003 yazının başı. Modül 2385 Ağustos 2001 çıkışlı olduğu için saat en erken o tarihli olabilir; tahmin bu tabanla uyumlu. Derinlik ölçer 0–80 m aralığında, 0,1 m adımlarla ve üç saniyede bir okuyor; dalış süresini 6 saat 59 dakikaya kadar tutuyor ve son 10 dalışı hafızada saklıyor.",
     "msrp": {},
     "haOption": "Casio MRS-301"
   },
