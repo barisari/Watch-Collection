@@ -2,7 +2,7 @@
  * (Markaya göre gruplama denendi, kullanıcı açılır listeleri tercih etti.) */
 
 import { state } from '../data.js';
-import { el, watchLabel, emptyState, photoSm, fmtDate } from '../ui.js';
+import { el, watchLabel, gridCode, emptyState, photoSm, fmtDate } from '../ui.js';
 
 const filters = { q: '', brand: '', category: '', sort: 'brand' };
 
@@ -129,7 +129,7 @@ function watchCard(w, navigate) {
         : null),
     /* Altyazı fotoğrafın altında ORTALI — görsel kare içinde ortalandığı için
        sola yaslı yazı saatten kopuk duruyordu. */
-    el('div.watch-code', w.name || w.model),
+    el('div.watch-code', gridCode(w)),
     el('div.watch-sub', SORTS[filters.sort].alt(w)),
   );
 }

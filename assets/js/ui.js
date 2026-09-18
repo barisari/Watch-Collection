@@ -80,6 +80,21 @@ export const photoLarge = (src) => src.replace('photos/watches/', 'photos/watche
 
 export const watchLabel = (w) => (w ? `${w.brand} ${w.model}` : 'Bilinmeyen saat');
 
+/* Izgarada gösterilen kod. Casio ailesinde model kodunun SON bölümü renk/varyant
+   kodudur (GA-2100-1A1 → GA-2100); kartta bir şey anlatmıyor, kullanıcının saati
+   tanıdığı biçim renksiz hâli. Tam kod künyede duruyor, bir tık ötede.
+
+   Casio dışında UYGULANMAZ: vintage Seiko'da son bölüm KASA kodudur
+   (6309-8190), atılırsa geriye kalibre numarası kalır ve saat tanınmaz. */
+const CASIO_AILESI = new Set(['Casio', 'Edifice', 'G-Shock', 'Oceanus', 'Pro Trek']);
+
+export const gridCode = (w) => {
+  if (!w) return '';
+  if (w.name) return w.name;                      // Mondaine gibi adı olanlar
+  if (!CASIO_AILESI.has(w.brand)) return w.model;
+  return w.model.replace(/-\d[A-Z0-9]*$/, '') || w.model;
+};
+
 /* ------------------------------------------------------------ ortak parçalar */
 
 export const emptyState = (message, hint) =>

@@ -704,6 +704,15 @@ reddedildi ve geri alındı.** Reddedilenleri tekrar denemeyin.
    görüyor. Altyazı `SORTS[...].alt()` ile tanımlı, yani her sıralama kendi
    metnini taşıyor. Üç anahtar da 28/28 dolu, altyazı boş kalmıyor. Tahmini
    satın alma tarihi "civarı" ekiyle basılıyor (tek örnek MRS-301).
+10. **Izgarada renk kodu yok** (18 Eylül). Kart artık `GA-2100-1A1` değil
+   **`GA-2100`** yazıyor. Kullanıcı: *"tam kodu bir anlam ifade etmiyor."*
+   Casio'da model kodunun son bölümü renk/varyanttır; kartta ayırt edici değil,
+   28 kodun hepsi kısaltıldıktan sonra da benzersiz kalıyor (sınandı).
+   Tam kod künyede duruyor, bir tık ötede.
+   **Casio dışına uygulanmaz:** vintage Seiko'da son bölüm KASA kodudur —
+   `6309-8190`'dan `-8190` atılırsa geriye kalibre numarası kalır ve saat
+   tanınmaz. Kural `ui.js > gridCode()` içinde, marka listesiyle sınırlı.
+
 9. **Kartta ölçü/çıkış satırı yok** (18 Eylül). Orada kasa çapı + çıkış yılı
    duruyordu. Kullanıcı ikisini de sordu ve ikisi de savunulamadı: mm oraya
    bilgi ihtiyacından değil, rotasyon sayacı kaldırılınca **boş kalan yuvayı
