@@ -372,16 +372,11 @@ girmez.
 (7T62-0HM0 gibi) yazıyor; kadranda model adı var. MRS-301'de işe yarayan yol
 bu. Alternatif: kullanıcının bir perakendeci sayfasının ekran görüntüsü.
 
-**GÖRSELLER KULLANICININ CANLANDIRMASI.** Üç Seiko'nun `photos/` altındaki
-kareleri ürün fotoğrafı DEĞİL: kullanıcı elindeki gerçek saatleri referans alıp
-*"Seiko bugün satsaydı sitesinde nasıl görünürdü"* diye üretmiş. MRS-301'deki
-durumun aynısı — `source.imageFrom` alanında yazıyor, ön yüzde gösterilmiyor.
-
-**Sonucu:** görselden okunan her şey (kadran rengi/dokusu, indeksler, kasa
-rengi, kayış) **doğrudan kanıt değil**. Bu alanlar `source.gorselDayanakli`
-altında sayılı; kullanıcıya doğrulatılmadan kesinmiş gibi anlatma. Kasa
-arkasından okunanlar, seri numarası ve ilan karşılaştırmaları bunun dışında —
-onlar gerçek kaynaklar.
+**GÖRSELLER KULLANICININ HAZIRLADIĞI, SAATE SADIK KARELER.** Üç Seiko'nun
+`photos/` altındaki görselleri kullanıcı hazırlamış: internette bulduğu düşük
+çözünürlüklü kareleri yükselterek, elindeki saatin göründüğü hâle **birebir
+sadık** kalarak. Uydurma değil — kadran, kasa ve kayış saatin kendisini
+yansıtıyor, yani görselden okunan renk/doku/kayış bilgisi kullanılabilir.
 
 **SERİ NUMARASI NASIL OKUNUR (doğrulandı).** Seiko'da kasa arkasındaki
 6-7 haneli seri: **1. hane = yılın SON hanesi**, **2. hane = ay** (1-9 Ocak-Eylül,

@@ -2818,15 +2818,14 @@
     "source": {
       "productUrl": null,
       "fetchedAt": null,
-      "imageColorsFrom": "Kullanıcının ürettiği görsel (gerçek saatten canlandırma)",
-      "imageFrom": "Kullanıcının ürettiği görsel: elindeki gerçek saati referans alarak, 'Seiko bugün satsaydı sitesinde nasıl görünürdü' diye canlandırmış. Yani ürün fotoğrafı DEĞİL. Ön yüzde belirtilmiyor. MRS-301'deki durumun aynısı.",
+      "imageColorsFrom": "Kullanıcının görseli (elindeki saate sadık)",
+      "imageFrom": "Kullanıcının hazırladığı görsel: internette bulduğu düşük çözünürlüklü kareleri yükselterek, elindeki saatin göründüğü hâle birebir sadık kalarak üretmiş. Kadran, kasa ve kayış saatin kendisini yansıtıyor.",
       "specsFrom": "Kadrandan okundu: SEIKO · AUTOMATIC · 17 JEWELS · 3'te gün+tarih. Kalibre kodu referanstan (6309). Kasa arkasındaki seri numarası 604786 → Ekim, yılı 6 ile biten yıl; 6309 kalibresi 1976-1988 arası üretildiği için 1976 mı 1986 mı belirsiz, releaseDate BOŞ bırakıldı. Kasa arkası ayrıca: STAINLESS STEEL, WATER RESISTANT (metre verilmemiş).",
       "serialFrom": "Kasa arkası: 604786",
       "releaseDateFrom": "Kasa arkası seri numarası 604786 → Ekim, yılı 6 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1976 ya da 1986 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1986 elendi, Ekim 1976 kaldı.",
       "strapNote": "Kayış sonradan takılmış (aftermarket); özgün kayış çelik bileklikti — kullanıcının amcasından öyle gelmiş, ikinci ilanda da 'Strap: Original' olarak çelik bileklik görünüyor.",
       "dimensionsFrom": "Üç bağımsız satış ilanı karşılaştırıldı. (1) eBay 286723564496: kuronsuz 37 mm, kuronla 38 mm, kalınlık 11 mm, kulak 22 mm — satıcı elle ölçmüş, yapılandırılmış alanlarla serbest metni tutuyor. (2) Satıcı sitesi: 37 x 41 mm kulaktan kulağa, kulak 22 mm. (3) WatchCharts'ta toplanmış satılmış eBay ilanı (beyaz kadranlı örnek): kasa 38 mm (kuronla ölçülmüş), kalınlık 11 mm, kulak 22 mm, vidalı kasa arkası. YAZILANLAR en az iki kaynağın verdiği değerler: 37 (kuronsuz), 11, 22. Kulaktan kulağa 41 mm TEK kaynakta (2. ilan) ama kullanıcının kararıyla yazıldı: aksini gösteren bir ölçü çıkarsa düzeltilecek.",
-      "crystalFrom": "Kullanıcı ve saatçisi: kesimli (faceted) akrilik cam. Bir köşesinde çıplak gözle görülmeyen ince bir çatlak var; saatçi tespit etmiş. Özgün cam korunuyor.",
-      "gorselDayanakli": "YALNIZCA görselden okunan alanlar: kadran rengi ve degradesi, çubuk indeksler, kasa rengi, kayış rengi/malzemesi. Görsel canlandırma olduğu için bunlar doğrudan kanıt değil — kullanıcıya doğrulatılacak."
+      "crystalFrom": "Kullanıcı ve saatçisi: kesimli (faceted) akrilik cam. Bir köşesinde çıplak gözle görülmeyen ince bir çatlak var; saatçi tespit etmiş. Özgün cam korunuyor."
     },
     "acquisition": {
       "date": null,
@@ -2916,13 +2915,12 @@
     "source": {
       "productUrl": null,
       "fetchedAt": null,
-      "imageColorsFrom": "Kullanıcının ürettiği görsel (gerçek saatten canlandırma)",
-      "imageFrom": "Kullanıcının ürettiği görsel: elindeki gerçek saati referans alarak, 'Seiko bugün satsaydı sitesinde nasıl görünürdü' diye canlandırmış. Yani ürün fotoğrafı DEĞİL. Ön yüzde belirtilmiyor. MRS-301'deki durumun aynısı.",
+      "imageColorsFrom": "Kullanıcının görseli (elindeki saate sadık)",
+      "imageFrom": "Kullanıcının hazırladığı görsel: internette bulduğu düşük çözünürlüklü kareleri yükselterek, elindeki saatin göründüğü hâle birebir sadık kalarak üretmiş. Kadran, kasa ve kayış saatin kendisini yansıtıyor.",
       "specsFrom": "Kadrandan okundu: SEIKO 5 · AUTOMATIC · 3'te gün+tarih · çubuk indeksler · siyah dokulu kadran (ölçüldü: rgb 27-81 arası). Kasa arkasından (kullanıcı): STAINLESS STEEL, WATER RESISTANT (metre yok). Kalibre kodu referanstan (6309).",
       "serialFrom": "Kasa arkası: 853105",
       "releaseDateFrom": "Seri 853105 → Mayıs, yılı 8 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1978 ya da 1988 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1988 elendi. UYARI: pazar yerlerinde bu referansın 1987/1988 tarihli örnekleri var; referans geç 80'lerde de üretilmiş, ama BU saatin tarihi kendi serisinden.",
-      "nicknameFrom": "Koleksiyoncu lakabı, resmi Seiko adlandırması değil. Bu referansa özel olarak kullanılıyor: WatchCharts'ta 'Seiko 5 Black Snowflake — 6309-8190' başlıklı ilan var. Benzetmenin kaynağı 2005 Grand Seiko SBGA211'in beyaz dokulu 'Snowflake' kadranı.",
-      "gorselDayanakli": "YALNIZCA görselden okunan alanlar: kadran rengi ve dokusu, çubuk indeksler, kasa rengi, ÇELİK BİLEKLİK. Görsel canlandırma olduğu için bunlar doğrudan kanıt değil — kullanıcıya doğrulatılacak."
+      "nicknameFrom": "Koleksiyoncu lakabı, resmi Seiko adlandırması değil. Bu referansa özel olarak kullanılıyor: WatchCharts'ta 'Seiko 5 Black Snowflake — 6309-8190' başlıklı ilan var. Benzetmenin kaynağı 2005 Grand Seiko SBGA211'in beyaz dokulu 'Snowflake' kadranı."
     },
     "acquisition": {
       "date": null,
