@@ -703,8 +703,14 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   sınırını bir saniyede çizen, kullanıcınınkini üç kez geçti.
 
   **Kural:** kullanıcı bir konuyu kapattığında — "boş ver", "kime ne", "önemli
-  değil" — o konu kapalıdır. Teknik olarak haklı olsan bile. Endişen gerçekten
-  veriyi bozacaksa **bir kez**, tek cümleyle söyle ve geç; ikinci kez açma.
+  değil" — o konu kapalıdır. Nokta. İstisna yok.
+
+  İlk yazdığım hâlinde "endişen gerçekten veriyi bozacaksa bir kez söyle" diye
+  bir çıkış bırakmıştım. Kullanıcı onu da yakaladı: *"verinin bozulup
+  bozulmadığını sen nereden biliyorsun, bunlar senin saatlerin mi?"* Doğru —
+  o kapı, ne zaman açacağıma yine benim karar vermem demekti. **Neyin önemli
+  olduğuna koleksiyonun sahibi karar verir.** Sen bir şeyi yanlış sanıyorsan
+  bile, kullanıcı kapattıysa kapanmıştır.
 
 - ## BAŞLADIĞIN SAATİ BİTİR.
   Aynı gün: 6309-8190'da yedi alan boşken SNAB71'in fotoğrafını işlemeye
