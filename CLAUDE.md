@@ -664,6 +664,14 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   saydam.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır; **görselin kendisine,
   boşluğa ya da kapat düğmesine tıklamak da, Escape de kapatır.**
+- **`name` alanı: üreticinin saate verdiği ad.** Yalnızca referansın bir depo
+  kodu olduğu saatlerde dolu. Şu an tek örnek Mondaine: adı **evo2 Automatic**,
+  MSE.40610.LBV ise SKU — Mondaine kendi sayfasında başlığa EVO2 yazıp SKU'yu
+  en alta koyuyor, biz tersini yapıyorduk. Casio'da referans zaten saatin adı,
+  o yüzden orada boş; başlıklar değişmedi.
+  `nickname` ile karıştırma: MRS-301'in "Marine Gear"ı **seri adı**, saatin adı
+  MRS-301. Bu yüzden ayrı bir alan gerekti — ikisi koda bakarak ayırt
+  edilemiyordu.
 - `id` alanı sabittir; fotoğraf yolları ve `haOption` eşleşmesi ona bağlı.
 
 ## Komutlar

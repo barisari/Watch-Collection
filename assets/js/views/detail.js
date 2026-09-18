@@ -82,7 +82,12 @@ export function renderDetail(root, id, navigate) {
        tabloda var. */
     el('header.detail-head',
       el('p.detail-brand', watch.brand),
-      el('h1.code', watch.reference),
+      /* `name` = üreticinin saate verdiği ad. Yalnızca referansın bir depo kodu
+         olduğu saatlerde dolu (Mondaine: ad "evo2 Automatic", referans
+         MSE.40610.LBV bir SKU). Casio'da referans zaten saatin adı, o yüzden
+         orada boş ve başlık değişmiyor. */
+      el('h1.code', watch.name || watch.reference),
+      watch.name && el('p.nickname', watch.reference),
       watch.nickname && el('p.nickname', watch.nickname),
     ),
 

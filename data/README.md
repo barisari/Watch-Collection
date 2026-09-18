@@ -21,6 +21,14 @@ görünmez, "—" bile yazmaz.
                                     // sabit; fotoğraf yolları ve haOption buna bağlı.
   "brand": "Omega",
   "model": "Speedmaster Professional Moonwatch",
+  "name": "Speedmaster",            // ÜRETİCİNİN saate verdiği ad. Yalnızca
+                                    // referans bir depo kodu olduğunda doldur:
+                                    // Mondaine'de ad "evo2 Automatic", referans
+                                    // MSE.40610.LBV bir SKU. Casio'da referans
+                                    // zaten saatin adı — orada BOŞ BIRAK.
+                                    // Doluysa ızgara kartının ve künye
+                                    // başlığının yazısı bu olur, referans
+                                    // başlığın altına küçük düşer.
   "nickname": "Moonwatch",          // kartlarda ve listelerde kısa ad
   "shortCode": "Moon",              // takvim hücresine sığan çok kısa ad (≤6 karakter).
                                     // Boş bırakırsan nickname/model kısaltılarak kullanılır.

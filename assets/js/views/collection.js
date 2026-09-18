@@ -56,7 +56,7 @@ function matches(w) {
   if (filters.brand && w.brand !== filters.brand) return false;
   if (filters.category && w.category !== filters.category) return false;
   if (filters.q) {
-    const hay = [w.brand, w.model, w.nickname, w.reference, ...(w.tags || [])]
+    const hay = [w.brand, w.name, w.model, w.nickname, w.reference, ...(w.tags || [])]
       .filter(Boolean).join(' ').toLocaleLowerCase('tr');
     if (!hay.includes(filters.q.toLocaleLowerCase('tr'))) return false;
   }
@@ -98,7 +98,7 @@ function watchCard(w, navigate) {
         : null),
     /* Altyazı fotoğrafın altında ORTALI — görsel kare içinde ortalandığı için
        sola yaslı yazı saatten kopuk duruyordu. */
-    el('div.watch-code', w.model),
+    el('div.watch-code', w.name || w.model),
     el('div.watch-brand', w.brand),
   );
 }

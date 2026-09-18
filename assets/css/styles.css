@@ -216,9 +216,15 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
    yüzeyle dikişsiz birleşiyor; saydam olanlar da aynı yüzeye oturuyor.
    Kapaklara dokunulmuyor, hepsi saydam. (Kesim yapılmıyor — kullanıcı kararı.)
 
-   Üç sütun: en çok ek kareye sahip saat (Mondaine, 3) satırı tam dolduruyor,
-   auto-fill'in bıraktığı ölü sütunlar kalkıyor. */
-.gallery { display: grid; gap: 10px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 12px; }
+   Kareler ORTALI: kapak kendi sütununda ortalanıyor, altındaki şerit sola
+   yaslı kalınca hizasız duruyordu. `1fr` izler tüm genişliği doldurduğu için
+   ortalanacak boşluk kalmıyordu — izler sabit genişliğe alındı. `auto-fit`
+   boş izi büzüyor, yani iki kare de üç kare de ortada toplanıyor. */
+.gallery {
+  display: grid; gap: 10px; margin-top: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 120px));
+  justify-content: center;
+}
 .gallery img {
   width: 100%; aspect-ratio: 1; object-fit: contain; display: block;
   background: #fff; padding: 8px;
