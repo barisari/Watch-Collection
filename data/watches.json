@@ -2822,7 +2822,8 @@
       "imageFrom": "Kullanıcının fotoğrafı (saydam zeminli)",
       "specsFrom": "Kadrandan okundu: SEIKO · AUTOMATIC · 17 JEWELS · 3'te gün+tarih. Kalibre kodu referanstan (6309). Kasa arkasındaki seri numarası 604786 → Ekim, yılı 6 ile biten yıl; 6309 kalibresi 1976-1988 arası üretildiği için 1976 mı 1986 mı belirsiz, releaseDate BOŞ bırakıldı. Kasa arkası ayrıca: STAINLESS STEEL, WATER RESISTANT (metre verilmemiş).",
       "serialFrom": "Kasa arkası: 604786",
-      "releaseDateFrom": "Kasa arkası seri numarası 604786 → Ekim, yılı 6 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1976 ya da 1986 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1986 elendi, Ekim 1976 kaldı."
+      "releaseDateFrom": "Kasa arkası seri numarası 604786 → Ekim, yılı 6 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1976 ya da 1986 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1986 elendi, Ekim 1976 kaldı.",
+      "strapNote": "Kayış sonradan takılmış (aftermarket); özgün kayış çelik bileklikti."
     },
     "acquisition": {
       "date": null,
@@ -2838,7 +2839,7 @@
       "photos/watches/seiko_6309-5000.webp"
     ],
     "tags": [],
-    "notes": "Amcasından hediye (2026).",
+    "notes": "Amcasından hediye (2026). Amcasından çelik bileklikle geldi ama bileklik çok yıpranmış olduğu için değiştirildi — şu anki kahverengi deri kayış sonradan alındı, orijinal değil.",
     "msrp": {},
     "haOption": null,
     "releaseDate": "1976-10"
