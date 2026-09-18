@@ -210,13 +210,31 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
 /* ---------- künye ---------- */
 
 .detail-head { margin: 22px 0 40px; }
-.detail-brand { margin-bottom: 8px; font-size: 15px; color: var(--ink-2); }
+
+/* Marka: kullanıcı "çok sönük kalmış" dedi — 15 px ve soluk gri idi. Artık tam
+   kontrast ve 600 ağırlık, koddan bir basamak aşağıda. Büyük harf ve açılmış
+   harf aralığı YOK: o "etiket" kalıbı bu sitede baştan reddedildi. Kod hâlâ
+   iki-üç kat büyük, yani kahraman değişmedi. */
+.detail-brand {
+  margin-bottom: 6px;
+  font-size: clamp(17px, 2.4vw, 21px); font-weight: 600;
+  line-height: 1.2; color: var(--ink);
+}
 .code {
   font-size: clamp(34px, 6.4vw, 60px); font-weight: 700;
   line-height: 1; letter-spacing: -0.035em;
   overflow-wrap: anywhere;
 }
 .nickname { margin-top: 12px; font-size: 16px; color: var(--ink-2); }
+
+/* Tam referans başlıktan çıkarıldı, en alta kendi satırına indi: bloğun en
+   küçük, en kuru satırı. Tabular rakam kodu hizalı tutuyor. */
+.detail-ref {
+  margin-top: 12px; font-size: 14px; color: var(--ink-2);
+  font-variant-numeric: tabular-nums; overflow-wrap: anywhere;
+}
+/* Lakap varsa referans onun hemen altına yapışır — ikisi tek grup. */
+.nickname + .detail-ref { margin-top: 4px; }
 
 .detail-grid { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); align-items: start; }
 @media (min-width: 860px) {

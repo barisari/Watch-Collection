@@ -2,7 +2,7 @@
 
 import { getWatch } from '../data.js';
 import {
-  el, fmtDate, fmtMoney, fmtNum, watchLabel, emptyState,
+  el, fmtDate, fmtMoney, fmtNum, watchLabel, gridCode, emptyState,
   photoSm, photoLarge,
 } from '../ui.js';
 import { term, termList, waterResistance } from '../terms.js';
@@ -69,26 +69,29 @@ export function renderDetail(root, id, navigate) {
   root.append(
     el('p', el('button.btn', { type: 'button', onclick: () => navigate('#/koleksiyon') }, '← Koleksiyon')),
 
-    /* Kod kahraman: kullanıcı saatleri koda göre tanıyor. Tam referans burada
-       (satın alındığı haliyle), ızgarada kısa model.
+    /* Kod kahraman: kullanıcı saatleri koda göre tanıyor.
 
-       Marka kodun ÜSTÜNDE. Teknik tabloda marka diye bir alan yok; yalnızca
-       "Casio modül 2784" gibi kalibre metinlerinden sızıyordu, yani 28 saatin
-       14'ünde (G-Shock, Edifice, Oceanus, Pro Trek, Mondaine) sayfanın hiçbir
-       yerinde geçmiyordu. Üstte durması marka → model sırasını veriyor; altına
-       koymak iri kodun altında iki küçük satır bırakırdı.
+       Marka kodun ÜSTÜNDE ve artık soluk değil. Teknik tabloda marka diye bir
+       alan yok; yalnızca "Casio modül 2784" gibi kalibre metinlerinden
+       sızıyordu, yani 28 saatin 14'ünde (G-Shock, Edifice, Oceanus, Pro Trek,
+       Mondaine) sayfanın hiçbir yerinde geçmiyordu.
 
        Tür ve çıkış buraya KONMUYOR — orta noktalı meta dizesi olurdu, ikisi de
-       tabloda var. */
+       tabloda var.
+
+       Başlık bloğu insandan makineye doğru okunur: MARKA → saatin adı →
+       lakabı → tam referans. Eskiden h1'de tam referans (GA-2100-1A1DR)
+       duruyordu; kullanıcı: "çok uzun ve kalabalık, Robocop okusun diye site
+       yapmışız gibi". Artık h1 ızgaradaki kısa kodun aynısı, tam referans
+       en altta kendi satırında.
+
+       `name` = üreticinin saate verdiği ad (Mondaine: "evo2 Automatic",
+       MSE.40610.LBV bir SKU). gridCode() adı varsa onu döndürüyor. */
     el('header.detail-head',
       el('p.detail-brand', watch.brand),
-      /* `name` = üreticinin saate verdiği ad. Yalnızca referansın bir depo kodu
-         olduğu saatlerde dolu (Mondaine: ad "evo2 Automatic", referans
-         MSE.40610.LBV bir SKU). Casio'da referans zaten saatin adı, o yüzden
-         orada boş ve başlık değişmiyor. */
-      el('h1.code', watch.name || watch.reference),
-      watch.name && el('p.nickname', watch.reference),
+      el('h1.code', gridCode(watch)),
       watch.nickname && el('p.nickname', watch.nickname),
+      gridCode(watch) !== watch.reference && el('p.detail-ref', watch.reference),
     ),
 
     el('div.detail-grid',

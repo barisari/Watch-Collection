@@ -704,6 +704,26 @@ reddedildi ve geri alındı.** Reddedilenleri tekrar denemeyin.
    görüyor. Altyazı `SORTS[...].alt()` ile tanımlı, yani her sıralama kendi
    metnini taşıyor. Üç anahtar da 28/28 dolu, altyazı boş kalmıyor. Tahmini
    satın alma tarihi "civarı" ekiyle basılıyor (tek örnek MRS-301).
+11. **Künye başlığı: marka belirgin, kod sade, referans en altta** (18 Eylül).
+   Kullanıcı: *"tam referans kodu yazması çok uzun ve kalabalık, Robocop okusun
+   diye site yapmışız gibi duruyor"* ve *"marka ismi de çok sönük kalmış."*
+   Blok artık **insandan makineye** doğru okunuyor:
+
+   | Satır | Değer | Biçim |
+   |---|---|---|
+   | Marka | G-Shock | `clamp(17,2.4vw,21)` · 600 · **`--ink`** |
+   | Kod (h1) | GA-2100 | `clamp(34,6.4vw,60)` · 700 |
+   | Lakap | Flightmaster | 16 px · `--ink-2` |
+   | Tam referans | GA-2100-1A1DR | 14 px · `--ink-2` · tabular |
+
+   h1 artık `gridCode()` — ızgaradakiyle aynı kod, yani iki ekran aynı şeyi
+   söylüyor. Tam referans başlıkta değil, bloğun en küçük son satırında;
+   kodla aynıysa (6309-5000, 6309-8190) hiç basılmıyor.
+   **Marka büyük harfe çevrilmedi, harf aralığı açılmadı** — `frontend-design`
+   becerisinin "her başlığın üstüne tracked-out ALL-CAPS etiket" tellini
+   tekrarlamamak için; belirginlik kontrast ve ağırlıktan geliyor.
+   Kod hâlâ markanın 2-3 katı: kahraman değişmedi.
+
 10. **Izgarada renk kodu yok** (18 Eylül). Kart artık `GA-2100-1A1` değil
    **`GA-2100`** yazıyor. Kullanıcı: *"tam kodu bir anlam ifade etmiyor."*
    Casio'da model kodunun son bölümü renk/varyanttır; kartta ayırt edici değil,
