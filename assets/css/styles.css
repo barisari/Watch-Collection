@@ -251,7 +251,6 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
   border-top: 1px solid var(--rule);
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
-.site-footer .sep { margin-left: 20px; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
