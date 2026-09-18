@@ -578,10 +578,34 @@ yapmak istemiyor.
 **Kullanıcı rotasyon kaydı birikmesini bekliyor**, gösterim tarafına ondan sonra
 başlanacak. Kendiliğinden başlama.
 
-**Açık kalanlar (gösterim yazılırken):** HA seçenek listesine Braun eklenecek
-(`haOption` 27/28); "takılma payı"nın paydası (tüm günler mi, saat takılan günler
-mi); aynı gün içindeki değişim ne kadar ince gösterilecek; HA takvimindeki
-`.ics` verisinin siteye hangi yolla geleceği.
+**9. HA listesi tamamlandı — `haOption` 31/31 (18 Eylül).**
+Kullanıcı Braun'u ve üç Seiko'yu HA'ya ekledi, Edifice üçlüsünü de düzeltti;
+liste veriyle **harfi harfine** eşitlendi. Dikkat edilecek üç ad:
+
+| HA seçeneği | Neden böyle |
+|---|---|
+| `Edifice EFB-730 D` · `EFK-110 D` · `EFS-S570 D` | **D'den önce boşluk var.** Önce HA'da `Casio EFB-730D` yazıyordu, veride `Edifice EFB-730D`; kullanıcı HA'yı düzeltirken hem markayı hem boşluğu değiştirdi. Veri HA'ya uyduruldu — geçmişi tutan taraf HA. |
+| `Seiko 5 6309-8190` | Kadranda **SEIKO 5** yazdığı için; öbür 6309 sade `Seiko 6309-5000`. İki vintage'ı ayıran şey bu. |
+| `Braun BN0021` | Kullanıcı kod düzenini seçti. |
+
+**Kullanıcı kodlu düzende karar kıldı.** "İnsana göre" adlar (`Braun`,
+`Seiko Flightmaster`, `Seiko Snowflake`, `Seiko TV`) önerildi, seçilmedi.
+Tekrar önerme.
+
+**Rename'in maliyeti şu an sıfıra yakın:** takvim GA-2100 ile başladı,
+Edifice hiç düşmemişti. Ama bu pencere kapanıyor — bundan sonra ad değişikliği
+gerçek veri kaybı.
+
+**HA'da "yeniden adlandır" yok:** eskisini sil, yenisini ekle. O an seçili olan
+seçeneği silersen durum ilk seçeneğe düşer — önce `None`'a al.
+**Geliştirici Araçları → Durumlar ekranından düzenleme kalıcı değildir**
+(kullanıcı bir kez böyle düzeltti, liste geri döndü). Doğru yer:
+Ayarlar → Cihazlar ve Servisler → Yardımcılar.
+
+**Açık kalanlar (gösterim yazılırken):** "takılma payı"nın paydası (tüm günler mi,
+saat takılan günler mi); aynı gün içindeki değişim ne kadar ince gösterilecek;
+HA takvimindeki `.ics` verisinin siteye hangi yolla geleceği; eski kayıtlardaki
+`Casio EFB-730D` gibi ölü adların eşlenmesi.
 
 ### Verilmemiş kararlar
 

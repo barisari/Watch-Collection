@@ -1158,7 +1158,7 @@
       "JPY": 26400
     },
     "releaseDate": "2024-09",
-    "haOption": "Edifice EFB-730D"
+    "haOption": "Edifice EFB-730 D"
   },
   {
     "id": "edifice-efk-110d-1a",
@@ -1252,7 +1252,7 @@
     "msrp": {
       "JPY": 49500
     },
-    "haOption": "Edifice EFK-110D"
+    "haOption": "Edifice EFK-110 D"
   },
   {
     "id": "edifice-efs-s570d-3audf",
@@ -1349,7 +1349,7 @@
       "TRY": 19689
     },
     "releaseDate": "2020",
-    "haOption": "Edifice EFS-S570D"
+    "haOption": "Edifice EFS-S570 D"
   },
   {
     "id": "g-shock-dw-6900rgm-5dr",
@@ -2749,7 +2749,8 @@
     "msrp": {
       "USD": 160,
       "GBP": 100
-    }
+    },
+    "haOption": "Braun BN0021"
   },
   {
     "id": "seiko-6309-5000",
@@ -2843,7 +2844,7 @@
     "tags": [],
     "notes": "Amcasından hediye (2026). Amcasından çelik bileklikle geldi ama bileklik çok yıpranmış olduğu için değiştirildi — şu anki kahverengi deri kayış sonradan alındı, orijinal değil. Kesimli akrilik camın bir köşesinde çok ince bir çatlak var; çıplak gözle fark edilmiyor, bakıma verildiğinde saatçi görmüş. Orijinal kesimli cam bulunamadığı için değiştirilmedi — özgün cam duruyor.",
     "msrp": {},
-    "haOption": null,
+    "haOption": "Seiko 6309-5000",
     "releaseDate": "1976-10"
   },
   {
@@ -2943,7 +2944,7 @@
     ],
     "notes": "Babasından. Kadranın dokusu koleksiyoncular arasında \"black snowflake\" diye geçiyor — 2005 Grand Seiko SBGA211'in beyaz dokulu kadranına benzetilerek.",
     "msrp": {},
-    "haOption": null
+    "haOption": "Seiko 5 6309-8190"
   },
   {
     "id": "seiko-snab71",
@@ -3044,6 +3045,6 @@
     "msrp": {
       "USD": 440
     },
-    "haOption": null
+    "haOption": "Seiko SNAB71"
   }
 ]
