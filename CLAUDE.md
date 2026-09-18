@@ -368,18 +368,25 @@ model kodunu ara. (`/global-en/products/prospex/SNAB71` ve
 - `seikowatches.com`: yumuşak 404, "SNAB" gövdede hiç geçmiyor.
 - `saatvesaat.com.tr` (distribütör): `catalogsearch` sonucu **boş**; sayfadaki
   6 "SNAB" geçişinin hepsi arama teriminin yankısı.
-- creationwatches / ethoswatches gibi perakendecilerde var ama teknik tablo
-  **JavaScript ile yükleniyor**, sunucudan gelmiyor — okunamadı.
+- creationwatches.com: **OKUNUYOR — ilk okumam yanlıştı** (18 Eylül, kullanıcı
+  adresi verince düzeltildi). Sayfa Next.js; teknik tablo HTML'in içindeki
+  **RSC yükünde** (`self.__next_f.push([1,"…"])`) geliyor, yani sunucudan
+  hazır. curl alıyor; WebFetch `<script>`leri attığı için bana boş göründü ve
+  "JS ile yükleniyor" dedim. **Ders: bir sayfa WebFetch'te boşsa curl ile ham
+  HTML'e bak** — Next.js/Nuxt sitelerinde veri script etiketinin içindedir.
+  Çıkarma yolu: `self.__next_f.push` parçalarını `json.loads` ile çöz, birleştir,
+  sonra `"fn-size-12 fw-500 text-start","children":"<alan>"` … `text-end`
+  çiftlerini tara.
 
-Yani MDV-106-1A ile aynı durumda: model üretimden kalkmış, üreticinin sayfası
-yok. Aramada dolaşan değerler — tam referans `SNAB71P1`, kalibre **7T62**
-(kasa kodu 7T62-0HM0), 43 mm, 100 m, hardlex — **hiçbiri doğrulanmadı**, arama
-özeti seviyesinde. CLAUDE.md'nin kendi kuralı gereği bunlar envantere böyle
-girmez.
+Üreticinin sayfası yok, ama **iki perakendeci tablosu var ve ikisi de okunuyor**:
+citywatches.in ve creationwatches.com. Değerleri birebir örtüşüyor — ikisi de
+Seiko'nun kendi bilgi sayfasından beslendiği için. creationwatches ayrıca
+Seiko'nun **EAN kodunu** veriyor: `4954628094384`. Bu yüzden başta "doğrulanmadı"
+diye kenara ayırdığım **kalibre 7T62** ve **tam referans SNAB71P1** envantere
+girdi: artık arama özeti değil, iki bağımsız kaynak + barkod.
 
-**Gereken:** kullanıcının elindeki saat. Kasa arkasında kalibre-kasa kodu
-(7T62-0HM0 gibi) yazıyor; kadranda model adı var. MRS-301'de işe yarayan yol
-bu. Alternatif: kullanıcının bir perakendeci sayfasının ekran görüntüsü.
+**Kasa kodu (`7T62-0HM0` gibi) hâlâ doğrulanmadı** — kalibre kısmı (7T62) iki
+kaynakta var, kasa eki hiçbirinde yok. Gerekirse kullanıcının kasa arkası.
 
 **GÖRSELLER KULLANICININ HAZIRLADIĞI, SAATE SADIK KARELER.** Üç Seiko'nun
 `photos/` altındaki görselleri kullanıcı hazırlamış: internette bulduğu düşük
@@ -429,9 +436,19 @@ citywatches.in'in **50 mm**'si yanlış değil — **kuronları da içine alıyo
 Aynı tablonun 24 mm kulak ölçüsü kumpasla birebir tuttuğu için tablodan
 **kalınlık 11 mm** ve **cam Hardlex** alındı; tablo o kadarıyla güvenilir.
 
-Yazılmayanlar: **kulaktan kulağa** (hiçbir kaynakta yok), **kalibre 7T62**,
-**tam referans SNAB71P1** — ikisi de yalnızca arama özeti seviyesinde.
-Kadran **kırık beyaz** (kullanıcının onayı; görseldeki krem ton stüdyo ışığı).
+**Kalibre `Seiko 7T62`, referans `SNAB71P1`, kayış `Calf leather` sonradan girdi**
+(kullanıcının onayıyla) — creationwatches sayfası okununca. `model` = SNAB71
+kalır, `reference` = SNAB71P1: Casio'daki pazar soneki mantığının aynısı,
+ızgarada kısa kod, künyede tam kod.
+
+Kadran **White** — kullanıcının kararı: *"White yazabilirsin her yerde böyle
+geçiyor."* Önce kırık beyaz yazılmıştı (görseldeki krem ton), iki perakendeci
+tablosu da "Dial Color: White" deyince değişti.
+
+Yazılmayanlar: **kulaktan kulağa** (hiçbir kaynakta yok), **ağırlık**,
+**çıkış tarihi**, **liste fiyatı**. creationwatches'ta 199 USD yazıyor ama o
+perakendecinin satış fiyatı, liste fiyatı değil — `msrp`'ye girmez.
+
 `nickname` = Flightmaster, çünkü o seri adı — MRS-301'in "Marine Gear"ı gibi.
 
 ---

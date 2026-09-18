@@ -22,6 +22,7 @@ const TR = {
   'Urethane': 'Üretan',
   'Titanium': 'Titanyum',
   'Leather': 'Deri',
+  'Calf leather': 'Dana derisi',
   'Cloth': 'Kumaş',
   'Chrome plated': 'Krom kaplama',
 
