@@ -236,8 +236,11 @@ en geç Mayıs 2014'te satışta olduğunu söylüyor.
 geldi: **49 mm** (kumpas). Bu dördünün hiçbirinde üreticinin yayımladığı bir
 değer yok, kaynak doğrudan saatin kendisi.
 
-Kulaktan kulağa 29/31 — kalan ikisi **Braun BN0021** ve **Mondaine Evo2**;
-ikisi de kendi sayfalarında bu ölçüyü hiç vermiyor (18 Eylül'de bakıldı).
+**Kulaktan kulağa: iş bitti, eksik sayma.** Mondaine Evo2 **46 mm** —
+üreticinin değeri değil, kullanıcının araştırmasından: The Time Bum eline alıp
+~46 ölçmüş, bir ilan 45 diyor; elle ölçüm ilanın önünde tutuldu.
+**Braun BN0021'e bakılmayacak** — kullanıcının kararı: *"ölçmek zor buna hiç
+bakmayalım eksik diye not etmene gerek yok."* Kapalı konu, tekrar açma.
 
 Kısa tanıtım eksik 6: A158WA-1, CA-53W-1, DBC-611-1, MDV-106-1A,
 MRS-301-2E, SNE529P. İlk üçünde **Casio metin yazmamış** — sayfada yalnızca

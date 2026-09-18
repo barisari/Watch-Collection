@@ -2500,7 +2500,7 @@
         "bezelMaterial": null,
         "diameter": 40,
         "thickness": 10,
-        "lugToLug": null,
+        "lugToLug": 46,
         "lugWidth": 20,
         "weight": 60,
         "crystal": "Sapphire Crystal",
@@ -2543,7 +2543,8 @@
       "imageFrom": "Kapak: Mondaine resmi ürün görseli, fonu KULLANICI Photoshop ile temizledi (2048×2048 PNG). Ek fotoğraflar üreticinin JPG kareleri.",
       "imageOriginal": "https://cdn.shopify.com/s/files/1/0101/1017/3243/products/MSE.40610.LB-S90-_2022_1.jpg",
       "msrpFrom": "eu.mondaine.com — €729 · uk.mondaine.com — £739",
-      "specsFrom": "uk.mondaine.com · kalibre değerleri Sellita SW220-1 künyesinden Şeffaf (see-through) arka kapak mondaine.com ürün sayfasından — SKU MSE.40610.LBV. Aynı sayfada kulaktan kulağa ve çıkış tarihi YOK; Mondaine bu iki değeri hiç yayımlamıyor."
+      "specsFrom": "uk.mondaine.com · kalibre değerleri Sellita SW220-1 künyesinden Şeffaf (see-through) arka kapak mondaine.com ürün sayfasından — SKU MSE.40610.LBV. Aynı sayfada kulaktan kulağa ve çıkış tarihi YOK; Mondaine bu iki değeri hiç yayımlamıyor.",
+      "dimensionsFrom": "Kulaktan kulağa 46 mm — ÜRETİCİNİN DEĞERİ DEĞİL. Mondaine bu ölçüyü hiç yayımlamıyor; kullanıcının araştırmasından geldi. İki kaynak var: The Time Bum saati eline alıp ~46 mm ölçmüş, Gioielleria Rosaspina ilanında 45 mm yazıyor. Elle ölçüm ilanın önünde tutuldu — bu depoda SNAB71 ve 6309-8190'da da aynı yol izlendi. evo2 kasası yuvarlak hatlı olduğu için ölçüm noktası 1 mm oynayabiliyor."
     },
     "acquisition": {
       "date": "2026-06-11",
