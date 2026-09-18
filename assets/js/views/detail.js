@@ -169,6 +169,9 @@ function sourceNote(watch) {
 function openLightbox(src, alt) {
   const previous = document.activeElement;
   const close = () => {
+    // Kapat düğmesine tıklamak hem kendi işleyicisini hem kutununkini
+    // tetikliyor; ikinci çağrı bir şey yapmasın.
+    if (!box.isConnected) return;
     box.remove();
     document.removeEventListener('keydown', onKey);
     if (previous && previous.focus) previous.focus();
@@ -181,8 +184,8 @@ function openLightbox(src, alt) {
 
   const box = el('div.lightbox', {
     role: 'dialog', 'aria-modal': 'true', 'aria-label': alt,
-    // Boşluğa tıklayınca kapansın; görselin kendisine tıklamak kapatmasın.
-    onclick: (e) => { if (e.target === box) close(); },
+    // Görselin kendisi dahil her yere tıklamak kapatır.
+    onclick: close,
   }, el('img', { src, alt }), button);
 
   document.addEventListener('keydown', onKey);

@@ -233,7 +233,7 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
   display: flex; align-items: center; justify-content: center;
   padding: 32px; background: var(--overlay); cursor: zoom-out;
 }
-.lightbox img { max-width: min(100%, 1100px); max-height: 100%; object-fit: contain; cursor: default; }
+.lightbox img { max-width: min(100%, 1100px); max-height: 100%; object-fit: contain; }
 .lightbox-close {
   position: absolute; top: 16px; right: 16px;
   width: 40px; height: 40px; border-radius: 0;
