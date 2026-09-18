@@ -2403,7 +2403,7 @@
         "thickness": 14.2,
         "lugToLug": 49.7,
         "lugWidth": null,
-        "weight": null,
+        "weight": 41.3,
         "crystal": null,
         "crystalCoating": null,
         "crystalShape": "Curved",
@@ -2449,7 +2449,8 @@
       "imageColorsFrom": "Kullanıcının doğruladığı görsel",
       "imageFrom": "Yapay zekâ ile üretildi — kullanıcının düşük çözünürlüklü orijinalden ürettiği kare; yazıları orijinal saatle uyuşacak şekilde düzelttirmiş. Ön yüzde belirtilmiyor.",
       "specsFrom": "Kasa ölçüleri, malzeme, renkler, cam formu ve fonksiyonlar Ersa Saat (Casio Türkiye yetkili distribütörü) ürün sayfasından. Modül no ve 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Fonksiyon ayrıntıları ve aydınlatma, Casio modül 2385 kullanma kılavuzundan.",
-      "releaseDateFrom": "Modül 2385'in çıkış tarihi (Casio servis listesi, QW-2385 satırı: Aug-2001). Saatin kendi çıkış tarihi hiçbir kaynakta yok. Eşitliğin gerekçesi: 2385 basınç sensörlü bir modül, sensör kasada port/membran istediği için modül o kasaya bağlı kalır — başka kasaya taşınması beklenmez. Bu YALNIZCA sensörlü/az yaygın modeller için geçerli; sensörsüz modül 593 hem A158WA-1'de (2009) hem F-91WPC-1A'da (2024) var."
+      "releaseDateFrom": "Modül 2385'in çıkış tarihi (Casio servis listesi, QW-2385 satırı: Aug-2001). Saatin kendi çıkış tarihi hiçbir kaynakta yok. Eşitliğin gerekçesi: 2385 basınç sensörlü bir modül, sensör kasada port/membran istediği için modül o kasaya bağlı kalır — başka kasaya taşınması beklenmez. Bu YALNIZCA sensörlü/az yaygın modeller için geçerli; sensörsüz modül 593 hem A158WA-1'de (2009) hem F-91WPC-1A'da (2024) var.",
+      "dimensionsFrom": "Ağırlık 41.3 g: KULLANICININ KENDİ ÖLÇÜMÜ (18 Eylül 2026) — üreticinin yayımladığı bir değer yok, terazi/kumpas esas."
     },
     "acquisition": {
       "date": "2002-06-01",
@@ -2788,7 +2789,7 @@
         "thickness": 11,
         "lugToLug": 41,
         "lugWidth": 22,
-        "weight": null,
+        "weight": 52.5,
         "crystal": "Acrylic",
         "crystalCoating": null,
         "crystalShape": "Faceted",
@@ -2831,7 +2832,7 @@
       "serialFrom": "Kasa arkası: 604786",
       "releaseDateFrom": "Kasa arkası seri numarası 604786 → Ekim, yılı 6 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1976 ya da 1986 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1986 elendi, Ekim 1976 kaldı.",
       "strapNote": "Kayış sonradan takılmış (aftermarket); özgün kayış çelik bileklikti — kullanıcının amcasından öyle gelmiş, ikinci ilanda da 'Strap: Original' olarak çelik bileklik görünüyor.",
-      "dimensionsFrom": "Üç bağımsız satış ilanı karşılaştırıldı. (1) eBay 286723564496: kuronsuz 37 mm, kuronla 38 mm, kalınlık 11 mm, kulak 22 mm — satıcı elle ölçmüş, yapılandırılmış alanlarla serbest metni tutuyor. (2) Satıcı sitesi: 37 x 41 mm kulaktan kulağa, kulak 22 mm. (3) WatchCharts'ta toplanmış satılmış eBay ilanı (beyaz kadranlı örnek): kasa 38 mm (kuronla ölçülmüş), kalınlık 11 mm, kulak 22 mm, vidalı kasa arkası. YAZILANLAR en az iki kaynağın verdiği değerler: 37 (kuronsuz), 11, 22. Kulaktan kulağa 41 mm TEK kaynakta (2. ilan) ama kullanıcının kararıyla yazıldı: aksini gösteren bir ölçü çıkarsa düzeltilecek.",
+      "dimensionsFrom": "Üç bağımsız satış ilanı karşılaştırıldı. (1) eBay 286723564496: kuronsuz 37 mm, kuronla 38 mm, kalınlık 11 mm, kulak 22 mm — satıcı elle ölçmüş, yapılandırılmış alanlarla serbest metni tutuyor. (2) Satıcı sitesi: 37 x 41 mm kulaktan kulağa, kulak 22 mm. (3) WatchCharts'ta toplanmış satılmış eBay ilanı (beyaz kadranlı örnek): kasa 38 mm (kuronla ölçülmüş), kalınlık 11 mm, kulak 22 mm, vidalı kasa arkası. YAZILANLAR en az iki kaynağın verdiği değerler: 37 (kuronsuz), 11, 22. Kulaktan kulağa 41 mm TEK kaynakta (2. ilan) ama kullanıcının kararıyla yazıldı: aksini gösteren bir ölçü çıkarsa düzeltilecek. Ağırlık 52.5 g: KULLANICININ KENDİ ÖLÇÜMÜ (18 Eylül 2026) — üreticinin yayımladığı bir değer yok, terazi/kumpas esas.",
       "crystalFrom": "Kullanıcı ve saatçisi: kesimli (faceted) akrilik cam. Bir köşesinde çıplak gözle görülmeyen ince bir çatlak var; saatçi tespit etmiş. Özgün cam korunuyor."
     },
     "acquisition": {
@@ -2885,7 +2886,7 @@
         "thickness": 11.4,
         "lugToLug": 41.5,
         "lugWidth": 18,
-        "weight": null,
+        "weight": 79.85,
         "crystal": "Mineral Glass",
         "crystalCoating": null,
         "crystalShape": "Flat",
@@ -2929,7 +2930,7 @@
       "releaseDateFrom": "Seri 853105 → Mayıs, yılı 8 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1978 ya da 1988 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1988 elendi. UYARI: pazar yerlerinde bu referansın 1987/1988 tarihli örnekleri var; referans geç 80'lerde de üretilmiş, ama BU saatin tarihi kendi serisinden.",
       "nicknameFrom": "Koleksiyoncu lakabı, resmi Seiko adlandırması değil. Bu referansa özel olarak kullanılıyor: WatchCharts'ta 'Seiko 5 Black Snowflake — 6309-8190' başlıklı ilan var. Benzetmenin kaynağı 2005 Grand Seiko SBGA211'in beyaz dokulu 'Snowflake' kadranı.",
       "jewelsFrom": "Kalibre 6309 = 17 taş. theseikoguy.com/movements/6309 kalibre tablosu ('Type: mechanical automatic · Jewels: 17'). Ayrıca aynı kalibreyi taşıyan 6309-5000'in kadranında 'AUTOMATIC 17 JEWELS' yazıyor. Taş sayısı mekanizmanın özelliği, kasadan bağımsız.",
-      "dimensionsFrom": "KULLANICININ KENDİ KUMPAS ÖLÇÜMÜ — en güvenilir kaynak, ilanların önünde. Kasa çapı 36 mm (kuron 4 yönünde olduğu için ölçüme girmiyor), kulak genişliği 18 mm, kulaktan kulağa 41,5 mm, kalınlık 11,4 mm. İlanlarla örtüşüyor: üç ayrı ilan 36 mm diyordu, eBay 376458490691 kulak 18 mm ve kalınlık 11 mm (yuvarlanmış) vermişti.",
+      "dimensionsFrom": "KULLANICININ KENDİ KUMPAS ÖLÇÜMÜ — en güvenilir kaynak, ilanların önünde. Kasa çapı 36 mm (kuron 4 yönünde olduğu için ölçüme girmiyor), kulak genişliği 18 mm, kulaktan kulağa 41,5 mm, kalınlık 11,4 mm. İlanlarla örtüşüyor: üç ayrı ilan 36 mm diyordu, eBay 376458490691 kulak 18 mm ve kalınlık 11 mm (yuvarlanmış) vermişti. Ağırlık 79.85 g: KULLANICININ KENDİ ÖLÇÜMÜ (18 Eylül 2026) — üreticinin yayımladığı bir değer yok, terazi/kumpas esas.",
       "crystalFrom": "Kullanıcı: düz cam, safir değil, akrilik de değil — mineral mi Hardlex mi emin değil. Hardlex Seiko'nun mineral camına verdiği ad olduğu için ikisi de aynı değere çıkıyor. Işıma: kullanıcı karanlıkta indekslerin ve ibrelerin hâlâ parladığını söyledi."
     },
     "acquisition": {
@@ -2982,9 +2983,9 @@
         "bezelMaterial": null,
         "diameter": 43.5,
         "thickness": 11,
-        "lugToLug": null,
+        "lugToLug": 49,
         "lugWidth": 24,
-        "weight": null,
+        "weight": 90.15,
         "crystal": "Hardlex",
         "crystalCoating": null,
         "crystalShape": null,
@@ -3026,7 +3027,7 @@
       "imageColorsFrom": "Kullanıcının görseli (elindeki saate sadık)",
       "imageFrom": "Kullanıcının hazırladığı görsel: internette bulduğu düşük çözünürlüklü kareleri yükselterek, elindeki saatin göründüğü hâle birebir sadık kalarak üretmiş. Kadran, kasa ve kayış saatin kendisini yansıtıyor.",
       "specsFrom": "Kadrandan okundu: SEIKO · Chronograph 100M · 12 yönünde MIN.30 kronograf sayacı · 6 yönünde ALARM sayacı · 4-5 arasında tarih penceresi · aplike ışımalı çubuk indeksler · kırmızı merkez kronograf saniyesi · hesap cetveli halkası (OIL LBS / GAL / STAT-NAUT). Kadran rengi White — kullanıcının kararı: her kaynakta böyle geçiyor (creationwatches ve citywatches teknik tablolarında \"Dial Color: White\"). Görseldeki krem ton stüdyo ışığı. Su geçirmezlik kadrandan. Kalibre 7T62, tam referans SNAB71P1 ve dana derisi kayış creationwatches.com ürün sayfasından — citywatches.in tablosuyla birebir örtüşüyor (iki bağımsız perakendeci) ve sayfada Seiko'nun kendi EAN kodu var: 4954628094384. Kasa arkası kodu 7T62-0HM0 (7T62 = kalibre, 0HM0 = kasa) ve pil ömrü 3 yıl watchsleuth.com Seiko Chrono Finder kataloğundan. UYARI — aynı katalog kulak genişliğine 20 mm diyor: YANLIŞ, kullanıcının kumpası ve iki perakendeci 24 mm veriyor. Kalınlığa da 12 mm diyor; 11 mm yazıldı (iki perakendeci + kullanıcının kararı). Kasa çapı için \"43mm (without crown)\" diyor — kullanıcının 43,5 mm ölçümünü ve 50 mm'nin kuronlarla olduğunu doğruluyor.",
-      "dimensionsFrom": "Kasa çapı 43,5 mm ve kulak genişliği 24 mm KULLANICININ KENDİ KUMPAS ÖLÇÜMÜ (çap kuronlar hariç). Kalınlık 11 mm citywatches.in teknik tablosundan — ölçülmedi. Aynı tablo çapı 50 mm veriyor: kullanıcının tespitiyle o ölçü kuronları da içine alıyor (bu saatte hem kuron muhafazaları hem iç halka için ikinci bir kuron var). Kulaktan kulağa hiçbir kaynakta yok. UYARI: aramada dolaşan 43 mm, kalibre 7T62 ve tam referans SNAB71P1 doğrulanmadı — yalnızca arama özeti seviyesinde, bu yüzden yazılmadı.",
+      "dimensionsFrom": "Kasa çapı 43,5 mm ve kulak genişliği 24 mm KULLANICININ KENDİ KUMPAS ÖLÇÜMÜ (çap kuronlar hariç). Kalınlık 11 mm citywatches.in teknik tablosundan — ölçülmedi. Aynı tablo çapı 50 mm veriyor: kullanıcının tespitiyle o ölçü kuronları da içine alıyor (bu saatte hem kuron muhafazaları hem iç halka için ikinci bir kuron var). Kulaktan kulağa hiçbir kaynakta yok. UYARI: aramada dolaşan 43 mm, kalibre 7T62 ve tam referans SNAB71P1 doğrulanmadı — yalnızca arama özeti seviyesinde, bu yüzden yazılmadı. Ağırlık 90.15 g ve kulaktan kulağa 49 mm: KULLANICININ KENDİ ÖLÇÜMÜ (18 Eylül 2026) — üreticinin yayımladığı bir değer yok, terazi/kumpas esas.",
       "crystalFrom": "citywatches.in teknik tablosu: Hardlex. Aynı tablonun kulak genişliği (24 mm) kullanıcının kumpasıyla birebir tuttuğu için tablo güvenilir sayıldı.",
       "msrpFrom": "creationwatches.com ürün verisi: products_price 440.0000 = liste fiyatı (sayfada üstü çizili), products_price_sorter 199.0000 = kampanya fiyatı. Ersa kuralının aynısı: üstü çizili olan liste fiyatıdır. Aynı kayıtta products_date_added 2014-05-15 — çıkış tarihi değil, \"en geç Mayıs 2014'te satıştaydı\" demek."
     },

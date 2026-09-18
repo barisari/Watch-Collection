@@ -231,8 +231,13 @@ en geç Mayıs 2014'te satışta olduğunu söylüyor.
 Çıkış tarihi eksik 4: MRS-301-2E, MSE.40610.LBV, SNE529, BN0021.
 (İki vintage Seiko'nun tarihi seri numarasından çözüldü; SNAB71'inki yok.)
 
-Ağırlık üç Seiko'da da boş — kullanıcının terazisi olursa tek eksik alan bu.
-Kulaktan kulağa yalnızca SNAB71'de boş.
+**Ağırlık 31/31 — kullanıcı tarttı (18 Eylül):** MRS-301 41,3 g · 6309-8190
+79,85 g · 6309-5000 52,5 g · SNAB71 90,15 g. SNAB71'in kulaktan kulağası da
+geldi: **49 mm** (kumpas). Bu dördünün hiçbirinde üreticinin yayımladığı bir
+değer yok, kaynak doğrudan saatin kendisi.
+
+Kulaktan kulağa 29/31 — kalan ikisi **Braun BN0021** ve **Mondaine Evo2**;
+ikisi de kendi sayfalarında bu ölçüyü hiç vermiyor (18 Eylül'de bakıldı).
 
 Kısa tanıtım eksik 6: A158WA-1, CA-53W-1, DBC-611-1, MDV-106-1A,
 MRS-301-2E, SNE529P. İlk üçünde **Casio metin yazmamış** — sayfada yalnızca
