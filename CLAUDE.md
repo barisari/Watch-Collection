@@ -372,7 +372,24 @@ girmez.
 (7T62-0HM0 gibi) yazıyor; kadranda model adı var. MRS-301'de işe yarayan yol
 bu. Alternatif: kullanıcının bir perakendeci sayfasının ekran görüntüsü.
 
-**2. 6309-8190 — vintage Seiko 5, otomatik.**
+**SERİ NUMARASI NASIL OKUNUR (doğrulandı).** Seiko'da kasa arkasındaki
+6-7 haneli seri: **1. hane = yılın SON hanesi**, **2. hane = ay** (1-9 Ocak-Eylül,
+O/0 Ekim, N Kasım, D Aralık), kalan haneler üretim sırası.
+On yılını vermiyor — onu kalibrenin üretim aralığı ve kullanıcının bilgisi
+daraltıyor.
+
+**ON YILINI ÇÖZEN ÖLÇÜT: kullanıcı 1985 doğumlu** ve bu vintage saatlerin
+kendisinden yaşlı olduğunu biliyor. İki saat de bu sayede çözüldü — kasa
+biçiminden yürütülen tahminden çok daha sağlam çıktı.
+
+**2. 6309-8190 — vintage Seiko 5, otomatik. Babasından.**
+Seri numarası **853105** → **Mayıs**, yılı 8 ile biten yıl → 1978 veya 1988;
+kullanıcıdan yaşlı olduğu için **Mayıs 1978**.
+(Uyarı: pazar yerlerinde bu referansın Nisan 1987 / Nisan 1988 tarihli örnekleri
+var, yani referans geç 80'lerde de üretilmiş. Bu saatin tarihini onlardan
+çıkarma — seri numarası + kullanıcının yaşı esas.)
+
+**Eski not (kalsın, gerekçesi duruyor):**
 Kod **kalibre-kasa** biçiminde: `6309` kalibre (1976–1988 arası otomatik,
 gün+tarih), `8190` kasa. Ünlü "Turtle" dalgıç değil, o 6309-704x. İlanlarda
 görülen örnekler **1987–1988**. Seiko'nun sitesinde bu yaşta referans yok;
