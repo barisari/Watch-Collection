@@ -174,19 +174,13 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
   overflow-wrap: anywhere;
 }
 .watch-brand { margin-top: 2px; font-size: 13px; color: var(--ink-2); transition: color .15s; }
-.watch-meta {
-  margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--rule);
-  display: flex; justify-content: center; gap: 12px;
-  font-size: 13px; color: var(--ink-2); transition: color .15s;
-}
-.watch-card:hover .watch-brand, .watch-card:hover .watch-meta { color: var(--ink); }
+.watch-card:hover .watch-brand { color: var(--ink); }
 
 /* Taban telefon ölçeği; dar kartta 21 px kod iki satıra düşüyordu. Bu blok
    kart kurallarından SONRA gelmeli — @media özgüllük eklemez, kaynak sırası
    karar verir. */
 @media (min-width: 560px) {
   .watch-code { font-size: 21px; }
-  .watch-meta { gap: 18px; }
 }
 
 .empty-state { padding: 56px 0; color: var(--ink-2); }

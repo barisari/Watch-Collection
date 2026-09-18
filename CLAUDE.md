@@ -396,8 +396,8 @@ detaydaki ROTASYON kutusu ve "Bugün bunu taktım" düğmesi, `data.js` içindek
 tüm wears tesisatı (`upsertWear`, `deleteWear`, `wearKey`, taslaklar).
 `npm run wear` betiği de kalktı.
 
-Kart alt satırındaki rotasyon sayacının yerine kasa çapı kondu (`watch-meta`
-`space-between` olduğu için sol yuva boş kalmasın).
+Kart alt satırındaki rotasyon sayacının yerine önce kasa çapı kondu (yuva boş
+kalmasın diye), 18 Eylül'de o satır tümden kaldırıldı — aşağıya bak.
 
 **"Kayıt ekle" sekmesi de kaldırıldı (aynı gün, ikinci adım).** İlk turda
 korumuştum çünkü içinde saat ekleme/düzenleme ve dışa aktarım vardı. Kullanıcı
@@ -547,6 +547,14 @@ reddedildi ve geri alındı.** Reddedilenleri tekrar denemeyin.
    iki tasarım gibi gösteriyordu.
 7. Emoji ikon yok (tema düğmesi SVG), büyük harfli etiket yok, `·` ile
    birleştirilmiş meta dizesi yok, `#0b0b0b` yok.
+8. **Kartta alt bilgi satırı yok** (18 Eylül). Orada kasa çapı + çıkış yılı
+   duruyordu. Kullanıcı ikisini de sordu ve ikisi de savunulamadı: mm oraya
+   bilgi ihtiyacından değil, rotasyon sayacı kaldırılınca **boş kalan yuvayı
+   doldurmak için** konmuştu; çıkış yılı 28 saatin 24'ünde bilindiği için
+   kartların bir kısmı eksikli görünüyordu. Kartta artık fotoğraf, model kodu
+   ve marka var. İkisi de künyede duruyor.
+   **Ders:** bir yuva boş kaldığında doldurulacak bir şey aranmaz — yuva
+   kaldırılır.
 
 **Becerilerin değeri, dürüstçe:** `ui-ux-pro-max` ölçülebilir kurallarda
 (kontrast 4,5, gövde 16 px, `srcset`, web dokunma hedefi 24 px) işe yaradı;

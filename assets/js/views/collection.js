@@ -14,9 +14,6 @@ const SORTS = {
 
 const uniq = (values) => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'tr'));
 
-/** releaseDate "2019-08" ya da "2023" biçiminde; karta yalnızca yıl yazılır. */
-const releaseYear = (w) => (w.releaseDate ? String(w.releaseDate).slice(0, 4) : null);
-
 export function renderCollection(root, navigate) {
   root.append(
     el('div.section-head',
@@ -103,17 +100,5 @@ function watchCard(w, navigate) {
        sola yaslı yazı saatten kopuk duruyordu. */
     el('div.watch-code', w.model),
     el('div.watch-brand', w.brand),
-    metaRow(w),
   );
-}
-
-/* Ölçü + çıkış yılı. İkisi de yoksa satır HİÇ basılmaz: .watch-meta'nın üst
-   çizgisi altında hiçbir şey olmadan duruyordu (MRS-301'de görülüyordu). */
-function metaRow(w) {
-  const parts = [
-    w.specs?.case?.diameter ? `${w.specs.case.diameter} mm` : null,
-    releaseYear(w),
-  ].filter(Boolean);
-  if (!parts.length) return null;
-  return el('div.watch-meta', parts.map((t) => el('span', t)));
 }
