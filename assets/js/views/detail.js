@@ -70,10 +70,18 @@ export function renderDetail(root, id, navigate) {
     el('p', el('button.btn', { type: 'button', onclick: () => navigate('#/koleksiyon') }, '← Koleksiyon')),
 
     /* Kod kahraman: kullanıcı saatleri koda göre tanıyor. Tam referans burada
-       (satın alındığı haliyle), ızgarada kısa model. Altına marka/tür/çıkış
-       satırı KONMUYOR — hepsi tabloda, tekrar etmek orta noktalı meta dizesinin
-       kılık değiştirmişi olurdu. */
+       (satın alındığı haliyle), ızgarada kısa model.
+
+       Marka kodun ÜSTÜNDE. Teknik tabloda marka diye bir alan yok; yalnızca
+       "Casio modül 2784" gibi kalibre metinlerinden sızıyordu, yani 28 saatin
+       14'ünde (G-Shock, Edifice, Oceanus, Pro Trek, Mondaine) sayfanın hiçbir
+       yerinde geçmiyordu. Üstte durması marka → model sırasını veriyor; altına
+       koymak iri kodun altında iki küçük satır bırakırdı.
+
+       Tür ve çıkış buraya KONMUYOR — orta noktalı meta dizesi olurdu, ikisi de
+       tabloda var. */
     el('header.detail-head',
+      el('p.detail-brand', watch.brand),
       el('h1.code', watch.reference),
       watch.nickname && el('p.nickname', watch.nickname),
     ),

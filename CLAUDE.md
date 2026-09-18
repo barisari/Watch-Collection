@@ -549,10 +549,17 @@ reddedildi ve geri alındı.** Reddedilenleri tekrar denemeyin.
 3. **Kart yok**: yuvarlatma, gölge, çerçeve yok. Fotoğraf doğrudan zeminde.
 4. **Sayfada renk yok**, renk saatlerden. `--ground/--ink/--ink-2/--rule`,
    iki temada ayrı, ölçülmüş. 8 yuvalı palet ve mavi vurgu silindi.
-5. **Model kodu kahraman**: kartta 22 px, künyede 34–60 px (`clamp`). Künyede
+5. **Model kodu kahraman**: kartta 21 px, künyede 34–60 px (`clamp`). Künyede
    tam referans, ızgarada kısa model. Kodun altındaki "marka · tür · çıkış"
-   satırı **konmadı** — orta noktalı meta dizesinin kılık değiştirmişi olurdu,
-   bilgiler tabloda zaten var.
+   satırı **konmadı** — orta noktalı meta dizesinin kılık değiştirmişi olurdu.
+   **Ama marka kodun ÜSTÜNE geri kondu (18 Eylül).** O maddenin gerekçesi
+   "bilgiler tabloda zaten var" diyordu; marka için bu **yanlıştı** — teknik
+   tabloda marka diye bir alan yok, yalnızca "Casio modül 2784" gibi kalibre
+   metinlerinden sızıyordu. Ölçüldü: 28 saatin **14'ünde** (7 G-Shock, 3 Edifice,
+   2 Oceanus, Pro Trek, Mondaine) marka künyenin hiçbir yerinde geçmiyordu.
+   Fable'ın kaldırdığı şeydi; öncesinde başlıkta renk noktasıyla birlikte
+   duruyordu. Nokta geri gelmedi (silinen paletin parçasıydı), tür ve çıkış da
+   konmadı — yalnızca marka.
 6. **Tek yazı ailesi**: Archivo (grotesk, tabular rakam), `assets/fonts/`
    altında gömülü. Opus ikinci bir serif önermişti (üreticinin cümleleri için);
    reddedildi — kullanıcı tanıtım metnini hiç öncelemedi, ikinci aile künyeyi
