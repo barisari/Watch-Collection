@@ -2448,7 +2448,8 @@
       "fetchedAt": null,
       "imageColorsFrom": "Kullanıcının doğruladığı görsel",
       "imageFrom": "Yapay zekâ ile üretildi — kullanıcının düşük çözünürlüklü orijinalden ürettiği kare; yazıları orijinal saatle uyuşacak şekilde düzelttirmiş. Ön yüzde belirtilmiyor.",
-      "specsFrom": "Kasa ölçüleri, malzeme, renkler, cam formu ve fonksiyonlar Ersa Saat (Casio Türkiye yetkili distribütörü) ürün sayfasından. Modül no ve 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Fonksiyon ayrıntıları ve aydınlatma, Casio modül 2385 kullanma kılavuzundan."
+      "specsFrom": "Kasa ölçüleri, malzeme, renkler, cam formu ve fonksiyonlar Ersa Saat (Casio Türkiye yetkili distribütörü) ürün sayfasından. Modül no ve 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Fonksiyon ayrıntıları ve aydınlatma, Casio modül 2385 kullanma kılavuzundan.",
+      "releaseDateFrom": "Modül 2385'in çıkış tarihi (Casio servis listesi, QW-2385 satırı: Aug-2001). Saatin kendi çıkış tarihi hiçbir kaynakta yok. Bu eşitlik YALNIZCA bu saat için kuruldu — genel kural değil: modül 593 hem A158WA-1'de (2009) hem F-91WPC-1A'da (2024) var."
     },
     "acquisition": {
       "date": "2002-06-01",
@@ -2466,7 +2467,8 @@
     "tags": [],
     "notes": "Babadan kalma. Satın alma tarihi tahmini: kullanıcının hatırladığı kadarıyla 2002 ya da 2003 yazının başı. Modül 2385 Ağustos 2001 çıkışlı olduğu için saat en erken o tarihli olabilir; tahmin bu tabanla uyumlu. Derinlik ölçer 0–80 m aralığında, 0,1 m adımlarla ve üç saniyede bir okuyor; dalış süresini 6 saat 59 dakikaya kadar tutuyor ve son 10 dalışı hafızada saklıyor.",
     "msrp": {},
-    "haOption": "Casio MRS-301"
+    "haOption": "Casio MRS-301",
+    "releaseDate": "2001-08"
   },
   {
     "id": "mondaine-mse-40610-lbv",

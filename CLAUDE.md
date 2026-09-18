@@ -267,7 +267,15 @@ SR927W ×2 + CR1216 · 2 yıl · Aug-2001`) — aynı servis kılavuzu ailesi, b
 yüzden manuals.plus 2376 demiş. Doğrusu 2385. Modül değerleri envantere girdi.
 
 `10 BAR` = 100 m, kadrandan okuduğumuz su geçirmezliği saatin kendisi doğruladı.
-Aug-2001 **modülün** tarihi; saatin çıkış tarihi değil, `releaseDate` boş kaldı.
+
+**`releaseDate` = 2001-08 (18 Eylül'de yazıldı, kullanıcının kararı).** Aug-2001
+modülün tarihi; saatin kendi çıkış tarihi hiçbir kaynakta yok. Kullanıcı bu saat
+için ikisini eşitledi — 2385, servis listesinde 2376'yla birebir aynı değerleri
+taşıyan, 2001'de o aileye açılmış bir numara.
+
+**Bunu genel kural yapma.** Envanterde modül 593 hem A158WA-1'de (2009) hem
+F-91WPC-1A'da (2024) var — 15 yıl arayla iki ayrı saat. Modül tarihini saate mal
+etmek orada 30 yıllık hata üretirdi. Gerekçe `source.releaseDateFrom` alanında.
 
 **Ders:** servis listesi modülü modele bağlamıyor, ama elinde modül numarası
 varsa pil/hassasiyet/tarih oradan geliyor. Numara kasa arkasında.
