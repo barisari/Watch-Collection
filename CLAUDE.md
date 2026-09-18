@@ -385,6 +385,9 @@ biçiminden yürütülen tahminden çok daha sağlam çıktı.
 **2. 6309-8190 — vintage Seiko 5, otomatik. Babasından.**
 Seri numarası **853105** → **Mayıs**, yılı 8 ile biten yıl → 1978 veya 1988;
 kullanıcıdan yaşlı olduğu için **Mayıs 1978**.
+Kasa arkası ayrıca: **STAINLESS STEEL** ve **WATER RESISTANT** (metre yok →
+`waterResistance: "Water Resistant"`, terms.js bunu "Suya dayanıklı (günlük
+kullanım)" diye basıyor; CA-53W-1'de de aynı yol kullanıldı).
 (Uyarı: pazar yerlerinde bu referansın Nisan 1987 / Nisan 1988 tarihli örnekleri
 var, yani referans geç 80'lerde de üretilmiş. Bu saatin tarihini onlardan
 çıkarma — seri numarası + kullanıcının yaşı esas.)

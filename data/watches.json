@@ -2775,7 +2775,7 @@
         "certification": null
       },
       "case": {
-        "material": null,
+        "material": "Stainless steel",
         "bezelMaterial": null,
         "diameter": null,
         "thickness": null,
@@ -2785,7 +2785,7 @@
         "crystal": null,
         "crystalCoating": null,
         "crystalShape": null,
-        "waterResistance": null,
+        "waterResistance": "Water Resistant",
         "bezel": null,
         "backlight": null,
         "color": "Steel"
@@ -2820,7 +2820,7 @@
       "fetchedAt": null,
       "imageColorsFrom": "Kullanıcının fotoğrafı",
       "imageFrom": "Kullanıcının fotoğrafı (saydam zeminli)",
-      "specsFrom": "Kadrandan okundu: SEIKO · AUTOMATIC · 17 JEWELS · 3'te gün+tarih. Kalibre kodu referanstan (6309). Kasa arkasındaki seri numarası 604786 → Ekim, yılı 6 ile biten yıl; 6309 kalibresi 1976-1988 arası üretildiği için 1976 mı 1986 mı belirsiz, releaseDate BOŞ bırakıldı.",
+      "specsFrom": "Kadrandan okundu: SEIKO · AUTOMATIC · 17 JEWELS · 3'te gün+tarih. Kalibre kodu referanstan (6309). Kasa arkasındaki seri numarası 604786 → Ekim, yılı 6 ile biten yıl; 6309 kalibresi 1976-1988 arası üretildiği için 1976 mı 1986 mı belirsiz, releaseDate BOŞ bırakıldı. Kasa arkası ayrıca: STAINLESS STEEL, WATER RESISTANT (metre verilmemiş).",
       "serialFrom": "Kasa arkası: 604786",
       "releaseDateFrom": "Kasa arkası seri numarası 604786 → Ekim, yılı 6 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1976 ya da 1986 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1986 elendi, Ekim 1976 kaldı."
     },
