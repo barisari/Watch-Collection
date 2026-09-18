@@ -159,8 +159,18 @@ yerel (`tr/tr`, `jp/ja`, `in/en`, `europe/en-gb`, `ca/en`), klasör
 harflerinin büyük/küçüklüğü ve dosya adındaki `_Seq01` / `_Seq1` ekleri
 tutarsız. Kalıbı kurmayı denedim, 24 modelin **ancak 4 tanesinde** tuttu.
 
-**Erişim:** ürün sayfası curl ile **403** veriyor (Akamai), CDN varlıkları
-**200**. Yani sayfayı WebFetch okur, görseli curl indirir. TR sayfası JS ile
+**ERİŞİM DEĞİŞTİ — casio.com artık WebFetch'e de kapalı (18 Eylül 2026).**
+Önceden "curl 403 alır ama WebFetch okur" yazıyordu; **artık ikisi de 403.**
+Akamai'nin kendi *Access Denied* sayfası geliyor (`errors.edgesuite.net`
+referansı), proxy sorunu değil — `$HTTPS_PROXY/__agentproxy/status` temiz.
+Denenip kapalı çıkanlar: `intl`, `sg`, `id`, `in` yolları · `gshock.casio.com` ·
+`g-shock.eu` · `gshock.com` · `casio-intl.com`. `world.casio.com` ve
+`edifice-watches.com` açılıyor ama **ürün sayfası yok**, ikisi de yalnızca
+ülke seçme/yönlendirme kabuğu. **CDN varlıkları hâlâ 200** — görseller iniyor.
+
+Yani Casio metni gerektiren işler şimdilik yapılamıyor (5 uzun tanıtım bu
+yüzden boş). Bir sonraki oturumda önce tek bir ürün sayfasını dene; açılıyorsa
+engel geçici demektir. TR sayfası JS ile
 yüklendiği için okunamıyor ama **TR CDN varlıkları gayet çalışıyor**.
 
 **Aynı model yerele göre farklı çözünürlükte olabiliyor:** GA-2100-1A1
@@ -227,8 +237,12 @@ Kulaktan kulağa yalnızca SNAB71'de boş.
 Kısa tanıtım eksik 6: A158WA-1, CA-53W-1, DBC-611-1, MDV-106-1A,
 MRS-301-2E, SNE529P. İlk üçünde **Casio metin yazmamış** — sayfada yalnızca
 madde listesi var, aranacak bir şey kalmadı. MDV-106-1A'nın okunabilir yerelde
-sayfası, MRS-301-2E'nin hiçbir yerde resmi sayfası yok. SNE529P'ye (Seiko)
-henüz bakılmadı.
+sayfası, MRS-301-2E'nin hiçbir yerde resmi sayfası yok.
+**SNE529P'ye bakıldı (18 Eylül): Seiko bu saat için hiç metin yazmamış.**
+`seikowatches.com/uk-en/products/discovermore/sne529` açılıyor ve tam teknik
+tabloyu veriyor, ama tanıtım paragrafı yok — sayfa yalnızca tablodan ibaret.
+Yani o iki alan arama eksikliğinden değil, kaynakta olmadığı için boş.
+Çıkış tarihi de aynı sayfada yok.
 
 Seri → URL yolu: `casio`, `gshock`, `edifice`, `protrek`, `oceanus`.
 **Oceanus yalnızca `jp` yerelinde**, diğerleri `intl`.
