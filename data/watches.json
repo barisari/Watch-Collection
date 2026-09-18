@@ -2852,7 +2852,7 @@
     "model": "6309-8190",
     "reference": "6309-8190",
     "name": null,
-    "nickname": "Seiko 5",
+    "nickname": "Black Snowflake",
     "shortCode": "8190",
     "year": 1978,
     "releaseDate": "1978-05",
@@ -2919,7 +2919,8 @@
       "imageFrom": "Kullanıcının fotoğrafı (saydam zeminli)",
       "specsFrom": "Kadrandan okundu: SEIKO 5 · AUTOMATIC · 3'te gün+tarih · çubuk indeksler · siyah dokulu kadran (ölçüldü: rgb 27-81 arası). Kasa arkasından (kullanıcı): STAINLESS STEEL, WATER RESISTANT (metre yok). Kalibre kodu referanstan (6309).",
       "serialFrom": "Kasa arkası: 853105",
-      "releaseDateFrom": "Seri 853105 → Mayıs, yılı 8 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1978 ya da 1988 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1988 elendi. UYARI: pazar yerlerinde bu referansın 1987/1988 tarihli örnekleri var; referans geç 80'lerde de üretilmiş, ama BU saatin tarihi kendi serisinden."
+      "releaseDateFrom": "Seri 853105 → Mayıs, yılı 8 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1978 ya da 1988 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1988 elendi. UYARI: pazar yerlerinde bu referansın 1987/1988 tarihli örnekleri var; referans geç 80'lerde de üretilmiş, ama BU saatin tarihi kendi serisinden.",
+      "nicknameFrom": "Koleksiyoncu lakabı, resmi Seiko adlandırması değil. Bu referansa özel olarak kullanılıyor: WatchCharts'ta 'Seiko 5 Black Snowflake — 6309-8190' başlıklı ilan var. Benzetmenin kaynağı 2005 Grand Seiko SBGA211'in beyaz dokulu 'Snowflake' kadranı."
     },
     "acquisition": {
       "date": null,
@@ -2934,8 +2935,10 @@
     "photos": [
       "photos/watches/seiko_6309-8190.webp"
     ],
-    "tags": [],
-    "notes": "Babasından.",
+    "tags": [
+      "snowflake"
+    ],
+    "notes": "Babasından. Kadranın dokusu koleksiyoncular arasında \"black snowflake\" diye geçiyor — 2005 Grand Seiko SBGA211'in beyaz dokulu kadranına benzetilerek.",
     "msrp": {},
     "haOption": null
   }
