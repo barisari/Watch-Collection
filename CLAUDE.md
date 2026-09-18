@@ -13,7 +13,7 @@ Ayrıntılı belgeler: [`README.md`](README.md) (kullanım, yayınlama) ve
 
 ## KALDIĞIMIZ YER (13 Eylül 2026)
 
-Site kurulu ve yayında. **28 saat, 8 marka**: Casio, Edifice, G-Shock, Oceanus,
+Site kurulu ve yayında. **31 saat, 8 marka**: Casio, Edifice, G-Shock, Oceanus,
 Pro Trek, Mondaine, Seiko, Braun. Vitrin tarafı bitti. Rotasyon kaydı **Home
 Assistant'ta** tutuluyor ve sitedeki rotasyon arayüzü kaldırıldı — site şu an
 saf vitrin. Ayrıntı: aşağıdaki *Rotasyon mimarisi* bölümü.
@@ -194,24 +194,30 @@ düşüktü); eksik olan adım 2'ydi.
 
 ### Doldurulma durumu (13 Eylül 2026)
 
-**28 saat.** Casio dışı üçü: Mondaine evo2 (MSE.40610.LBV), Seiko SNE529P,
-Braun BN0021BKG.
+**31 saat.** Casio dışı altısı: Mondaine evo2 (MSE.40610.LBV), Braun BN0021BKG
+ve dört Seiko — SNE529P, 6309-5000, 6309-8190, SNAB71.
+(Son üç Seiko 18 Eylül'de girdi; ayrıntı aşağıdaki *Üç Seiko* bölümünde.)
 
 | Alan | Durum |
 |---|---|
-| Teknik özellikler | 28/28 |
-| Kadran / kasa / kayış rengi | 28/28 |
-| Görsel | 28/28 |
-| Görsel aslı (arşiv) | 28/28 — `photos/originals/` |
-| Satın alma tarihi | 28/28 |
-| Liste fiyatı | 27/28 |
-| Çıkış tarihi | 24/28 |
-| Tanıtım metni | 22/28 kısa · 16/28 uzun |
+| Teknik özellikler | 31/31 |
+| Kadran / kasa / kayış rengi | 31/31 |
+| Görsel | 31/31 |
+| Görsel aslı (arşiv) | 31/31 — `photos/originals/` |
+| Satın alma tarihi | 28/31 |
+| Liste fiyatı | 27/31 |
+| Çıkış tarihi | 27/31 |
+| Tanıtım metni | 22/31 kısa · 16/31 uzun |
 | Rotasyon kaydı | sitede yok — kayıt HA'da (aşağıya bak) |
 
-Liste fiyatı eksik: **MRS-301-2E** (hiçbir yerde resmi kaydı yok).
+Liste fiyatı eksik 4: **MRS-301-2E** (hiçbir yerde resmi kaydı yok) ve üç
+vintage/üretimden kalkmış Seiko — 6309-5000, 6309-8190, SNAB71.
 
 Çıkış tarihi eksik 4: MRS-301-2E, MSE.40610.LBV, SNE529, BN0021.
+(İki vintage Seiko'nun tarihi seri numarasından çözüldü; SNAB71'inki yok.)
+
+Ağırlık üç Seiko'da da boş — kullanıcının terazisi olursa tek eksik alan bu.
+Kulaktan kulağa yalnızca SNAB71'de boş.
 
 Kısa tanıtım eksik 6: A158WA-1, CA-53W-1, DBC-611-1, MDV-106-1A,
 MRS-301-2E, SNE529P. İlk üçünde **Casio metin yazmamış** — sayfada yalnızca
@@ -341,10 +347,12 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
    gösterim tarafı sıfırdan yazılacak (aşağıdaki bölüm).
 
-### Bekleyen: 3 Seiko (18 Eylül 2026)
+### Üç Seiko — tamamlandı (18 Eylül 2026)
 
-Kullanıcının kataloğa girmediği üç saat var, hepsi Seiko ve "en zor olanlar"
-dediği bunlar. İkisinin kodu alındı, üçüncüsü henüz verilmedi.
+Kullanıcının kataloğa girmediği üç saat vardı, hepsi Seiko ve "en zor olanlar"
+dediği bunlar. **Üçü de girdi.** Aşağısı nasıl çözüldüklerinin kaydı — üçünde de
+belirleyici kaynak internet değil, **kullanıcının elindeki saat** oldu
+(kasa arkası, kumpas, kendi yaşı).
 
 **Erişim durumu.** `seikowatches.com`, `seiko.co.jp` ve `saatvesaat.com.tr`
 (Seiko Türkiye distribütörü) bu ortamdan açılıyor; Casio'nun 403'ü burada yok.
@@ -356,6 +364,7 @@ model kodunu ara. (`/global-en/products/prospex/SNAB71` ve
 `/global-en/products/SNAB71P1` ikisi de böyle çıktı.)
 
 **1. SNAB71 — Flightmaster pilot kronograf. RESMİ KAYNAK YOK (18 Eylül'de arandı).**
+*(Sonuç aşağıda, 3. maddede: saat girildi, veri kumpas + perakendeci tablosundan.)*
 - `seikowatches.com`: yumuşak 404, "SNAB" gövdede hiç geçmiyor.
 - `saatvesaat.com.tr` (distribütör): `catalogsearch` sonucu **boş**; sayfadaki
   6 "SNAB" geçişinin hepsi arama teriminin yankısı.
@@ -413,7 +422,17 @@ Not: seri numarasının ilk hanesi yılın SON hanesi — tek başına on yılı
 vermiyor (7 → 1977 de olabilir 1987 de). İlanlardaki 1987/1988 aralığı bu
 belirsizliği daraltıyor ama tek başına kanıt değil.
 
-**3. Üçüncü saat:** kodu henüz verilmedi.
+**3. SNAB71 — girildi (18 Eylül).** Ölçüler kullanıcının kumpasından:
+kasa çapı **43,5 mm** (kuronlar hariç), kulak genişliği **24 mm**.
+citywatches.in'in **50 mm**'si yanlış değil — **kuronları da içine alıyor**
+(kuron muhafazaları + iç halka için ikinci kuron). Kullanıcının tespiti.
+Aynı tablonun 24 mm kulak ölçüsü kumpasla birebir tuttuğu için tablodan
+**kalınlık 11 mm** ve **cam Hardlex** alındı; tablo o kadarıyla güvenilir.
+
+Yazılmayanlar: **kulaktan kulağa** (hiçbir kaynakta yok), **kalibre 7T62**,
+**tam referans SNAB71P1** — ikisi de yalnızca arama özeti seviyesinde.
+Kadran **kırık beyaz** (kullanıcının onayı; görseldeki krem ton stüdyo ışığı).
+`nickname` = Flightmaster, çünkü o seri adı — MRS-301'in "Marine Gear"ı gibi.
 
 ---
 
