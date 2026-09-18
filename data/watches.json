@@ -2397,23 +2397,23 @@
         "certification": null
       },
       "case": {
-        "material": "Stainless steel / Resin",
+        "material": "Resin",
         "bezelMaterial": "Resin",
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
+        "diameter": 49,
+        "thickness": 14.2,
+        "lugToLug": 49.7,
         "lugWidth": null,
         "weight": null,
         "crystal": null,
         "crystalCoating": null,
-        "crystalShape": null,
+        "crystalShape": "Curved",
         "waterResistance": 100,
         "bezel": null,
-        "backlight": null,
-        "color": "Blue"
+        "backlight": "Var",
+        "color": "Grey / Navy blue"
       },
       "dial": {
-        "color": "Blue",
+        "color": "Navy blue",
         "display": "ana-digi",
         "indices": null,
         "lume": null,
@@ -2421,13 +2421,15 @@
           "Depth meter",
           "Max depth memory",
           "Data recall",
-          "Stopwatch"
+          "Stopwatch",
+          "Daily alarm",
+          "Auto calendar"
         ]
       },
       "strap": {
         "type": "Band",
-        "material": "Resin",
-        "color": "Blue",
+        "material": "Silicone",
+        "color": "Navy blue",
         "clasp": null,
         "sizeRange": null
       }
@@ -2445,7 +2447,7 @@
       "fetchedAt": null,
       "imageColorsFrom": "Kullanıcının doğruladığı görsel",
       "imageFrom": "Yapay zekâ ile üretildi — kullanıcının düşük çözünürlüklü orijinalden ürettiği kare; yazıları orijinal saatle uyuşacak şekilde düzelttirmiş. Ön yüzde belirtilmiyor.",
-      "specsFrom": "Modül no + 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Kadran yazıları kullanıcının doğruladığı görselden."
+      "specsFrom": "Kasa ölçüleri, malzeme, renkler, cam formu ve fonksiyonlar Ersa Saat (Casio Türkiye yetkili distribütörü) ürün sayfasından. Modül no ve 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından."
     },
     "acquisition": {
       "date": "2002-06-01",
