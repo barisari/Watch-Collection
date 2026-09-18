@@ -52,10 +52,12 @@ const TR = {
   'Sapphire': 'Safir',
   'Sapphire crystal': 'Safir cam',
   'Resin Glass': 'Reçine cam',
+  'Acrylic': 'Akrilik cam',
   'Inorganic glass': 'İnorganik cam',
   'Anti-reflective': 'Yansıma önleyici kaplama',
   'Flat': 'Düz',
   'Curved': 'Kavisli',
+  'Faceted': 'Kesimli',
 
   // --- mekanizma tipi ---
   'quartz': 'Kuvars',
