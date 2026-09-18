@@ -713,14 +713,17 @@ reddedildi ve geri alındı.** Reddedilenleri tekrar denemeyin.
    |---|---|---|
    | Marka | G-Shock | `clamp(17,2.4vw,21)` · 600 · **`--ink`** |
    | Kod (h1) | GA-2100 | `clamp(34,6.4vw,60)` · 700 |
-   | Lakap + referans | Flightmaster (SNAB71P1) | 15 px · `--ink-2` · tabular |
+   | Lakap + referans | Flightmaster — SNAB71P1 | 15 px · `--ink-2` · tabular |
 
    h1 artık `gridCode()` — ızgaradakiyle aynı kod, yani iki ekran aynı şeyi
-   söylüyor. Lakap ve tam referans **tek satır** (kullanıcının isteği: *"ayrı
-   satırlarda olmasın tek satır yeterli"*). Ayırıcı **parantez** — orta nokta
-   ve uzun tire bu sitede yasak kalıplar; parantez zaten "bunun tam kodu şu"
-   diye okunuyor, ayırıcı gibi durmuyor. Referans kodun aynısıysa (6309-5000)
-   basılmıyor; ikisi de yoksa satır hiç açılmıyor (boş `<p>` boşluk bırakmasın).
+   söylüyor. Lakap ve tam referans **tek satır**, ayırıcı **uzun tire** — ikisi de
+   kullanıcının kararı (*"ayrı satırlarda olmasın tek satır yeterli"*, sonra
+   *"parantez yerine uzun tire"*). Önce parantez konmuştu: gerekçem
+   `frontend-design`'ın "WORD — fragment" tellini tekrarlamamaktı, ama seçim
+   kullanıcınındı ve kural zaten "brief'in kendi sözü kazanır" diyor.
+   **Buradaki uzun tire yerleşiktir, geri alma.** Referans kodun aynısıysa
+   (6309-5000) basılmıyor; ikisi de yoksa satır hiç açılmıyor (boş `<p>`
+   boşluk bırakmasın).
    **Marka büyük harfe çevrilmedi, harf aralığı açılmadı** — `frontend-design`
    becerisinin "her başlığın üstüne tracked-out ALL-CAPS etiket" tellini
    tekrarlamamak için; belirginlik kontrast ve ağırlıktan geliyor.

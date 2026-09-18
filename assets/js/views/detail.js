@@ -57,10 +57,11 @@ function msrpRow(watch) {
 
 /* Künye başlığının kod altındaki tek satırı: lakap ve tam referans.
  * Referans başlıktaki kodun aynısıysa (6309-5000) tekrar edilmez; ikisi de
- * yoksa satır hiç açılmaz, boş bir <p> boşluk bırakmasın. */
+ * yoksa satır hiç açılmaz, boş bir <p> boşluk bırakmasın.
+ * Ayırıcı uzun tire — kullanıcının seçimi. */
 function altSatir(watch) {
   const ref = gridCode(watch) === watch.reference ? null : watch.reference;
-  const metin = watch.nickname && ref ? `${watch.nickname} (${ref})`
+  const metin = watch.nickname && ref ? `${watch.nickname} \u2014 ${ref}`
               : (watch.nickname || ref);
   return metin ? el('p.detail-sub', metin) : null;
 }
@@ -94,9 +95,8 @@ export function renderDetail(root, id, navigate) {
        duruyordu; kullanıcı: "çok uzun ve kalabalık, Robocop okusun diye site
        yapmışız gibi". Artık h1 ızgaradaki kısa kodun aynısı.
 
-       Lakap ve referans TEK satırda (kullanıcının isteği). Ayırıcı parantez:
-       orta nokta da uzun tire de bu sitede yasak kalıplar. Parantez zaten
-       "bunun tam kodu şu" diye okunuyor, ayırıcı gibi durmuyor.
+       Lakap ve referans TEK satırda, ayırıcı UZUN TİRE — ikisi de kullanıcının
+       kararı. Önce parantez konmuştu; kullanıcı tireyi istedi.
 
        `name` = üreticinin saate verdiği ad (Mondaine: "evo2 Automatic",
        MSE.40610.LBV bir SKU). gridCode() adı varsa onu döndürüyor. */
