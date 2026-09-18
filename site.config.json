@@ -1,10 +1,6 @@
 {
   "collectionName": "Saat Koleksiyonum",
-  "ownerName": "",
-  "tagline": "Envanter ve teknik özellikler",
-  "defaultCurrency": "USD",
   "locale": "tr-TR",
-  "neglectedAfterDays": 60,
   "privateFields": [
     "acquisition.price",
     "acquisition.seller",

@@ -33,30 +33,24 @@ function bindChrome() {
 /* ------------------------------------------------------------- yönlendirme */
 
 function parseHash() {
-  const raw = location.hash.replace(/^#\/?/, '');
-  const [pathPart, queryPart] = raw.split('?');
-  const parts = pathPart.split('/').filter(Boolean).map(decodeURIComponent);
-  return { route: parts[0] || 'koleksiyon', id: parts[1] || null, params: new URLSearchParams(queryPart || '') };
+  const raw = location.hash.replace(/^#\/?/, '').split('?')[0];
+  const parts = raw.split('/').filter(Boolean).map(decodeURIComponent);
+  return { route: parts[0] || 'koleksiyon', id: parts[1] || null };
 }
 
-function navigate(hash, replace = false) {
-  if (replace && location.hash === hash) { render(); return; }
-  if (replace) history.replaceState(null, '', hash);
-  else location.hash = hash;
-  if (replace) render();
-}
+const navigate = (hash) => { location.hash = hash; };
 
 /* Sorun: ızgarada aşağı inip bir saate tıklayınca detay sayfası ortasından
  * açılıyordu. Hash yönlendirmesi içeriği değiştiriyor ama tarayıcı kaydırmayı
  * olduğu yerde bırakıyor.
  *
- * Koşulsuz başa sarmak yanlış olurdu: render() aynı görünüm için de çağrılıyor
- * (mod düğmesi, rotasyon kaydı). O durumda sayfa yerinden oynamamalı. Bu yüzden
- * yalnızca rota ya da kimlik değişince sarıyor. */
+ * Koşulsuz başa sarmak yanlış olurdu: render() aynı görünüm için yeniden
+ * çağrılabiliyor, o durumda sayfa yerinden oynamamalı. Bu yüzden yalnızca rota
+ * ya da kimlik değişince sarıyor. */
 let lastKey = null;
 
 function render() {
-  const { route, id, params } = parseHash();
+  const { route, id } = parseHash();
   const key = `${route}/${id || ''}`;
   clear(viewHost);
   bindChrome();
@@ -69,7 +63,7 @@ function render() {
   } catch (err) {
     console.error(err);
     viewHost.append(
-      el('div.card',
+      el('div.empty-state',
         el('h2', 'Bir şeyler ters gitti'),
         el('p', 'Bu bölüm çizilemedi. Tarayıcı konsolunda ayrıntı var.'),
         el('p.muted', String(err && err.message ? err.message : err))));

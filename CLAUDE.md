@@ -522,17 +522,18 @@ yani 11 MB Pages yayınını şişirmiyor.
 
 ## Görsel kimlik (17 Eylül 2026 — Fable, sıfırdan değerlendirme)
 
-Kullanıcı Opus'un planını devralmamamı, siteyi kendi gözümle yeniden
-değerlendirmemi istedi. Kararlar ve gerekçeleri:
+Bu bölümde dört madde **yürürlükte**, iki madde **kullanıcı tarafından
+reddedildi ve geri alındı.** Reddedilenleri tekrar denemeyin.
 
-1. **Kapaklar gerçek ölçekli** — en büyük kusur buydu, Opus ertelemişti.
-   Ayrıntı yukarıda ("Kapaklar gerçek ölçekli"). Karttaki "38 mm" artık
-   görünen boyutla örtüşüyor.
-2. **Izgara markaya göre gruplu**: "Casio 12 · G-Shock 7 · …" başlıkları,
-   kullanıcının kendi marka sırasında (HA listesiyle aynı). Marka/tür/sıralama
-   açılır listeleri **kaldırıldı** (kullanıcı onayıyla) — 28 saatlik kişisel
-   vitrinde yapı kontrolle değil gruplamayla verilir. Arama kaldı. Kartta marka
-   satırı yok, başlık söylüyor.
+1. ~~Kapaklar gerçek ölçekli~~ — **REDDEDİLDİ (17 Eylül).** Kapaklar kasa
+   çapına göre ölçeklendirilmişti. Kullanıcı: *"Çok saçma geldi gerçeğine göre
+   oranlı imaj kullanmak, ben burda vitrin sitesi yapıyorum."* Görseller eski
+   çerçevelemeyle yeniden üretildi; `build-photo-sizes.mjs` başında uyarı var.
+   **Tekrar deneme.**
+2. ~~Izgara markaya göre gruplu~~ — **REDDEDİLDİ (17 Eylül).** Marka başlıklı
+   gruplar konmuş, marka/tür/sıralama açılır listeleri kaldırılmıştı.
+   Kullanıcı: *"hem açılır listelerin olması daha iyiydi."* Açılır listeler
+   geri geldi, ızgara düz, kartta marka satırı duruyor.
 3. **Kart yok**: yuvarlatma, gölge, çerçeve yok. Fotoğraf doğrudan zeminde.
 4. **Sayfada renk yok**, renk saatlerden. `--ground/--ink/--ink-2/--rule`,
    iki temada ayrı, ölçülmüş. 8 yuvalı palet ve mavi vurgu silindi.
@@ -618,14 +619,12 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   Ölçüldü: ızgara masaüstünde **1,63 → 1,04 MB** (%36), künye sayfası 1×
   ekranda 180 → 110 KB. `NO_ENLARGE=1` ile üretilir: kaynağı yetmeyen dosya
   büyütülmez. Üç boyun hepsi artık bu betikten çıkıyor, 900'ler elle üretilmiyor.
-- **Kapaklar gerçek ölçekli.** Eski çerçeveleme "içerik yüksekliği 770 px"
-  diyordu; kayışı uzun saat küçük, kısası büyük çıkıyordu (kasa 382–588 px,
-  %54 saçılma, gerçek boyutla ilgisiz). Şimdi her kapak **kasa çapına** göre
-  ölçekleniyor: mm başına sabit piksel (900 tuvalde 12,96 px/mm, en büyük kasa
-  50 mm tuvalin %72'si). Ölçüldü: 27 kapakta ±%0,1. Kasa genişliği görselden
-  okunuyor (en geniş opak satır), çap `specs.case.diameter`'dan. Çapı olmayan
-  MRS-301 ve yan/arka ek kareler eski çerçevelemeyle. Yeni saat eklerken çapı
-  girmeden görsel üretme — ölçek dışı kalır.
+- **Kapakları kasa çapına göre ölçekleme — denendi, reddedildi.** Her kapak
+  mm başına sabit pikselle üretilmişti (kart üstündeki "38 mm" görünen boyutla
+  örtüşsün diye). Ölçü tuttu ama kullanıcı vitrin için saçma buldu: büyük saat
+  kareyi doldururken küçük saat ortada kaybolduğu için ızgara dağınık
+  görünüyordu. Hepsi tek tip çerçevelemeye döndürüldü. `build-photo-sizes.mjs`
+  başındaki uyarı bunu tekrarlıyor — **tekrar deneme.**
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır (Escape kapatır).
 - `id` alanı sabittir; fotoğraf yolları ve `haOption` eşleşmesi ona bağlı.
 
@@ -639,5 +638,5 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
 | `node scripts/import-casio-sheet.mjs <csv> [--reset]` | Casio Collection tablosundan içe aktarır |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
 | `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafı 900×900 WebP'ye çerçeveler (`npm i sharp`). `CUTOUT=off` fona dokunmaz — varsayılan yol bu. `CANVAS`/`NO_ENLARGE` ile boy ayarlanır |
-| `node scripts/build-photo-sizes.mjs` | Üç boyu üretir (600 / 900 / 1500); kapaklar kasa çapına göre ölçekli |
+| `node scripts/build-photo-sizes.mjs` | Üç boyu üretir (600 / 900 / 1500), hepsi tek tip çerçeveyle |
 | `node scripts/fetch-originals.mjs [--force]` | Görsel asıllarını `photos/originals/` altına indirir |

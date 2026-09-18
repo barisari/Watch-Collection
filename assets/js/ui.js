@@ -10,7 +10,7 @@
 --------------------------------------------------------------------------- */
 
 import { state } from './data.js';
-/** el('div.card', { id:'x' }, child, 'metin') — spec 'etiket#kimlik.sınıf.sınıf' */
+/** el('div.stack', { id:'x' }, child, 'metin') — spec 'etiket#kimlik.sınıf.sınıf' */
 export function el(spec, attrs, ...children) {
   const [selector, ...classes] = spec.split('.');
   const [tagPart, idPart] = selector.split('#');

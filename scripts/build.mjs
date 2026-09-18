@@ -4,11 +4,11 @@
  *   node scripts/build.mjs           # hassas alanlar SİLİNİR (herkese açık yayın)
  *   node scripts/build.mjs --private # her şey dahil (özel/parola korumalı yayın)
  *
- * Neden önemli: tarayıcıdaki "koleksiyoner modu" düğmesi bir güvenlik önlemi
- * DEĞİLDİR — sadece görüntüyü sadeleştirir. Veriyi gerçekten gizlemenin tek
- * yolu, yayınlanan JSON'un içinde o alanların hiç bulunmamasıdır. Bu betik
- * site.config.json > privateFields listesindeki alanları dist/ kopyasından
- * temizler; depodaki asıl dosyalara dokunmaz. */
+ * Neden önemli: veriyi gerçekten gizlemenin tek yolu, yayınlanan JSON'un
+ * içinde o alanların hiç bulunmamasıdır — tarayıcıda gizleyen bir arayüz
+ * gizlilik sınırı değildir. Bu betik site.config.json > privateFields
+ * listesindeki alanları dist/ kopyasından temizler; depodaki asıl dosyalara
+ * dokunmaz. */
 
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';

@@ -128,7 +128,7 @@ export function renderDetail(root, id, navigate) {
           ['Uyduğu bilek', s.strap?.sizeRange],
         ]),
         acquisitionCard(watch),
-        watch.notes && el('section.spec', el('h3', 'Notlar'), el('p', { style: { margin: 0 } }, watch.notes)),
+        watch.notes && el('section', el('h3', 'Notlar'), el('p', watch.notes)),
         sourceNote(watch),
       ),
     ),
@@ -163,8 +163,8 @@ function sourceNote(watch) {
     watch.source.fetchedAt ? ` (${fmtDate(watch.source.fetchedAt)})` : '');
 }
 
-/* Fotoğrafa tıklayınca büyük hâli. Görseller 900×900 saklanıyor ama panelde
- * ~400 px görünüyor; büyütme onları tam boyutunda gösteriyor. */
+/* Fotoğrafa tıklayınca büyük hâli: panelde ~400 px görünen kapak, büyütmede
+ * 1500 px'lik sürümüyle açılır. */
 function openLightbox(src, alt) {
   const previous = document.activeElement;
   const close = () => {
@@ -208,23 +208,21 @@ function zoomable(src, alt, extra = {}) {
 
 function photoPanel(watch) {
   const photos = watch.photos || [];
-  return el('section.spec',
-    el('div.watch-photo', { style: { borderRadius: '8px', border: '1px solid var(--border)', marginBottom: photos.length > 1 ? '12px' : '0' } },
-      photos[0]
-        ? zoomable(photos[0], watchLabel(watch), {
-            srcset: `${photos[0]} 900w, ${photoLarge(photos[0])} 1500w`,
-            sizes: '(min-width: 900px) 400px, 90vw',
-            zoom: photoLarge(photos[0]),
-          })
-        : el('span.placeholder', { 'aria-hidden': 'true' }, '⌚')),
+  if (!photos.length) return null;
+
+  return el('section',
+    el('div.watch-photo',
+      zoomable(photos[0], watchLabel(watch), {
+        srcset: `${photos[0]} 900w, ${photoLarge(photos[0])} 1500w`,
+        sizes: '(min-width: 900px) 400px, 90vw',
+        zoom: photoLarge(photos[0]),
+      })),
     photos.length > 1 && el('div.gallery',
       photos.slice(1).map((src, i) =>
         /* Küçük kare 90-130 px görünüyor; 600'lük boy 3× ekranda bile fazlasıyla
            yetiyor. Tıklayınca 1500 açılıyor. */
         zoomable(photoSm(src), `${watchLabel(watch)} — fotoğraf ${i + 2}`,
           { loading: 'lazy', zoom: photoLarge(src) }))),
-    !photos.length && el('p.muted', { style: { margin: '10px 0 0', textAlign: 'center' } },
-      'Fotoğraf eklemek için dosyayı photos/ klasörüne koy ve yolunu saat kaydına yaz.'),
   );
 }
 
@@ -265,7 +263,7 @@ function specRow(label, value) {
 function specCard(title, rows) {
   const filled = rows.filter(([, v]) => v != null && v !== '');
   if (!filled.length) return null;
-  return el('section.spec',
+  return el('section',
     el('h3', title),
     el('table.spec-table', el('tbody', filled.map(([k, v]) => specRow(k, v)))));
 }

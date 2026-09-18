@@ -8,7 +8,7 @@
    ve teknik özellikleri üreticinin sayfasından doğrulamak gerekiyor. Envanter
    depo tarafındaki betiklerle yönetiliyor (bkz. CLAUDE.md > Komutlar).
 
-   localStorage'da yalnızca tercihler duruyor: tema ve koleksiyoner modu.
+   localStorage'da yalnızca tema tercihi duruyor.
 --------------------------------------------------------------------------- */
 
 const PREFS_KEY = 'watch-collection:prefs:v1';
@@ -61,12 +61,11 @@ export async function loadAll() {
     loadJSON('data/watches.json', []),
   ]);
 
+  // privateFields'ı derleme betiği okuyor (dist kopyasından siler); tarayıcı
+  // tarafı kullanmıyor ama varsayılanı burada durması kaynağı tek yerde tutuyor.
   state.config = {
     collectionName: 'Saat Koleksiyonum',
-    tagline: '',
-    defaultCurrency: 'USD',
     locale: 'tr-TR',
-    neglectedAfterDays: 60,
     privateFields: ['acquisition.price', 'acquisition.seller', 'acquisition.serial', 'valuation'],
     ...config,
   };
@@ -75,10 +74,5 @@ export async function loadAll() {
 
   state.prefs = readStore(PREFS_KEY, { theme: null });
 }
-
-/* ---------------------------------------------------------- gizli alanlar */
-
-const getPath = (obj, path) =>
-  path.split('.').reduce((acc, key) => (acc == null ? undefined : acc[key]), obj);
 
 export const getWatch = (id) => state.watches.find((w) => w.id === id) || null;

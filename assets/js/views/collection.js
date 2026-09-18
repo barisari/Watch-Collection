@@ -88,12 +88,14 @@ function watchCard(w, navigate) {
   },
     el('div.watch-photo',
       photo
-        /* Kart ekranda 268-333 px görünüyor; sizes tarayıcıya çizim genişliğini
-           söyler, srcset'ten doğru basamağı seçer: 1× masaüstü 600, 3× telefon 900. */
+        /* sizes tarayıcıya kartın çizim genişliğini söyler, srcset'ten doğru
+           basamağı seçsin diye. 820 px altında ızgara her zaman iki sütun:
+           telefonda da ~50vw, eskiden 100vw yazıyordu ve gereksiz yere 900'lük
+           dosyayı indirtiyordu. */
         ? el('img', {
             src: photo,
             srcset: `${photoSm(photo)} 600w, ${photo} 900w`,
-            sizes: '(min-width: 1220px) 270px, (min-width: 820px) 33vw, (min-width: 560px) 50vw, 100vw',
+            sizes: '(min-width: 1220px) 270px, (min-width: 820px) 33vw, 50vw',
             alt: watchLabel(w), loading: 'lazy',
           })
         : null),
@@ -101,8 +103,17 @@ function watchCard(w, navigate) {
        sola yaslı yazı saatten kopuk duruyordu. */
     el('div.watch-code', w.model),
     el('div.watch-brand', w.brand),
-    el('div.watch-meta',
-      el('span', w.specs?.case?.diameter ? `${w.specs.case.diameter} mm` : ''),
-      el('span', { title: w.releaseDate ? 'Piyasaya çıkış' : null }, releaseYear(w) || '')),
+    metaRow(w),
   );
+}
+
+/* Ölçü + çıkış yılı. İkisi de yoksa satır HİÇ basılmaz: .watch-meta'nın üst
+   çizgisi altında hiçbir şey olmadan duruyordu (MRS-301'de görülüyordu). */
+function metaRow(w) {
+  const parts = [
+    w.specs?.case?.diameter ? `${w.specs.case.diameter} mm` : null,
+    releaseYear(w),
+  ].filter(Boolean);
+  if (!parts.length) return null;
+  return el('div.watch-meta', parts.map((t) => el('span', t)));
 }

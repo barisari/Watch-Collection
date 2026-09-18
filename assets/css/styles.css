@@ -139,10 +139,19 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
 
 /* ---------- koleksiyon: kontakt baskı ---------- */
 
+/* Sütun sayısı açıkça yazılıyor, auto-fill ile değil: iki ayrı minmax tabanı
+   600 px'te 3, 768 px'te 2 sütun veriyordu — ekran genişlerken sütun azalıyordu.
+   Telefonda 2 sütun şart, tek sütunda 28 saat 28 ekran kaydırma demekti. */
 .grid-watches {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  column-gap: 28px; row-gap: 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px; row-gap: 28px;
+}
+@media (min-width: 560px) {
+  .grid-watches { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; row-gap: 40px; }
+}
+@media (min-width: 1000px) {
+  .grid-watches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 .watch-card {
@@ -159,15 +168,26 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
 
 .watch-code {
   margin-top: 14px;
-  font-size: 21px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em;
+  font-size: 17px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em;
+  /* Model kodları boşluksuz (MSE.40610.LBV); dar kartta taşıp sayfaya yatay
+     kaydırma ekliyorlardı. Nokta kendiliğinden kırılma noktası değil. */
+  overflow-wrap: anywhere;
 }
 .watch-brand { margin-top: 2px; font-size: 13px; color: var(--ink-2); transition: color .15s; }
 .watch-meta {
   margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--rule);
-  display: flex; justify-content: center; gap: 18px;
+  display: flex; justify-content: center; gap: 12px;
   font-size: 13px; color: var(--ink-2); transition: color .15s;
 }
 .watch-card:hover .watch-brand, .watch-card:hover .watch-meta { color: var(--ink); }
+
+/* Taban telefon ölçeği; dar kartta 21 px kod iki satıra düşüyordu. Bu blok
+   kart kurallarından SONRA gelmeli — @media özgüllük eklemez, kaynak sırası
+   karar verir. */
+@media (min-width: 560px) {
+  .watch-code { font-size: 21px; }
+  .watch-meta { gap: 18px; }
+}
 
 .empty-state { padding: 56px 0; color: var(--ink-2); }
 .empty-state p + p { margin-top: 4px; }
@@ -183,7 +203,12 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
 .nickname { margin-top: 12px; font-size: 16px; color: var(--ink-2); }
 
 .detail-grid { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); align-items: start; }
-@media (min-width: 860px) { .detail-grid { grid-template-columns: 400px minmax(0, 1fr); gap: 56px; } }
+@media (min-width: 860px) {
+  .detail-grid { grid-template-columns: 400px minmax(0, 1fr); gap: 56px; }
+  /* Sol sütun kapaktan ibaret ve kısa; teknik tablo yanında uzayıp gidiyor.
+     Yapışkan olmazsa kapak ilk ekrandan sonra kayboluyor. */
+  .detail-grid > .stack:first-child { position: sticky; top: 24px; }
+}
 .stack { display: grid; gap: 32px; }
 
 .zoomable { cursor: zoom-in; }
