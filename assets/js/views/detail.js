@@ -171,10 +171,11 @@ function sourceNote(watch) {
   let host;
   try { host = new URL(url).hostname.replace(/^www\./, ''); } catch { host = 'ürün sayfası'; }
 
+  // Çekilme tarihi veride duruyor (source.fetchedAt) ama BASILMIYOR: siteyi
+  // gezen için bir şey ifade etmiyor, deponun kendi kaydı.
   return el('p.note',
     'Teknik bilgiler üreticinin ürün sayfasından alındı: ',
-    el('a', { href: url, target: '_blank', rel: 'noopener' }, host),
-    watch.source.fetchedAt ? ` (${fmtDate(watch.source.fetchedAt)})` : '');
+    el('a', { href: url, target: '_blank', rel: 'noopener' }, host));
 }
 
 /* Fotoğrafa tıklayınca büyük hâli: panelde ~400 px görünen kapak, büyütmede

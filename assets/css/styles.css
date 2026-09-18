@@ -3,8 +3,9 @@
 
    İLKE: sayfada renk yok, renk saatlerden gelir. Fotoğraflar saydam; zemin
    akromatik bir stüdyo grisi, 28 nesnenin kendi rengi tek renk kaynağı.
-   Kart yok: yuvarlatma, gölge, çerçeve yok — nesne ile göz arasında hiçbir
-   şey durmaz. Cesaret tek yerde: model kodu.
+   Kart yok: gölge, çerçeve, zemin yok — nesne ile göz arasında hiçbir şey
+   durmaz. Cesaret tek yerde: model kodu. Yuvarlatma yalnızca denetimlerde
+   (--radius, 4 px); içerik köşesiz.
 
    Yazı: tek aile, Archivo (grotesk, tabular rakam). Hiyerarşi boy ve
    ağırlıkla; ikinci aile yok.
@@ -39,6 +40,9 @@
 
   --sans: "Archivo", system-ui, sans-serif;
   --maxw: 1180px;
+  /* Yuvarlatma YALNIZCA denetimlerde (açılır liste, arama, düğmeler).
+     İçerik — fotoğraf, tablo, kart — köşesiz kalır. */
+  --radius: 4px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -100,7 +104,7 @@ h3 {
   font: inherit; font-size: 14px; line-height: 1;
   display: inline-flex; align-items: center; gap: 8px;
   padding: 9px 12px;
-  border: 1px solid var(--rule); border-radius: 0;
+  border: 1px solid var(--rule); border-radius: var(--radius);
   background: none; color: var(--ink);
   cursor: pointer; transition: border-color .15s;
 }
@@ -110,7 +114,7 @@ h3 {
 .theme-toggle {
   width: 36px; height: 36px; padding: 0;
   display: inline-grid; place-items: center;
-  border: 1px solid var(--rule); border-radius: 0;
+  border: 1px solid var(--rule); border-radius: var(--radius);
   background: none; color: var(--ink); cursor: pointer;
   transition: border-color .15s;
 }
@@ -130,9 +134,12 @@ h3 {
 select, input[type="search"] {
   font: inherit; font-size: 14px;
   padding: 8px 10px; min-height: 36px;
-  border: 1px solid var(--ink-2); border-radius: 0;
+  border: 1px solid var(--ink-2); border-radius: var(--radius);
   background: var(--ground); color: var(--ink);
 }
+/* Tarayıcının kendi oku sağ kenara yapışıyordu; sağ payı büyütmek onu içeri
+   çekiyor. 10 → 24 px ölçülerek seçildi. */
+select { padding-right: 24px; }
 select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .filters label { font-size: 13px; color: var(--ink-2); display: flex; align-items: center; gap: 8px; }
 .spacer { flex: 1 1 auto; }
@@ -255,7 +262,7 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
 .lightbox img { max-width: min(100%, 1100px); max-height: 100%; object-fit: contain; }
 .lightbox-close {
   position: absolute; top: 16px; right: 16px;
-  width: 40px; height: 40px; border-radius: 0;
+  width: 40px; height: 40px; border-radius: var(--radius);
   border: 1px solid rgba(255, 255, 255, .45); background: none; color: #fff;
   font: inherit; font-size: 24px; line-height: 1; cursor: pointer;
 }
