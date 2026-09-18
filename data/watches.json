@@ -2779,7 +2779,7 @@
         "bezelMaterial": null,
         "diameter": 37,
         "thickness": 11,
-        "lugToLug": null,
+        "lugToLug": 41,
         "lugWidth": 22,
         "weight": null,
         "crystal": null,
@@ -2824,7 +2824,7 @@
       "serialFrom": "Kasa arkası: 604786",
       "releaseDateFrom": "Kasa arkası seri numarası 604786 → Ekim, yılı 6 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1976 ya da 1986 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1986 elendi, Ekim 1976 kaldı.",
       "strapNote": "Kayış sonradan takılmış (aftermarket); özgün kayış çelik bileklikti — kullanıcının amcasından öyle gelmiş, ikinci ilanda da 'Strap: Original' olarak çelik bileklik görünüyor.",
-      "dimensionsFrom": "Üç bağımsız satış ilanı karşılaştırıldı. (1) eBay 286723564496: kuronsuz 37 mm, kuronla 38 mm, kalınlık 11 mm, kulak 22 mm — satıcı elle ölçmüş, yapılandırılmış alanlarla serbest metni tutuyor. (2) Satıcı sitesi: 37 x 41 mm kulaktan kulağa, kulak 22 mm. (3) WatchCharts'ta toplanmış satılmış eBay ilanı (beyaz kadranlı örnek): kasa 38 mm (kuronla ölçülmüş), kalınlık 11 mm, kulak 22 mm, vidalı kasa arkası. YAZILANLAR en az iki kaynağın verdiği değerler: 37 (kuronsuz), 11, 22. Tek kaynakta kalan: kulaktan kulağa 41 mm."
+      "dimensionsFrom": "Üç bağımsız satış ilanı karşılaştırıldı. (1) eBay 286723564496: kuronsuz 37 mm, kuronla 38 mm, kalınlık 11 mm, kulak 22 mm — satıcı elle ölçmüş, yapılandırılmış alanlarla serbest metni tutuyor. (2) Satıcı sitesi: 37 x 41 mm kulaktan kulağa, kulak 22 mm. (3) WatchCharts'ta toplanmış satılmış eBay ilanı (beyaz kadranlı örnek): kasa 38 mm (kuronla ölçülmüş), kalınlık 11 mm, kulak 22 mm, vidalı kasa arkası. YAZILANLAR en az iki kaynağın verdiği değerler: 37 (kuronsuz), 11, 22. Kulaktan kulağa 41 mm TEK kaynakta (2. ilan) ama kullanıcının kararıyla yazıldı: aksini gösteren bir ölçü çıkarsa düzeltilecek."
     },
     "acquisition": {
       "date": null,
