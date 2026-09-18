@@ -66,7 +66,7 @@ const TR = {
   // --- gösterim ---
   'digital': 'Dijital',
   'analog': 'Analog',
-  'ana-digi': 'Ana-dijital',
+  'ana-digi': 'Analog - Dijital',
 
   // --- kayış / toka ---
   'Bracelet': 'Bilezik',

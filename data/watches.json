@@ -7,7 +7,7 @@
     "nickname": null,
     "shortCode": "A1000D",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3479",
@@ -105,7 +105,7 @@
     "nickname": null,
     "shortCode": "A1100B",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3503",
@@ -201,7 +201,7 @@
     "nickname": null,
     "shortCode": "A1100D",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3503",
@@ -297,7 +297,7 @@
     "nickname": null,
     "shortCode": "A158WA",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 593",
@@ -394,7 +394,7 @@
     "nickname": null,
     "shortCode": "AE1200",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3299",
@@ -493,7 +493,7 @@
     "nickname": null,
     "shortCode": "CA53W1",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3208",
@@ -592,7 +592,7 @@
     "nickname": null,
     "shortCode": "DBC611",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3228",
@@ -691,7 +691,7 @@
     "nickname": null,
     "shortCode": "F91WPC",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 593",
@@ -788,7 +788,7 @@
     "nickname": null,
     "shortCode": "MDV106",
     "year": null,
-    "category": "dalgıç",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Casio modül 2784",
@@ -885,7 +885,7 @@
     "nickname": null,
     "shortCode": "MTPB18",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5436",
@@ -979,7 +979,7 @@
     "nickname": null,
     "shortCode": "MTPB19",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5664",
@@ -1073,7 +1073,7 @@
     "nickname": null,
     "shortCode": "EFB730",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5742",
@@ -1168,7 +1168,7 @@
     "nickname": null,
     "shortCode": "EFK110",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": null,
@@ -1262,7 +1262,7 @@
     "nickname": null,
     "shortCode": "EFSS57",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5634",
@@ -1359,7 +1359,7 @@
     "nickname": null,
     "shortCode": "DW6900",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3529",
@@ -1459,7 +1459,7 @@
     "nickname": null,
     "shortCode": "GA2100",
     "year": null,
-    "category": "ana-dijital",
+    "category": "Analog - Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5611",
@@ -1561,7 +1561,7 @@
     "nickname": null,
     "shortCode": "GBD200",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3506",
@@ -1664,7 +1664,7 @@
     "nickname": null,
     "shortCode": "GBX100",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3482",
@@ -1771,7 +1771,7 @@
     "nickname": null,
     "shortCode": "GMB210",
     "year": null,
-    "category": "ana-dijital",
+    "category": "Analog - Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5691",
@@ -1876,7 +1876,7 @@
     "nickname": null,
     "shortCode": "GSTB10",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5748",
@@ -1979,7 +1979,7 @@
     "nickname": null,
     "shortCode": "GWBX56",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3578",
@@ -2081,7 +2081,7 @@
     "nickname": null,
     "shortCode": "OCWS40",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": null,
@@ -2182,7 +2182,7 @@
     "nickname": null,
     "shortCode": "OCWT20",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Casio modül 5596",
@@ -2279,7 +2279,7 @@
     "nickname": null,
     "shortCode": "PRW35L",
     "year": null,
-    "category": "dijital",
+    "category": "Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 3582",
@@ -2381,7 +2381,7 @@
     "nickname": "Marine Gear",
     "shortCode": "MRS301",
     "year": null,
-    "category": "ana-dijital",
+    "category": "Analog - Dijital",
     "specs": {
       "movement": {
         "caliber": "Casio modül 2385",
@@ -2479,7 +2479,7 @@
     "nickname": null,
     "shortCode": "EVO2",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Sellita SW 220-1",
@@ -2574,7 +2574,7 @@
     "nickname": null,
     "shortCode": "SNE529",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": "Seiko V158",
@@ -2667,7 +2667,7 @@
     "nickname": null,
     "shortCode": "BN0021",
     "year": null,
-    "category": "analog",
+    "category": "Analog",
     "specs": {
       "movement": {
         "caliber": null,
