@@ -2750,5 +2750,95 @@
       "USD": 160,
       "GBP": 100
     }
+  },
+  {
+    "id": "seiko-6309-5000",
+    "brand": "Seiko",
+    "model": "6309-5000",
+    "reference": "6309-5000",
+    "nickname": null,
+    "shortCode": "6309",
+    "year": null,
+    "category": "Analog",
+    "specs": {
+      "movement": {
+        "caliber": "Seiko 6309A",
+        "type": "automatic",
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
+        "powerReserve": null,
+        "frequency": null,
+        "jewels": 17,
+        "certification": null
+      },
+      "case": {
+        "material": null,
+        "bezelMaterial": null,
+        "diameter": null,
+        "thickness": null,
+        "lugToLug": null,
+        "lugWidth": null,
+        "weight": null,
+        "crystal": null,
+        "crystalCoating": null,
+        "crystalShape": null,
+        "waterResistance": null,
+        "bezel": null,
+        "backlight": null,
+        "color": "Steel"
+      },
+      "dial": {
+        "color": "Brown",
+        "display": "analog",
+        "indices": "Baton",
+        "lume": null,
+        "complications": [
+          "Day/Date"
+        ]
+      },
+      "strap": {
+        "type": "Strap",
+        "material": "Leather",
+        "color": "Brown",
+        "clasp": null,
+        "sizeRange": null
+      }
+    },
+    "tagline": {
+      "en": null,
+      "tr": null
+    },
+    "story": {
+      "en": null,
+      "tr": null
+    },
+    "source": {
+      "productUrl": null,
+      "fetchedAt": null,
+      "imageColorsFrom": "Kullanıcının fotoğrafı",
+      "imageFrom": "Kullanıcının fotoğrafı (saydam zeminli)",
+      "specsFrom": "Kadrandan okundu: SEIKO · AUTOMATIC · 17 JEWELS · 3'te gün+tarih. Kalibre kodu referanstan (6309). Kasa arkasındaki seri numarası 604786 → Ekim, yılı 6 ile biten yıl; 6309 kalibresi 1976-1988 arası üretildiği için 1976 mı 1986 mı belirsiz, releaseDate BOŞ bırakıldı.",
+      "serialFrom": "Kasa arkası: 604786"
+    },
+    "acquisition": {
+      "date": null,
+      "condition": null,
+      "boxPapers": null,
+      "dateApprox": null
+    },
+    "service": {
+      "lastServiceDate": null,
+      "intervalYears": null
+    },
+    "photos": [
+      "photos/watches/seiko_6309-5000.webp"
+    ],
+    "tags": [],
+    "notes": "Amcasından hediye (2026).",
+    "msrp": {},
+    "haOption": null
   }
 ]

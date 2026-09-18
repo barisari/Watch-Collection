@@ -32,6 +32,7 @@ const TR = {
   'Off-white': 'Kırık beyaz',
   'Green': 'Yeşil',
   'Grey': 'Gri',
+  'Brown': 'Kahverengi',
   'Navy blue': 'Lacivert',
   'Grey / Navy blue': 'Gri-lacivert',
   'Blue': 'Mavi',
