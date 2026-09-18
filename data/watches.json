@@ -2874,10 +2874,10 @@
       "case": {
         "material": "Stainless steel",
         "bezelMaterial": null,
-        "diameter": null,
-        "thickness": null,
-        "lugToLug": null,
-        "lugWidth": null,
+        "diameter": 36,
+        "thickness": 11.4,
+        "lugToLug": 41.5,
+        "lugWidth": 18,
         "weight": null,
         "crystal": null,
         "crystalCoating": null,
@@ -2921,7 +2921,8 @@
       "serialFrom": "Kasa arkası: 853105",
       "releaseDateFrom": "Seri 853105 → Mayıs, yılı 8 ile biten yıl. 6309 kalibresi 1976-1988 arası üretildiği için 1978 ya da 1988 olabilirdi. Kullanıcı 1985 doğumlu ve saatin kendisinden yaşlı olduğunu biliyor → 1988 elendi. UYARI: pazar yerlerinde bu referansın 1987/1988 tarihli örnekleri var; referans geç 80'lerde de üretilmiş, ama BU saatin tarihi kendi serisinden.",
       "nicknameFrom": "Koleksiyoncu lakabı, resmi Seiko adlandırması değil. Bu referansa özel olarak kullanılıyor: WatchCharts'ta 'Seiko 5 Black Snowflake — 6309-8190' başlıklı ilan var. Benzetmenin kaynağı 2005 Grand Seiko SBGA211'in beyaz dokulu 'Snowflake' kadranı.",
-      "jewelsFrom": "Kalibre 6309 = 17 taş. theseikoguy.com/movements/6309 kalibre tablosu ('Type: mechanical automatic · Jewels: 17'). Ayrıca aynı kalibreyi taşıyan 6309-5000'in kadranında 'AUTOMATIC 17 JEWELS' yazıyor. Taş sayısı mekanizmanın özelliği, kasadan bağımsız."
+      "jewelsFrom": "Kalibre 6309 = 17 taş. theseikoguy.com/movements/6309 kalibre tablosu ('Type: mechanical automatic · Jewels: 17'). Ayrıca aynı kalibreyi taşıyan 6309-5000'in kadranında 'AUTOMATIC 17 JEWELS' yazıyor. Taş sayısı mekanizmanın özelliği, kasadan bağımsız.",
+      "dimensionsFrom": "KULLANICININ KENDİ KUMPAS ÖLÇÜMÜ — en güvenilir kaynak, ilanların önünde. Kasa çapı 36 mm (kuron 4 yönünde olduğu için ölçüme girmiyor), kulak genişliği 18 mm, kulaktan kulağa 41,5 mm, kalınlık 11,4 mm. İlanlarla örtüşüyor: üç ayrı ilan 36 mm diyordu, eBay 376458490691 kulak 18 mm ve kalınlık 11 mm (yuvarlanmış) vermişti."
     },
     "acquisition": {
       "date": null,
