@@ -652,7 +652,18 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   kareyi doldururken küçük saat ortada kaybolduğu için ızgara dağınık
   görünüyordu. Hepsi tek tip çerçevelemeye döndürüldü. `build-photo-sizes.mjs`
   başındaki uyarı bunu tekrarlıyor — **tekrar deneme.**
-- Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır (Escape kapatır).
+- **Künyedeki ek kareler tek tip beyaz yüzeyde durur.** Ek fotoğraflar iki
+  cinsten geliyor: Mondaine (3) ve Braun (2) opak **beyaz** zeminli (kaynak JPG,
+  kesim yapılmıyor), Seiko (2) saydam. Koyu temada beyazlar parlak dikdörtgen
+  gibi duruyordu, saydamlar zemine karışıyordu — yan yana tutarsızdı. Çözüm
+  CSS'te: `.gallery img` hepsine `background:#fff` + 8 px pay veriyor. Opak
+  kareler tam 255,255,255 olduğu için yüzeyle dikişsiz birleşiyor. Izgara üç
+  sütun — en çok ek kareye sahip saat (Mondaine, 3) satırı tam dolduruyor.
+  Kullanıcının izni var: *"bunların arka planın düz renk olması benim için sorun
+  değil çünkü ana sayfa değil detay sayfası."* Kapaklar bunun dışında, hepsi
+  saydam.
+- Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır; **görselin kendisine,
+  boşluğa ya da kapat düğmesine tıklamak da, Escape de kapatır.**
 - `id` alanı sabittir; fotoğraf yolları ve `haOption` eşleşmesi ona bağlı.
 
 ## Komutlar
