@@ -205,13 +205,18 @@ ve dört Seiko — SNE529P, 6309-5000, 6309-8190, SNAB71.
 | Görsel | 31/31 |
 | Görsel aslı (arşiv) | 31/31 — `photos/originals/` |
 | Satın alma tarihi | 28/31 |
-| Liste fiyatı | 27/31 |
+| Liste fiyatı | 28/31 |
 | Çıkış tarihi | 27/31 |
 | Tanıtım metni | 22/31 kısa · 16/31 uzun |
 | Rotasyon kaydı | sitede yok — kayıt HA'da (aşağıya bak) |
 
-Liste fiyatı eksik 4: **MRS-301-2E** (hiçbir yerde resmi kaydı yok) ve üç
-vintage/üretimden kalkmış Seiko — 6309-5000, 6309-8190, SNAB71.
+Liste fiyatı eksik 3: **MRS-301-2E** (hiçbir yerde resmi kaydı yok) ve iki
+vintage Seiko — 6309-5000, 6309-8190.
+SNAB71 çözüldü: **440 USD**, creationwatches'ın kendi ürün verisinden
+(`products_price` 440 = liste, `products_price_sorter` 199 = kampanya).
+**Ersa kuralı burada da geçerli: üstü çizili olan liste fiyatıdır.**
+Aynı kayıtta `products_date_added` 2014-05-15 — çıkış tarihi değil, saatin
+en geç Mayıs 2014'te satışta olduğunu söylüyor.
 
 Çıkış tarihi eksik 4: MRS-301-2E, MSE.40610.LBV, SNE529, BN0021.
 (İki vintage Seiko'nun tarihi seri numarasından çözüldü; SNAB71'inki yok.)
@@ -454,8 +459,13 @@ geçiyor."* Önce kırık beyaz yazılmıştı (görseldeki krem ton), iki perak
 tablosu da "Dial Color: White" deyince değişti.
 
 Yazılmayanlar: **kulaktan kulağa** (hiçbir kaynakta yok), **ağırlık**,
-**çıkış tarihi**, **liste fiyatı**. creationwatches'ta 199 USD yazıyor ama o
-perakendecinin satış fiyatı, liste fiyatı değil — `msrp`'ye girmez.
+**çıkış tarihi** (Seiko hiç yayımlamamış — üç kaynak da aynı şeyi söylüyor;
+7T62'nin ~2002 üretim başlangıcı yalnızca alt sınır ve o kalibre onlarca
+Seiko'da var, yani saate mal edilmez — Casio'daki modül 593 durumunun aynısı).
+**Liste fiyatı 440 USD girdi** (yukarıya bak); ilk turda 199 USD'yi görüp
+"liste fiyatı yok" demiştim, yanlıştı — 199 kampanya fiyatıydı.
+**EUR karşılığı türetilmedi:** USD = 1,10 × EUR oranı yalnızca Casio
+fiyatlarıyla ölçüldü, Seiko'da sınanmadı.
 
 `nickname` = Flightmaster, çünkü o seri adı — MRS-301'in "Marine Gear"ı gibi.
 
