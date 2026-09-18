@@ -346,18 +346,31 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 Kullanıcının kataloğa girmediği üç saat var, hepsi Seiko ve "en zor olanlar"
 dediği bunlar. İkisinin kodu alındı, üçüncüsü henüz verilmedi.
 
-**Erişim durumu — Casio'dakinden iyi.** `seikowatches.com`, `seiko.co.jp` ve
-`saatvesaat.com.tr` (Seiko Türkiye distribütörü) bu ortamdan **200** veriyor;
-Casio'nun 403'ü burada yok. Yani modern modellerin sayfaları doğrudan
-okunabilir.
+**Erişim durumu.** `seikowatches.com`, `seiko.co.jp` ve `saatvesaat.com.tr`
+(Seiko Türkiye distribütörü) bu ortamdan açılıyor; Casio'nun 403'ü burada yok.
 
-**1. SNAB71 — Flightmaster pilot kronograf.**
-Aramada çıkanlar: tam referans `SNAB71P1`, kalibre **7T62** (kasa kodu
-7T62-0HM0), 43 mm, 100 m, hardlex cam, kuvars alarm-kronograf.
-**Hiçbiri Seiko'nun kendi sayfasından doğrulanmadı** — hepsi perakendeci ve
-fiyat toplayıcı siteler (creationwatches, watchcharts, ethoswatches). Model
-üretimden kalkmış olabilir, önce `seikowatches.com` denenecek; bulunamazsa
-kalibre 7T62'nin resmi sayfasından hassasiyet/pil değerleri alınabilir.
+**TUZAK — seikowatches.com YUMUŞAK 404 veriyor.** Olmayan ürün adresi de
+**HTTP 200** dönüyor: gövde genel kabuk, içinde "not found" imi var ve aranan
+model kodu hiç geçmiyor. Yani durum koduna bakarak "sayfa var" deme; gövdede
+model kodunu ara. (`/global-en/products/prospex/SNAB71` ve
+`/global-en/products/SNAB71P1` ikisi de böyle çıktı.)
+
+**1. SNAB71 — Flightmaster pilot kronograf. RESMİ KAYNAK YOK (18 Eylül'de arandı).**
+- `seikowatches.com`: yumuşak 404, "SNAB" gövdede hiç geçmiyor.
+- `saatvesaat.com.tr` (distribütör): `catalogsearch` sonucu **boş**; sayfadaki
+  6 "SNAB" geçişinin hepsi arama teriminin yankısı.
+- creationwatches / ethoswatches gibi perakendecilerde var ama teknik tablo
+  **JavaScript ile yükleniyor**, sunucudan gelmiyor — okunamadı.
+
+Yani MDV-106-1A ile aynı durumda: model üretimden kalkmış, üreticinin sayfası
+yok. Aramada dolaşan değerler — tam referans `SNAB71P1`, kalibre **7T62**
+(kasa kodu 7T62-0HM0), 43 mm, 100 m, hardlex — **hiçbiri doğrulanmadı**, arama
+özeti seviyesinde. CLAUDE.md'nin kendi kuralı gereği bunlar envantere böyle
+girmez.
+
+**Gereken:** kullanıcının elindeki saat. Kasa arkasında kalibre-kasa kodu
+(7T62-0HM0 gibi) yazıyor; kadranda model adı var. MRS-301'de işe yarayan yol
+bu. Alternatif: kullanıcının bir perakendeci sayfasının ekran görüntüsü.
 
 **2. 6309-8190 — vintage Seiko 5, otomatik.**
 Kod **kalibre-kasa** biçiminde: `6309` kalibre (1976–1988 arası otomatik,
