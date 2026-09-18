@@ -341,6 +341,43 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
    gösterim tarafı sıfırdan yazılacak (aşağıdaki bölüm).
 
+### Bekleyen: 3 Seiko (18 Eylül 2026)
+
+Kullanıcının kataloğa girmediği üç saat var, hepsi Seiko ve "en zor olanlar"
+dediği bunlar. İkisinin kodu alındı, üçüncüsü henüz verilmedi.
+
+**Erişim durumu — Casio'dakinden iyi.** `seikowatches.com`, `seiko.co.jp` ve
+`saatvesaat.com.tr` (Seiko Türkiye distribütörü) bu ortamdan **200** veriyor;
+Casio'nun 403'ü burada yok. Yani modern modellerin sayfaları doğrudan
+okunabilir.
+
+**1. SNAB71 — Flightmaster pilot kronograf.**
+Aramada çıkanlar: tam referans `SNAB71P1`, kalibre **7T62** (kasa kodu
+7T62-0HM0), 43 mm, 100 m, hardlex cam, kuvars alarm-kronograf.
+**Hiçbiri Seiko'nun kendi sayfasından doğrulanmadı** — hepsi perakendeci ve
+fiyat toplayıcı siteler (creationwatches, watchcharts, ethoswatches). Model
+üretimden kalkmış olabilir, önce `seikowatches.com` denenecek; bulunamazsa
+kalibre 7T62'nin resmi sayfasından hassasiyet/pil değerleri alınabilir.
+
+**2. 6309-8190 — vintage Seiko 5, otomatik.**
+Kod **kalibre-kasa** biçiminde: `6309` kalibre (1976–1988 arası otomatik,
+gün+tarih), `8190` kasa. Ünlü "Turtle" dalgıç değil, o 6309-704x. İlanlarda
+görülen örnekler **1987–1988**. Seiko'nun sitesinde bu yaşta referans yok;
+tek kaynak pazar yerleri — yani MRS-301'de yaşadığımız *"eBay'de circa 1997
+yazıyor"* tuzağının aynısı. **Tarihi ilandan alma.**
+
+**Doğru yol kasa arkası.** Vintage Seiko'da kasa arkasındaki 7 haneli seri
+numarası üretim ay/yılını taşıyor. MRS-301'i modül 2385 böyle çözmüştü;
+burada da kesin bilgi kullanıcının elindeki saatte. Kullanıcıdan istenecek:
+**kasa arkasının fotoğrafı** (seri no + tam kasa kodu) ve kadran.
+Not: seri numarasının ilk hanesi yılın SON hanesi — tek başına on yılı
+vermiyor (7 → 1977 de olabilir 1987 de). İlanlardaki 1987/1988 aralığı bu
+belirsizliği daraltıyor ama tek başına kanıt değil.
+
+**3. Üçüncü saat:** kodu henüz verilmedi.
+
+---
+
 ### Rotasyon mimarisi (13 Eylül 2026 — karar verildi)
 
 Günlük aylardır boş. Sebebi tembellik değil **kayıt sürtünmesi**: sitedeki
