@@ -34,7 +34,9 @@ görünmez, "—" bile yazmaz.
                                     // Boş bırakırsan nickname/model kısaltılarak kullanılır.
   "reference": "310.30.42.50.01.001",
   "year": 2022,
-  "category": "kronograf",          // serbest metin; filtre kutusunu besler
+  "category": "Analog",             // GÖSTERİM TİPİ; filtre kutusunu besler.
+                                    // Üç değer: Analog · Dijital · Analog - Dijital
+                                    // specs.dial.display'den türetilir, elle yazma.
 
   "specs": {
     "movement": {

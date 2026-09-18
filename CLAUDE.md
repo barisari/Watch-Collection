@@ -672,6 +672,13 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   saydam.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır; **görselin kendisine,
   boşluğa ya da kapat düğmesine tıklamak da, Escape de kapatır.**
+- **`category` GÖSTERİM TİPİDİR ve `specs.dial.display`'den türetilir.**
+  Üç değer: `Analog` · `Dijital` · `Analog - Dijital`. Eskiden serbest metindi
+  ve içinde `dalgıç` vardı — dalgıçlık bir gösterim tipi değil, üstelik o saat
+  (MDV-106) analog. İki alan aynı şeyi söylediği için 28 kayıttan 27'si
+  örtüşüyordu, biri ayrışmıştı; ayrışma tekrar etmesin diye kategori artık
+  `display`'den yazılıyor. Yeni saat eklerken elle kategori girme, gösterimi
+  gir. Künyedeki "Gösterim" satırı da aynı sözcükleri basıyor (`terms.js`).
 - **`name` alanı: üreticinin saate verdiği ad.** Yalnızca referansın bir depo
   kodu olduğu saatlerde dolu. Şu an tek örnek Mondaine: adı **evo2 Automatic**,
   MSE.40610.LBV ise SKU — Mondaine kendi sayfasında başlığa EVO2 yazıp SKU'yu
