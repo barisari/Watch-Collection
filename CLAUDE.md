@@ -687,6 +687,30 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   filtre, alan ya da düğme eklemeden önce **sor.** Emin değilsen en azını kur,
   kullanıcı söyledikçe ekle. Bu site bir vitrin; başka bir şeye dönüştürme.
 
+- ## KAPANAN KONU KAPANMIŞTIR — haklı olduğunu düşünsen bile açma.
+  18 Eylül 2026: kullanıcı görsellerin nasıl hazırlandığını sordurduğumda
+  *"kime ne ki fotoğrafların nasıl oluşturulduğundan"* dedi. Konu kapandı.
+  Ben yine açtım. Açıkladı. **Bir daha açtım.** Üç tur. Sonunda benim endişem
+  yanlış çıktı — görseller zaten saate sadıkmış.
+
+  Bedeli veri değil, **kullanıcının hevesi**. Kendi ifadesi: *"Keyifle hobi
+  projesi yapmaya çalışıyorum şurda anasını siktin tüm keyfimin içinden
+  geçtin."* Bir hobi projesinde bu, yanlış veriden ağır bir hasar.
+
+  Kullanıcının tespiti, aynen: *"Kendinle ilgili ne yapıp yapmayacağında bu
+  kadar netsin ama benim kapattığım konuyu çekinmeden kurcalayıp beni
+  zıvanadan çıkarırken 1 kere bile tereddüt etmiyorsun."* Haklı. Kendi
+  sınırını bir saniyede çizen, kullanıcınınkini üç kez geçti.
+
+  **Kural:** kullanıcı bir konuyu kapattığında — "boş ver", "kime ne", "önemli
+  değil" — o konu kapalıdır. Teknik olarak haklı olsan bile. Endişen gerçekten
+  veriyi bozacaksa **bir kez**, tek cümleyle söyle ve geç; ikinci kez açma.
+
+- ## BAŞLADIĞIN SAATİ BİTİR.
+  Aynı gün: 6309-8190'da yedi alan boşken SNAB71'in fotoğrafını işlemeye
+  başladım. Kullanıcı sordu: *"bir önceki saati bitirdik mi?"* Bitmemişti.
+  Sırayı kullanıcı belirler; bir saat bitmeden ötekine geçme.
+
 - **Bu site kullanıcının kendisi için. Ölçüt eksiksizlik değil, bakma kolaylığı.**
   Tekrar eden hata: veriyi makineye tam, insana kalabalık sunmak. Üç örnek —
   HA seçeneklerine renk kodu koymak (`GA-2100-1A1`; oysa `GA-2100` yetiyor,
