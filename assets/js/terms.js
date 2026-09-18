@@ -53,6 +53,7 @@ const TR = {
   'Sapphire crystal': 'Safir cam',
   'Resin Glass': 'Reçine cam',
   'Acrylic': 'Akrilik cam',
+  'Hardlex': 'Hardlex mineral cam',
   'Inorganic glass': 'İnorganik cam',
   'Anti-reflective': 'Yansıma önleyici kaplama',
   'Flat': 'Düz',
@@ -95,6 +96,7 @@ const TR = {
   'Auto calendar': 'Otomatik takvim',
   'Full auto-calendar': 'Tam otomatik takvim',
   'Chronograph': 'Kronograf',
+  'Alarm': 'Alarm',
   'Date display': 'Tarih göstergesi',
   'Day display': 'Gün göstergesi',
   'Battery level indicator': 'Pil seviye göstergesi',
@@ -107,6 +109,11 @@ const TR = {
   'Super Illuminator': 'Super Illuminator',
   'Bluetooth smartphone link': 'Bluetooth telefon bağlantısı',
   'Radio-controlled': 'Radyo sinyaliyle otomatik ayar',
+
+  // --- kadran indeksleri ---
+  'Baton': 'Çubuk',
+  'Applied baton': 'Aplike çubuk',
+  'Arabic': 'Rakamlı',
 };
 
 /** Bilinen bir terimse Türkçesini, değilse olduğu gibi döndürür. */
