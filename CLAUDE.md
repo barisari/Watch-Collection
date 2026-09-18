@@ -269,13 +269,17 @@ yüzden manuals.plus 2376 demiş. Doğrusu 2385. Modül değerleri envantere gir
 `10 BAR` = 100 m, kadrandan okuduğumuz su geçirmezliği saatin kendisi doğruladı.
 
 **`releaseDate` = 2001-08 (18 Eylül'de yazıldı, kullanıcının kararı).** Aug-2001
-modülün tarihi; saatin kendi çıkış tarihi hiçbir kaynakta yok. Kullanıcı bu saat
-için ikisini eşitledi — 2385, servis listesinde 2376'yla birebir aynı değerleri
-taşıyan, 2001'de o aileye açılmış bir numara.
+modülün tarihi; saatin kendi çıkış tarihi hiçbir kaynakta yok.
 
-**Bunu genel kural yapma.** Envanterde modül 593 hem A158WA-1'de (2009) hem
-F-91WPC-1A'da (2024) var — 15 yıl arayla iki ayrı saat. Modül tarihini saate mal
-etmek orada 30 yıllık hata üretirdi. Gerekçe `source.releaseDateFrom` alanında.
+**Gerekçe — sensör kuralı (kullanıcının tespiti):** 2385 basınç sensörlü bir modül.
+Sensör kasada port/membran istiyor, yani modül o kasaya bağlı kalıyor; Casio onu
+başka kasalara taşımaz. Dolayısıyla sensörlü modüllerde **modülün tarihi ≈ saatin
+tarihi.** Envanter bunu destekliyor: sensörlü dört saatin (GBD-200 → 3506,
+GBX-100 → 3482, PRW-35LD → 3582, MRS-301 → 2385) hiçbiri modülünü paylaşmıyor.
+
+**Sensörsüz modüllerde uygulama.** Modül 593 hem A158WA-1'de (2009) hem
+F-91WPC-1A'da (2024) var — 15 yıl arayla iki ayrı saat, çünkü düz bir zaman modülü
+her kasaya girer. Orada modül tarihini saate mal etmek 30 yıllık hata üretirdi.
 
 **Ders:** servis listesi modülü modele bağlamıyor, ama elinde modül numarası
 varsa pil/hassasiyet/tarih oradan geliyor. Numara kasa arkasında.

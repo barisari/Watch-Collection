@@ -2449,7 +2449,7 @@
       "imageColorsFrom": "Kullanıcının doğruladığı görsel",
       "imageFrom": "Yapay zekâ ile üretildi — kullanıcının düşük çözünürlüklü orijinalden ürettiği kare; yazıları orijinal saatle uyuşacak şekilde düzelttirmiş. Ön yüzde belirtilmiyor.",
       "specsFrom": "Kasa ölçüleri, malzeme, renkler, cam formu ve fonksiyonlar Ersa Saat (Casio Türkiye yetkili distribütörü) ürün sayfasından. Modül no ve 10 bar kasa arkasından okundu (kullanıcı); modül değerleri Casio servis listesindeki QW-2385 satırından. Fonksiyon ayrıntıları ve aydınlatma, Casio modül 2385 kullanma kılavuzundan.",
-      "releaseDateFrom": "Modül 2385'in çıkış tarihi (Casio servis listesi, QW-2385 satırı: Aug-2001). Saatin kendi çıkış tarihi hiçbir kaynakta yok. Bu eşitlik YALNIZCA bu saat için kuruldu — genel kural değil: modül 593 hem A158WA-1'de (2009) hem F-91WPC-1A'da (2024) var."
+      "releaseDateFrom": "Modül 2385'in çıkış tarihi (Casio servis listesi, QW-2385 satırı: Aug-2001). Saatin kendi çıkış tarihi hiçbir kaynakta yok. Eşitliğin gerekçesi: 2385 basınç sensörlü bir modül, sensör kasada port/membran istediği için modül o kasaya bağlı kalır — başka kasaya taşınması beklenmez. Bu YALNIZCA sensörlü/az yaygın modeller için geçerli; sensörsüz modül 593 hem A158WA-1'de (2009) hem F-91WPC-1A'da (2024) var."
     },
     "acquisition": {
       "date": "2002-06-01",
