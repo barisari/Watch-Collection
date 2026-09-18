@@ -168,9 +168,27 @@ Denenip kapalı çıkanlar: `intl`, `sg`, `id`, `in` yolları · `gshock.casio.c
 `edifice-watches.com` açılıyor ama **ürün sayfası yok**, ikisi de yalnızca
 ülke seçme/yönlendirme kabuğu. **CDN varlıkları hâlâ 200** — görseller iniyor.
 
-Yani Casio metni gerektiren işler şimdilik yapılamıyor (5 uzun tanıtım bu
-yüzden boş). Bir sonraki oturumda önce tek bir ürün sayfasını dene; açılıyorsa
-engel geçici demektir. TR sayfası JS ile
+Bir sonraki oturumda önce tek bir ürün sayfasını dene; açılıyorsa engel geçici
+demektir. **Engel kullanıcının tarayıcısında yok** — casio.com ona açık, bize
+kapalı; Akamai veri merkezi IP'sini eliyor.
+
+**ÇÖZÜM YOLU: Wayback arşivi (18 Eylül'de işe yaradı).**
+```bash
+# 1) en yeni anlık görüntünün damgasını al  (CDX API)
+curl "https://web.archive.org/cdx/search/cdx?url=<URL>&fl=timestamp&filter=statuscode:200&limit=-1"
+# 2) ham gövdeyi çek — id_ eki Wayback'in kendi çerçevesini ATAR
+curl "https://web.archive.org/web/<TS>id_/<URL>" -o x.raw
+# 3) GÖVDE GZIP GELİYOR, açmadan okuma:  python3 -c "import gzip;print(gzip.decompress(open('x.raw','rb').read()).decode())"
+```
+Tanıtım metni `cmp-text` sınıflı kutularda; 70 karakterden uzun ve 10'dan çok
+boşluk taşıyan satırları süzmek yetiyor.
+
+**GBD-200-1 böyle alındı.** Öbür dördü (GBX-100-8, GW-BX5600-1A1,
+MTP-B185D-2A2V, EFK-110D-1A) "has not archived that URL" verdi — **ama bu kesin
+değil**, çünkü o sırada CDX API kapalıydı ve tarih tahmin ederek sorguladım.
+CDX ayağa kalkınca joker aramayla (`url=casio.com/intl/watches/*`) tekrar bak.
+`archive.ph`, `archive.is` ve `timetravel.mementoweb.org` bu ortamda proxy
+tarafından kapalı (bağlantı hiç kurulmuyor), tek arşiv seçeneği Wayback. TR sayfası JS ile
 yüklendiği için okunamıyor ama **TR CDN varlıkları gayet çalışıyor**.
 
 **Aynı model yerele göre farklı çözünürlükte olabiliyor:** GA-2100-1A1
