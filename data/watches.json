@@ -2987,7 +2987,7 @@
         "color": "Steel"
       },
       "dial": {
-        "color": "Off-white",
+        "color": "White",
         "display": "analog",
         "indices": "Applied baton",
         "lume": "Var",
@@ -3018,7 +3018,7 @@
       "fetchedAt": null,
       "imageColorsFrom": "Kullanıcının görseli (elindeki saate sadık)",
       "imageFrom": "Kullanıcının hazırladığı görsel: internette bulduğu düşük çözünürlüklü kareleri yükselterek, elindeki saatin göründüğü hâle birebir sadık kalarak üretmiş. Kadran, kasa ve kayış saatin kendisini yansıtıyor.",
-      "specsFrom": "Kadrandan okundu: SEIKO · Chronograph 100M · 12 yönünde MIN.30 kronograf sayacı · 6 yönünde ALARM sayacı · 4-5 arasında tarih penceresi · aplike ışımalı çubuk indeksler · kırmızı merkez kronograf saniyesi · hesap cetveli halkası (OIL LBS / GAL / STAT-NAUT). Kadran rengi kullanıcının onayıyla kırık beyaz (görseldeki krem ton stüdyo ışığı). Su geçirmezlik kadrandan.",
+      "specsFrom": "Kadrandan okundu: SEIKO · Chronograph 100M · 12 yönünde MIN.30 kronograf sayacı · 6 yönünde ALARM sayacı · 4-5 arasında tarih penceresi · aplike ışımalı çubuk indeksler · kırmızı merkez kronograf saniyesi · hesap cetveli halkası (OIL LBS / GAL / STAT-NAUT). Kadran rengi White — kullanıcının kararı: her kaynakta böyle geçiyor (creationwatches ve citywatches teknik tablolarında \"Dial Color: White\"). Görseldeki krem ton stüdyo ışığı. Su geçirmezlik kadrandan.",
       "dimensionsFrom": "Kasa çapı 43,5 mm ve kulak genişliği 24 mm KULLANICININ KENDİ KUMPAS ÖLÇÜMÜ (çap kuronlar hariç). Kalınlık 11 mm citywatches.in teknik tablosundan — ölçülmedi. Aynı tablo çapı 50 mm veriyor: kullanıcının tespitiyle o ölçü kuronları da içine alıyor (bu saatte hem kuron muhafazaları hem iç halka için ikinci bir kuron var). Kulaktan kulağa hiçbir kaynakta yok. UYARI: aramada dolaşan 43 mm, kalibre 7T62 ve tam referans SNAB71P1 doğrulanmadı — yalnızca arama özeti seviyesinde, bu yüzden yazılmadı.",
       "crystalFrom": "citywatches.in teknik tablosu: Hardlex. Aynı tablonun kulak genişliği (24 mm) kullanıcının kumpasıyla birebir tuttuğu için tablo güvenilir sayıldı."
     },
