@@ -939,7 +939,7 @@
     },
     "story": {
       "en": null,
-      "tr": null
+      "tr": "Sade ama etkileyici detaylarıyla öne çıkan bu model, günlük kullanıma uygun tasarımıyla stil sahibi kullanıcılar için ideal bir seçim. Kare kasa formu ve turkuaz kadranı modern çizgilerle birleşirken, saat 3 yönünde konumlandırılmış takvim göstergesi işlevselliği artırıyor."
     },
     "source": {
       "productUrl": "https://www.casio.com/intl/watches/casio/product.MTP-B185D-2A2V/",
@@ -948,7 +948,8 @@
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "msrpFrom": "ersasaat.com.tr — Casio Türkiye yetkili satıcısı, indirim öncesi liste fiyatı (30 Ağustos 2026) · casio.com/th — MSRP",
       "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/M/MT/MTP/mtp-b185d-2a2v/assets/MTP-B185D-2A2V.png",
-      "releaseFrom": "MTP-B185 serisi lansmanı, Mayıs 2025 (resmi değil) — bu varyantın kendi tarihi doğrulanamadı"
+      "releaseFrom": "MTP-B185 serisi lansmanı, Mayıs 2025 (resmi değil) — bu varyantın kendi tarihi doğrulanamadı",
+      "storyFrom": "shopcasio.ersasaat.com.tr — Casio Türkiye'nin resmi mağazası (Ersa, tek yetkili distribütör). casio.com bu ortamdan 403 verdiği için metin oradan alındı; kullanıcının izni var: \"Ersa resmi distribütör direk oradaki bilgileri kullanabilirsin.\" Türkçesi Casio'nun kendi tanıtım materyalinden, o yüzden story.en boş bırakıldı. Sayfa: https://shopcasio.ersasaat.com.tr/casio-standart-mtp-b185d-2a2vdf-kol-saati-d2 UYARI: bu metin öbür üçü gibi Casio'nun lansman materyali değil, mağaza yazısı gibi duruyor (kısa ve genel). Casio'nun kendi metni bulunursa bununla değiştir."
     },
     "acquisition": {
       "date": "2026-04-02",
@@ -1223,7 +1224,7 @@
     },
     "story": {
       "en": null,
-      "tr": null
+      "tr": "CASIO'nun ikinci otomatik saat koleksiyonu olan EDIFICE EFK-110D, spor otomobillerin yüksek performans ruhunu modern otomatik saatçilikle buluşturuyor. Üç ibre ve tarih göstergesine sahip sade kadran, elektroform teknolojisiyle oluşturulan ince dokulu yüzeyiyle dikkat çekiyor. Kompakt 38 mm kasada paslanmaz çeliğe ayrı ayrı uygulanan hairline ve ayna polisaj, keskin hatlar boyunca ışık geçişleri yaratıyor. Vidalı şeffaf arka kapak, Japon üretimi otomatik mekanizmanın çalışmasını gözler önüne seriyor."
     },
     "source": {
       "productUrl": "https://www.casio.com/intl/watches/edifice/product.EFK-110D-1A/",
@@ -1232,7 +1233,8 @@
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "releaseFrom": "casio.com/jp (Japonya sürümü)",
       "msrpFrom": "casio.com/jp — メーカー希望小売価格 (vergi dahil)",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/E/EF/efk/efk-110d-1a/assets/EFK-110D-1A.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/E/EF/efk/efk-110d-1a/assets/EFK-110D-1A.png",
+      "storyFrom": "shopcasio.ersasaat.com.tr — Casio Türkiye'nin resmi mağazası (Ersa, tek yetkili distribütör). casio.com bu ortamdan 403 verdiği için metin oradan alındı; kullanıcının izni var: \"Ersa resmi distribütör direk oradaki bilgileri kullanabilirsin.\" Türkçesi Casio'nun kendi tanıtım materyalinden, o yüzden story.en boş bırakıldı. Sayfa: https://shopcasio.ersasaat.com.tr/casio-edifice-efk-110d-1adr-kol-saati-d2"
     },
     "acquisition": {
       "date": "2026-08-27",
@@ -1728,7 +1730,7 @@
     },
     "story": {
       "en": null,
-      "tr": null
+      "tr": "Doğal plaj renklerinden ilham alan GBX-100-8, sörfçüler ve ekstrem spor tutkunları için tasarlanmış akıllı telefon bağlantılı bir saat. G-LIDE serisinin bu üyesi, özel uygulaması sayesinde dünya genelindeki 3.300 sörf noktasından birini seçmenize ve gelgit düzenlerini saatinize aktarmanıza olanak tanıyor. Yüksek çözünürlüklü Memory in Pixel ekranı gelgit grafiklerini, ay evresini, yüksek/alçak gelgit zamanlarını ve gün doğumu ile batımını net gösteriyor. Paslanmaz çelik ve silikon karışımı çerçevesi, darbeye dayanıklı yapısı ve yumuşak biyo-tabanlı üretan kordonuyla 200 metreye kadar su geçirmez."
     },
     "source": {
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.GBX-100-8/",
@@ -1738,7 +1740,8 @@
       "releaseFrom": "shockbase.org",
       "msrpFrom": "shockbase.org",
       "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/G/GB/GBX/gbx-100-8/assets/GBX-100-8.png",
-      "msrpEstimatedFrom": "EUR ↔ USD oranıyla türetildi (USD = 1.103 × EUR). Oran, ikisi de bilinen 5 saatte 1,093–1,107 arasında; birini dışarıda bırakma sınamasında hata ~%1. Gerçek liste fiyatı değil, hesaplanmış karşılıktır."
+      "msrpEstimatedFrom": "EUR ↔ USD oranıyla türetildi (USD = 1.103 × EUR). Oran, ikisi de bilinen 5 saatte 1,093–1,107 arasında; birini dışarıda bırakma sınamasında hata ~%1. Gerçek liste fiyatı değil, hesaplanmış karşılıktır.",
+      "storyFrom": "shopcasio.ersasaat.com.tr — Casio Türkiye'nin resmi mağazası (Ersa, tek yetkili distribütör). casio.com bu ortamdan 403 verdiği için metin oradan alındı; kullanıcının izni var: \"Ersa resmi distribütör direk oradaki bilgileri kullanabilirsin.\" Türkçesi Casio'nun kendi tanıtım materyalinden, o yüzden story.en boş bırakıldı. Sayfa: https://shopcasio.ersasaat.com.tr/g-shock-g-lide-gbx-100-8dr-kol-saati-d2 AYRICA: metin \"doğal plaj renklerinden ilham alan\" diyor — envanterdeki Beige doğrulandı, shockbase'in \"Grey\" demesi yanlış."
     },
     "acquisition": {
       "date": "2026-03-10",
@@ -2043,7 +2046,7 @@
     },
     "story": {
       "en": null,
-      "tr": null
+      "tr": "Olağanüstü okunabilirlik sunan piksel içi bellek (MIP) ekran, güneş ışığını enerjiye dönüştüren Tough Solar teknolojisi, akıllı telefon bağlantısı için Bluetooth ve radyo dalgasıyla zaman kalibrasyonu — G-SHOCK'un işlevselliği bambaşka bir seviyeye taşınıyor. Klasik DW-5600UE ve DW-5600UBB modellerinden ilham alan kadran, ilk G-SHOCK'un tuğla dokulu tasarımını anımsatan özel güneş paneliyle birleşiyor. Kasa, çerçeve ve kordonun ana silikon bileşenleri çevresel etkiyi azaltmak için biyo-tabanlı silikondan üretiliyor."
     },
     "source": {
       "productUrl": "https://www.casio.com/intl/watches/gshock/product.GW-BX5600-1A1/",
@@ -2052,7 +2055,8 @@
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "releaseFrom": "shockbase.org",
       "msrpFrom": "shockbase.org",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/G/GW/GWB/gw-bx5600-1a1/assets/GW-BX5600-1A1.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/G/GW/GWB/gw-bx5600-1a1/assets/GW-BX5600-1A1.png",
+      "storyFrom": "shopcasio.ersasaat.com.tr — Casio Türkiye'nin resmi mağazası (Ersa, tek yetkili distribütör). casio.com bu ortamdan 403 verdiği için metin oradan alındı; kullanıcının izni var: \"Ersa resmi distribütör direk oradaki bilgileri kullanabilirsin.\" Türkçesi Casio'nun kendi tanıtım materyalinden, o yüzden story.en boş bırakıldı. Sayfa: https://shopcasio.ersasaat.com.tr/g-shock-iconic-gw-bx5600-1a1dr-kol-saati-d2"
     },
     "acquisition": {
       "date": "2025-12-24",
