@@ -1070,6 +1070,23 @@ dalında `bridge/results/` altına gelir, `git fetch origin bridge-local` +
 `git show` ile okunur. `bridge/` siteye girmiyor ve Pages tetiklemiyor
 (`paths-ignore`).
 
+**OTOMATİK MOD — `bridge/SESSION.md` senin sorumluluğunda.**
+Yerel oturum artık görev yoklamasını kendi yapıyor; kullanıcı her görevi
+yapıştırmıyor. Anahtar o dosyanın ilk satırı:
+
+- **Oturum başında** `DURUM: ACIK` olduğundan emin ol.
+- **İş bitince `DURUM: KAPALI` yazıp GÖNDER.** Unutursan yerel oturum boşuna
+  yoklamaya devam eder ve kullanıcının token'ını yakar. Bu senin işin;
+  kullanıcı hatırlatmak zorunda kalmasın.
+
+Döngüde yerel oturum **yalnızca** public sayfa okur ve `bridge/` altına yazar;
+`bridge-local` dalına push önceden onaylı, başka hiçbir yere push yok. Cihaz,
+kurulum, silme, başka dal — hiçbiri döngüde yapılmaz. Görev dosyana bunlardan
+birini yazarsan yerel oturum o görevi atlar ve "kapsam dışı" der. Bu sınır
+bilerek konuldu: döngüde görevi bir yapay zekâ yazıyor, başkası çalıştırıyor.
+Sonuçlar burada kullanıcıyla birlikte gözden geçirilir — kullanıcının şartı:
+*"bizden habersiz bir durum olmayacak."*
+
 **Üç şeyi unutma:**
 - Yerel oturumun **bağlamı yok** — her görev dosyası tek başına anlaşılır olmalı.
 - Depo **herkese açık** — göreve/sonuca şifre, token, IP, cihaz bilgisi yazma.

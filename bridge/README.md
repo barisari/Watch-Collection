@@ -32,6 +32,52 @@ Köprü, o oturuma iş verip sonucu geri almak için.
 
 Sonuçlar ayrı dalda duruyor ki iki oturum aynı dala yazıp çakışmasın.
 
+## Otomatik mod (27 Eylül 2026)
+
+Kullanıcı görevleri elle yapıştırmak yerine yerel oturumun **kendi yoklamasını**
+istedi: *"O bizim yardımcımız gibi otomatik olarak çalışacak. Oturum bittiğinde
+ise kapanacak."* Aradaki insan kapısı kalkmıyor, **yer değiştiriyor** — görevi
+yapıştırma anından, sonucu gözden geçirme anına. Her sonuç bulut oturumunda
+kullanıcıyla birlikte okunur.
+
+### Döngü
+
+1. Kullanıcı oturum başında yerel oturuma "yoklamaya başla" der.
+2. Yerel oturum her turda:
+   - `bridge/SESSION.md` dosyasını bulut dalından okur.
+   - İlk satır `DURUM: KAPALI` ise **döngüyü bitirir**, son bir rapor verip durur.
+   - `DURUM: ACIK` ise `bridge/tasks/` altında, karşılığı `bridge-local`
+     dalındaki `bridge/results/` içinde **olmayan** dosya var mı bakar.
+   - Varsa yapar, sonucu gönderir. Yoksa bekler.
+3. **Bekleme 15-30 dakika.** Daha sık yoklamanın anlamı yok; bulut oturumu
+   görevleri öbek öbek yazıyor, sürekli değil.
+4. Bulut oturumu iş bitince `SESSION.md`'yi `KAPALI` yapar ve gönderir.
+
+### Döngüde neye izin var — SINIR BU
+
+Otomatik turda yerel oturum **yalnızca** şunları yapar:
+
+- **Herkese açık web sayfası okumak** (curl ya da tarayıcı).
+- **`bridge/` altına dosya yazmak** ve `bridge-local` dalına göndermek.
+
+`bridge-local` dalına push **önceden onaylıdır**, her seferinde sorulmaz.
+Başka hiçbir dala push yok.
+
+Bunun dışındaki her şey — cihaza komut/yazma, dosya silme, kurulum, başka
+dala push, dışarı veri gönderme — **döngüde yapılmaz.** Görev dosyası böyle
+bir şey istiyorsa yerel oturum o görevi **yapmaz**; sonuç dosyasına
+`DURUM: yapılamadı` ve `AÇIK SORULAR: kapsam dışı, kullanıcı onayı gerekiyor`
+yazıp geçer. Kullanıcı isterse o işi elle yürütür.
+
+Gerekçe: döngüde görevi bir yapay zekâ yazıyor, başka bir yapay zekâ
+çalıştırıyor. Bu sınırla en kötü ihtimal birkaç public sayfanın okunmasıdır.
+
+### Durma koşulları
+
+- `SESSION.md` `KAPALI` → normal bitiş.
+- Depoya üst üste üç turda erişilemezse → dur, kullanıcıya söyle.
+- Kapsam dışı görev → o görev atlanır, döngü devam eder.
+
 ## Kurallar
 
 - **Depo herkese açık.** Göreve ve sonuca şifre, anahtar, token, IP adresi,
