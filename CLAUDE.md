@@ -1087,6 +1087,20 @@ bilerek konuldu: döngüde görevi bir yapay zekâ yazıyor, başkası çalışt
 Sonuçlar burada kullanıcıyla birlikte gözden geçirilir — kullanıcının şartı:
 *"bizden habersiz bir durum olmayacak."*
 
+**Yerel tarafın kendi notu `bridge-local` dalında: `bridge/LOCAL.md`.**
+Yoklama aralığı, tarayıcı davranışı, kendi kuralları orada — ve orası onun
+alanı, oraya yazma. `git show origin/bridge-local:bridge/LOCAL.md` ile oku.
+Oradaki bilgiyi buraya kopyalama, iki yerde tutulan şey bayatlar.
+Şu an yazdığına göre: bir sonuçtan 5 dk sonra, sonra 15 dk, sonra 30 dakikada
+bir yokluyor — yani sonuç gelir gelmez yazdığın görev hızlı alınır.
+Döngü yalnızca kullanıcının bilgisayarı açıkken dönüyor.
+
+**Görev dosyasına `CHROME: izinli` yazarsan** kullanıcının kendi Chrome'u
+(oturumlu) kullanılabilir hale gelir; kullanıcı bu satırı izni saydığını
+söyledi. **Varsayılanın `yok` olsun** — yerel oturumun dahili tarayıcısı
+casio.com dahil çoğu şeyi açıyor. Gerekçen yoksa kullanıcının oturumlu
+tarayıcısını kullanma.
+
 **Üç şeyi unutma:**
 - Yerel oturumun **bağlamı yok** — her görev dosyası tek başına anlaşılır olmalı.
 - Depo **herkese açık** — göreve/sonuca şifre, token, IP, cihaz bilgisi yazma.
