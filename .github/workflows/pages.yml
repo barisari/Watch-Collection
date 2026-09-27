@@ -9,6 +9,10 @@ on:
     # Deponun varsayılan dalı şu an claude/watch-collection-manager-gl4ziq.
     # İleride main'e taşırsan burada bir şey değiştirmene gerek yok.
     branches: [main, master, claude/watch-collection-manager-gl4ziq]
+    # Köprü klasörü siteye girmiyor (build.mjs kopyalamıyor); oraya yapılan
+    # görev/sonuç gönderimleri boşuna yayın tetiklemesin.
+    paths-ignore:
+      - 'bridge/**'
   workflow_dispatch:
 
 permissions:
