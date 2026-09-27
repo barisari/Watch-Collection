@@ -44,6 +44,11 @@ Bunun dışındaki her görev yapılmaz; sonuçta `DURUM: yapılamadı` ve
   Kullanıcı, bu satırı kendi izni saydığını söyledi. Chrome yalnızca herkese açık
   sayfaları okumak için kullanılır; giriş yapma, form doldurma ya da hesaplarda
   işlem yok. Satır yoksa Chrome kullanılmaz.
+- **Süreli izin:** Chrome izni yalnızca bu otomatik döngü boyunca geçerli.
+  `SESSION.md` `DURUM: KAPALI` olunca biter. Sonraki bir döngüde Chrome gerekirse
+  kullanıcının yerel oturuma yeniden izin vermesi gerekir.
+- Bir görev form doldurma, giriş yapma gibi bir şey isterse yerel oturum o görevi
+  yapmaz; kullanıcı gerekirse yerel oturuma doğrudan müdahale eder.
 - Öneri: README'deki görev dosyası biçimine isteğe bağlı bir satır ekle:
   `CHROME: izinli | yok`.
 
