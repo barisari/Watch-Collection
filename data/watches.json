@@ -350,11 +350,11 @@
     },
     "tagline": {
       "en": null,
-      "tr": null
+      "tr": "1989’dan beri değişmeyen tasarımıyla dijital klasik."
     },
     "story": {
       "en": null,
-      "tr": null
+      "tr": "Rahat erişilebilirliği ve uzun ömürlü kullanımıyla A158W dijital saatler, 1989’dan bu yana zamana meydan okuyan bir popülerliğe sahip. Malzeme seçiminden üretim sürecine kadar her aşamada yapılan titiz optimizasyon sayesinde, metal kayışa sahip olmasına rağmen erişilebilir bir fiyat sunuyor; modülün geliştirilmesi ve parça sayısının azaltılmasıyla hem dayanıklılık arttı hem fiyat aşağı indi. Yalnızca 8,2 mm kalınlığındaki kasa bilekte rahat durup gömlek manşetine takılmıyor. İlk çıkışından bu yana değişmeyen sade tasarımı, fonksiyonel estetiğin özünü yakalama arayışından doğdu."
     },
     "source": {
       "productUrl": "https://www.casio.com/intl/watches/casio/product.A158WA-1/",
@@ -363,7 +363,8 @@
       "imageFrom": "Casio resmi ürün görseli (geçici — kendi fotoğraflarınla değişecek)",
       "releaseFrom": "casiofanmag.com (temel model, resmi değil)",
       "msrpFrom": "ersasaat.com.tr — Casio Türkiye yetkili satıcısı, indirim öncesi liste fiyatı (30 Ağustos 2026) · casio.com/in — MRP (vergi dahil)",
-      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/A/A1/A15/A158WA-1/assets/A158WA-1.png"
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/tr/tr/timepiece/product/watch/A/A1/A15/A158WA-1/assets/A158WA-1.png",
+      "storyFrom": "shopcasio.ersasaat.com.tr — Casio Türkiye'nin resmi mağazası. Sayfa: https://shopcasio.ersasaat.com.tr/casio-retro-a158wa-1df-kol-saati-d2 · Metin Casio'nun kendi Türkçesi, dört paragraftan derlendi. NOT: belgede uzun süre \"A158WA-1 için Casio metin yazmamış\" yazıyordu — YANLIŞTI. intl sayfasında yoktu, TR sayfasında var."
     },
     "acquisition": {
       "date": "2013-12-21",

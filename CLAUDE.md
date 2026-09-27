@@ -61,6 +61,7 @@ oradaki A her zaman renk kodunun parçasıdır. 6 sayfa çekilerek doğrulandı.
 | `europe` yolu | `casio.com/europe/watches/casio/vintage/product.<MODEL>/` | Yalnızca `intl`'de olmayan modeller için teknik özellik | fiyat, tarih |
 | Singapur / Endonezya | `casio.com/sg/…` · `casio.com/id/…` | Teknik tablo + tanıtım metni | fiyat |
 | Destek sayfası | `casio.com/<ülke>/watches/<seri>/support.<MODEL>/` | **Modül numarası** (kılavuz PDF adından: `qw3503`) | — |
+| **shopcasio.ersasaat.com.tr** | `shopcasio.ersasaat.com.tr/<seri>-<MODEL>-kol-saati-d2` | **Casio'nun Türkçe tanıtım metni** (casio.com kapalıyken tek kaynak), ₺ fiyat | teknik tablo ikincil |
 | **shockbase.org** | `shockbase.org/watches/watch_dyn.php?model=<MODEL>&subseries=..&series=..` | Çıkış tarihi, 14 para biriminde liste fiyatı, yazılı renk alanları, pil hücresi | **yalnızca G-Shock** |
 | casiofanmag.com | `casiofanmag.com/retro/<aile>/` · `/standard/<aile>/` | Serinin ilk çıkış yılı (resmi değil) | — |
 | Modül servis listesi | PDF, depoda yok — `casio-watch.fastcr.cz` | Modülün pil/hassasiyet/tarihi | **model adı hiç geçmiyor** — modülü saate bağlamaz |
@@ -246,8 +247,12 @@ web.archive.org **proxy'den 502** dönüyor, yani engel tarayıcı tarafında de
 creationwatches.com bu dört modeli taşıyor ve açılıyor, ama `shortdescription`
 alanındaki metin **Casio'nun değil, perakendecinin kendi SEO yazısı**:
 *"Experience cutting-edge technology with the Casio GBX-100-8..."* gibi.
-Envanterdeki 17 `story`'nin hepsi üreticinin kendi cümleleri; araya bir
-perakendeci kopyası koymak alanın anlamını bozar. Yazılmadı. TR sayfası JS ile
+Envanterdeki `story` alanlarının hepsi üreticinin kendi cümleleri; araya bir
+perakendeci kopyası koymak alanın anlamını bozar. Yazılmadı.
+**Ersa bundan farklı:** orası Casio'nun kendi Türkçe metnini basıyor, uydurma
+SEO yazısı değil — kullanıcının izni de var (*"Ersa resmi distribütör direk
+oradaki bilgileri kullanabilirsin"*). Ayrımı metne bakarak yap: modele özel ve
+teknikse üreticinin, genel ve satış dilindeyse mağazanın. TR sayfası JS ile
 yüklendiği için okunamıyor ama **TR CDN varlıkları gayet çalışıyor**.
 
 **Aynı model yerele göre farklı çözünürlükte olabiliyor:** GA-2100-1A1
@@ -319,10 +324,27 @@ değer yok, kaynak doğrudan saatin kendisi.
 **Braun BN0021'e bakılmayacak** — kullanıcının kararı: *"ölçmek zor buna hiç
 bakmayalım eksik diye not etmene gerek yok."* Kapalı konu, tekrar açma.
 
-Kısa tanıtım eksik 6: A158WA-1, CA-53W-1, DBC-611-1, MDV-106-1A,
-MRS-301-2E, SNE529P. İlk üçünde **Casio metin yazmamış** — sayfada yalnızca
-madde listesi var, aranacak bir şey kalmadı. MDV-106-1A'nın okunabilir yerelde
-sayfası, MRS-301-2E'nin hiçbir yerde resmi sayfası yok.
+**TANITIM METNİ — 27 Eylül'de büyük atılım: Casio Türkiye'nin resmi mağazası.**
+`shopcasio.ersasaat.com.tr` açılıyor ve **Casio'nun kendi Türkçe lansman
+metnini** taşıyor. casio.com IP engeliyle kapalıyken bulunan yol bu; fikir
+kullanıcınındı (*"bölge sayfalarına baktın mı, ersa.com.tr açılıyor mu"*).
+**Alan adı önemli:** `ersasaat.com` kapalı (eski notta yanlış yazıyordu),
+**`ersa.com.tr` · `ersasaat.com.tr` · `shopcasio.ersasaat.com.tr` açık.**
+`ersa.com.tr` kurumsal site, ürün sayfası yok; mağaza öbür ikisi.
+
+Böyle doldurulanlar: **EFK-110D-1A · GW-BX5600-1A1 · GBX-100-8 · A158WA-1**
+(dördü de Casio'nun kendi metni) ve **MTP-B185D-2A2V** (kısa, mağaza yazısı
+gibi — kaynak notunda işaretli, Casio'nunki bulunursa değiştir).
+
+**A158WA-1 için "Casio metin yazmamış" notu YANLIŞTI.** `intl` sayfasında
+yoktu, **TR sayfasında dört paragraf var** (1989 mirası, modül sadeleştirme,
+8,2 mm kasa). Ders: bir metin `intl`'de yoksa TR/bölge sayfasına bak.
+
+Kısa tanıtım hâlâ eksik 5: CA-53W-1, DBC-611-1, MDV-106-1A, MRS-301-2E,
+SNE529P. **Üçü Ersa'da da sınandı (27 Eylül): CA-53W-1, DBC-611-1 ve
+MDV-106-1A'nın sayfasında ürün metni YOK**, yalnızca kargo/garanti kalıbı var.
+Yani bu üçünde gerçekten yazılmamış. **MRS-301-2E Ersa'nın güncel sitesinde
+hiç yok** (üretimden kalkalı çok olmuş); elimizdeki tek Ersa izi kılavuz PDF'i.
 **SNE529P'ye bakıldı (18 Eylül): Seiko bu saat için hiç metin yazmamış.**
 `seikowatches.com/uk-en/products/discovermore/sne529` açılıyor ve tam teknik
 tabloyu veriyor, ama tanıtım paragrafı yok — sayfa yalnızca tablodan ibaret.
