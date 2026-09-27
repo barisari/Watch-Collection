@@ -159,6 +159,28 @@ yerel (`tr/tr`, `jp/ja`, `in/en`, `europe/en-gb`, `ca/en`), klasör
 harflerinin büyük/küçüklüğü ve dosya adındaki `_Seq01` / `_Seq1` ekleri
 tutarsız. Kalıbı kurmayı denedim, 24 modelin **ancak 4 tanesinde** tuttu.
 
+**TARAYICI ARTIK ÇALIŞIYOR (27 Eylül 2026) — eski "proxy'den geçemiyor" notu YANLIŞ.**
+Belgede uzun süre *"başsız tarayıcı proxy'den geçemiyor (`ERR_CONNECTION_RESET`)"*
+yazıyordu. Doğrusu: geçiyor, sadece iki şey gerekiyordu.
+
+```bash
+# 1) certutil'i kur (apt'ın önbelleği bayatsa önce update, yoksa 404 verir)
+apt-get update -qq && apt-get install -y libnss3-tools
+# 2) proxy'nin CA'sını Chromium'un NSS deposuna ekle — TLS doğrulaması KAPATILMAZ
+mkdir -p ~/.pki/nssdb; : > /tmp/nsspw.txt
+certutil -d "sql:$HOME/.pki/nssdb" -N -f /tmp/nsspw.txt </dev/null
+for f in /etc/ssl/certs/ccr-agent-proxy.pem /etc/ssl/certs/ccr-agent-proxy-2.pem; do
+  certutil -d "sql:$HOME/.pki/nssdb" -A -t "C,," -n "$(basename $f .pem)" -i "$f" -f /tmp/nsspw.txt </dev/null
+done
+```
+Playwright global kurulu (`/opt/node22/lib/node_modules/playwright`), Chromium
+`/opt/pw-browsers/chromium`. Betikte:
+`chromium.launch({ executablePath:'/opt/pw-browsers/chromium',
+args:['--no-sandbox','--disable-dev-shm-usage'], proxy:{ server: process.env.HTTPS_PROXY } })`
+CA eklenmeden `ERR_CERT_AUTHORITY_INVALID` alınır — eski notun kaynağı buydu.
+**JS çalıştıran sayfalar (TR yereli gibi) artık okunabilir**; bir sayfa curl'e
+boş geliyorsa tarayıcıyı dene.
+
 **ERİŞİM DEĞİŞTİ — casio.com artık WebFetch'e de kapalı (18 Eylül 2026).**
 Önceden "curl 403 alır ama WebFetch okur" yazıyordu; **artık ikisi de 403.**
 Akamai'nin kendi *Access Denied* sayfası geliyor (`errors.edgesuite.net`
@@ -167,6 +189,15 @@ Denenip kapalı çıkanlar: `intl`, `sg`, `id`, `in` yolları · `gshock.casio.c
 `g-shock.eu` · `gshock.com` · `casio-intl.com`. `world.casio.com` ve
 `edifice-watches.com` açılıyor ama **ürün sayfası yok**, ikisi de yalnızca
 ülke seçme/yönlendirme kabuğu. **CDN varlıkları hâlâ 200** — görseller iniyor.
+
+**27 Eylül: engel GENİŞLEDİ ve parmak izi meselesi değil, IP meselesi.**
+Gerçek Chromium'la (yukarıdaki kurulum, doğru UA, JS açık) denendi — **yine 403**,
+Akamai'nin *Access Denied* sayfası. Yani tarayıcı numarası işe yaramıyor.
+Üstelik **`/content/dam/` altındaki görseller de artık 403**; "CDN varlıkları
+hâlâ 200" notu da geçersiz. AEM içerik yolları (`/content/casio/locales/...html`,
+`.model.json`) de 403.
+Denenen sunucu-taraflı aracılar: `r.jina.ai` → 403 (Akamai onu da eliyor),
+`api.allorigins.win` → 522.
 
 Bir sonraki oturumda önce tek bir ürün sayfasını dene; açılıyorsa engel geçici
 demektir. **Engel kullanıcının tarayıcısında yok** — casio.com ona açık, bize
@@ -208,7 +239,8 @@ curl "https://archive.org/wayback/available?url=<TAM URL>"   # -> closest.timest
 | GW-BX5600-1A1 · MTP-B185D-2A2V | — | API hız sınırına takıldı, bakılamadı |
 
 `archive.ph`, `archive.is` ve `timetravel.mementoweb.org` bu ortamda proxy
-tarafından kapalı (bağlantı hiç kurulmuyor).
+tarafından kapalı (bağlantı hiç kurulmuyor). Tarayıcıyla da denendi:
+web.archive.org **proxy'den 502** dönüyor, yani engel tarayıcı tarafında değil.
 
 **PERAKENDECİ METNİ `story` ALANINA GİRMEZ (27 Eylül'de sınandı).**
 creationwatches.com bu dört modeli taşıyor ve açılıyor, ama `shortdescription`
