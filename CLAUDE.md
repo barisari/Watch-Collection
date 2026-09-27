@@ -1095,14 +1095,13 @@ Oradaki bilgiyi buraya kopyalama, iki yerde tutulan şey bayatlar.
 bir yokluyor — yani sonuç gelir gelmez yazdığın görev hızlı alınır.
 Döngü yalnızca kullanıcının bilgisayarı açıkken dönüyor.
 
-**`CHROME: izinli` satırını ASLA kendi kararınla yazma.** O satır
-kullanıcının kendi Chrome'unu (oturumlu, hesapları açık) açar. Yalnızca
-kullanıcı **bu sohbette açıkça izin verdiğinde** yazılır; dahili tarayıcı
-bir sayfada yetmezse kullanıcıya sor. Kullanıcının kurgusu: *"Chrome için
-izni ben buradan sana söyleyebilirim, bu yüzden senin yazacağın not benim
-kontrolümde olmuş olur."* Yani satır her zaman kullanıcının kararının
-kaydıdır. (İlk yazdığım hâlinde "dahili tarayıcı yetmezse `izinli` yazarım"
-diyordum — izni kendime veriyordum, kullanıcı düzeltti.)
+**`CHROME: izinli` satırını kendi kararınla yazabilirsin** — kullanıcı
+izin verdi: *"Chrome için izni sen de verebilirsin sıkıntı değil, güvenlik
+açığı oluşturmayacak şekilde ayarladım diğer oturumu."* Güvenlik sınırı
+yerel tarafta (`LOCAL.md`): Chrome yalnızca public sayfa okur, giriş/form/
+hesap işlemi yok. Alışkanlık: her göreve değil, dahili tarayıcının
+yetmediği yerde yaz — dahili tarayıcı casio.com dahil çoğu şeyi açıyor.
+(Kural bu konuda iki kez değişti; geçerli olan bu.)
 
 **Sonucu bekleme: en fazla iki kontrol.** Görev yazdıktan sonra sonucu
 kendiliğinden **iki kez** kontrol edebilirsin, yerel tarafın 5/15 dk
