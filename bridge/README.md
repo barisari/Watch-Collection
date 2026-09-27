@@ -129,13 +129,15 @@ kendi Chrome'u** (açık hesaplarıyla) kullanılabilir hale gelir. Kullanıcı 
 satırı kendi izni saydığını söyledi; yalnızca herkese açık sayfa okumak için,
 giriş yapma/form doldurma/hesapta işlem yok.
 
-**`izinli` yalnızca kullanıcı bulut oturumunda açıkça izin verdiğinde
-yazılır.** Bulut oturumu bu kararı kendi başına vermez — dahili tarayıcı bir
-sayfada yetmezse kullanıcıya sorar. Böylece bu satır her zaman kullanıcının
-o oturumdaki kararının kaydı olur, yapay zekânın değil. Kullanıcının
-ifadesiyle: *"Chrome için izni ben buradan sana söyleyebilirim, bu yüzden
-senin yazacağın not benim kontrolümde olmuş olur."* Yerel oturuma da bu
-böyle anlatıldı.
+**`izinli`'yi bulut oturumu da kendi kararıyla yazabilir** — kullanıcının
+kararı (27 Eylül): *"Chrome için izni sen de verebilirsin sıkıntı değil,
+güvenlik açığı oluşturmayacak şekilde ayarladım diğer oturumu."* Güvenlik
+sınırı yerel tarafta: Chrome yalnızca herkese açık sayfa okumak için
+kullanılır; giriş yapma, form doldurma, hesapta işlem yok (bkz. `LOCAL.md`).
+
+Kullanım alışkanlığı: dahili tarayıcı zaten casio.com dahil çoğu sayfayı
+açıyor, o yüzden `izinli` her göreve değil, **dahili tarayıcının yetmediği
+yerde** yazılır.
 
 ## Sonuç dosyası biçimi
 
