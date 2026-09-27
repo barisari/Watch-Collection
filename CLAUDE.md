@@ -191,9 +191,18 @@ Denenip kapalı çıkanlar: `intl`, `sg`, `id`, `in` yolları · `gshock.casio.c
 `edifice-watches.com` açılıyor ama **ürün sayfası yok**, ikisi de yalnızca
 ülke seçme/yönlendirme kabuğu. **CDN varlıkları hâlâ 200** — görseller iniyor.
 
-**27 Eylül: engel GENİŞLEDİ ve parmak izi meselesi değil, IP meselesi.**
-Gerçek Chromium'la (yukarıdaki kurulum, doğru UA, JS açık) denendi — **yine 403**,
-Akamai'nin *Access Denied* sayfası. Yani tarayıcı numarası işe yaramıyor.
+**27 Eylül: engel İKİ KATMANLI — hem IP hem istek parmak izi.**
+Yerel destek oturumu kullanıcının kendi bilgisayarından ölçtü ve tablo şöyle
+tamamlandı:
+
+| Nereden | curl | Gerçek tarayıcı |
+|---|---|---|
+| Bu konteyner (veri merkezi IP) | 403 | **403** |
+| Kullanıcının evi (ev IP) | **403** | **200** |
+
+Yani: veri merkezi IP'si her hâlükârda eleniyor; ev IP'sinden bile curl
+reddediliyor, yalnızca gerçek tarayıcı geçiyor. Buradan bir tarayıcı açmak
+yetmez (denendi, 403) — casio.com için tek yol kullanıcının makinesi.
 Üstelik **`/content/dam/` altındaki görseller de artık 403**; "CDN varlıkları
 hâlâ 200" notu da geçersiz. AEM içerik yolları (`/content/casio/locales/...html`,
 `.model.json`) de 403.
@@ -336,14 +345,34 @@ Böyle doldurulanlar: **EFK-110D-1A · GW-BX5600-1A1 · GBX-100-8 · A158WA-1**
 (dördü de Casio'nun kendi metni) ve **MTP-B185D-2A2V** (kısa, mağaza yazısı
 gibi — kaynak notunda işaretli, Casio'nunki bulunursa değiştir).
 
-**A158WA-1 için "Casio metin yazmamış" notu YANLIŞTI.** `intl` sayfasında
-yoktu, **TR sayfasında dört paragraf var** (1989 mirası, modül sadeleştirme,
-8,2 mm kasa). Ders: bir metin `intl`'de yoksa TR/bölge sayfasına bak.
+**A158WA-1'in metni ERSA'DA, casio.com'da DEĞİL — bu cümleyi 27 Eylül'de
+düzelttim.** Önce "intl'de yoktu, TR sayfasında dört paragraf var" diye
+yazmıştım; **yanlış anlaşılır**, çünkü o dört paragraf `casio.com/tr`'de değil
+`shopcasio.ersasaat.com.tr`'de. Yerel destek oturumu casio.com/tr'yi gerçek
+tarayıcıyla açtı: orada da düz paragraf yok, yalnızca madde özeti var.
+Yani metin büyük olasılıkla Casio Türkiye'nin kampanya materyali; ürün
+sayfasının metni değil. Kaynak notu (`storyFrom`) zaten doğru yazıyor.
+**Ders: metin `intl`'de yoksa casio.com'un başka yereline değil, DİSTRİBÜTÖRÜN
+mağazasına bak.**
 
 Kısa tanıtım hâlâ eksik 5: CA-53W-1, DBC-611-1, MDV-106-1A, MRS-301-2E,
 SNE529P. **Üçü Ersa'da da sınandı (27 Eylül): CA-53W-1, DBC-611-1 ve
 MDV-106-1A'nın sayfasında ürün metni YOK**, yalnızca kargo/garanti kalıbı var.
-Yani bu üçünde gerçekten yazılmamış. **MRS-301-2E Ersa'nın güncel sitesinde
+
+**KONU KAPANDI — casio.com'un kendisinde de yok (27 Eylül, yerel destek
+oturumu gerçek tarayıcıyla açtı).** Dört model, iki yerel, sekiz sayfa:
+
+| Model | `intl` | `tr` |
+|---|---|---|
+| MTP-B185D-2A2V | açıldı, paragraf **yok** (3 maddelik özet) | açıldı, paragraf **yok** |
+| CA-53W-1 | açıldı, paragraf **yok** | **404** |
+| DBC-611-1 | açıldı, paragraf **yok** | açıldı, paragraf **yok** |
+| MDV-106-1A | **404** | **404** |
+
+**MDV-106-1A'nın casio.com'da hiçbir yerelde sayfası yok.** Bu dördü için
+aramayı tekrarlama; kaynakta metin yok, arama eksikliği değil.
+MTP-B185D'deki mağaza yazısı bu yüzden yerinde kalıyor — yerine konacak bir
+Casio metni mevcut değil. **MRS-301-2E Ersa'nın güncel sitesinde
 hiç yok** (üretimden kalkalı çok olmuş); elimizdeki tek Ersa izi kılavuz PDF'i.
 **SNE529P'ye bakıldı (18 Eylül): Seiko bu saat için hiç metin yazmamış.**
 `seikowatches.com/uk-en/products/discovermore/sne529` açılıyor ve tam teknik
