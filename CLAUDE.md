@@ -179,8 +179,8 @@ Playwright global kurulu (`/opt/node22/lib/node_modules/playwright`), Chromium
 `chromium.launch({ executablePath:'/opt/pw-browsers/chromium',
 args:['--no-sandbox','--disable-dev-shm-usage'], proxy:{ server: process.env.HTTPS_PROXY } })`
 CA eklenmeden `ERR_CERT_AUTHORITY_INVALID` alınır — eski notun kaynağı buydu.
-**JS çalıştıran sayfalar (TR yereli gibi) artık okunabilir**; bir sayfa curl'e
-boş geliyorsa tarayıcıyı dene.
+**JS çalıştıran sayfalar artık okunabilir**; bir sayfa curl'e boş geliyorsa
+tarayıcıyı dene. **casio.com hariç:** o buradan tarayıcıyla da 403 (aşağıya bak).
 
 **ERİŞİM DEĞİŞTİ — casio.com artık WebFetch'e de kapalı (18 Eylül 2026).**
 Önceden "curl 403 alır ama WebFetch okur" yazıyordu; **artık ikisi de 403.**
@@ -189,7 +189,8 @@ referansı), proxy sorunu değil — `$HTTPS_PROXY/__agentproxy/status` temiz.
 Denenip kapalı çıkanlar: `intl`, `sg`, `id`, `in` yolları · `gshock.casio.com` ·
 `g-shock.eu` · `gshock.com` · `casio-intl.com`. `world.casio.com` ve
 `edifice-watches.com` açılıyor ama **ürün sayfası yok**, ikisi de yalnızca
-ülke seçme/yönlendirme kabuğu. **CDN varlıkları hâlâ 200** — görseller iniyor.
+ülke seçme/yönlendirme kabuğu. ~~CDN varlıkları hâlâ 200~~ — 27 Eylül'de
+kararsız çıktı, aşağıya bak.
 
 **27 Eylül: engel İKİ KATMANLI — hem IP hem istek parmak izi.**
 Yerel destek oturumu kullanıcının kendi bilgisayarından ölçtü ve tablo şöyle
@@ -203,8 +204,10 @@ tamamlandı:
 Yani: veri merkezi IP'si her hâlükârda eleniyor; ev IP'sinden bile curl
 reddediliyor, yalnızca gerçek tarayıcı geçiyor. Buradan bir tarayıcı açmak
 yetmez (denendi, 403) — casio.com için tek yol kullanıcının makinesi.
-Üstelik **`/content/dam/` altındaki görseller de artık 403**; "CDN varlıkları
-hâlâ 200" notu da geçersiz. AEM içerik yolları (`/content/casio/locales/...html`,
+**`/content/dam/` altındaki görseller KARARSIZ** (27 Eylül akşamı ölçüldü):
+aynı dosya dakikalar arayla bir 200, bir 403 veriyor. 24 görsellik bir turda
+8'i geçti, 16'sı 403 aldı. Yani görsel buradan inebilir ama tekrar denemek
+gerekir. Ürün sayfası (HTML) ise her denemede 403. AEM içerik yolları (`/content/casio/locales/...html`,
 `.model.json`) de 403.
 Denenen sunucu-taraflı aracılar: `r.jina.ai` → 403 (Akamai onu da eliyor),
 `api.allorigins.win` → 522.
@@ -261,8 +264,8 @@ perakendeci kopyası koymak alanın anlamını bozar. Yazılmadı.
 **Ersa bundan farklı:** orası Casio'nun kendi Türkçe metnini basıyor, uydurma
 SEO yazısı değil — kullanıcının izni de var (*"Ersa resmi distribütör direk
 oradaki bilgileri kullanabilirsin"*). Ayrımı metne bakarak yap: modele özel ve
-teknikse üreticinin, genel ve satış dilindeyse mağazanın. TR sayfası JS ile
-yüklendiği için okunamıyor ama **TR CDN varlıkları gayet çalışıyor**.
+teknikse üreticinin, genel ve satış dilindeyse mağazanın. `casio.com/tr`
+sayfası buradan açılmıyor (403). Görselleri kararsız, yukarıya bak.
 
 **Aynı model yerele göre farklı çözünürlükte olabiliyor:** GA-2100-1A1
 `tr` / `intl` / `in` / `europe` yerellerinde 500×600, **`jp` yerelinde
@@ -293,7 +296,7 @@ düşüktü); eksik olan adım 2'ydi.
 **Tek istisna MRS-301** — bu saatin hiçbir yerelde resmi görseli yok (hepsi
 404). Kullanıcının ürettiği kare kalıcı çözüm, çözünürlük kıyaslaması yapılmaz.
 
-### Doldurulma durumu (13 Eylül 2026)
+### Doldurulma durumu (27 Eylül 2026)
 
 **31 saat.** Casio dışı altısı: Mondaine evo2 (MSE.40610.LBV), Braun BN0021BKG
 ve dört Seiko — SNE529P, 6309-5000, 6309-8190, SNAB71.
@@ -308,7 +311,7 @@ ve dört Seiko — SNE529P, 6309-5000, 6309-8190, SNAB71.
 | Satın alma tarihi | 28/31 |
 | Liste fiyatı | 28/31 |
 | Çıkış tarihi | 27/31 |
-| Tanıtım metni | 22/31 kısa · 16/31 uzun |
+| Tanıtım metni | 23/31 kısa · 23/31 uzun |
 | Rotasyon kaydı | sitede yok — kayıt HA'da (aşağıya bak) |
 
 Liste fiyatı eksik 3: **MRS-301-2E** (hiçbir yerde resmi kaydı yok) ve iki
@@ -319,8 +322,8 @@ SNAB71 çözüldü: **440 USD**, creationwatches'ın kendi ürün verisinden
 Aynı kayıtta `products_date_added` 2014-05-15 — çıkış tarihi değil, saatin
 en geç Mayıs 2014'te satışta olduğunu söylüyor.
 
-Çıkış tarihi eksik 4: MRS-301-2E, MSE.40610.LBV, SNE529, BN0021.
-(İki vintage Seiko'nun tarihi seri numarasından çözüldü; SNAB71'inki yok.)
+Çıkış tarihi eksik 4: MSE.40610.LBV, SNE529, BN0021, SNAB71.
+(İki vintage Seiko'nun tarihi seri numarasından, MRS-301'inki modülünden çözüldü.)
 
 **Ağırlık 31/31 — kullanıcı tarttı (18 Eylül):** MRS-301 41,3 g · 6309-8190
 79,85 g · 6309-5000 52,5 g · SNAB71 90,15 g. SNAB71'in kulaktan kulağası da
@@ -355,9 +358,10 @@ sayfasının metni değil. Kaynak notu (`storyFrom`) zaten doğru yazıyor.
 **Ders: metin `intl`'de yoksa casio.com'un başka yereline değil, DİSTRİBÜTÖRÜN
 mağazasına bak.**
 
-Kısa tanıtım hâlâ eksik 5: CA-53W-1, DBC-611-1, MDV-106-1A, MRS-301-2E,
-SNE529P. **Üçü Ersa'da da sınandı (27 Eylül): CA-53W-1, DBC-611-1 ve
-MDV-106-1A'nın sayfasında ürün metni YOK**, yalnızca kargo/garanti kalıbı var.
+Tanıtım metni eksik 8: CA-53W-1, DBC-611-1, MDV-106-1A, MRS-301-2E, SNE529P
+ve üç Seiko (SNAB71, 6309-5000, 6309-8190; Seiko'nun bu üçü için sayfası yok).
+**CA-53W-1, DBC-611-1 ve MDV-106-1A Ersa'da da sınandı (27 Eylül): sayfalarında
+ürün metni YOK**, yalnızca kargo/garanti kalıbı var.
 
 **KONU KAPANDI — casio.com'un kendisinde de yok (27 Eylül, yerel destek
 oturumu gerçek tarayıcıyla açtı).** Dört model, iki yerel, sekiz sayfa:
@@ -383,13 +387,13 @@ Yani o iki alan arama eksikliğinden değil, kaynakta olmadığı için boş.
 Seri → URL yolu: `casio`, `gshock`, `edifice`, `protrek`, `oceanus`.
 **Oceanus yalnızca `jp` yerelinde**, diğerleri `intl`.
 
-**Neden TR değil de `intl`:** TR sayfasında da her şey yazıyor — ama teknik
-tablo JavaScript ile yükleniyor. casio.com'a tek erişimimiz JS çalıştırmayan
-WebFetch: başsız tarayıcı proxy'den geçemiyor (`ERR_CONNECTION_RESET`), curl
-403 alıyor (Akamai). `intl` sayfası sunucudan hazır geldiği için okunabiliyor.
-Yani TR'yi "boş olduğu için" değil, **okuyamadığımız için** kullanmıyoruz.
-Kullanıcı tarayıcısında TR sayfasını görebilir; bir çelişki çıkarsa kaynak
-odur.
+**Neden TR değil de `intl` (tarihçe):** TR sayfasında da her şey yazıyor,
+ama teknik tablo JavaScript ile yükleniyor. JS çalıştıramadığımız dönemde
+`intl` sunucudan hazır geldiği için seçilmişti. **27 Eylül'den beri bu ayrımın
+anlamı yok:** casio.com'un hiçbir sayfası buradan açılmıyor (curl, WebFetch,
+tarayıcı üçü de 403). Casio sayfası gerekirse köprüden yerel oturum okur, TR
+dahil. Kullanıcı tarayıcısında TR sayfasını görebilir; bir çelişki çıkarsa
+kaynak odur.
 
 ### MRS-301 — modül çözüldü: **2385**
 
@@ -473,7 +477,7 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 
 ### Bekleyen adımlar
 
-1. ~~Teknik özellikler~~ — 28/28 dolu. MDV-106-1A perakendeci verisinden,
+1. ~~Teknik özellikler~~ — 31/31 dolu. MDV-106-1A perakendeci verisinden,
    MRS-301-2E kasa arkası + kadrandan tamamlandı. Yeni saat eklerken kural aynı:
    her partiden sonra kullanıcıya doğrulat — aynı modelin varyantları arasında
    ölçüler değişebiliyor.
@@ -491,12 +495,13 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 4. ~~`MRS-301-2E` satın alma tarihi~~ — babadan kalma; modül 2385'in Ağustos
    2001 tabanından tahmin edildi ve `acquisition.dateApprox` ile işaretlendi
    (ön yüzde "… civarı (tahmini)" basılıyor).
-5. ~~Casio dışı saatler~~ — Mondaine, Seiko, Braun girdi. Eksik saatler
-   olabilir; kullanıcı listeyi henüz tamamlamadı.
+5. ~~Casio dışı saatler~~ — Mondaine, Seiko, Braun girdi. **Liste tamam:**
+   31 saat, kullanıcı eksik olmadığını söyledi.
 6. **Fotoğraflar** — hepsi üreticinin görselleri. Kullanıcı kendi fotoğraflarını
    çekmeyecek; bunun yerine **mevcut modeller için ek fotoğraf** indirilecek
    (üreticiler genelde 3–8 kare yayımlıyor). Sırası kullanıcıya ait, kendiliğinden
-   başlama.
+   başlama. Casio görselleri buradan kararsız iniyor (yukarıya bak); inmeyenler
+   için köprü var.
 7. ~~Rotasyon~~ — sitedeki rotasyon arayüzü **17 Eylül 2026'da kaldırıldı**,
    `data/wears.json` silindi. Yani "public derlemeden çıkar" maddesi düştü:
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
@@ -876,7 +881,8 @@ reddedildi ve geri alındı.** Reddedilenleri tekrar denemeyin.
    "Şubat 2026". Gerekçe: kasa çapına göre sıralarken altyazıda marka yazması
    sırayı doğrulanamaz kılıyordu — şimdi göz ızgarada değerlerin arttığını
    görüyor. Altyazı `SORTS[...].alt()` ile tanımlı, yani her sıralama kendi
-   metnini taşıyor. Üç anahtar da 28/28 dolu, altyazı boş kalmıyor. Tahmini
+   metnini taşıyor. Marka ve kasa çapı 31/31 dolu; satın alma tarihi 28/31,
+   yani o sıralamada iki vintage Seiko ile SNAB71'in altyazısı boş. Tahmini
    satın alma tarihi "civarı" ekiyle basılıyor (tek örnek MRS-301).
 11. **Künye başlığı: marka belirgin, kod sade, referans en altta** (18 Eylül).
    Kullanıcı: *"tam referans kodu yazması çok uzun ve kalabalık, Robocop okusun

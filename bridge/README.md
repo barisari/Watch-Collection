@@ -20,7 +20,8 @@ Köprü, o oturuma iş verip sonucu geri almak için.
 
 1. **Bulut oturumu** görevi `bridge/tasks/YYYY-MM-DD-kisa-baslik.md` olarak
    kendi çalışma dalına yazar ve gönderir.
-2. **Kullanıcı** yerel oturuma tek satır yapıştırır:
+2. **Otomatik modda** yerel oturum görevi kendi bulur (aşağıya bak). Elle
+   modda **kullanıcı** yerel oturuma tek satır yapıştırır:
    `watch-collection projesi için çalışıyoruz. GitHub'da yeni görev var: bridge/tasks/<dosya>.md (dal: <dal>)`
 3. **Yerel oturum** işi yapar, sonucu `bridge-local` dalına aynı adla
    `bridge/results/<dosya>.md` olarak gönderir.
@@ -53,8 +54,8 @@ kullanıcıyla birlikte okunur.
    - `DURUM: ACIK` ise `bridge/tasks/` altında, karşılığı `bridge-local`
      dalındaki `bridge/results/` içinde **olmayan** dosya var mı bakar.
    - Varsa yapar, sonucu gönderir. Yoksa bekler.
-3. **Bekleme 15-30 dakika.** Daha sık yoklamanın anlamı yok; bulut oturumu
-   görevleri öbek öbek yazıyor, sürekli değil.
+3. **Yoklama aralığı yerel tarafın kararı.** Güncel değer `LOCAL.md`'de;
+   buraya yazılmıyor, iki yerde tutulursa biri bayatlar.
 4. Bulut oturumu iş bitince `SESSION.md`'yi `KAPALI` yapar ve gönderir.
 
 ### Döngüde neye izin var — SINIR BU
