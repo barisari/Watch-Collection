@@ -12,14 +12,27 @@ Son güncelleme: 2026-09-27
 Yerel oturum, `bridge/README.md`'deki "Otomatik mod" döngüsünü uyguluyor:
 `SESSION.md` → bekleyen görevler → sonuç.
 
-- **Kontrol aralığı (kullanıcının kararı):** Bir sonuç gönderildikten 5 dk sonra,
-  ondan 15 dk sonra, sonra 30 dakikada bir. Her sonuç gönderiminde başa döner.
-  Yani yeni bir görev en geç ~30 dk içinde alınır. Bir sonuç gittikten hemen sonra
-  yazılan görev daha hızlı alınır.
+- **İzleyici (2026-09-27'den beri, kullanıcı onayladı):** Yerel oturum artık
+  zamanlayıcıyla uyanmıyor. Arka planda bir Git Bash betiği (yerelde
+  `scripts/bridge-watch.sh`, depoya gönderilmiyor) çalışıyor:
+  - 30 sn'de bir `git ls-remote` ile bulut dalının başına bakar.
+  - Baş değişince `git fetch` yapar. Bekleyen görev ya da `SESSION.md` KAPALI varsa
+    çıkar ve yerel oturumu uyandırır. Başka bir dosya değişmişse (belge, veri)
+    uyandırmadan beklemeye devam eder.
+  - Yalnızca okur: ls-remote, fetch, ls-tree, show.
+  - **Süre sınırı 30 dk:** Dolunca çıkar, yerel oturum bir kez uyanıp yeniden başlatır.
+    Boştayken yerel oturum yaklaşık 30 dakikada bir uyanır (eskisiyle aynı maliyet).
+  - Yeni görev yaklaşık 30-60 sn içinde alınır.
+  - Depoya art arda 10 bakışta (~5 dk) erişemezse çıkar. Bu üç kez üst üste olursa
+    yerel oturum durur ve kullanıcıya söyler.
+  - Yedek: Betik sessizce ölürse diye yerel oturum ayrıca 60 dakikalık bir uyanış
+    kurar; normalde tetiklenmez.
 - Döngü yalnızca kullanıcının bilgisayarında uygulama ve oturum açıkken çalışır.
-  Bilgisayar uykudaysa görev bekler. Uzun süre sonuç gelmezse kullanıcıya sor.
-- **Bitiş:** `SESSION.md` ilk satırı `DURUM: KAPALI` olunca. Depoya üst üste üç turda
-  erişilemezse yerel oturum durur ve kullanıcıya söyler.
+  Uygulama kapanır ya da bilgisayar uyursa betik de durur ve görev bekler. Kullanıcı
+  oturumu açıp takibi yeniden başlatınca devam eder. Uzun süre sonuç gelmezse
+  kullanıcıya sor.
+- **Bitiş:** `SESSION.md` ilk satırı `DURUM: KAPALI` olunca. İzleyici yeniden
+  başlatılmaz, yerel oturum son raporu verip durur.
 - Kullanıcı yeni görevi ayrıca yerel oturuma da haber verebilir; o zaman beklemeden
   bakılır.
 
