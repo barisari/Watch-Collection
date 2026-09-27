@@ -1095,11 +1095,21 @@ Oradaki bilgiyi buraya kopyalama, iki yerde tutulan şey bayatlar.
 bir yokluyor — yani sonuç gelir gelmez yazdığın görev hızlı alınır.
 Döngü yalnızca kullanıcının bilgisayarı açıkken dönüyor.
 
-**Görev dosyasına `CHROME: izinli` yazarsan** kullanıcının kendi Chrome'u
-(oturumlu) kullanılabilir hale gelir; kullanıcı bu satırı izni saydığını
-söyledi. **Varsayılanın `yok` olsun** — yerel oturumun dahili tarayıcısı
-casio.com dahil çoğu şeyi açıyor. Gerekçen yoksa kullanıcının oturumlu
-tarayıcısını kullanma.
+**`CHROME: izinli` satırını ASLA kendi kararınla yazma.** O satır
+kullanıcının kendi Chrome'unu (oturumlu, hesapları açık) açar. Yalnızca
+kullanıcı **bu sohbette açıkça izin verdiğinde** yazılır; dahili tarayıcı
+bir sayfada yetmezse kullanıcıya sor. Kullanıcının kurgusu: *"Chrome için
+izni ben buradan sana söyleyebilirim, bu yüzden senin yazacağın not benim
+kontrolümde olmuş olur."* Yani satır her zaman kullanıcının kararının
+kaydıdır. (İlk yazdığım hâlinde "dahili tarayıcı yetmezse `izinli` yazarım"
+diyordum — izni kendime veriyordum, kullanıcı düzeltti.)
+
+**Sonucu bekleme: en fazla iki kontrol.** Görev yazdıktan sonra sonucu
+kendiliğinden **iki kez** kontrol edebilirsin, yerel tarafın 5/15 dk
+aralığına denk gelecek şekilde (~6 dk ve ~16 dk). İkincisinde de yoksa
+bırak, kullanıcıya söyle. Kullanıcı: *"2 kez sadece ama sürekli beklemene
+gerek yok."* Bu oturum uzak bir konteynerde çalıştığı için bekleme aracı
+`send_later` (konteyner yeniden başlasa da mesaj gelir).
 
 **Üç şeyi unutma:**
 - Yerel oturumun **bağlamı yok** — her görev dosyası tek başına anlaşılır olmalı.

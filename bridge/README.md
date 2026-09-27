@@ -29,6 +29,10 @@ Köprü, o oturuma iş verip sonucu geri almak için.
    git fetch origin bridge-local
    git show origin/bridge-local:bridge/results/<dosya>.md
    ```
+   Sonucu **en fazla iki kez** kendiliğinden kontrol eder — yerel tarafın
+   5 dk / 15 dk aralığına denk gelecek şekilde (~6 dk ve ~16 dk sonra).
+   İkincisinde de yoksa beklemeyi bırakır ve kullanıcıya söyler. Sürekli
+   yoklama yok.
 
 Sonuçlar ayrı dalda duruyor ki iki oturum aynı dala yazıp çakışmasın.
 
@@ -125,9 +129,13 @@ kendi Chrome'u** (açık hesaplarıyla) kullanılabilir hale gelir. Kullanıcı 
 satırı kendi izni saydığını söyledi; yalnızca herkese açık sayfa okumak için,
 giriş yapma/form doldurma/hesapta işlem yok.
 
-**Varsayılanın `yok` olsun.** `izinli` yazmak için bir gerekçen olsun —
-dahili tarayıcının o sayfada yetmediğini görmüş olman gibi. Kullanıcının
-oturumlu tarayıcısını gereksiz yere kullanma.
+**`izinli` yalnızca kullanıcı bulut oturumunda açıkça izin verdiğinde
+yazılır.** Bulut oturumu bu kararı kendi başına vermez — dahili tarayıcı bir
+sayfada yetmezse kullanıcıya sorar. Böylece bu satır her zaman kullanıcının
+o oturumdaki kararının kaydı olur, yapay zekânın değil. Kullanıcının
+ifadesiyle: *"Chrome için izni ben buradan sana söyleyebilirim, bu yüzden
+senin yazacağın not benim kontrolümde olmuş olur."* Yerel oturuma da bu
+böyle anlatıldı.
 
 ## Sonuç dosyası biçimi
 
