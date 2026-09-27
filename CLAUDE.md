@@ -183,12 +183,39 @@ curl "https://web.archive.org/web/<TS>id_/<URL>" -o x.raw
 Tanıtım metni `cmp-text` sınıflı kutularda; 70 karakterden uzun ve 10'dan çok
 boşluk taşıyan satırları süzmek yetiyor.
 
-**GBD-200-1 böyle alındı.** Öbür dördü (GBX-100-8, GW-BX5600-1A1,
-MTP-B185D-2A2V, EFK-110D-1A) "has not archived that URL" verdi — **ama bu kesin
-değil**, çünkü o sırada CDX API kapalıydı ve tarih tahmin ederek sorguladım.
-CDX ayağa kalkınca joker aramayla (`url=casio.com/intl/watches/*`) tekrar bak.
+**GBD-200-1 böyle alındı.**
+
+**27 EYLÜL GÜNCELLEMESİ — `web.archive.org` bu konteynerden ERİŞİLEMİYOR.**
+curl `http=000` veriyor, WebFetch *"unable to fetch from web.archive.org"*
+diyor. Proxy günlüğü sebebi söylüyor: `ws_closed_mid_exchange` — *tunnel closed
+(code 1006) after 11s*, yani egress tüneli kopuyor. `/root/.ccr/README.md`
+bunu "altyapı sorunu, etrafından dolaşma, bildir" diye sınıflıyor. 18 Eylül'de
+çalışıyordu; konteynere göre değişiyor, her oturumda yeniden dene.
+
+**AMA `archive.org` (web. öneki olmadan) AÇIK** ve availability API'si hangi
+anlık görüntünün var olduğunu söylüyor — arşiv erişilebilir olduğunda doğrudan
+o damgaya git, CDX'i beklemeye gerek yok:
+```bash
+curl "https://archive.org/wayback/available?url=<TAM URL>"   # -> closest.timestamp
+```
+27 Eylül'de böyle çıkarılan damgalar (içerik çekilemedi, sadece varlık bilgisi):
+
+| Model | Yerel | Damga |
+|---|---|---|
+| GBD-200-1 | intl | 20230327122631 *(zaten alındı)* |
+| EFK-110D-1A | intl | **20260508093902** |
+| GBX-100-8 | us · id · jp | **20241116213943** · 20250122175232 · 20240923053045 |
+| GW-BX5600-1A1 · MTP-B185D-2A2V | — | API hız sınırına takıldı, bakılamadı |
+
 `archive.ph`, `archive.is` ve `timetravel.mementoweb.org` bu ortamda proxy
-tarafından kapalı (bağlantı hiç kurulmuyor), tek arşiv seçeneği Wayback. TR sayfası JS ile
+tarafından kapalı (bağlantı hiç kurulmuyor).
+
+**PERAKENDECİ METNİ `story` ALANINA GİRMEZ (27 Eylül'de sınandı).**
+creationwatches.com bu dört modeli taşıyor ve açılıyor, ama `shortdescription`
+alanındaki metin **Casio'nun değil, perakendecinin kendi SEO yazısı**:
+*"Experience cutting-edge technology with the Casio GBX-100-8..."* gibi.
+Envanterdeki 17 `story`'nin hepsi üreticinin kendi cümleleri; araya bir
+perakendeci kopyası koymak alanın anlamını bozar. Yazılmadı. TR sayfası JS ile
 yüklendiği için okunamıyor ama **TR CDN varlıkları gayet çalışıyor**.
 
 **Aynı model yerele göre farklı çözünürlükte olabiliyor:** GA-2100-1A1
