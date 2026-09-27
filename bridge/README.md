@@ -140,6 +140,16 @@ Kullanım alışkanlığı: dahili tarayıcı zaten casio.com dahil çoğu sayfa
 açıyor, o yüzden `izinli` her göreve değil, **dahili tarayıcının yetmediği
 yerde** yazılır.
 
+## Dosya taşıma
+
+Görsel gibi dosyalar `bridge-local` dalında `bridge/foto/<MODEL>/` altına gelir:
+dokunulmamış asıl, galerideki sırayla `01.png`, `02.jpg`… Tablo sonuç
+dosyasında (piksel, bayt, kaynak adres, karede ne var).
+
+```bash
+git show origin/bridge-local:bridge/foto/<MODEL>/<dosya> > <hedef>
+```
+
 ## Sonuç dosyası biçimi
 
 ```

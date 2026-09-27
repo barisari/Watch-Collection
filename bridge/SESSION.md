@@ -1,5 +1,5 @@
-DURUM: ACIK
-SON GÜNCELLEME: 2026-09-27
+DURUM: KAPALI
+SON GÜNCELLEME: 2026-09-28
 
 Bu dosyanın ilk satırı yerel oturumun döngü anahtarıdır.
 

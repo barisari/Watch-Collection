@@ -502,6 +502,30 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    (üreticiler genelde 3–8 kare yayımlıyor). Sırası kullanıcıya ait, kendiliğinden
    başlama. Casio görselleri buradan kararsız iniyor (yukarıya bak); inmeyenler
    için köprü var.
+
+   **27 Eylül: ilk beş saatin galerisi köprüden geldi, siteye GİRMEDİ —
+   kullanıcının seçimini bekliyor** ("şimdilik duralım, sonra devam ederiz").
+   Kareler `bridge-local` dalında `bridge/foto/<MODEL>/`: dokunulmamış asıllar,
+   galerideki sırayla `01…`. Her saatin `01`'i kapakla aynı görünüm.
+   Gözden geçirme sayfası (`npm i --no-save sharp` gerekir):
+   `node bridge/temas.mjs <çıktı.jpg> "<başlık>" "sec=2,3;kapak=1" <dosyalar…>`
+   Önerim — kullanıcı **henüz onaylamadı**:
+
+   | Saat | Kare | Öneri |
+   |---|---|---|
+   | A1000DN-7 | 3 | 2, 3 (kutu, yedek kordon) |
+   | GA-2100-1A1 | 14 | 3, 7, 8 — 2-11 arası 525-700 px, hiçbir yerelde büyüğü yok |
+   | EFB-730D-7AV | 9 | 7, 8, 9 (ortam çekimleri, saat tek başına) |
+   | PRW-35LD-5 | 20 | 12-17 (açılı, arka kapak, toka, üç ekran modu) |
+   | OCW-T200S-1A | 11 | 2, 6, 7 |
+
+   Ölçüt: saat karede tek başına ve kapakta görünmeyen bir şeyi gösteriyor.
+   Bilekte/model, afiş/özellik ve başka modelin göründüğü kareler dışarıda.
+   **İşlerken iki tuzak:** A1000DN-7'nin `02.png`'si aslında JPEG (sunucudaki
+   adıyla geldi) → `photos/originals/`'a `.jpg` uzantısıyla koy.
+   `build-photo-sizes.mjs` `CUTOUT=off`'u yalnızca `.jpg` asıllara veriyor;
+   Oceanus'un kareleri opak `.png` — ek karelerin hepsine `CUTOUT=off` ver,
+   yoksa otomatik kesime girerler.
 7. ~~Rotasyon~~ — sitedeki rotasyon arayüzü **17 Eylül 2026'da kaldırıldı**,
    `data/wears.json` silindi. Yani "public derlemeden çıkar" maddesi düştü:
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
@@ -1097,8 +1121,8 @@ Sonuçlar burada kullanıcıyla birlikte gözden geçirilir — kullanıcının 
 Yoklama aralığı, tarayıcı davranışı, kendi kuralları orada — ve orası onun
 alanı, oraya yazma. `git show origin/bridge-local:bridge/LOCAL.md` ile oku.
 Oradaki bilgiyi buraya kopyalama, iki yerde tutulan şey bayatlar.
-Yoklama düzeni orada, buraya kopyalanmıyor. 27 Eylül'de yerel tarafa da
-izleyiciye geçmesi görev olarak yazıldı (`bridge/tasks/2026-09-27-izleyici.md`).
+Yoklama düzeni orada, buraya kopyalanmıyor. Yerel taraf da 27 Eylül'de
+izleyiciye geçti (kullanıcı yerelde onayladı); görevi ~10-30 sn'de buluyor.
 Döngü yalnızca kullanıcının bilgisayarı açıkken dönüyor.
 
 **`CHROME: izinli` satırını kendi kararınla yazabilirsin** — kullanıcı
@@ -1113,9 +1137,9 @@ yetmediği yerde yaz — dahili tarayıcı casio.com dahil çoğu şeyi açıyor
 da kalıcı). Görevi gönderince `bridge/bekle.sh <sonuç-dosyası>` betiğini Bash
 aracında `run_in_background` ile başlat. Betik bridge-local'ı 30 sn'de bir
 `git ls-remote` ile yoklar. Sonuç gelince oturumu bir kez uyandırır, beklerken
-token harcanmaz. Azami bekleme 16 dk. Yerel taraf zamanlayıcıyla yokluyorsa,
-sessizlikten sonraki ilk görevde 30 dk ver. Süre dolarsa bırak, kullanıcıya
-söyle.
+token harcanmaz. Azami bekleme 16 dk; görsel indirme gibi ağır işte 20 dk.
+Süre dolarsa bırak, kullanıcıya söyle. Ara sonuç gelirse ("onay bekleniyor")
+dosyanın güncellenmesini `degisim` kipiyle bekle.
 Eski kural "en fazla iki kontrol (~6 ve ~16 dk)" idi. Bırakıldı, çünkü sabit
 saatte bakınca yerel tarafın 5 dk turu kaçabiliyor ve tur 15-20 dk'ya
 uzuyor. Hız testinin ilk turunda birkaç saniye farkla kaçacaktı.
@@ -1125,6 +1149,14 @@ yönde doğru taşındı, atlanan ya da tekrarlanan görev olmadı. Seri içinde
 tur ~5 dk (yerel tarafın 5 dk turu). Yerel tarayıcı otomatik turda casio.com'u
 kimse dokunmadan açtı: 200, başlık `GA-2100-1A1 | CASIO`, izin istemi yok.
 Akamai ilk açılışta sayfayı bir kez yeniliyor, sonuca etkisi yok.
+
+**İzleyiciyle ikinci test de geçti** (27 Eylül, `foto-1..5`). Yerel oturum
+görevleri 11-33 sn'de buldu; tur, indirme dahil 2-3,5 dk. 57 kare, 54 MB,
+hepsi eksiksiz. Yerel tarafta casio.com görselleri curl'e de 200 veriyor
+(ürün sayfası vermese de).
+**Kullanım limiti iki oturumu birden durdurur** — aynı hesap. 5. turda ikisi
+de takıldı; limit açılınca yerel oturum sonucu gönderdi ve izleyicisini kendisi
+yeniden başlattı. Uzun bir sessizlik görürsen önce bunu düşün.
 
 **Üç şeyi unutma:**
 - Yerel oturumun **bağlamı yok** — her görev dosyası tek başına anlaşılır olmalı.
