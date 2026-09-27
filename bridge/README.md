@@ -30,10 +30,10 @@ Köprü, o oturuma iş verip sonucu geri almak için.
    git fetch origin bridge-local
    git show origin/bridge-local:bridge/results/<dosya>.md
    ```
-   Sonucu **en fazla iki kez** kendiliğinden kontrol eder — yerel tarafın
-   5 dk / 15 dk aralığına denk gelecek şekilde (~6 dk ve ~16 dk sonra).
-   İkincisinde de yoksa beklemeyi bırakır ve kullanıcıya söyler. Sürekli
-   yoklama yok.
+   Sonucu **arka planda bir izleyiciyle** bekler: `bridge/bekle.sh <dosya>`
+   bridge-local'ı 30 sn'de bir `git ls-remote` ile yoklar, sonuç gelince
+   oturumu bir kez uyandırır. Beklerken model turu yok. Azami bekleme 16 dk
+   (sessizlikten sonraki ilk görevde 30 dk). Süre dolarsa kullanıcıya söyler.
 
 Sonuçlar ayrı dalda duruyor ki iki oturum aynı dala yazıp çakışmasın.
 

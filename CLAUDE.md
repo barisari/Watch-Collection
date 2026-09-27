@@ -1097,8 +1097,8 @@ Sonuçlar burada kullanıcıyla birlikte gözden geçirilir — kullanıcının 
 Yoklama aralığı, tarayıcı davranışı, kendi kuralları orada — ve orası onun
 alanı, oraya yazma. `git show origin/bridge-local:bridge/LOCAL.md` ile oku.
 Oradaki bilgiyi buraya kopyalama, iki yerde tutulan şey bayatlar.
-Şu an yazdığına göre: bir sonuçtan 5 dk sonra, sonra 15 dk, sonra 30 dakikada
-bir yokluyor — yani sonuç gelir gelmez yazdığın görev hızlı alınır.
+Yoklama düzeni orada, buraya kopyalanmıyor. 27 Eylül'de yerel tarafa da
+izleyiciye geçmesi görev olarak yazıldı (`bridge/tasks/2026-09-27-izleyici.md`).
 Döngü yalnızca kullanıcının bilgisayarı açıkken dönüyor.
 
 **`CHROME: izinli` satırını kendi kararınla yazabilirsin** — kullanıcı
@@ -1109,12 +1109,22 @@ hesap işlemi yok. Alışkanlık: her göreve değil, dahili tarayıcının
 yetmediği yerde yaz — dahili tarayıcı casio.com dahil çoğu şeyi açıyor.
 (Kural bu konuda iki kez değişti; geçerli olan bu.)
 
-**Sonucu bekleme: en fazla iki kontrol.** Görev yazdıktan sonra sonucu
-kendiliğinden **iki kez** kontrol edebilirsin, yerel tarafın 5/15 dk
-aralığına denk gelecek şekilde (~6 dk ve ~16 dk). İkincisinde de yoksa
-bırak, kullanıcıya söyle. Kullanıcı: *"2 kez sadece ama sürekli beklemene
-gerek yok."* Bu oturum uzak bir konteynerde çalıştığı için bekleme aracı
-`send_later` (konteyner yeniden başlasa da mesaj gelir).
+**Sonucu bekleme: izleyiciyle** (27 Eylül, kullanıcının kararı: iki tarafta
+da kalıcı). Görevi gönderince `bridge/bekle.sh <sonuç-dosyası>` betiğini Bash
+aracında `run_in_background` ile başlat. Betik bridge-local'ı 30 sn'de bir
+`git ls-remote` ile yoklar. Sonuç gelince oturumu bir kez uyandırır, beklerken
+token harcanmaz. Azami bekleme 16 dk. Yerel taraf zamanlayıcıyla yokluyorsa,
+sessizlikten sonraki ilk görevde 30 dk ver. Süre dolarsa bırak, kullanıcıya
+söyle.
+Eski kural "en fazla iki kontrol (~6 ve ~16 dk)" idi. Bırakıldı, çünkü sabit
+saatte bakınca yerel tarafın 5 dk turu kaçabiliyor ve tur 15-20 dk'ya
+uzuyor. Hız testinin ilk turunda birkaç saniye farkla kaçacaktı.
+
+**Hız testi geçti** (27 Eylül, `hizli-1..4`). 4 tur 17 dk sürdü, kodlar iki
+yönde doğru taşındı, atlanan ya da tekrarlanan görev olmadı. Seri içinde her
+tur ~5 dk (yerel tarafın 5 dk turu). Yerel tarayıcı otomatik turda casio.com'u
+kimse dokunmadan açtı: 200, başlık `GA-2100-1A1 | CASIO`, izin istemi yok.
+Akamai ilk açılışta sayfayı bir kez yeniliyor, sonuca etkisi yok.
 
 **Üç şeyi unutma:**
 - Yerel oturumun **bağlamı yok** — her görev dosyası tek başına anlaşılır olmalı.
