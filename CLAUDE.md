@@ -504,8 +504,8 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    için köprü var.
 
    **27 Eylül: ilk beş saatin galerisi köprüden geldi.** 29 Eylül'de
-   **PRW-35LD-5**, **EFB-730D-7AV**, **A1000DN-7** ve **OCW-T200S-1A** girdi;
-   **kalan GA-2100-1A1 seçim bekliyor**.
+   **Beşi de girdi** (29 Eylül). Ek karesi olmayan 23 saat var; sırası
+   kullanıcının.
    Sıra kullanıcının; her seferinde bir saat.
    Kareler `bridge-local` dalında `bridge/foto/<MODEL>/`: dokunulmamış asıllar,
    galerideki sırayla `01…`. Her saatin `01`'i kapakla aynı görünüm.
@@ -516,13 +516,17 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    | Saat | Kare | Öneri |
    |---|---|---|
    | A1000DN-7 | 3 | ✅ **girdi** — 2, 3 (kutu, yedek kordon) → `casio_a1000dn-7er-2.jpg` · `-3.png` |
-   | GA-2100-1A1 | 14 | 3, 7, 8 — 2-11 arası 525-700 px, hiçbir yerelde büyüğü yok |
+   | GA-2100-1A1 | 14 | ✅ **girdi** — yalnızca 12 (bilekte, 2000 px) → `g-shock_ga-2100-1a1dr-2.jpg` |
    | EFB-730D-7AV | 9 | ✅ **girdi** — 7, 8, 2 (kullanıcı 9 yerine 2'yi seçti) → `edifice_efb-730d-7avudf-2…4` |
    | PRW-35LD-5 | 20 | ✅ **girdi** — 12-17 → `pro_trek_prw-35ld-5jf-2…7` |
    | OCW-T200S-1A | 11 | ✅ **girdi** — 4, 5, 7 (kullanıcının seçimi) → `oceanus_ocw-t200s-1ajf-2…4`, 3:2 |
 
    Ölçüt: saat karede tek başına ve kapakta görünmeyen bir şeyi gösteriyor.
-   Bilekte/model, afiş/özellik ve başka modelin göründüğü kareler dışarıda.
+   Bilekte/model, afiş/özellik ve başka modelin göründüğü kareler dışarıda —
+   ama son sözü kullanıcı söylüyor, iki saatte bilek karesi seçti (EFB 2, GA 12).
+   **Çözünürlük standardı:** GA-2100'ün 525-700 px kareleri kabul edilmedi
+   (*"bizim standartlarımıza göre çok düşük"*); 1080 px (Mondaine, Braun) yayında.
+   Küçük kareyi önerme.
    **İşleme yolu:** asılları `git show` ile birebir
    `photos/originals/<kapak-adı>-N.<uzantı>`'ya al, veriye ekle, sonra
    `node scripts/build-photo-sizes.mjs --ekler`. Ek kareler yalnızca
