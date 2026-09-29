@@ -18,6 +18,11 @@
  * (29 Eylül 2026): kapak kuralı ek karelere de uygulanıyordu; Casio'da kayış
  * kenara dayanırken bizde karenin dört yanında boşluk kalıyordu.
  *
+ * İSTİSNA — kapak gibi çerçevelenen ek kareler (ESKI_CERCEVE): kaynağın
+ * kendisi büyük saydam boşluk taşıyorsa (Seiko'nun 1231×1968 tuvali, saat
+ * ~%50) olduğu gibi bırakınca saat karede küçülüyor. Kullanıcı SNE529 için
+ * eski hâli seçti (29 Eylül): "Eski hali en güzeli duruyor bu saat için."
+ *
  * İki yolda da kaynağı yetmeyen dosya büyütülmez (NO_ENLARGE).
  */
 import { readFile, mkdir } from 'node:fs/promises';
@@ -31,6 +36,8 @@ const BOYLAR = [
   { ad: 'base', canvas: 900, klasor: 'photos/watches/' },
   { ad: 'large', canvas: 1500, klasor: 'photos/watches/large/' },
 ];
+
+const ESKI_CERCEVE = new Set(['seiko_sne529p-2', 'seiko_sne529p-3']);
 
 const watches = JSON.parse(await readFile('data/watches.json', 'utf8'));
 const kapaklar = new Set(watches.map((w) => (w.photos || [])[0]).filter(Boolean));
@@ -49,7 +56,7 @@ for (const boy of BOYLAR) {
 
     const out = webp.replace('photos/watches/', boy.klasor);
     await mkdir(dirname(out), { recursive: true });
-    if (kapaklar.has(webp)) {
+    if (kapaklar.has(webp) || ESKI_CERCEVE.has(ad)) {
       const env = { ...process.env, CANVAS: String(boy.canvas), NO_ENLARGE: '1' };
       if (asil.endsWith('.jpg')) env.CUTOUT = 'off';
       execFileSync('node', ['scripts/normalize-photo.mjs', asil, out], { env, encoding: 'utf8' });

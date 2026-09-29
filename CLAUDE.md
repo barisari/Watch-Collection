@@ -528,11 +528,11 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    boyutlandırılır (aşağıda "EK KARE = ÜRETİCİNİN KADRAJI"); fon kesme
    tuzağı ek karelerde artık yok. Tek dikkat: A1000DN-7'nin `02.png`'si
    aslında JPEG (sunucudaki adıyla geldi) → aslı `.jpg` uzantısıyla koy.
-   **SNE529'un iki ek karesi karar bekliyor** (29 Eylül): Seiko'nun
-   1231×1968 saydam tuvali, saat tuvalin ~%50'si; yeni kuralla karede
-   küçülüyor. Kullanıcıya soruldu: saydam boşluk kırpılsın mı, Seiko'nun
-   tuvali mi kalsın. Karar gelene kadar eski (770/900 çerçeveli) hâli yayında —
-   `--ekler` çalıştırılırsa ezilir, dikkat.
+   **SNE529'un iki ek karesi eski çerçevesinde kaldı** (29 Eylül, kullanıcı:
+   *"Eski hali en güzeli duruyor bu saat için"*). Seiko'nun 1231×1968 saydam
+   tuvalinde saat ~%50; olduğu gibi bırakınca karede küçülüyordu. Betikte
+   `ESKI_CERCEVE` istisnası var, `--ekler` onları ezmez (sınandı: 13 karenin
+   hiçbiri değişmedi).
 7. ~~Rotasyon~~ — sitedeki rotasyon arayüzü **17 Eylül 2026'da kaldırıldı**,
    `data/wears.json` silindi. Yani "public derlemeden çıkar" maddesi düştü:
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
@@ -1085,6 +1085,9 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   boyutlandırılır**; kırpma, pay, fon kesme yok. `build-photo-sizes.mjs` ek
   kareleri `normalize-photo.mjs`'e sokmuyor, `--ekler` yalnızca onları üretir.
   Künyedeki 8 px pay da kalktı. Kapaklar değişmedi (ızgarada eş boy için).
+  **İstisna:** kaynağın kendisi büyük saydam boşluk taşıyorsa (Seiko tuvali)
+  saat küçülüyor — SNE529'da kullanıcı eski çerçeveyi seçti. Yeni bir saydam
+  ek kare gelirse iki hâli yan yana gösterip sor, kuralı kendin genelleme.
   **Ders:** bir kural bir iş için konduysa başka işe taşımadan önce sor.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır; **görselin kendisine,
   boşluğa ya da kapat düğmesine tıklamak da, Escape de kapatır.**
