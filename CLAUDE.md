@@ -522,18 +522,17 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 
    Ölçüt: saat karede tek başına ve kapakta görünmeyen bir şeyi gösteriyor.
    Bilekte/model, afiş/özellik ve başka modelin göründüğü kareler dışarıda.
-   **İşlerken iki tuzak:** A1000DN-7'nin `02.png`'si aslında JPEG (sunucudaki
-   adıyla geldi) → `photos/originals/`'a `.jpg` uzantısıyla koy.
-   `build-photo-sizes.mjs` `CUTOUT=off`'u yalnızca `.jpg` asıllara veriyor;
-   Oceanus'un kareleri opak `.png` — ek karelerin hepsine `CUTOUT=off` ver,
-   yoksa otomatik kesime girerler.
-   **İşleme yolu (PRW'de uygulandı):** asılları `git show` ile birebir
-   `photos/originals/<kapak-adı>-N.<uzantı>`'ya al, sonra YALNIZCA yeni
-   dosyalar için `normalize-photo.mjs`'i `build-photo-sizes.mjs`'in
-   ayarlarıyla çalıştır (`CANVAS=600/900/1500`, `NO_ENLARGE=1`, `CUTOUT=off`)
-   — tüm betiği çalıştırmak 46 görseli baştan üretir. PRW'nin tam kadraj
-   yakın çekimlerinde kenar rengi beyaz çıktı, pay dikişsiz; opak koyu zeminli
-   karede (Oceanus 02) pay o renkle dolar, önce dene ve bak.
+   **İşleme yolu:** asılları `git show` ile birebir
+   `photos/originals/<kapak-adı>-N.<uzantı>`'ya al, veriye ekle, sonra
+   `node scripts/build-photo-sizes.mjs --ekler`. Ek kareler yalnızca
+   boyutlandırılır (aşağıda "EK KARE = ÜRETİCİNİN KADRAJI"); fon kesme
+   tuzağı ek karelerde artık yok. Tek dikkat: A1000DN-7'nin `02.png`'si
+   aslında JPEG (sunucudaki adıyla geldi) → aslı `.jpg` uzantısıyla koy.
+   **SNE529'un iki ek karesi karar bekliyor** (29 Eylül): Seiko'nun
+   1231×1968 saydam tuvali, saat tuvalin ~%50'si; yeni kuralla karede
+   küçülüyor. Kullanıcıya soruldu: saydam boşluk kırpılsın mı, Seiko'nun
+   tuvali mi kalsın. Karar gelene kadar eski (770/900 çerçeveli) hâli yayında —
+   `--ekler` çalıştırılırsa ezilir, dikkat.
 7. ~~Rotasyon~~ — sitedeki rotasyon arayüzü **17 Eylül 2026'da kaldırıldı**,
    `data/wears.json` silindi. Yani "public derlemeden çıkar" maddesi düştü:
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
@@ -1033,7 +1032,7 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   ver.** `normalize-photo.mjs` yalnızca ölçekleme/çerçeveleme için kullanılır
   (girdide %5'ten fazla saydamlık varsa kesimi kendiliğinden atlıyor).
   **Kapak dışındaki ek fotoğraflara temizlik hiç gerekmez** — oldukları gibi
-  kalır. Zaten çoğu asıl CDN'den saydam zeminli iniyor; kesim gereken tek
+  kalır, kadrajları da (aşağıya bak). Zaten çoğu asıl CDN'den saydam zeminli iniyor; kesim gereken tek
   durum JPG kaynaklar (Mondaine, Braun).
 - **Açık ve koyu tema renk jetonları AYRI tanımlanır.** `--text-muted` uzun
   süre iki temada da `#898781` idi: koyu zeminde 4,85 veriyordu ama açık
@@ -1070,12 +1069,23 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   cinsten geliyor: Mondaine (3) ve Braun (2) opak **beyaz** zeminli (kaynak JPG,
   kesim yapılmıyor), Seiko (2) saydam. Koyu temada beyazlar parlak dikdörtgen
   gibi duruyordu, saydamlar zemine karışıyordu — yan yana tutarsızdı. Çözüm
-  CSS'te: `.gallery img` hepsine `background:#fff` + 8 px pay veriyor. Opak
+  CSS'te: `.gallery img` hepsine `background:#fff` veriyor (8 px pay vardı,
+  29 Eylül'de kalktı — aşağıya bak). Opak
   kareler tam 255,255,255 olduğu için yüzeyle dikişsiz birleşiyor. Izgara üç
   sütun — en çok ek kareye sahip saat (Mondaine, 3) satırı tam dolduruyor.
   Kullanıcının izni var: *"bunların arka planın düz renk olması benim için sorun
   değil çünkü ana sayfa değil detay sayfası."* Kapaklar bunun dışında, hepsi
   saydam.
+- ## EK KARE = ÜRETİCİNİN KADRAJI (29 Eylül 2026).
+  Kapak kuralı (kenarı kırp, 900'ün 770'ine sığdır, ortala) ek karelere de
+  **sessizce** uygulanıyordu: betik kapakla ek kareyi ayırt etmiyordu, ben de
+  sorgulamadım. Casio'nun kenara dayalı karelerinde dört yanda boşluk kaldı;
+  büyütünce ~110 px. Kullanıcı: *"Ek fotoğraflar için neden böyle bir şey
+  yapma ihtiyacı duyuyorsun?"* — ihtiyaç yoktu. Karar: **ek kareler yalnızca
+  boyutlandırılır**; kırpma, pay, fon kesme yok. `build-photo-sizes.mjs` ek
+  kareleri `normalize-photo.mjs`'e sokmuyor, `--ekler` yalnızca onları üretir.
+  Künyedeki 8 px pay da kalktı. Kapaklar değişmedi (ızgarada eş boy için).
+  **Ders:** bir kural bir iş için konduysa başka işe taşımadan önce sor.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır; **görselin kendisine,
   boşluğa ya da kapat düğmesine tıklamak da, Escape de kapatır.**
 - **`category` GÖSTERİM TİPİDİR ve `specs.dial.display`'den türetilir.**
@@ -1189,5 +1199,5 @@ sadece bu proje için değil, kalıcı bir kalıp.
 | `node scripts/import-casio-sheet.mjs <csv> [--reset]` | Casio Collection tablosundan içe aktarır |
 | `node scripts/build.mjs [--private]` | `dist/` hazırlar (hassas alanları siler) |
 | `node scripts/normalize-photo.mjs <girdi> <çıktı.webp>` | Fotoğrafı 900×900 WebP'ye çerçeveler (`npm i sharp`). `CUTOUT=off` fona dokunmaz — varsayılan yol bu. `CANVAS`/`NO_ENLARGE` ile boy ayarlanır |
-| `node scripts/build-photo-sizes.mjs` | Üç boyu üretir (600 / 900 / 1500), hepsi tek tip çerçeveyle |
+| `node scripts/build-photo-sizes.mjs [--ekler]` | Üç boyu üretir (600 / 900 / 1500). Kapak tek tip çerçeveyle, ek kare olduğu gibi (yalnızca boyut). `--ekler`: yalnızca ek kareler |
 | `node scripts/fetch-originals.mjs [--force]` | Görsel asıllarını `photos/originals/` altına indirir |

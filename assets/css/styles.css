@@ -262,7 +262,7 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
 }
 .gallery img {
   width: 100%; aspect-ratio: 1; object-fit: contain; display: block;
-  background: #fff; padding: 8px;
+  background: #fff;
 }
 
 /* Üreticinin tanıtım metni: aynı aile, yalnızca boy ve ağırlıkla ayrılır. */
