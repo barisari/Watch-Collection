@@ -23,7 +23,9 @@
  * ~%50) olduğu gibi bırakınca saat karede küçülüyor. Boş saydam alan atılır
  * (görünür her piksel kalır, sınandı), sonra yine yalnızca boyutlandırılır —
  * pay yok. Kullanıcı SNE529 için üç hâli görüp bunu seçti (29 Eylül): "3.
- * gerçekten güzel görünüyor." Yeni saydam ek kare gelirse iki hâli göster, sor.
+ * gerçekten güzel görünüyor." Yeni ek karelerde istisna YOK — kullanıcının
+ * kesin kuralı (29 Eylül): "ek resimlerde orjinal tuval neyse onu kullan,
+ * boşluk falan kırpıp durma, kafana göre kenarlık falan ekleme."
  *
  * İki yolda da kaynağı yetmeyen dosya büyütülmez (NO_ENLARGE).
  */
