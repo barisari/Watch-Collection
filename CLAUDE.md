@@ -503,8 +503,9 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    başlama. Casio görselleri buradan kararsız iniyor (yukarıya bak); inmeyenler
    için köprü var.
 
-   **27 Eylül: ilk beş saatin galerisi köprüden geldi, siteye GİRMEDİ —
-   kullanıcının seçimini bekliyor** ("şimdilik duralım, sonra devam ederiz").
+   **27 Eylül: ilk beş saatin galerisi köprüden geldi.** 29 Eylül'de
+   **PRW-35LD-5 girdi** (12-17, kullanıcı onayladı); **kalan dördü seçim
+   bekliyor**. Sıra kullanıcının; her seferinde bir saat.
    Kareler `bridge-local` dalında `bridge/foto/<MODEL>/`: dokunulmamış asıllar,
    galerideki sırayla `01…`. Her saatin `01`'i kapakla aynı görünüm.
    Gözden geçirme sayfası (`npm i --no-save sharp` gerekir):
@@ -516,7 +517,7 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    | A1000DN-7 | 3 | 2, 3 (kutu, yedek kordon) |
    | GA-2100-1A1 | 14 | 3, 7, 8 — 2-11 arası 525-700 px, hiçbir yerelde büyüğü yok |
    | EFB-730D-7AV | 9 | 7, 8, 9 (ortam çekimleri, saat tek başına) |
-   | PRW-35LD-5 | 20 | 12-17 (açılı, arka kapak, toka, üç ekran modu) |
+   | PRW-35LD-5 | 20 | ✅ **girdi** — 12-17 → `pro_trek_prw-35ld-5jf-2…7` |
    | OCW-T200S-1A | 11 | 2, 6, 7 |
 
    Ölçüt: saat karede tek başına ve kapakta görünmeyen bir şeyi gösteriyor.
@@ -526,6 +527,13 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    `build-photo-sizes.mjs` `CUTOUT=off`'u yalnızca `.jpg` asıllara veriyor;
    Oceanus'un kareleri opak `.png` — ek karelerin hepsine `CUTOUT=off` ver,
    yoksa otomatik kesime girerler.
+   **İşleme yolu (PRW'de uygulandı):** asılları `git show` ile birebir
+   `photos/originals/<kapak-adı>-N.<uzantı>`'ya al, sonra YALNIZCA yeni
+   dosyalar için `normalize-photo.mjs`'i `build-photo-sizes.mjs`'in
+   ayarlarıyla çalıştır (`CANVAS=600/900/1500`, `NO_ENLARGE=1`, `CUTOUT=off`)
+   — tüm betiği çalıştırmak 46 görseli baştan üretir. PRW'nin tam kadraj
+   yakın çekimlerinde kenar rengi beyaz çıktı, pay dikişsiz; opak koyu zeminli
+   karede (Oceanus 02) pay o renkle dolar, önce dene ve bak.
 7. ~~Rotasyon~~ — sitedeki rotasyon arayüzü **17 Eylül 2026'da kaldırıldı**,
    `data/wears.json` silindi. Yani "public derlemeden çıkar" maddesi düştü:
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
