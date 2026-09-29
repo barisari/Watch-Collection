@@ -177,9 +177,24 @@ function storyCard(watch) {
 }
 
 /* Fotoğrafa tıklayınca büyük hâli: panelde ~400 px görünen kapak, büyütmede
- * 1500 px'lik sürümüyle açılır. */
-function openLightbox(src, alt) {
+ * 1500 px'lik sürümüyle açılır. Saatin bütün fotoğrafları (kapak + ek kareler)
+ * tek dizi: önceki/sonraki düğmeleri ve ← → tuşlarıyla aralarında gezilir,
+ * uçlarda başa/sona sarar (kullanıcının isteği, 29 Eylül). */
+const OK = {
+  onceki: '<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sonraki: '<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M7.5 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+
+function openLightbox(items, start = 0) {
   const previous = document.activeElement;
+  let at = start;
+  const img = el('img', { src: items[at].src, alt: items[at].alt });
+  const show = (i) => {
+    at = (i + items.length) % items.length;
+    img.src = items[at].src;
+    img.alt = items[at].alt;
+    box.setAttribute('aria-label', items[at].alt);
+  };
   const close = () => {
     // Kapat düğmesine tıklamak hem kendi işleyicisini hem kutununkini
     // tetikliyor; ikinci çağrı bir şey yapmasın.
@@ -188,17 +203,34 @@ function openLightbox(src, alt) {
     document.removeEventListener('keydown', onKey);
     if (previous && previous.focus) previous.focus();
   };
-  const onKey = (e) => { if (e.key === 'Escape') close(); };
+  const onKey = (e) => {
+    if (e.key === 'Escape') close();
+    else if (items.length > 1 && e.key === 'ArrowLeft') show(at - 1);
+    else if (items.length > 1 && e.key === 'ArrowRight') show(at + 1);
+  };
+  // Ok düğmeleri kutunun "her yere tıklamak kapatır" davranışına karışmasın.
+  const okDugmesi = (yon, etiket, adim) => {
+    const b = el(`button.lightbox-nav.${yon}`, {
+      type: 'button', 'aria-label': etiket,
+      onclick: (e) => { e.stopPropagation(); show(at + adim); },
+    });
+    b.innerHTML = OK[yon];
+    return b;
+  };
 
   const button = el('button.lightbox-close', {
     type: 'button', 'aria-label': 'Kapat', onclick: close,
   }, '×');
 
   const box = el('div.lightbox', {
-    role: 'dialog', 'aria-modal': 'true', 'aria-label': alt,
+    role: 'dialog', 'aria-modal': 'true', 'aria-label': items[at].alt,
     // Görselin kendisi dahil her yere tıklamak kapatır.
     onclick: close,
-  }, el('img', { src, alt }), button);
+  },
+  items.length > 1 && okDugmesi('onceki', 'Önceki fotoğraf', -1),
+  img,
+  items.length > 1 && okDugmesi('sonraki', 'Sonraki fotoğraf', 1),
+  button);
 
   document.addEventListener('keydown', onKey);
   document.body.append(box);
@@ -210,13 +242,14 @@ function openLightbox(src, alt) {
  * yalnızca 3× ekran çekiyor. Büyütmede her zaman 1500 açılıyor. */
 
 function zoomable(src, alt, extra = {}) {
-  const { zoom = src, ...attrs } = extra;
+  const { zoom = [{ src, alt }], at = 0, ...attrs } = extra;
+  const open = () => openLightbox(zoom, at);
   return el('img.zoomable', {
     src, alt, role: 'button', tabindex: '0',
     title: 'Büyütmek için tıkla',
-    onclick: () => openLightbox(zoom, alt),
+    onclick: open,
     onkeydown: (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(zoom, alt); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
     },
     ...attrs,
   });
@@ -226,19 +259,25 @@ function photoPanel(watch) {
   const photos = watch.photos || [];
   if (!photos.length) return null;
 
+  const label = watchLabel(watch);
+  // Büyütmede gezilen dizi: kapak + ek kareler, hepsi 1500'lük boyuyla.
+  const zoom = photos.map((p, i) => ({
+    src: photoLarge(p), alt: i ? `${label} — fotoğraf ${i + 1}` : label,
+  }));
+
   return el('section',
     el('div.watch-photo',
-      zoomable(photos[0], watchLabel(watch), {
+      zoomable(photos[0], label, {
         srcset: `${photos[0]} 900w, ${photoLarge(photos[0])} 1500w`,
         sizes: '(min-width: 900px) 400px, 90vw',
-        zoom: photoLarge(photos[0]),
+        zoom, at: 0,
       })),
     photos.length > 1 && el('div.gallery',
       photos.slice(1).map((src, i) =>
         /* Küçük kare 90-130 px görünüyor; 600'lük boy 3× ekranda bile fazlasıyla
            yetiyor. Tıklayınca 1500 açılıyor. */
-        zoomable(photoSm(src), `${watchLabel(watch)} — fotoğraf ${i + 2}`,
-          { loading: 'lazy', zoom: photoLarge(src) }))),
+        zoomable(photoSm(src), `${label} — fotoğraf ${i + 2}`,
+          { loading: 'lazy', zoom, at: i + 1 }))),
   );
 }
 

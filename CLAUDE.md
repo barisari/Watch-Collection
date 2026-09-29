@@ -1110,6 +1110,11 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   **Ders:** bir kural bir iş için konduysa başka işe taşımadan önce sor.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır; **görselin kendisine,
   boşluğa ya da kapat düğmesine tıklamak da, Escape de kapatır.**
+  **Önceki/sonraki** (29 Eylül, kullanıcının isteği): büyütmede iki yanda ok
+  düğmesi (kapat düğmesiyle aynı dil, telefonda görselin üstüne bindiği için
+  yarı saydam koyu zemin) ve ← → tuşları. Kapak dahil saatin bütün
+  fotoğrafları arasında gezer, uçlarda sarar; tek fotoğraflı saatte ok yok.
+  Kaydırma (swipe) yok — istenmedi.
 - **`category` GÖSTERİM TİPİDİR ve `specs.dial.display`'den türetilir.**
   Üç değer: `Analog` · `Dijital` · `Analog - Dijital`. Eskiden serbest metindi
   ve içinde `dalgıç` vardı — dalgıçlık bir gösterim tipi değil, üstelik o saat

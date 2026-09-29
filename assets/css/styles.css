@@ -298,6 +298,20 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
 }
 .lightbox-close:hover { border-color: #fff; }
 .lightbox-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+/* Önceki/sonraki: kapat düğmesiyle aynı dil. Telefonda görselin üstüne
+   biniyor; beyaz zeminli fotoğrafta kaybolmasın diye yarı saydam koyu zemin. */
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  display: grid; place-items: center; padding: 0;
+  width: 40px; height: 40px; border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, .45); background: rgba(0, 0, 0, .5);
+  color: #fff; cursor: pointer;
+}
+.lightbox-nav svg { width: 20px; height: 20px; }
+.lightbox-nav.onceki { left: 16px; }
+.lightbox-nav.sonraki { right: 16px; }
+.lightbox-nav:hover { border-color: #fff; }
+.lightbox-nav:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 @media (max-width: 600px) { .lightbox { padding: 16px; } }
 
 /* ---------- altbilgi ---------- */
