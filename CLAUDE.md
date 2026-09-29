@@ -529,12 +529,12 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    boyutlandırılır (aşağıda "EK KARE = ÜRETİCİNİN KADRAJI"); fon kesme
    tuzağı ek karelerde artık yok. Tek dikkat: A1000DN-7'nin `02.png`'si
    aslında JPEG (sunucudaki adıyla geldi) → aslı `.jpg` uzantısıyla koy.
-   **SNE529'un iki ek karesinde saydam boşluk kırpılıyor** (29 Eylül).
-   Seiko'nun 1231×1968 saydam tuvalinde saat ~%50; olduğu gibi bırakınca
-   karede küçülüyordu. Kullanıcı önce eski çerçeveyi seçti, önbellek
-   karışıklığı çözülünce üç hâli ekran görüntüsüyle görüp kırpılmışı seçti
-   (*"3. gerçekten güzel görünüyor"*). Betikte `SAYDAM_KIRP` istisnası;
-   görünür her piksel kalıyor (sınandı), saat 1030×920 px.
+   **SNE529'un iki ek karesi ilk (kapak gibi çerçeveli) hâlinde** (29 Eylül,
+   son karar). Seiko'nun 1231×1968 saydam tuvalinde saat ~%50. Üç hâl
+   denendi: çerçeveli (ilk), Seiko tuvali, saydam boşluk kırpılmış. Kullanıcı
+   sonunda ilkini seçti: *"SNE29da ilk haline dön o zaman ideal oran oydu."*
+   Betikte `ESKI_CERCEVE` istisnası; dosyalar ilk hâlle birebir (sınandı).
+   **Kapalı konu — tekrar açma.**
 7. ~~Rotasyon~~ — sitedeki rotasyon arayüzü **17 Eylül 2026'da kaldırıldı**,
    `data/wears.json` silindi. Yani "public derlemeden çıkar" maddesi düştü:
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
@@ -1097,8 +1097,8 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   falan ekleme. Bıktım orjinal resimleri bozmandan."* Ek karede orijinal
   tuval — saydam boşluk olsa bile kırpma, pay/kenarlık ekleme, bunun için
   **soru da sorma.** Yalnızca site boyuna küçültülür (oran aynı kalır).
-  Tek istisna SNE529 (`SAYDAM_KIRP`): kırpılmış hâli kullanıcı bu kuraldan
-  önce kendisi seçmişti; kuraldan sonra ne olacağı soruldu.
+  Tek istisna SNE529 (`ESKI_CERCEVE`, kapak gibi çerçeveli): kullanıcı kuraldan
+  sonra da onun ilk hâlini seçti — *"ideal oran oydu"*. Başka kareye genelleme.
   **Ders:** bir kural bir iş için konduysa başka işe taşımadan önce sor.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır; **görselin kendisine,
   boşluğa ya da kapat düğmesine tıklamak da, Escape de kapatır.**

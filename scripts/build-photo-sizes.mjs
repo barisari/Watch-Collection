@@ -18,13 +18,11 @@
  * (29 Eylül 2026): kapak kuralı ek karelere de uygulanıyordu; Casio'da kayış
  * kenara dayanırken bizde karenin dört yanında boşluk kalıyordu.
  *
- * İSTİSNA — saydam boşluğu kırpılan ek kareler (SAYDAM_KIRP): kaynağın
- * kendisi büyük saydam boşluk taşıyorsa (Seiko'nun 1231×1968 tuvali, saat
- * ~%50) olduğu gibi bırakınca saat karede küçülüyor. Boş saydam alan atılır
- * (görünür her piksel kalır, sınandı), sonra yine yalnızca boyutlandırılır —
- * pay yok. Kullanıcı SNE529 için üç hâli görüp bunu seçti (29 Eylül): "3.
- * gerçekten güzel görünüyor." Yeni ek karelerde istisna YOK — kullanıcının
- * kesin kuralı (29 Eylül): "ek resimlerde orjinal tuval neyse onu kullan,
+ * TEK İSTİSNA — kapak gibi çerçevelenen ek kareler (ESKI_CERCEVE): SNE529.
+ * Seiko'nun 1231×1968 saydam tuvalinde saat ~%50; orijinal tuvalde karede çok
+ * küçük kalıyor. Kullanıcı üç hâli görüp sonunda ilkini seçti (29 Eylül):
+ * "SNE29da ilk haline dön o zaman ideal oran oydu." Başka ek kareye uygulanmaz
+ * — kullanıcının kesin kuralı: "ek resimlerde orjinal tuval neyse onu kullan,
  * boşluk falan kırpıp durma, kafana göre kenarlık falan ekleme."
  *
  * İki yolda da kaynağı yetmeyen dosya büyütülmez (NO_ENLARGE).
@@ -41,7 +39,7 @@ const BOYLAR = [
   { ad: 'large', canvas: 1500, klasor: 'photos/watches/large/' },
 ];
 
-const SAYDAM_KIRP = new Set(['seiko_sne529p-2', 'seiko_sne529p-3']);
+const ESKI_CERCEVE = new Set(['seiko_sne529p-2', 'seiko_sne529p-3']);
 
 const watches = JSON.parse(await readFile('data/watches.json', 'utf8'));
 const kapaklar = new Set(watches.map((w) => (w.photos || [])[0]).filter(Boolean));
@@ -60,13 +58,12 @@ for (const boy of BOYLAR) {
 
     const out = webp.replace('photos/watches/', boy.klasor);
     await mkdir(dirname(out), { recursive: true });
-    if (kapaklar.has(webp)) {
+    if (kapaklar.has(webp) || ESKI_CERCEVE.has(ad)) {
       const env = { ...process.env, CANVAS: String(boy.canvas), NO_ENLARGE: '1' };
       if (asil.endsWith('.jpg')) env.CUTOUT = 'off';
       execFileSync('node', ['scripts/normalize-photo.mjs', asil, out], { env, encoding: 'utf8' });
     } else {
-      const kaynak = SAYDAM_KIRP.has(ad) ? await sharp(asil).trim().png().toBuffer() : asil;
-      await sharp(kaynak)
+      await sharp(asil)
         .resize(boy.canvas, boy.canvas, { fit: 'inside', withoutEnlargement: true })
         .webp({ quality: 90 }).toFile(out);
     }
