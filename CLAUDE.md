@@ -504,8 +504,8 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    için köprü var.
 
    **27 Eylül: ilk beş saatin galerisi köprüden geldi.** 29 Eylül'de
-   **PRW-35LD-5 girdi** (12-17, kullanıcı onayladı); **kalan dördü seçim
-   bekliyor**. Sıra kullanıcının; her seferinde bir saat.
+   **PRW-35LD-5** ve **EFB-730D-7AV** girdi; **kalan üçü seçim bekliyor**.
+   Sıra kullanıcının; her seferinde bir saat.
    Kareler `bridge-local` dalında `bridge/foto/<MODEL>/`: dokunulmamış asıllar,
    galerideki sırayla `01…`. Her saatin `01`'i kapakla aynı görünüm.
    Gözden geçirme sayfası (`npm i --no-save sharp` gerekir):
@@ -516,7 +516,7 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    |---|---|---|
    | A1000DN-7 | 3 | 2, 3 (kutu, yedek kordon) |
    | GA-2100-1A1 | 14 | 3, 7, 8 — 2-11 arası 525-700 px, hiçbir yerelde büyüğü yok |
-   | EFB-730D-7AV | 9 | 7, 8, 9 (ortam çekimleri, saat tek başına) |
+   | EFB-730D-7AV | 9 | ✅ **girdi** — 7, 8, 2 (kullanıcı 9 yerine 2'yi seçti) → `edifice_efb-730d-7avudf-2…4` |
    | PRW-35LD-5 | 20 | ✅ **girdi** — 12-17 → `pro_trek_prw-35ld-5jf-2…7` |
    | OCW-T200S-1A | 11 | 2, 6, 7 |
 
