@@ -528,11 +528,12 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    boyutlandırılır (aşağıda "EK KARE = ÜRETİCİNİN KADRAJI"); fon kesme
    tuzağı ek karelerde artık yok. Tek dikkat: A1000DN-7'nin `02.png`'si
    aslında JPEG (sunucudaki adıyla geldi) → aslı `.jpg` uzantısıyla koy.
-   **SNE529'un iki ek karesi eski çerçevesinde kaldı** (29 Eylül, kullanıcı:
-   *"Eski hali en güzeli duruyor bu saat için"*). Seiko'nun 1231×1968 saydam
-   tuvalinde saat ~%50; olduğu gibi bırakınca karede küçülüyordu. Betikte
-   `ESKI_CERCEVE` istisnası var, `--ekler` onları ezmez (sınandı: 13 karenin
-   hiçbiri değişmedi).
+   **SNE529'un iki ek karesinde saydam boşluk kırpılıyor** (29 Eylül).
+   Seiko'nun 1231×1968 saydam tuvalinde saat ~%50; olduğu gibi bırakınca
+   karede küçülüyordu. Kullanıcı önce eski çerçeveyi seçti, önbellek
+   karışıklığı çözülünce üç hâli ekran görüntüsüyle görüp kırpılmışı seçti
+   (*"3. gerçekten güzel görünüyor"*). Betikte `SAYDAM_KIRP` istisnası;
+   görünür her piksel kalıyor (sınandı), saat 1030×920 px.
 7. ~~Rotasyon~~ — sitedeki rotasyon arayüzü **17 Eylül 2026'da kaldırıldı**,
    `data/wears.json` silindi. Yani "public derlemeden çıkar" maddesi düştü:
    çıkarılacak dosya yok. Kayıt HA'da birikiyor; yeterince veri olunca
@@ -834,6 +835,11 @@ HA takvimindeki `.ics` verisinin siteye hangi yolla geleceği; eski kayıtlardak
 - Canlı: https://barisari.github.io/Watch-Collection/
 - Varsayılan dal: `claude/watch-collection-manager-gl4ziq` (depo ilk gönderimden
   önce boş olduğu için `main` değil). Pages iş akışı bu dalı da dinliyor.
+- **Tarayıcı önbelleği 10 dk** (`cache-control: max-age=600`). Görsel
+  güncellendikten sonra 10 dk boyunca eskisi görünebilir; hatta karışık:
+  önceden açılmış küçük kareler eski, ilk kez açılan büyük hâl yeni (29 Eylül,
+  kullanıcı tam bunu gördü). Yayını önce önbelleksiz tarayıcıyla kontrol et,
+  kullanıcıya `Ctrl+Shift+R` ya da 10 dk bekle de.
 - Her commit'te otomatik yayınlanır. Settings → Pages → Source: GitHub Actions
   zaten seçili — Pages ayar sayfasındaki "Jekyll" / "Static HTML" önerilerine
   **dokunma**, ikinci bir iş akışı ekleyip çakışırlar.
@@ -1086,8 +1092,9 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   kareleri `normalize-photo.mjs`'e sokmuyor, `--ekler` yalnızca onları üretir.
   Künyedeki 8 px pay da kalktı. Kapaklar değişmedi (ızgarada eş boy için).
   **İstisna:** kaynağın kendisi büyük saydam boşluk taşıyorsa (Seiko tuvali)
-  saat küçülüyor — SNE529'da kullanıcı eski çerçeveyi seçti. Yeni bir saydam
-  ek kare gelirse iki hâli yan yana gösterip sor, kuralı kendin genelleme.
+  saat küçülüyor — SNE529'da boş saydam alan kırpılıyor (`SAYDAM_KIRP`), pay
+  yine yok. Yeni bir saydam ek kare gelirse hâlleri yan yana gösterip sor,
+  kuralı kendin genelleme.
   **Ders:** bir kural bir iş için konduysa başka işe taşımadan önce sor.
 - Detay sayfasında fotoğrafa tıklayınca büyük hâli açılır; **görselin kendisine,
   boşluğa ya da kapat düğmesine tıklamak da, Escape de kapatır.**
