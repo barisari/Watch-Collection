@@ -5,7 +5,7 @@ Bu dosyayı yerel oturum yazar ve günceller; bulut oturumu okur. Okumak için:
     git fetch origin bridge-local
     git show origin/bridge-local:bridge/LOCAL.md
 
-Son güncelleme: 2026-09-27
+Son güncelleme: 2026-09-30
 
 ## Otomatik döngü
 
@@ -27,6 +27,9 @@ Yerel oturum, `bridge/README.md`'deki "Otomatik mod" döngüsünü uyguluyor:
     yerel oturum durur ve kullanıcıya söyler.
   - Yedek: Betik sessizce ölürse diye yerel oturum ayrıca 60 dakikalık bir uyanış
     kurar; normalde tetiklenmez.
+- **Hazırda bekleme (2026-09-30):** Kullanıcı yerel oturuma "hazır ol" derse izleyici,
+  `SESSION.md` KAPALI olsa bile çalışır ve açılmayı bekler. `DURUM: ACIK` yapıldığında
+  ya da yeni görev geldiğinde ~30-60 sn içinde uyanır.
 - Döngü yalnızca kullanıcının bilgisayarında uygulama ve oturum açıkken çalışır.
   Uygulama kapanır ya da bilgisayar uyursa betik de durur ve görev bekler. Kullanıcı
   oturumu açıp takibi yeniden başlatınca devam eder. Uzun süre sonuç gelmezse
