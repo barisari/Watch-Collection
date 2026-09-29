@@ -260,8 +260,11 @@ select:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outli
   grid-template-columns: repeat(auto-fit, minmax(96px, 120px));
   justify-content: center;
 }
+/* Karo fotoğrafın kendi oranını alır: kare olmayan karede (Oceanus 3:2)
+   üstte-altta beyaz şerit kalıyordu, kenarlık gibi görünüyordu (kullanıcının
+   kararı, 29 Eylül). Zemin saydam karelerin arkası için. */
 .gallery img {
-  width: 100%; aspect-ratio: 1; object-fit: contain; display: block;
+  width: 100%; height: auto; display: block;
   background: #fff;
 }
 

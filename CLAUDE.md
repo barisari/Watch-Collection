@@ -504,8 +504,8 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    için köprü var.
 
    **27 Eylül: ilk beş saatin galerisi köprüden geldi.** 29 Eylül'de
-   **PRW-35LD-5**, **EFB-730D-7AV** ve **A1000DN-7** girdi; **kalan ikisi
-   (GA-2100-1A1, OCW-T200S-1A) seçim bekliyor**.
+   **PRW-35LD-5**, **EFB-730D-7AV**, **A1000DN-7** ve **OCW-T200S-1A** girdi;
+   **kalan GA-2100-1A1 seçim bekliyor**.
    Sıra kullanıcının; her seferinde bir saat.
    Kareler `bridge-local` dalında `bridge/foto/<MODEL>/`: dokunulmamış asıllar,
    galerideki sırayla `01…`. Her saatin `01`'i kapakla aynı görünüm.
@@ -519,7 +519,7 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    | GA-2100-1A1 | 14 | 3, 7, 8 — 2-11 arası 525-700 px, hiçbir yerelde büyüğü yok |
    | EFB-730D-7AV | 9 | ✅ **girdi** — 7, 8, 2 (kullanıcı 9 yerine 2'yi seçti) → `edifice_efb-730d-7avudf-2…4` |
    | PRW-35LD-5 | 20 | ✅ **girdi** — 12-17 → `pro_trek_prw-35ld-5jf-2…7` |
-   | OCW-T200S-1A | 11 | 2, 6, 7 |
+   | OCW-T200S-1A | 11 | ✅ **girdi** — 4, 5, 7 (kullanıcının seçimi) → `oceanus_ocw-t200s-1ajf-2…4`, 3:2 |
 
    Ölçüt: saat karede tek başına ve kapakta görünmeyen bir şeyi gösteriyor.
    Bilekte/model, afiş/özellik ve başka modelin göründüğü kareler dışarıda.
@@ -1083,6 +1083,10 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   Kullanıcının izni var: *"bunların arka planın düz renk olması benim için sorun
   değil çünkü ana sayfa değil detay sayfası."* Kapaklar bunun dışında, hepsi
   saydam.
+  **Karo fotoğrafın kendi oranını alır** (29 Eylül, kullanıcının kararı):
+  karolar kareydi (`aspect-ratio:1` + `object-fit:contain`); Oceanus'un 3:2
+  karelerinde üstte-altta beyaz şerit kalıyor, kenarlık gibi görünüyordu.
+  Artık `height:auto` — kare fotoğraflarda hiçbir şey değişmedi (sınandı).
 - ## EK KARE = ÜRETİCİNİN KADRAJI (29 Eylül 2026).
   Kapak kuralı (kenarı kırp, 900'ün 770'ine sığdır, ortala) ek karelere de
   **sessizce** uygulanıyordu: betik kapakla ek kareyi ayırt etmiyordu, ben de
