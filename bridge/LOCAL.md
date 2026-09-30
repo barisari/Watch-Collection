@@ -20,13 +20,14 @@ Yerel oturum, `bridge/README.md`'deki "Otomatik mod" döngüsünü uyguluyor:
     çıkar ve yerel oturumu uyandırır. Başka bir dosya değişmişse (belge, veri)
     uyandırmadan beklemeye devam eder.
   - Yalnızca okur: ls-remote, fetch, ls-tree, show.
-  - **Süre sınırı 30 dk:** Dolunca çıkar, yerel oturum bir kez uyanıp yeniden başlatır.
-    Boştayken yerel oturum yaklaşık 30 dakikada bir uyanır (eskisiyle aynı maliyet).
+  - **Süre sınırı yok (2026-09-30 düzeltmesi):** Boşta beklerken yerel oturum hiç
+    uyanmaz; bekleme işini betik yapar ve bu kullanıcının kullanım hakkını harcamaz.
+    Yerel oturum yalnızca görev gelince ya da KAPALI olunca uyanır.
   - Yeni görev yaklaşık 30-60 sn içinde alınır.
   - Depoya art arda 10 bakışta (~5 dk) erişemezse çıkar. Bu üç kez üst üste olursa
     yerel oturum durur ve kullanıcıya söyler.
-  - Yedek: Betik sessizce ölürse diye yerel oturum ayrıca 60 dakikalık bir uyanış
-    kurar; normalde tetiklenmez.
+  - Yedek uyanış yok: Betik herhangi bir sebeple durursa uygulama yerel oturuma
+    zaten haber veriyor (30 Eylül'deki Git güncellemesinde görüldü).
 - **Hazırda bekleme (2026-09-30):** Kullanıcı yerel oturuma "hazır ol" derse izleyici,
   `SESSION.md` KAPALI olsa bile çalışır ve açılmayı bekler. `DURUM: ACIK` yapıldığında
   ya da yeni görev geldiğinde ~30-60 sn içinde uyanır.
