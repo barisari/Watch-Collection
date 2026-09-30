@@ -505,8 +505,9 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
 
    **27 Eylül: ilk beş saatin galerisi köprüden geldi.** 29 Eylül'de
    **Beşi de girdi** (29 Eylül). Sonra köprüyle **OCW-S400RL-8A** geldi ve
-   girdi (3, 4, 6; 1400 px). Ek karesi olmayan 22 saat var; sırası
-   kullanıcının. Kullanıcı: *"Zorlanıyorsan diğer oturumdan yardım iste, token
+   girdi (3, 4, 6; 1400 px). 30 Eylül'de **EFK-110D-1A** (2, 9, 10; 2000 px) —
+   kullanıcı saati bana bıraktı, önerdiğim kareleri onayladı. Ek karesi
+   olmayan 21 saat var; sırası kullanıcının. Kullanıcı: *"Zorlanıyorsan diğer oturumdan yardım iste, token
    harcama"* — casio.com'da dosya adı tahmin ederek yoklama yapma, köprüye ver.
    Sıra kullanıcının; her seferinde bir saat.
    Kareler `bridge-local` dalında `bridge/foto/<MODEL>/`: dokunulmamış asıllar,
@@ -523,6 +524,7 @@ metinler (`tagline`, `story`) `{ en, tr }` biçiminde. Arayüz şu an tek dil
    | PRW-35LD-5 | 20 | ✅ **girdi** — 12-17 → `pro_trek_prw-35ld-5jf-2…7` |
    | OCW-T200S-1A | 11 | ✅ **girdi** — 4, 5, 7 (kullanıcının seçimi) → `oceanus_ocw-t200s-1ajf-2…4`, 3:2 |
    | OCW-S400RL-8A | 10 | ✅ **girdi** — 3, 4, 6 (kullanıcı 5 yerine 6'yı seçti) → `oceanus_ocw-s400rl-8ajr-2…4` |
+   | EFK-110D-1A | 10 | ✅ **girdi** — 2, 9, 10 (bilekte, taş üzerinde, beyaz zeminde yatık) → `edifice_efk-110d-1a-2…4` |
 
    Ölçüt: saat karede tek başına ve kapakta görünmeyen bir şeyi gösteriyor.
    Bilekte/model, afiş/özellik ve başka modelin göründüğü kareler dışarıda —
