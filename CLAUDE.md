@@ -1027,18 +1027,22 @@ becerisinin ele veren işaret diye saydığı şeyin ta kendisi. Zevk konusunda
   olduğuna koleksiyonun sahibi karar verir.** Sen bir şeyi yanlış sanıyorsan
   bile, kullanıcı kapattıysa kapanmıştır.
 
-- ## KULLANICININ VERİSİNİ DIŞ KAYNAKLA YARGILAMA (2 Ekim 2026).
+- ## ÇELİŞKİDE ÖNCE KULLANICININ KAYITLARINA KENDİN BAK (2 Ekim 2026).
   Mondaine'nin kalibresini (SW220-1) yalnızca Mondaine'nin İngiltere sayfası
   SW200-1 dediği için "yanlış" ilan ettim. Kullanıcı gizli gün diskini
   söyleyince kabul etmek yerine kaynak tablosu ve ona yaptırılacak bir test
-  çıkardım. Sipariş kaydında **SW220-1** yazıyordu; veri baştan doğruydu.
+  çıkardım. Satın alma kaydında **SW220-1** yazıyordu; veri baştan doğruydu.
   Kullanıcı: *"Satın alma notlarını sana 100 kere yolladım. Sakın beni benzer
   bir konuda yorma bir daha."*
-  **Kural:** saatlerin sahibi kullanıcı; onun kayıtları (satın alma
-  belgeleri, Drive tabloları, saatin kendisi) internetteki her sayfanın
-  önünde gelir. Bir dış kaynak verideki değerle çelişirse "yanlış" deme,
-  kullanıcıyı ispata zorlama: önce kullanıcının kayıtlarına bak, orada da
-  yoksa değeri olduğu gibi bırak. Kullanıcı bir açıklama yaptığında kabul et.
+  **Uyarmak doğruydu, yöntem yanlıştı.** Kullanıcı 31 saatin her ayrıntısını
+  aklında tutamaz (*"Ben robot muyum?"*); olası bir hatayı yakalamak tam olarak
+  bizim işimiz. Sıra şu:
+  1. Bir kaynak verideki değerle çelişirse **önce kullanıcının kayıtlarına
+     kendin bak**: Drive'daki satın alma kayıtları (*Verilmemiş kararlar →
+     Fiyatlar*), Casio Collection tablosu, verideki `source` notları.
+  2. Kayıtlar çözüyorsa iş biter, kullanıcıyı hiç yorma.
+  3. Çözmüyorsa **kısaca uyar**: hangi kaynak ne diyor, bizde ne var.
+     "Yanlış" deme, ispat isteme, test yaptırma. Kararı kullanıcı verir.
   **Mondaine MSE.40610.LBV = Sellita SW220-1, kapalı konu.**
 
 - ## BAŞLADIĞIN SAATİ BİTİR.
