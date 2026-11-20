@@ -3081,5 +3081,109 @@
       "USD": 440
     },
     "haOption": "Seiko SNAB71"
+  },
+  {
+    "id": "casio-w-221h-1avdf",
+    "brand": "Casio",
+    "model": "W-221H-1AV",
+    "reference": "W-221H-1AVDF",
+    "nickname": null,
+    "shortCode": "W221H",
+    "year": null,
+    "category": "Dijital",
+    "specs": {
+      "movement": {
+        "caliber": "Casio modül 3585",
+        "type": "quartz",
+        "battery": "CR2032",
+        "batteryLife": "Yaklaşık 10 yıl",
+        "accuracy": "±30 saniye/ay",
+        "radioControlled": null,
+        "bluetooth": null,
+        "powerReserve": null,
+        "frequency": null,
+        "jewels": null,
+        "certification": null
+      },
+      "case": {
+        "material": "Resin",
+        "bezelMaterial": null,
+        "diameter": 38.4,
+        "thickness": 12.2,
+        "lugToLug": 43.7,
+        "lugWidth": null,
+        "weight": 35,
+        "crystal": "Resin Glass",
+        "crystalCoating": null,
+        "crystalShape": null,
+        "waterResistance": 50,
+        "bezel": null,
+        "backlight": "LED (kehribar)",
+        "color": "Black / Silver"
+      },
+      "dial": {
+        "color": "Grey LCD",
+        "display": "digital",
+        "indices": null,
+        "lume": null,
+        "complications": [
+          "World time",
+          "Stopwatch",
+          "Countdown timer",
+          "Daily alarm",
+          "Hourly time signal",
+          "Flash alert",
+          "Full auto-calendar"
+        ]
+      },
+      "strap": {
+        "type": "Band",
+        "material": "Resin",
+        "color": "Black",
+        "clasp": null,
+        "sizeRange": "145–215 mm"
+      }
+    },
+    "tagline": {
+      "en": "A practical digital watch with a boldly angular design.",
+      "tr": "Cesur köşeli tasarımlı, kullanışlı bir dijital saat."
+    },
+    "story": {
+      "en": "Slip on a simple, yet practical digital watch with a boldly angular design. With large LCD for outstanding visibility, LED backlight for an easy read, and a 10-year battery that keeps you going for years, this watch is also packed with handy functions like world time, stopwatch, alarm, timer, full-auto calendar, and more.",
+      "tr": "Cesur köşeli tasarımıyla sade ama kullanışlı bir dijital saat. Büyük LCD ekranı mükemmel okunurluk, LED arka ışığı kolay okuma sağlıyor; 10 yıllık pili de seni yıllarca idare ediyor. Dünya saati, kronometre, alarm, geri sayım ve tam otomatik takvim gibi pratik işlevlerle de dolu."
+    },
+    "source": {
+      "productUrl": "https://www.casio.com/intl/watches/casio/product.W-221H-1AV/",
+      "fetchedAt": "2026-11-20",
+      "imageColorsFrom": "Casio resmi ürün görseli",
+      "imageFrom": "Casio resmi ürün görselleri (intl galerisi, 2000×2000, yerel oturum indirdi)",
+      "storyFrom": "casio.com/intl ürün sayfası (yerel oturum okudu, 20 Kasım 2026)",
+      "releaseFrom": "casio.com/jp — W-221H-1AJF (Japonya sürümü) 発売年月 2026年2月",
+      "msrpFrom": "ersasaat.com.tr — Casio Türkiye yetkili satıcısı, indirim öncesi liste fiyatı (20 Kasım 2026) · casio.com/in — MRP (vergi dahil)",
+      "imageOriginal": "https://www.casio.com/content/dam/casio/product-info/locales/intl/en/timepiece/product/watch/W/W2/w22/w-221h-1av/assets/W-221H-1AV.png"
+    },
+    "acquisition": {
+      "date": "2026-11-16",
+      "condition": null,
+      "boxPapers": null
+    },
+    "service": {
+      "lastServiceDate": null,
+      "intervalYears": null
+    },
+    "photos": [
+      "photos/watches/casio_w-221h-1avdf.webp",
+      "photos/watches/casio_w-221h-1avdf-2.webp",
+      "photos/watches/casio_w-221h-1avdf-3.webp",
+      "photos/watches/casio_w-221h-1avdf-4.webp"
+    ],
+    "tags": [],
+    "notes": null,
+    "releaseDate": "2026-02",
+    "msrp": {
+      "INR": 2995,
+      "TRY": 8519
+    },
+    "haOption": null
   }
 ]

@@ -96,6 +96,7 @@ const TR = {
   'Hourly time signal': 'Saat başı sinyali',
   'Auto calendar': 'Otomatik takvim',
   'Full auto-calendar': 'Tam otomatik takvim',
+  'Flash alert': 'Işıklı uyarı',
   'Chronograph': 'Kronograf',
   'Alarm': 'Alarm',
   'Date display': 'Tarih göstergesi',
