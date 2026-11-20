@@ -3185,5 +3185,104 @@
       "TRY": 8519
     },
     "haOption": null
+  },
+  {
+    "id": "seiko-srpl05k1",
+    "brand": "Seiko",
+    "model": "SRPL05",
+    "reference": "SRPL05K1",
+    "nickname": "Heritage Design Re-creation",
+    "shortCode": "SRPL05",
+    "year": null,
+    "category": "Analog",
+    "specs": {
+      "movement": {
+        "caliber": "Seiko 4R36",
+        "type": "automatic",
+        "battery": null,
+        "batteryLife": null,
+        "accuracy": null,
+        "radioControlled": null,
+        "bluetooth": null,
+        "powerReserve": 41,
+        "frequency": null,
+        "jewels": 24,
+        "certification": null
+      },
+      "case": {
+        "material": "Stainless steel",
+        "bezelMaterial": null,
+        "diameter": 38.5,
+        "thickness": 12.4,
+        "lugToLug": 44.8,
+        "lugWidth": 20,
+        "weight": 142,
+        "crystal": "Hardlex",
+        "crystalCoating": null,
+        "crystalShape": "Curved",
+        "waterResistance": 100,
+        "bezel": "Döner bezel",
+        "backlight": null,
+        "color": "Steel"
+      },
+      "dial": {
+        "color": "Black",
+        "display": "analog",
+        "indices": null,
+        "lume": "Lumibrite (ibreler, indeksler, bezel)",
+        "complications": [
+          "Day/Date"
+        ]
+      },
+      "strap": {
+        "type": "Bracelet",
+        "material": "Stainless steel",
+        "color": "Steel",
+        "clasp": "Three-fold clasp",
+        "sizeRange": null
+      }
+    },
+    "tagline": {
+      "en": "A beloved late-1960s Seiko design, reissued.",
+      "tr": "1960'ların sonunun sevilen Seiko tasarımı, yeniden."
+    },
+    "story": {
+      "en": "A beloved Seiko design that was popular around the world from the late 1960s to the early 1970s, reissued in the Seiko 5 Sports collection. Reproduced in a size and shape as close as possible to the original, the reissued design is powered by the tried-and-trusted Caliber 4R36 automatic movement. The dial closely follows that of the classic design, with the original Seiko 5 Sports logo revived at the 12 o'clock position. As a special feature of the limited edition, the watch comes with a sporty retro leather strap reminiscent of the time when the original model was popular.",
+      "tr": "1960'ların sonundan 1970'lerin başına dünya çapında sevilen bir Seiko tasarımı, Seiko 5 Sports koleksiyonunda yeniden üretildi. Ölçüsü ve biçimi aslına olabildiğince yakın tutulan saat, güvenilirliği kanıtlanmış 4R36 otomatik kalibresiyle çalışıyor. Kadran klasik tasarımı yakından izliyor; saat 12'de orijinal Seiko 5 Sports logosu yeniden yer alıyor. Sınırlı üretimin özel bir parçası olarak, orijinal modelin popüler olduğu dönemi hatırlatan sportif retro bir deri kayışla geliyor."
+    },
+    "source": {
+      "productUrl": "https://www.seikowatches.com/no-en/products/5sports/special/heritage_design_recreation_limited/",
+      "fetchedAt": "2026-11-20",
+      "imageColorsFrom": "Seiko resmi görseli",
+      "imageFrom": "Kapak: aydinsaatstore.com ürün görseli (1200×1800 saydam PNG). Ek kareler: 2 = Seiko özel sayfası (para.jpg), 3 = aydinsaatstore.com kutu görseli. Seiko ürün sayfası kaldırılmış (404).",
+      "storyFrom": "seikowatches.com özel sayfası (Heritage Design Re-creation Limited Edition) — SRPL03 ile ortak metin, SRPL05'e uyan cümleler alındı",
+      "specsFrom": "aydinsaatstore.com — kullanıcının verdiği sayfa (Seiko'nun İngilizce teknik tablosu kaldırılmış); kalibre, adet ve çıkış Seiko özel sayfasından",
+      "releaseFrom": "seikowatches.com özel sayfası — \"Available in July 2024\"",
+      "msrpFrom": "aydinsaatstore.com — tavsiye edilen perakende satış fiyatı (20 Kasım 2026)",
+      "imageOriginal": "https://www.aydinsaatstore.com/idea/il/97/myassets/products/171/srpl05k1.png"
+    },
+    "acquisition": {
+      "date": "2026-11-06",
+      "condition": null,
+      "boxPapers": null
+    },
+    "service": {
+      "lastServiceDate": null,
+      "intervalYears": null
+    },
+    "photos": [
+      "photos/watches/seiko_srpl05k1.webp",
+      "photos/watches/seiko_srpl05k1-2.webp",
+      "photos/watches/seiko_srpl05k1-3.webp"
+    ],
+    "tags": [
+      "limited edition"
+    ],
+    "notes": "9.999 adet sınırlı üretim; arka kapakta \"LIMITED EDITION\" ve seri numarası. Ek olarak retro deri kayışla geliyor.",
+    "releaseDate": "2024-07",
+    "msrp": {
+      "TRY": 40895
+    },
+    "haOption": null
   }
 ]
