@@ -3184,7 +3184,7 @@
       "INR": 2995,
       "TRY": 8519
     },
-    "haOption": "Casio W-221H"
+    "haOption": null
   },
   {
     "id": "seiko-srpl05k1",
@@ -3283,6 +3283,6 @@
     "msrp": {
       "TRY": 40895
     },
-    "haOption": "Seiko SRPL05"
+    "haOption": null
   }
 ]
